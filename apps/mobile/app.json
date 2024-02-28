@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ICL",
-    "slug": "inter-club-league",
+    "name": "mobile",
+    "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "inter-club-league",
+    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -16,16 +16,13 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.conorob.interclubleague",
-      "supportsTablet": true,
-      "userInterfaceStyle": "automatic"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "userInterfaceStyle": "automatic"
+      }
     },
     "web": {
       "bundler": "metro",
