@@ -1,5 +1,5 @@
 {
-  "name": "@inter-club-league/expo",
+  "name": "@inter-club-league/mobile",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
