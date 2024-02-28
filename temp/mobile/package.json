@@ -3,6 +3,7 @@
   "main": "index.js",
   "version": "1.0.0",
   "scripts": {
+    "clean": "rm -rf node_modules",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
