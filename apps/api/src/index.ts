@@ -97,7 +97,7 @@ async function bootstrap() {
     )
   }
 
-  console.log(`🚀 Server ready at ${config.graphqlPath}`)
+  console.log(`🚀 Server ready at ${config.graphqlUri}`)
 
   return app
 }

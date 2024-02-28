@@ -1,2 +1,3 @@
-export * from './graphql'
-export * from './graphql-env'
+import { graphql } from 'graphql'
+
+export { graphql }
