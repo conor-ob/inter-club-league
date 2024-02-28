@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./**/*.{ts,tsx}'],
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  presets: [require('nativewind/preset')],
   theme: {
     extend: {
       fontFamily: {
@@ -16,5 +19,8 @@ module.exports = {
       }
     }
   },
+  future: {
+    hoverOnlyWhenSupported: true
+  },
   plugins: []
-}
+} satisfies Config

@@ -1,10 +1,10 @@
 {
-  "name": "tailwind-app",
+  "name": "@inter-club-league/mobile",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules",
-    "start": "expo start",
+    "start": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
