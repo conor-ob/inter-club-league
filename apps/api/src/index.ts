@@ -1,67 +1,106 @@
-// npm install @apollo/server express graphql cors body-parser
-import http from 'http';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
-import express from 'express';
+import {
+  ApolloServerPluginLandingPageLocalDefault,
+  ApolloServerPluginLandingPageProductionDefault
+} from '@apollo/server/plugin/landingPage/default';
+import { config } from '@inter-club-league/config';
 import cors from 'cors';
-import bodyParser from 'body-parser';
-import { config } from '@inter-club-league/config'
-
-interface MyContext {
-  token?: String
-}
-// Construct a schema, using GraphQL schema language
-const typeDefs = `
-  type Query {
-    hello: String
-  }
-`;
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world',
-  },
-};
+import express from 'express';
+import http from 'http';
+import { ServerContext } from './context/ServerContext';
+import { Database } from './database/Database';
+import { FileReader } from './database/FileReader';
+import { GcMapper } from './mapping/GcMapper';
+import { ScheduleMapper } from './mapping/ScheduleMapper';
+import { StageMapper } from './mapping/StageMapper';
+import { StageResultsMapper } from './mapping/StageResultsMapper';
+import { resolvers } from './resolvers';
+import { GcService } from './service/GcService';
+import { MarshallsService } from './service/MarshallsService';
+import { ScheduleService } from './service/ScheduleService';
+import { StageResultsService } from './service/StageResultsService';
+import { StagesService } from './service/StagesService';
 
 async function bootstrap() {
-  // Required logic for integrating with Express
-  const app = express();
-  // Our httpServer handles incoming requests to our Express app.
-  // Below, we tell Apollo Server to "drain" this httpServer,
-  // enabling our servers to shut down gracefully.
-  const httpServer = http.createServer(app);
+  const fileReader = new FileReader();
+  const database = new Database(fileReader);
 
-  // Same ApolloServer initialization as before, plus the drain plugin
-  // for our httpServer.
-  const server = new ApolloServer<MyContext>({
-    typeDefs,
+  const scheduleMapper = new ScheduleMapper();
+  const stageMapper = new StageMapper(database);
+  const stageResultsMapper = new StageResultsMapper(database);
+  const gcMapper = new GcMapper(database);
+
+  const stagesService = new StagesService(database, stageMapper);
+  const scheduleService = new ScheduleService(
+    database,
+    stagesService,
+    scheduleMapper
+  );
+  const gcService = new GcService(database, gcMapper, stagesService);
+  const stageResultsService = new StageResultsService(
+    database,
+    stageResultsMapper,
+    stagesService,
+    gcService
+  );
+  const marshallsService = new MarshallsService(database);
+
+  const app = express();
+  const httpServer = http.createServer(app);
+  const server = new ApolloServer<ServerContext>({
+    typeDefs: fileReader.readFile('./src/generated/schema.graphql'),
     resolvers,
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    plugins: [
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+      process.env.NODE_ENV === 'production'
+        ? ApolloServerPluginLandingPageProductionDefault({
+            footer: false
+          })
+        : ApolloServerPluginLandingPageLocalDefault()
+    ]
   });
-  // Ensure we wait for our server to start
   await server.start();
 
-  // Set up our Express middleware to handle CORS, body parsing,
-  // and our expressMiddleware function.
   app.use(
     config.graphqlEndpoint,
-    cors<cors.CorsRequest>(),
-    bodyParser.json(),
-    // expressMiddleware accepts the same arguments:
-    // an Apollo Server instance and optional configuration options
-    expressMiddleware(server, {
-      context: async ({ req }) => ({ token: req.headers.token }),
+    cors({
+      origin: function (origin, callback) {
+        if (!origin) {
+          // allow requests with no origin
+          return callback(null, true);
+        } else if (config.allowedOrigins.indexOf(origin) === -1) {
+          return callback(null, false);
+        } else {
+          return callback(null, false);
+        }
+      }
     }),
+    express.json(),
+    expressMiddleware(server, {
+      context: async () => ({
+        gcService: gcService,
+        marshallsService: marshallsService,
+        // riderStatsService: riderStatsService,
+        scheduleService: scheduleService,
+        stageResultsService: stageResultsService,
+        stagesService: stagesService
+      })
+    })
   );
 
-  // if (import.meta.env.PROD) {
-    // Modified server startup
-    // httpServer.listen(4000);
-  // }
+  if (process.env.NODE_ENV === 'production') {
+    console.log('prod');
+    await new Promise<void>((resolve) =>
+      httpServer.listen({ port: config.graphqlPort }, resolve)
+    );
+  }
+
+  console.log(`🚀 Server ready at ${config.graphqlPath}`);
 
   return app;
 }
+
 const app = bootstrap();
 export const viteNodeApp = app;

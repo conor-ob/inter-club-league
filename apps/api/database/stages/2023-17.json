@@ -1,0 +1,15 @@
+{
+  "id": "2023-17",
+  "season": 2023,
+  "number": 17,
+  "name": "Doreys / Green Sheds",
+  "club": "BWCC",
+  "location": "Doreys / Green Sheds",
+  "county": "Meath",
+  "startTime": "2023-08-10T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}

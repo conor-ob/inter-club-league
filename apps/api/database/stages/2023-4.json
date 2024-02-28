@@ -1,0 +1,15 @@
+{
+  "id": "2023-4",
+  "season": 2023,
+  "number": 4,
+  "name": "Donal Gleeson Memorial",
+  "club": "BWCC",
+  "location": "Green Sheds",
+  "county": "Meath",
+  "startTime": "2023-05-04T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S+SS,SL,L",
+  "coordinates": "53.500740,-6.590326",
+  "stravaId": null
+}

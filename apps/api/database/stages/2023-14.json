@@ -1,0 +1,15 @@
+{
+  "id": "2023-14",
+  "season": 2023,
+  "number": 14,
+  "name": "25 mile TT",
+  "club": "UIRC",
+  "location": "Trim Road",
+  "county": "Meath",
+  "startTime": "2023-07-13T19:00:00Z",
+  "type": "TIME_TRIAL",
+  "mandatory": true,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}
