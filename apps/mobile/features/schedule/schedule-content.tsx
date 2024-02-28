@@ -124,7 +124,9 @@ export function ScheduleContent() {
                         <P>{item.name}</P>
                         <P>{item.displayDate}</P>
                       </Row> */}
-                      <Text>{item.name}</Text>
+                      <Text className='text-black dark:text-white'>
+                        {item.name}
+                      </Text>
                     </View>
                   </TouchableHighlight>
                 </Link>

@@ -13,7 +13,6 @@ type ApolloProviderProps = {
 }
 
 export function ApolloClientProvider({ children }: ApolloProviderProps) {
-  console.log(config.graphqlUri)
   const httpLink = new HttpLink({ uri: config.graphqlUri })
 
   const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
