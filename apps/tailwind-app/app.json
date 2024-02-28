@@ -1,11 +1,33 @@
 {
   "expo": {
-    "scheme": "acme",
+    "name": "ICL",
+    "slug": "inter-club-league",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "inter-club-league",
     "userInterfaceStyle": "automatic",
-    "orientation": "default",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.conorob.interclubleague",
+      "userInterfaceStyle": "automatic"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "userInterfaceStyle": "automatic"
+    },
     "web": {
+      "bundler": "metro",
       "output": "static",
-      "bundler": "metro"
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       [
@@ -15,7 +37,8 @@
         }
       ]
     ],
-    "name": "tailwind-app",
-    "slug": "tailwind-app"
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }
