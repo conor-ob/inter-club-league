@@ -1,4 +1,4 @@
-import Colours from '@/constants/Colours'
+import { colors } from '@/design/color-theme'
 import {
   default as FontAwesome,
   default as FontAwesomeIcons
@@ -40,8 +40,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colours[colorScheme ?? 'light'].brand,
-        tabBarInactiveTintColor: Colours[colorScheme ?? 'light'].tabIconDefault,
+        tabBarActiveTintColor: colors[colorScheme ?? 'light'].brand,
+        tabBarInactiveTintColor: colors[colorScheme ?? 'light'].tabIconDefault,
         headerShown: false
       }}
     >

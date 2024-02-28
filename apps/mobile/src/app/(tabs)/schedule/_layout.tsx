@@ -1,4 +1,4 @@
-import Colours from '@/constants/Colours'
+import { colors } from '@/design/color-theme'
 import { Stack, useGlobalSearchParams } from 'expo-router'
 import { useColorScheme } from 'react-native'
 
@@ -22,9 +22,9 @@ export default function Layout() {
         options={{
           title: parseTitle(params.id),
           headerTitleStyle: {
-            color: Colours[colorScheme ?? 'light'].textColourPrimary
+            color: colors[colorScheme ?? 'light'].textColorPrimary
           },
-          headerTintColor: Colours[colorScheme ?? 'light'].brand,
+          headerTintColor: colors[colorScheme ?? 'light'].brand,
           headerShadowVisible: false
         }}
       />

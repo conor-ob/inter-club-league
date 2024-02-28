@@ -1,5 +1,20 @@
 import { vars } from 'nativewind'
 
+export const colors = {
+  light: {
+    brand: '#fc4c02',
+    tabIconDefault: '#4b5563',
+    textColorPrimary: '#000000',
+    textColorSecondary: '#6b7280'
+  },
+  dark: {
+    brand: '#fde047',
+    tabIconDefault: '#9ca3af',
+    textColorPrimary: '#ffffff',
+    textColorSecondary: '#9ca3af'
+  }
+}
+
 export const themes = {
   light: vars({
     '--color-primary-default': '#3a5e96',
@@ -14,7 +29,7 @@ export const themes = {
     '--color-slate-default': '#38383a',
     '--color-dark-default': '#1f355b',
     '--color-light-default': '#FCFDFD',
-    '--color-brand': '#fc4c02',
+    '--color-brand': colors.light.brand,
     '--color-overlay': 'rgba(0, 0, 0, .05)'
   }),
   dark: vars({
@@ -30,7 +45,7 @@ export const themes = {
     '--color-slate-default': '#38383a',
     '--color-dark-default': '#1f355b',
     '--color-light-default': '#1E1E1E',
-    '--color-brand': '#fde047',
+    '--color-brand': colors.dark.brand,
     '--color-overlay': 'rgba(255, 255, 255, .05)'
   })
 }
