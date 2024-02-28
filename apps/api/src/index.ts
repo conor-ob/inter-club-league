@@ -6,7 +6,7 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { config} from '@inter-club-league/config'
+import { config } from '@inter-club-league/config'
 
 interface MyContext {
   token?: String
@@ -46,7 +46,7 @@ async function bootstrap() {
   // Set up our Express middleware to handle CORS, body parsing,
   // and our expressMiddleware function.
   app.use(
-    '/graphql',
+    config.graphqlEndpoint,
     cors<cors.CorsRequest>(),
     bodyParser.json(),
     // expressMiddleware accepts the same arguments:
@@ -60,8 +60,6 @@ async function bootstrap() {
     // Modified server startup
     // httpServer.listen(4000);
   // }
-
-  console.log('Server started ' + config.graphqlPath)
 
   return app;
 }

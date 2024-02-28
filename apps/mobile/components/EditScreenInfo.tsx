@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 import { ExternalLink } from './ExternalLink';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
-import { config} from "@inter-club-league/config"
 
 import Colors from '@/constants/Colors';
 
@@ -16,7 +15,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          {`Open up the code for this screen: ${config.graphqlPort}`}
+          Open up the code for this screen:
         </Text>
 
         <View
