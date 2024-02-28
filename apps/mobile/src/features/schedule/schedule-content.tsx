@@ -98,7 +98,7 @@ export function ScheduleContent() {
     >
       {data?.schedule.completed.map((scheduleMonth) => (
         <View key={scheduleMonth.id}>
-          <Text className='ml-4 text-xl font-semibold text-black dark:text-white'>
+          <Text className='text-brand ml-4 text-xl font-semibold'>
             {scheduleMonth.displayName.charAt(0).toUpperCase() +
               scheduleMonth.displayName.slice(1)}
           </Text>

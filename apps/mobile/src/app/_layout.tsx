@@ -1,4 +1,5 @@
 import { ApolloClientProvider } from '@/providers/apollo/apollo-client-provider'
+import { ThemeProvider as TailwindThemeProvider } from '@/providers/theme/theme-provider'
 import {
   Inter_100Thin,
   Inter_200ExtraLight,
@@ -14,7 +15,7 @@ import {
 import {
   DarkTheme,
   DefaultTheme,
-  ThemeProvider
+  ThemeProvider as ReactNativeThemeProvider
 } from '@react-navigation/native'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
@@ -68,11 +69,15 @@ function RootLayoutNav() {
 
   return (
     <ApolloClientProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        </Stack>
-      </ThemeProvider>
+      <ReactNativeThemeProvider
+        value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+      >
+        <TailwindThemeProvider>
+          <Stack>
+            <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+          </Stack>
+        </TailwindThemeProvider>
+      </ReactNativeThemeProvider>
     </ApolloClientProvider>
   )
 }
