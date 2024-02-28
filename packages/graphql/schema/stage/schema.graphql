@@ -1,0 +1,35 @@
+type Stage {
+  id: ID!
+  categoryGroups: [CategoryGroup!]!
+  club: Club!
+  county: String!
+  displayDate: String!
+  location: String!
+  mandatory: Boolean!
+  name: String!
+  number: Int!
+  season: Int!
+  startTime: String!
+  status: StageStatus!
+  type: RaceType!
+  coordinates: String
+  stravaId: String
+}
+
+enum RaceType {
+  CRITERIUM
+  HILL_CLIMB
+  ROAD_RACE
+  TIME_TRIAL
+}
+
+enum StageStatus {
+  COMPLETED
+  IN_PROGRESS
+  UPCOMING
+}
+
+type Query {
+  stage(stageId: ID!): Stage!
+  stages(seasonId: ID): [Stage!]!
+}

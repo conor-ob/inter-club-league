@@ -1,0 +1,26 @@
+type CategoryResults {
+  id: ID!
+  categoryGroup: CategoryGroup!
+  stageRiders: [StageRider!]!
+}
+
+type StageResults {
+  id: ID!
+  categoryResults: [CategoryResults!]!
+  gcLeaderId: String!
+  stageNumber: Int!
+  stageStatus: StageStatus!
+}
+
+type StageRider {
+  id: ID!
+  category: Category!
+  club: Club!
+  points: Int!
+  position: String!
+  rider: Rider!
+}
+
+extend type Query {
+  stageResults(stageId: ID): StageResults!
+}

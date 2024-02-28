@@ -1,0 +1,5 @@
+type Rider {
+  id: ID!
+  initials: String!
+  name: String!
+}

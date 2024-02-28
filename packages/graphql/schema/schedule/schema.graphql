@@ -1,0 +1,15 @@
+type Schedule {
+  id: ID!
+  completed: [ScheduleMonth!]!
+  upcoming: [ScheduleMonth!]!
+}
+
+type ScheduleMonth {
+  id: ID!
+  displayName: String!
+  stages: [Stage!]!
+}
+
+type Query {
+  schedule(seasonId: ID): Schedule!
+}

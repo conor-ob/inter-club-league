@@ -1,0 +1,19 @@
+{
+  "version": "0.0.0",
+  "name": "@inter-club-league/graphql",
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "dependencies": {
+    "gql.tada": "^1.2.1",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@0no-co/graphqlsp": "^1.4.1",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/schema-ast": "^4.0.0",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-resolvers": "^4.0.1",
+    "typescript": "^5.3.3"
+  }
+}
