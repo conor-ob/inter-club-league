@@ -1,8 +1,10 @@
 import { useQuery } from '@apollo/client'
 import { graphql } from '@inter-club-league/graphql/src/graphql'
+import cx from 'classnames'
 import { Link } from 'expo-router'
 import {
   FlatList,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -89,21 +91,19 @@ export function ScheduleContent() {
 
   return (
     <ScrollView
-    // className={cx({
-    //   'p-4': Platform.OS === 'android',
-    //   'p-5': Platform.OS === 'ios'
-    // })}
+      className={cx({
+        'p-4': Platform.OS === 'android',
+        'p-5': Platform.OS === 'ios'
+      })}
     >
       {data?.schedule.completed.map((scheduleMonth) => (
         <View key={scheduleMonth.id}>
-          {/* <Text className='ml-4 text-xl font-semibold'> */}
-          <Text>
+          <Text className='ml-4 text-xl font-semibold text-black dark:text-white'>
             {scheduleMonth.displayName.charAt(0).toUpperCase() +
               scheduleMonth.displayName.slice(1)}
           </Text>
 
-          {/* <View className='rounded-lg bg-white dark:bg-[#121212]'> */}
-          <View>
+          <View className='rounded-lg bg-white dark:bg-[#121212]'>
             <FlatList
               data={scheduleMonth.stages}
               scrollEnabled={false}
@@ -117,8 +117,7 @@ export function ScheduleContent() {
               )}
               renderItem={({ item }) => (
                 <Link href={`/(tabs)/schedule/${item.id}`} asChild>
-                  {/* <TouchableHighlight className='px-4'> */}
-                  <TouchableHighlight>
+                  <TouchableHighlight className='px-4' activeOpacity={0.8}>
                     <View>
                       {/* <Row className='justify-between'>
                         <P>{item.name}</P>
