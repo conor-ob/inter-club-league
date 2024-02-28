@@ -5,8 +5,8 @@ const base = {
 const production = {
   allowedOrigins: [],
   graphqlEndpoint: '/',
-  graphqlPath: 'https://inter-club-league-iqi66.ondigitalocean.app/graphql',
-  graphqlUri: 'https://inter-club-league-iqi66.ondigitalocean.app/graphql',
+  graphqlPath: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
+  graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
   ...base
 };
 
