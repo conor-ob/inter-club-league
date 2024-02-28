@@ -5,7 +5,6 @@ const base = {
 const production = {
   allowedOrigins: [],
   graphqlEndpoint: '/',
-  graphqlPath: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
   graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
   ...base
 }
@@ -13,8 +12,7 @@ const production = {
 const development = {
   allowedOrigins: [`http://localhost:${base.graphqlPort}`],
   graphqlEndpoint: '/graphql',
-  graphqlPath: `http://localhost:${base.graphqlPort}/graphql`,
-  graphqlUri: `http://10.11.8.29:${base.graphqlPort}/graphql`,
+  graphqlUri: `http://localhost:${base.graphqlPort}/graphql`,
   ...base
 }
 
