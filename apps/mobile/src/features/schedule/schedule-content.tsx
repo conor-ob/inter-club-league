@@ -108,10 +108,7 @@ export function ScheduleContent() {
         <View key={scheduleMonth.id}>
           <CardListHeader
             className='mb-2 ml-4 mt-6'
-            title={
-              scheduleMonth.displayName.charAt(0).toUpperCase() +
-              scheduleMonth.displayName.slice(1)
-            }
+            title={scheduleMonth.displayName.toUpperCase()}
           />
 
           <Card>

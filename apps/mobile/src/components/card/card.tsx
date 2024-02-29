@@ -5,5 +5,5 @@ type CardProps = {
 }
 
 export function Card({ children }: CardProps) {
-  return <View className='bg-card rounded-lg'>{children}</View>
+  return <View className='bg-card rounded-xl'>{children}</View>
 }

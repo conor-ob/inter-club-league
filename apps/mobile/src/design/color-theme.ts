@@ -5,20 +5,20 @@ export const colors = {
   light: {
     brand: 'rgba(252, 76, 2, 1)',
     background: 'rgb(242, 242, 242)',
-    border: 'rgba(216, 216, 216, 1)',
+    border: 'rgba(179, 179, 179, 1)',
     card: 'rgba(255, 255, 255, 1)',
     cardDivider: 'rgba(196, 196, 198, 1)',
-    tabIconDefault: '#4b5563',
+    tabIconDefault: 'rgba(153, 153, 153, 1)',
     textColorPrimary: 'rgba(28, 28, 30, 1)',
     textColorSecondary: 'rgba(28, 28, 30, 0.6)'
   },
   dark: {
     brand: 'rgba(253, 224, 71, 1)',
     background: 'rgb(1, 1, 1)',
-    border: 'rgba(39, 39, 41, 1)',
+    border: 'rgba(38, 38, 38, 1)',
     card: 'rgba(18, 18, 18, 1)',
     cardDivider: 'rgba(71, 71, 74, 1)',
-    tabIconDefault: '#9ca3af',
+    tabIconDefault: 'rgba(153, 153, 153, 1)',
     textColorPrimary: 'rgba(229, 229, 231, 1)',
     textColorSecondary: 'rgba(229, 229, 231, 0.6)'
   }
