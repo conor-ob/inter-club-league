@@ -1,4 +1,6 @@
+import { darkTheme, lightTheme } from '@/design/color-theme'
 import { ApolloClientProvider } from '@/providers/apollo/apollo-client-provider'
+import { ThemeProvider as TailwindThemeProvider } from '@/providers/theme/theme-provider'
 import {
   Inter_100Thin,
   Inter_200ExtraLight,
@@ -11,26 +13,20 @@ import {
   Inter_900Black,
   useFonts
 } from '@expo-google-fonts/inter'
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider
-} from '@react-navigation/native'
-import { SplashScreen, Stack } from 'expo-router'
+import { ThemeProvider as ReactNativeThemeProvider } from '@react-navigation/native'
+import { SplashScreen } from 'expo-router'
 import { useEffect } from 'react'
 import { useColorScheme } from 'react-native'
-
-// import { useColorScheme } from '@/components/useColorScheme';
-
-export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary
-} from 'expo-router'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
-export default function RootLayout() {
+type ProvidersProps = {
+  children: React.ReactNode
+}
+
+export function Providers({ children }: ProvidersProps) {
+  const colorScheme = useColorScheme()
   const [loaded, error] = useFonts({
     'inter-thin': Inter_100Thin,
     'inter-extralight': Inter_200ExtraLight,
@@ -58,19 +54,13 @@ export default function RootLayout() {
     return null
   }
 
-  return <RootLayoutNav />
-}
-
-function RootLayoutNav() {
-  const colorScheme = useColorScheme()
-
   return (
     <ApolloClientProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        </Stack>
-      </ThemeProvider>
+      <ReactNativeThemeProvider
+        value={colorScheme === 'dark' ? darkTheme : lightTheme}
+      >
+        <TailwindThemeProvider>{children}</TailwindThemeProvider>
+      </ReactNativeThemeProvider>
     </ApolloClientProvider>
   )
 }
