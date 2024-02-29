@@ -132,7 +132,7 @@ export function ScheduleContent() {
                           size={16}
                           name='calendar-outline'
                           color={
-                            colors[colorScheme ?? 'light'].textColorSecondary
+                            colors[colorScheme ?? 'light'].textColorPrimary
                           }
                         />
                       </View>
@@ -191,23 +191,43 @@ export function ScheduleContent() {
                         </Text>
                       </View>
                     )} */}
-                    <View className=' flex flex-row items-center'>
+                    <View className='-mx-1 flex flex-row flex-wrap'>
                       {/* <GcBadge /> */}
                       {/* <View className='w-2' /> */}
-                      <IconBadge
-                        label={item.location}
-                        icon='location'
-                        color='#007aff'
-                      />
-                      <View className='w-2' />
-                      <IconBadge
-                        label={item.startTime.substring(
-                          item.startTime.indexOf('T') + 1,
-                          item.startTime.lastIndexOf(':')
-                        )}
-                        icon='time'
-                        color='#9933ff'
-                      />
+                      <View className='px-1 py-1'>
+                        <IconBadge
+                          label={item.location}
+                          icon='location'
+                          color={colors[colorScheme ?? 'light'].brandBlue}
+                        />
+                      </View>
+
+                      <View className='px-1 py-1'>
+                        <IconBadge
+                          label={item.startTime.substring(
+                            item.startTime.indexOf('T') + 1,
+                            item.startTime.lastIndexOf(':')
+                          )}
+                          icon='time'
+                          color={colors[colorScheme ?? 'light'].brandPurple}
+                        />
+                      </View>
+                      <View className='px-1 py-1'>
+                        <IconBadge
+                          label={getRaceType(item.type)}
+                          icon={getRaceIcon(item.type)}
+                          color={colors[colorScheme ?? 'light'].brandRed}
+                        />
+                      </View>
+                      {item.mandatory && (
+                        <View className='px-1 py-1'>
+                          <IconBadge
+                            label='GC Points'
+                            icon='trophy'
+                            color={colors[colorScheme ?? 'light'].brandDefault}
+                          />
+                        </View>
+                      )}
                     </View>
                   </TouchableOpacity>
                   {/* <TouchableHighlight
@@ -234,13 +254,13 @@ function getRaceIcon(
 ): React.ComponentProps<typeof Ionicons>['name'] {
   switch (type) {
     case 'CRITERIUM':
-      return 'flag-outline'
+      return 'flag'
     case 'HILL_CLIMB':
-      return 'trending-up-outline'
+      return 'trending-up'
     case 'TIME_TRIAL':
-      return 'stopwatch-outline'
+      return 'stopwatch'
     default:
-      return 'bicycle-outline'
+      return 'bicycle'
   }
 }
 

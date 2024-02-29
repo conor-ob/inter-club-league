@@ -18,7 +18,7 @@ export default function Layout() {
                   placeholder: 'Search',
                   hintTextColor:
                     colors[colorScheme ?? 'light'].textColorSecondary,
-                  headerIconColor: colors[colorScheme ?? 'light'].brand,
+                  headerIconColor: colors[colorScheme ?? 'light'].brandDefault,
                   textColor: colors[colorScheme ?? 'light'].textColorPrimary,
                   shouldShowHintSearchIcon: false
                 }

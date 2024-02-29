@@ -10,7 +10,12 @@ export default {
         secondary: 'var(--color-secondary)',
         tertiary: 'var(--color-tertiary)',
         quarternary: 'var(--color-quarternary)',
-        brand: 'var(--color-brand)',
+        brand: {
+          DEFAULT: 'var(--color-brand-default)',
+          blue: 'var(--color-brand-blue)',
+          purple: 'var(--color-brand-purple)',
+          red: 'var(--color-brand-red)'
+        },
         gc: 'var(--color-gc)',
         card: 'var(--color-card)'
       },
