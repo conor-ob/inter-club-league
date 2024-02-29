@@ -1,3 +1,4 @@
+import { darkTheme, lightTheme } from '@/design/color-theme'
 import { ApolloClientProvider } from '@/providers/apollo/apollo-client-provider'
 import { ThemeProvider as TailwindThemeProvider } from '@/providers/theme/theme-provider'
 import {
@@ -12,11 +13,7 @@ import {
   Inter_900Black,
   useFonts
 } from '@expo-google-fonts/inter'
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider as ReactNativeThemeProvider
-} from '@react-navigation/native'
+import { ThemeProvider as ReactNativeThemeProvider } from '@react-navigation/native'
 import { SplashScreen } from 'expo-router'
 import { useEffect } from 'react'
 import { useColorScheme } from 'react-native'
@@ -60,7 +57,7 @@ export function Providers({ children }: ProvidersProps) {
   return (
     <ApolloClientProvider>
       <ReactNativeThemeProvider
-        value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+        value={colorScheme === 'dark' ? darkTheme : lightTheme}
       >
         <TailwindThemeProvider>{children}</TailwindThemeProvider>
       </ReactNativeThemeProvider>

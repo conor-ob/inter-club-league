@@ -103,7 +103,7 @@ export function ScheduleContent() {
               scheduleMonth.displayName.slice(1)}
           </Text>
 
-          <View className='rounded-lg bg-white dark:bg-[#121212]'>
+          <View className='bg-card rounded-lg'>
             <FlatList
               data={scheduleMonth.stages}
               scrollEnabled={false}
@@ -123,14 +123,12 @@ export function ScheduleContent() {
                         <P>{item.name}</P>
                         <P>{item.displayDate}</P>
                       </Row> */}
-                      <Text className='text-black dark:text-white'>
-                        {item.name}
-                      </Text>
+                      <Text className='text-primary'>{item.name}</Text>
                     </View>
                   </TouchableHighlight>
                 </Link>
               )}
-            ></FlatList>
+            />
           </View>
 
           {/* <View className='rounded-lg bg-white dark:bg-[#121212]'>

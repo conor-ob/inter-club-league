@@ -35,6 +35,7 @@ export default {
           DEFAULT: 'var(--color-light-default)'
         },
         brand: 'var(--color-brand)',
+        card: 'var(--color-card)',
         overlay: 'var(--color-overlay)'
       },
       fontFamily: {

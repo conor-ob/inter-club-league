@@ -24,8 +24,7 @@ export default function Layout() {
                   shouldShowHintSearchIcon: false
                 }
               : {
-                  placeholder: 'Search',
-                  tintColor: colors[colorScheme ?? 'light'].brand
+                  placeholder: 'Search'
                 }
         }}
       />
