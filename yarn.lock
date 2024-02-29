@@ -3463,9 +3463,9 @@ __metadata:
   linkType: hard
 
 "@jridgewell/set-array@npm:^1.0.1":
-  version: 1.1.2
-  resolution: "@jridgewell/set-array@npm:1.1.2"
-  checksum: 69a84d5980385f396ff60a175f7177af0b8da4ddb81824cb7016a9ef914eee9806c72b6b65942003c63f7983d4f39a5c6c27185bbca88eb4690b62075602e28e
+  version: 1.2.1
+  resolution: "@jridgewell/set-array@npm:1.2.1"
+  checksum: 832e513a85a588f8ed4f27d1279420d8547743cc37fcad5a5a76fc74bb895b013dfe614d0eed9cb860048e6546b798f8f2652020b4b2ba0561b05caa8c654b10
   languageName: node
   linkType: hard
 
@@ -4698,11 +4698,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^20.11.5":
-  version: 20.11.22
-  resolution: "@types/node@npm:20.11.22"
+  version: 20.11.23
+  resolution: "@types/node@npm:20.11.23"
   dependencies:
     undici-types: ~5.26.4
-  checksum: ef8fd0b561c3c9810f3c23c990c856619232934e54308c84e79d4e39d44b66668eceb6eca89c64ebcbc78fb514446661ad58b0f8e6b5fa3d9ed9ff0983aac4ef
+  checksum: 75ac466f5493069c08bf4563e24074bf956c4bebbcd410427905cb4d18350ccf20f73438e7513b79e9105a8919a59f2110038b684a55243e5ab2f9b0c871bfe0
   languageName: node
   linkType: hard
 
@@ -6826,9 +6826,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.686
-  resolution: "electron-to-chromium@npm:1.4.686"
-  checksum: 5360d21a3bf020cee151da32246335a0cb1cc9e67e1815f9d6e2557bae2453dcdc73b58c7b98fa88ab85fc39155d967f3e21e7d92a182b01222672f2d858142a
+  version: 1.4.687
+  resolution: "electron-to-chromium@npm:1.4.687"
+  checksum: c4c48db3aa1cc193d106aa3ea9244a1606e5c2873756ff7c8725d6178c903acd9a4c9fe9a613a85a7e9513fcbf3fb4d81832c0e2773419bea27a74b344d93853
   languageName: node
   linkType: hard
 

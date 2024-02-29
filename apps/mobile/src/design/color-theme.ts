@@ -3,20 +3,24 @@ import { vars } from 'nativewind'
 
 export const colors = {
   light: {
-    brand: '#fc4c02',
-    card: '#ffffff',
-    cardDivider: '#c4c4c6',
+    brand: 'rgba(252, 76, 2, 1)',
+    background: 'rgb(242, 242, 242)',
+    border: 'rgba(216, 216, 216, 1)',
+    card: 'rgba(255, 255, 255, 1)',
+    cardDivider: 'rgba(196, 196, 198, 1)',
     tabIconDefault: '#4b5563',
-    textColorPrimary: '#1c1c1e',
-    textColorSecondary: '#8a8a8e'
+    textColorPrimary: 'rgba(28, 28, 30, 1)',
+    textColorSecondary: 'rgba(28, 28, 30, 0.6)'
   },
   dark: {
-    brand: '#fde047',
-    card: '#121212',
-    cardDivider: '#47474a',
+    brand: 'rgba(253, 224, 71, 1)',
+    background: 'rgb(1, 1, 1)',
+    border: 'rgba(39, 39, 41, 1)',
+    card: 'rgba(18, 18, 18, 1)',
+    cardDivider: 'rgba(71, 71, 74, 1)',
     tabIconDefault: '#9ca3af',
-    textColorPrimary: '#e5e5e7',
-    textColorSecondary: '#8d8d93'
+    textColorPrimary: 'rgba(229, 229, 231, 1)',
+    textColorSecondary: 'rgba(229, 229, 231, 0.6)'
   }
 }
 
@@ -61,10 +65,10 @@ export const lightTheme: Theme = {
   dark: false,
   colors: {
     primary: colors.light.brand,
-    background: 'rgb(242, 242, 242)',
-    card: 'rgb(255, 255, 255)',
-    text: 'rgb(28, 28, 30)',
-    border: 'rgb(216, 216, 216)',
+    background: colors.light.background,
+    card: colors.light.card,
+    text: colors.light.textColorPrimary,
+    border: colors.light.border,
     notification: 'rgb(255, 59, 48)'
   }
 }
@@ -73,10 +77,10 @@ export const darkTheme: Theme = {
   dark: true,
   colors: {
     primary: colors.dark.brand,
-    background: 'rgb(1, 1, 1)',
-    card: 'rgb(18, 18, 18)',
-    text: 'rgb(229, 229, 231)',
-    border: 'rgb(39, 39, 41)',
+    background: colors.dark.background,
+    card: colors.dark.card,
+    text: colors.dark.textColorPrimary,
+    border: colors.dark.border,
     notification: 'rgb(255, 69, 58)'
   }
 }

@@ -8,7 +8,9 @@ type CardListHeaderProps = {
 
 export function CardListHeader({ title, className }: CardListHeaderProps) {
   return (
-    <Text className={cx('text-primary font-inter-semibold text-xl', className)}>
+    <Text
+      className={cx('text-secondary font-inter-semibold text-xl', className)}
+    >
       {title}
     </Text>
   )
