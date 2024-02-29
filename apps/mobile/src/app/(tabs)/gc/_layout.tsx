@@ -1,4 +1,4 @@
-import Colours from '@/constants/Colours'
+import { colors } from '@/design/color-theme'
 import { Stack } from 'expo-router'
 import { Platform, useColorScheme } from 'react-native'
 
@@ -10,7 +10,7 @@ export default function Layout() {
       <Stack.Screen
         name='index'
         options={{
-          title: 'Results',
+          title: 'GC',
           headerLargeTitle: true,
           headerShadowVisible: false,
           headerSearchBarOptions:
@@ -18,14 +18,13 @@ export default function Layout() {
               ? {
                   placeholder: 'Search',
                   hintTextColor:
-                    Colours[colorScheme ?? 'light'].textColourSecondary,
-                  headerIconColor: Colours[colorScheme ?? 'light'].brand,
-                  textColor: Colours[colorScheme ?? 'light'].textColourPrimary,
+                    colors[colorScheme ?? 'light'].textColorSecondary,
+                  headerIconColor: colors[colorScheme ?? 'light'].brand,
+                  textColor: colors[colorScheme ?? 'light'].textColorPrimary,
                   shouldShowHintSearchIcon: false
                 }
               : {
-                  placeholder: 'Search',
-                  tintColor: Colours[colorScheme ?? 'light'].brand
+                  placeholder: 'Search'
                 }
         }}
       />

@@ -1,4 +1,3 @@
-import Colours from '@/constants/Colours'
 import { Stack, useGlobalSearchParams } from 'expo-router'
 import { useColorScheme } from 'react-native'
 
@@ -14,17 +13,12 @@ export default function Layout() {
           title: 'Schedule',
           headerLargeTitle: true,
           headerShadowVisible: false
-          // headerStyle: { backgroundColor: '#121212' },
         }}
       />
       <Stack.Screen
         name='[id]'
         options={{
           title: parseTitle(params.id),
-          headerTitleStyle: {
-            color: Colours[colorScheme ?? 'light'].textColourPrimary
-          },
-          headerTintColor: Colours[colorScheme ?? 'light'].brand,
           headerShadowVisible: false
         }}
       />
