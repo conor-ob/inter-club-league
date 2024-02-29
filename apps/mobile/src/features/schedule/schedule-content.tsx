@@ -1,3 +1,4 @@
+import { IconBadge } from '@/components/badge/icon-badge'
 import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { CardListHeader } from '@/components/card/card-list-header'
@@ -136,8 +137,8 @@ export function ScheduleContent() {
                         />
                       </View>
                     </View>
-                    <Text className='font-inter-semibold text-primary mb-6 text-2xl'>{`Stage ${item.number}`}</Text>
-                    <View className='mb-2 flex flex-row items-center'>
+                    <Text className='font-inter-semibold text-primary mb-4 text-2xl'>{`Stage ${item.number}`}</Text>
+                    {/* <View className='mb-2 flex flex-row items-center'>
                       <Ionicon
                         size={16}
                         name='time-outline'
@@ -165,8 +166,8 @@ export function ScheduleContent() {
                         {', '}
                         {item.county}
                       </Text>
-                    </View>
-                    <View className='flex flex-row items-center'>
+                    </View> */}
+                    {/* <View className='flex flex-row items-center'>
                       <Ionicon
                         size={16}
                         name={getRaceIcon(item.type)}
@@ -177,8 +178,8 @@ export function ScheduleContent() {
                       <Text className='font-inter-medium text-secondary ml-2 text-base'>
                         {getRaceType(item.type)}
                       </Text>
-                    </View>
-                    {item.mandatory && (
+                    </View> */}
+                    {/* {item.mandatory && (
                       <View className='mt-2 flex flex-row items-center'>
                         <Ionicon
                           size={16}
@@ -189,7 +190,25 @@ export function ScheduleContent() {
                           GC Points
                         </Text>
                       </View>
-                    )}
+                    )} */}
+                    <View className=' flex flex-row items-center'>
+                      {/* <GcBadge /> */}
+                      {/* <View className='w-2' /> */}
+                      <IconBadge
+                        label={item.location}
+                        icon='location'
+                        color='#007aff'
+                      />
+                      <View className='w-2' />
+                      <IconBadge
+                        label={item.startTime.substring(
+                          item.startTime.indexOf('T') + 1,
+                          item.startTime.lastIndexOf(':')
+                        )}
+                        icon='time'
+                        color='#9933ff'
+                      />
+                    </View>
                   </TouchableOpacity>
                   {/* <TouchableHighlight
                     className='px-4'
