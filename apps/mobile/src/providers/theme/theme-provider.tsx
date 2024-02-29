@@ -6,11 +6,13 @@ import { View } from 'react-native'
 interface ThemeProviderProps {
   children: React.ReactNode
 }
+
 export const ThemeContext = createContext<{
   theme: 'light' | 'dark'
 }>({
   theme: 'light'
 })
+
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const { colorScheme } = useColorScheme()
   return (
