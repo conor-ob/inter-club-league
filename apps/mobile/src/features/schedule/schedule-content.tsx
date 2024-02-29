@@ -99,6 +99,7 @@ export function ScheduleContent() {
   return (
     <ScrollView
       className={cx({
+        'mb-8': true,
         'mx-4': Platform.OS === 'android',
         'mx-5': Platform.OS === 'ios'
       })}
