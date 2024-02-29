@@ -15,6 +15,7 @@
     "@expo/vector-icons": "^14.0.0",
     "@inter-club-league/config": "*",
     "@inter-club-league/graphql": "*",
+    "@react-native-segmented-control/segmented-control": "^2.5.0",
     "@react-navigation/native": "^6.0.2",
     "classnames": "^2.5.1",
     "expo": "^50.0.1",
@@ -26,7 +27,6 @@
     "expo-status-bar": "~1.11.1",
     "expo-system-ui": "~2.9.3",
     "expo-web-browser": "~12.8.2",
-    "gql.tada": "^1.2.1",
     "nativewind": "^4.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -38,7 +38,6 @@
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@0no-co/graphqlsp": "^1.4.1",
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.45",
     "typescript": "^5.3.0"
