@@ -12,7 +12,6 @@ export default function Layout() {
         options={{
           title: 'Results',
           headerLargeTitle: true,
-          headerShadowVisible: false,
           headerSearchBarOptions:
             Platform.OS === 'android'
               ? {
