@@ -5,6 +5,7 @@ export const colors = {
   light: {
     brand: '#fc4c02',
     card: '#ffffff',
+    cardDivider: '#c4c4c6',
     tabIconDefault: '#4b5563',
     textColorPrimary: '#1c1c1e',
     textColorSecondary: '#8a8a8e'
@@ -12,6 +13,7 @@ export const colors = {
   dark: {
     brand: '#fde047',
     card: '#121212',
+    cardDivider: '#47474a',
     tabIconDefault: '#9ca3af',
     textColorPrimary: '#e5e5e7',
     textColorSecondary: '#8d8d93'
@@ -22,7 +24,7 @@ export const themes = {
   light: vars({
     '--color-primary-default': colors.light.textColorPrimary,
     '--color-primary-light': '#5bd1e7',
-    '--color-secondary-default': '#9b6cca',
+    '--color-secondary-default': colors.light.textColorSecondary,
     '--color-secondary-light': '#dfbeff',
     '--color-tertiary-default': '#ff88bd',
     '--color-tertiary-light': '#ffc2e6',
@@ -39,7 +41,7 @@ export const themes = {
   dark: vars({
     '--color-primary-default': colors.dark.textColorPrimary,
     '--color-primary-light': '#5bd1e7',
-    '--color-secondary-default': '#9b6cca',
+    '--color-secondary-default': colors.dark.textColorSecondary,
     '--color-secondary-light': '#dfbeff',
     '--color-tertiary-default': '#ff88bd',
     '--color-tertiary-light': '#ffc2e6',
