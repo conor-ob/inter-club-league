@@ -91,7 +91,6 @@ async function bootstrap() {
   )
 
   if (process.env.NODE_ENV === 'production') {
-    console.log('prod')
     await new Promise<void>((resolve) =>
       httpServer.listen({ port: config.graphqlPort }, resolve)
     )

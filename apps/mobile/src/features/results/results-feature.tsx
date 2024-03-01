@@ -7,8 +7,6 @@ export function ResultsFeature() {
   const { data, loading, error, refetch } = useStageResultsQuery()
   const [refreshing, setRefreshing] = useState(false)
 
-  console.log('data=' + JSON.stringify(data))
-
   const handleRefresh = useCallback(() => {
     setRefreshing(true)
     refetch()
