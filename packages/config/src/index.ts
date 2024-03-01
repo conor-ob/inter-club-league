@@ -12,7 +12,7 @@ const production = {
 const development = {
   allowedOrigins: [`http://localhost:${base.graphqlPort}`],
   graphqlEndpoint: '/graphql',
-  graphqlUri: `http://localhost:${base.graphqlPort}/graphql`,
+  graphqlUri: `https://inter-club-league-jtmtu.ondigitalocean.app/graphql`,
   ...base
 }
 

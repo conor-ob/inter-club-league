@@ -3,10 +3,17 @@ import SegmentedControl from '@react-native-segmented-control/segmented-control'
 import cx from 'classnames'
 import { Skeleton } from 'moti/skeleton'
 import { useCallback, useEffect, useState } from 'react'
-import { Platform, RefreshControl, ScrollView, View } from 'react-native'
+import {
+  Platform,
+  RefreshControl,
+  ScrollView,
+  View,
+  useColorScheme
+} from 'react-native'
 import { ScheduleList } from './schedule-list'
 
 export function ScheduleContent() {
+  const colorScheme = useColorScheme()
   const { data, loading, error, refetch } = useScheduleQuery()
   const [refreshing, setRefreshing] = useState(false)
 
@@ -37,8 +44,8 @@ export function ScheduleContent() {
         />
       }
     >
-      <View className='my-8'>
-        {false && !loading ? (
+      <View className='py-8'>
+        {data && !loading ? (
           <ScheduleList schedule={data.schedule} />
         ) : (
           <View>
@@ -47,13 +54,13 @@ export function ScheduleContent() {
               enabled={false}
             />
             <View className='h-6' />
-            <Skeleton colorMode='dark' width={'20%'} height={24} />
+            <Skeleton colorMode={colorScheme} width={'20%'} height={24} />
             <View className='h-4' />
-            <Skeleton colorMode='dark' width={'100%'} height={128} />
+            <Skeleton colorMode={colorScheme} width={'100%'} height={128} />
             <View className='h-6' />
-            <Skeleton colorMode='dark' width={'30%'} height={24} />
+            <Skeleton colorMode={colorScheme} width={'30%'} height={24} />
             <View className='h-4' />
-            <Skeleton colorMode='dark' width={'100%'} height={256} />
+            <Skeleton colorMode={colorScheme} width={'100%'} height={256} />
           </View>
         )}
       </View>
