@@ -14,6 +14,7 @@
 - "Next event" card at the top
 - API response should include nextEvent, primarySchedule and secondarySchedule fields
 - Add selected schedule to route params
+- Simplify API by removing schedule endpoint, just fetch stages and build the schedule
 
 ### Settings page
 
