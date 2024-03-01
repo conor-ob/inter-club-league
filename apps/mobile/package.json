@@ -1,6 +1,6 @@
 {
   "name": "@inter-club-league/mobile",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules",

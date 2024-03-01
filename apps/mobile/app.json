@@ -2,7 +2,7 @@
   "expo": {
     "name": "ICL",
     "slug": "inter-club-league",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "inter-club-league",
@@ -12,9 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.conorob.interclubleague",
       "userInterfaceStyle": "automatic"
