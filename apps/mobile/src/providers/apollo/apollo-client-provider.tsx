@@ -3,7 +3,8 @@ import {
   ApolloLink,
   ApolloProvider,
   HttpLink,
-  InMemoryCache
+  InMemoryCache,
+  Observable
 } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
 import { config } from '@inter-club-league/config'
@@ -14,6 +15,27 @@ type ApolloProviderProps = {
 
 export function ApolloClientProvider({ children }: ApolloProviderProps) {
   const httpLink = new HttpLink({ uri: config.graphqlUri })
+
+  const delayLink = (delay = 1000) =>
+    new ApolloLink((operation, forward) => {
+      return new Observable((observer) => {
+        const getDelayedMethod =
+          (name: string) =>
+          (...args: any) => {
+            setTimeout(() => {
+              // @ts-ignore
+              observer[name](...args)
+            }, delay)
+          }
+        const subscription = forward(operation).subscribe({
+          next: getDelayedMethod('next'),
+          error: getDelayedMethod('error')
+        })
+        return () => {
+          if (subscription) subscription.unsubscribe()
+        }
+      })
+    })
 
   const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
     if (graphQLErrors) {

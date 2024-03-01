@@ -1,12 +1,19 @@
-import { Skeleton } from '@/components/loaders/skeleton'
 import { useScheduleQuery } from '@/graphql/use-schedule-query'
 import SegmentedControl from '@react-native-segmented-control/segmented-control'
 import cx from 'classnames'
+import { Skeleton } from 'moti/skeleton'
 import { useCallback, useEffect, useState } from 'react'
-import { Platform, RefreshControl, ScrollView, View } from 'react-native'
+import {
+  Platform,
+  RefreshControl,
+  ScrollView,
+  View,
+  useColorScheme
+} from 'react-native'
 import { ScheduleList } from './schedule-list'
 
 export function ScheduleContent() {
+  const colorScheme = useColorScheme()
   const { data, loading, error, refetch } = useScheduleQuery()
   const [refreshing, setRefreshing] = useState(false)
 
@@ -24,8 +31,8 @@ export function ScheduleContent() {
   return (
     <ScrollView
       className={cx({
-        'mx-4': Platform.OS === 'android',
-        'mx-5': Platform.OS === 'ios'
+        'px-4': Platform.OS === 'android',
+        'px-5': Platform.OS === 'ios'
       })}
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
@@ -37,8 +44,7 @@ export function ScheduleContent() {
         />
       }
     >
-      <View className='my-8'>
-        <View />
+      <View className='py-8'>
         {data && !loading ? (
           <ScheduleList schedule={data.schedule} />
         ) : (
@@ -47,10 +53,14 @@ export function ScheduleContent() {
               values={['Upcoming', 'Completed']}
               enabled={false}
             />
-            <Skeleton className='mb-2 mt-6 h-6 w-20' />
-            <Skeleton className='mb-2 mt-1 h-36 w-full rounded-xl' />
-            <Skeleton className='mb-2 mt-6 h-6 w-24' />
-            <Skeleton className='mb-2 mt-1 h-72 w-full rounded-xl' />
+            <View className='h-6' />
+            <Skeleton colorMode={colorScheme} width={'20%'} height={24} />
+            <View className='h-4' />
+            <Skeleton colorMode={colorScheme} width={'100%'} height={128} />
+            <View className='h-6' />
+            <Skeleton colorMode={colorScheme} width={'30%'} height={24} />
+            <View className='h-4' />
+            <Skeleton colorMode={colorScheme} width={'100%'} height={256} />
           </View>
         )}
       </View>
