@@ -2,23 +2,44 @@ import { Skeleton } from '@/components/loaders/skeleton'
 import { useScheduleQuery } from '@/graphql/use-schedule-query'
 import SegmentedControl from '@react-native-segmented-control/segmented-control'
 import cx from 'classnames'
-import { Platform, ScrollView, View } from 'react-native'
+import { useCallback, useEffect, useState } from 'react'
+import { Platform, RefreshControl, ScrollView, View } from 'react-native'
 import { ScheduleList } from './schedule-list'
 
 export function ScheduleContent() {
-  const { data, loading, error } = useScheduleQuery()
+  const { data, loading, error, refetch } = useScheduleQuery()
+  const [refreshing, setRefreshing] = useState(false)
+
+  const handleRefresh = useCallback(() => {
+    setRefreshing(true)
+    refetch()
+  }, [refetch])
+
+  useEffect(() => {
+    if (!loading) {
+      setRefreshing(false)
+    }
+  }, [loading])
 
   return (
     <ScrollView
       className={cx({
-        'mb-8': true,
         'mx-4': Platform.OS === 'android',
         'mx-5': Platform.OS === 'ios'
       })}
+      contentInsetAdjustmentBehavior='automatic'
+      refreshControl={
+        <RefreshControl
+          refreshing={refreshing === true}
+          onRefresh={() => {
+            handleRefresh()
+          }}
+        />
+      }
     >
       <View className='my-8'>
         <View />
-        {data ? (
+        {data && !loading ? (
           <ScheduleList schedule={data.schedule} />
         ) : (
           <View>

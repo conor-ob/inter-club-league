@@ -1,5 +1,5 @@
-import { ScrollView } from 'react-native'
+import { ResultsContent } from '@/features/results/results-content'
 
 export default function Results() {
-  return <ScrollView contentInsetAdjustmentBehavior='automatic'></ScrollView>
+  return <ResultsContent />
 }

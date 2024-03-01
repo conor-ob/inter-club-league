@@ -105,5 +105,8 @@ const scheduleQuery = graphql(`
 `)
 
 export function useScheduleQuery(seasonId?: string) {
-  return useQuery(scheduleQuery, { variables: { seasonId: seasonId } })
+  return useQuery(scheduleQuery, {
+    variables: { seasonId: seasonId },
+    notifyOnNetworkStatusChange: true
+  })
 }
