@@ -1,5 +1,5 @@
-import { ResultsContent } from '@/features/results/results-content'
+import { ResultsFeature } from '@/features/results/results-feature'
 
 export default function Results() {
-  return <ResultsContent />
+  return <ResultsFeature />
 }

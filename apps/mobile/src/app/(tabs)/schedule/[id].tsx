@@ -1,5 +1,5 @@
-import { ScrollView } from 'react-native'
+import { StageFeature } from '@/features/stage/stage-feature'
 
 export default function Stage() {
-  return <ScrollView contentInsetAdjustmentBehavior='automatic'></ScrollView>
+  return <StageFeature />
 }
