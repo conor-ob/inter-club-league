@@ -11,15 +11,13 @@ export default function Layout() {
         name='index'
         options={{
           title: 'Schedule',
-          headerLargeTitle: true,
-          headerShadowVisible: false
+          headerLargeTitle: true
         }}
       />
       <Stack.Screen
         name='[id]'
         options={{
-          title: parseTitle(params.id),
-          headerShadowVisible: false
+          title: parseTitle(params.id)
         }}
       />
     </Stack>

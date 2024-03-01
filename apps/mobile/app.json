@@ -2,7 +2,7 @@
   "expo": {
     "name": "ICL",
     "slug": "inter-club-league",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "inter-club-league",
@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "userInterfaceStyle": "automatic"
+      "userInterfaceStyle": "automatic",
+      "package": "com.conorob.interclubleague"
     },
     "web": {
       "bundler": "metro",
@@ -39,6 +40,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": "https://n"
+      },
+      "eas": {
+        "projectId": "2746fce8-e0cd-429a-b51a-2469891dcdaf"
+      }
     }
   }
 }

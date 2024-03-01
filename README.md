@@ -1,32 +1,44 @@
-# Turborepo react-native starter
+# Inter Club League
 
-This is an official starter Turborepo.
+## Ideas
 
-## Using this example
+### GraphQL API
 
-Run the following command:
+- Add versioning to endpoints
+  - /v1/graphql
+  - /v2/graphql
 
-```sh
-npx create-turbo@latest -e with-react-native-web
-```
+### Schedule page
 
-## What's inside?
+- Horizontal GC scroller
+- "Next event" card at the top
+- API response should include nextEvent, primarySchedule and secondarySchedule fields
+- Add selected schedule to route params
 
-This Turborepo includes the following packages/apps:
+### Settings page
 
-### Apps and Packages
+- iPhone settings style
+- Season selector
+- Light / dark theme selector
+- Home page selector
 
-- `native`: a [react-native](https://reactnative.dev/) app built with [expo](https://docs.expo.dev/)
-- `web`: a [Next.js](https://nextjs.org/) app built with [react-native-web](https://necolas.github.io/react-native-web/)
-- `@repo/ui`: a stub [react-native](https://reactnative.dev/) component library shared by both `web` and `native` applications
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### Stage page
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- API response should include info
+  - list of strings which are separated into paragraphs in the UI
+- "Add to calendar" feature
 
-### Utilities
+### Stage results page
 
-This Turborepo has some additional tools already setup for you:
+- Main page should show a list of races / groups
+- User can click on group to view results
 
-- [Expo](https://docs.expo.dev/) for native development
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [Prettier](https://prettier.io) for code formatting
+### GC page
+
+- Filter by category (how does it work with upgrades)
+
+### Rider stats page
+
+- Show list of races and results, medals, position, unplaced, DNS etc
+- Show GC winner
+- Stats like number of wins, medals, places, races finished, upgrades etc

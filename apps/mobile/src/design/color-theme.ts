@@ -3,66 +3,74 @@ import { vars } from 'nativewind'
 
 export const colors = {
   light: {
-    brand: '#fc4c02',
-    card: '#ffffff',
-    tabIconDefault: '#4b5563',
-    textColorPrimary: '#1c1c1e',
-    textColorSecondary: '#8a8a8e'
+    brandDefault: 'rgba(252, 76, 2, 1)',
+    brandBlue: 'rgba(0, 122, 255, 1)',
+    brandPurple: 'rgba(175, 82, 222, 1)',
+    brandRed: 'rgba(246, 52, 40, 1)',
+    gc: 'rgba(253, 224, 71, 1)',
+    background: 'rgb(242, 242, 242)',
+    border: 'rgba(179, 179, 179, 1)',
+    card: 'rgba(255, 255, 255, 1)',
+    cardDivider: 'rgba(196, 196, 198, 1)',
+    tabIconDefault: 'rgba(153, 153, 153, 1)',
+    textColorPrimary: 'rgba(0, 0, 0, 1)',
+    textColorSecondary: 'rgba(60, 60, 67, 0.6)',
+    textColorTertiary: 'rgba(60, 60, 67, 0.30)',
+    textColorQuarternary: 'rgba(60, 60, 67, 0.18)'
   },
   dark: {
-    brand: '#fde047',
-    card: '#121212',
-    tabIconDefault: '#9ca3af',
-    textColorPrimary: '#e5e5e7',
-    textColorSecondary: '#8d8d93'
+    brandDefault: 'rgba(253, 224, 71, 1)',
+    brandBlue: 'rgba(32, 148, 250, 1)',
+    brandPurple: 'rgba(191, 90, 242, 1)',
+    brandRed: 'rgba(255, 59, 48, 1)',
+    gc: 'rgba(253, 224, 71, 1)',
+    background: 'rgb(1, 1, 1)',
+    border: 'rgba(38, 38, 38, 1)',
+    card: 'rgba(18, 18, 18, 1)',
+    cardDivider: 'rgba(71, 71, 74, 1)',
+    tabIconDefault: 'rgba(153, 153, 153, 1)',
+    textColorPrimary: 'rgba(255, 255, 255, 1)',
+    textColorSecondary: 'rgba(235, 235, 235, 0.6)',
+    textColorTertiary: 'rgba(235, 235, 245, 0.30)',
+    textColorQuarternary: 'rgba(235, 235, 245, 0.18)'
   }
 }
 
 export const themes = {
   light: vars({
-    '--color-primary-default': colors.light.textColorPrimary,
-    '--color-primary-light': '#5bd1e7',
-    '--color-secondary-default': '#9b6cca',
-    '--color-secondary-light': '#dfbeff',
-    '--color-tertiary-default': '#ff88bd',
-    '--color-tertiary-light': '#ffc2e6',
-    '--color-accent-default': '#f9c04a',
-    '--color-accent-light': '#ffeea9',
-    '--color-grey-default': '#979797',
-    '--color-slate-default': '#38383a',
-    '--color-dark-default': '#1f355b',
-    '--color-light-default': '#FCFDFD',
-    '--color-brand': colors.light.brand,
-    '--color-card': colors.light.card,
-    '--color-overlay': 'rgba(0, 0, 0, .05)'
+    '--color-primary': colors.light.textColorPrimary,
+    '--color-secondary': colors.light.textColorSecondary,
+    '--color-tertiary': colors.light.textColorTertiary,
+    '--color-quarternary': colors.light.textColorQuarternary,
+    '--color-brand-default': colors.light.brandDefault,
+    '--color-brand-blue': colors.light.brandBlue,
+    '--color-brand-purple': colors.light.brandPurple,
+    '--color-brand-red': colors.light.brandRed,
+    '--color-gc': colors.light.gc,
+    '--color-card': colors.light.card
   }),
   dark: vars({
-    '--color-primary-default': colors.dark.textColorPrimary,
-    '--color-primary-light': '#5bd1e7',
-    '--color-secondary-default': '#9b6cca',
-    '--color-secondary-light': '#dfbeff',
-    '--color-tertiary-default': '#ff88bd',
-    '--color-tertiary-light': '#ffc2e6',
-    '--color-accent-default': '#f9c04a',
-    '--color-accent-light': '#ffeea9',
-    '--color-grey-default': '#979797',
-    '--color-slate-default': '#38383a',
-    '--color-dark-default': '#1f355b',
-    '--color-light-default': '#1E1E1E',
-    '--color-brand': colors.dark.brand,
-    '--color-card': colors.dark.card,
-    '--color-overlay': 'rgba(255, 255, 255, .05)'
+    '--color-primary': colors.dark.textColorPrimary,
+    '--color-secondary': colors.dark.textColorSecondary,
+    '--color-tertiary': colors.dark.textColorTertiary,
+    '--color-quarternary': colors.light.textColorQuarternary,
+    '--color-brand-default': colors.dark.brandDefault,
+    '--color-brand-blue': colors.dark.brandBlue,
+    '--color-brand-purple': colors.dark.brandPurple,
+    '--color-brand-red': colors.dark.brandRed,
+    '--color-gc': colors.dark.gc,
+    '--color-card': colors.dark.card
   })
 }
 
 export const lightTheme: Theme = {
   dark: false,
   colors: {
-    primary: colors.light.brand,
-    background: 'rgb(242, 242, 242)',
-    card: 'rgb(255, 255, 255)',
-    text: 'rgb(28, 28, 30)',
-    border: 'rgb(216, 216, 216)',
+    primary: colors.light.brandDefault,
+    background: colors.light.background,
+    card: colors.light.card,
+    text: colors.light.textColorPrimary,
+    border: colors.light.border,
     notification: 'rgb(255, 59, 48)'
   }
 }
@@ -70,11 +78,11 @@ export const lightTheme: Theme = {
 export const darkTheme: Theme = {
   dark: true,
   colors: {
-    primary: colors.dark.brand,
-    background: 'rgb(1, 1, 1)',
-    card: 'rgb(18, 18, 18)',
-    text: 'rgb(229, 229, 231)',
-    border: 'rgb(39, 39, 41)',
+    primary: colors.dark.brandDefault,
+    background: colors.dark.background,
+    card: colors.dark.card,
+    text: colors.dark.textColorPrimary,
+    border: colors.dark.border,
     notification: 'rgb(255, 69, 58)'
   }
 }

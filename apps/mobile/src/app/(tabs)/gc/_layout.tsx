@@ -12,14 +12,13 @@ export default function Layout() {
         options={{
           title: 'GC',
           headerLargeTitle: true,
-          headerShadowVisible: false,
           headerSearchBarOptions:
             Platform.OS === 'android'
               ? {
                   placeholder: 'Search',
                   hintTextColor:
                     colors[colorScheme ?? 'light'].textColorSecondary,
-                  headerIconColor: colors[colorScheme ?? 'light'].brand,
+                  headerIconColor: colors[colorScheme ?? 'light'].brandDefault,
                   textColor: colors[colorScheme ?? 'light'].textColorPrimary,
                   shouldShowHintSearchIcon: false
                 }

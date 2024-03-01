@@ -6,37 +6,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: 'var(--color-primary-default)',
-          light: 'var(--color-primary-light)'
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
+        quarternary: 'var(--color-quarternary)',
+        brand: {
+          DEFAULT: 'var(--color-brand-default)',
+          blue: 'var(--color-brand-blue)',
+          purple: 'var(--color-brand-purple)',
+          red: 'var(--color-brand-red)'
         },
-        secondary: {
-          DEFAULT: 'var(--color-secondary-default)',
-          light: 'var(--color-secondary-light)'
-        },
-        tertiary: {
-          DEFAULT: 'var(--color-tertiary-default)',
-          light: 'var(--color-tertiary-light)'
-        },
-        accent: {
-          DEFAULT: 'var(--color-accent-default)',
-          light: 'var(--color-accent-light)'
-        },
-        grey: {
-          DEFAULT: 'var(--color-grey-default)'
-        },
-        slate: {
-          DEFAULT: 'var(--color-slate-default)'
-        },
-        dark: {
-          DEFAULT: 'var(--color-dark-default)'
-        },
-        light: {
-          DEFAULT: 'var(--color-light-default)'
-        },
-        brand: 'var(--color-brand)',
-        card: 'var(--color-card)',
-        overlay: 'var(--color-overlay)'
+        gc: 'var(--color-gc)',
+        card: 'var(--color-card)'
       },
       fontFamily: {
         'inter-thin': ['inter-thin'],
