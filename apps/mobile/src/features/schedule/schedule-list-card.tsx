@@ -51,7 +51,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
                 <View className='px-1 py-1'>
                   <IconBadge
                     label={item.location}
-                    icon='location'
+                    icon='location-outline'
                     color={colors[colorScheme ?? 'light'].brandBlue}
                   />
                 </View>
@@ -62,7 +62,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
                       item.startTime.indexOf('T') + 1,
                       item.startTime.lastIndexOf(':')
                     )}
-                    icon='time'
+                    icon='time-outline'
                     color={colors[colorScheme ?? 'light'].brandPurple}
                   />
                 </View>
@@ -77,7 +77,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
                   <View className='px-1 py-1'>
                     <IconBadge
                       label='GC Points'
-                      icon='trophy'
+                      icon='trophy-outline'
                       color={colors[colorScheme ?? 'light'].brandDefault}
                     />
                   </View>
@@ -105,13 +105,13 @@ function getRaceIcon(
 ): React.ComponentProps<typeof Ionicons>['name'] {
   switch (type) {
     case 'CRITERIUM':
-      return 'flag'
+      return 'flag-outline'
     case 'HILL_CLIMB':
-      return 'trending-up'
+      return 'trending-up-outline'
     case 'TIME_TRIAL':
-      return 'stopwatch'
+      return 'stopwatch-outline'
     default:
-      return 'bicycle'
+      return 'bicycle-outline'
   }
 }
 

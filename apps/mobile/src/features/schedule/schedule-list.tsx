@@ -31,6 +31,24 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
           setSelectedIndex(event.nativeEvent.selectedSegmentIndex)
         }}
       />
+      {selectedIndex === 0 &&
+        !schedule.upcomingStage &&
+        schedule.upcoming.length === 0 && (
+          <View>
+            <CardListHeader
+              className='mb-2 ml-4 mt-6'
+              title='No upcoming stages'
+            />
+          </View>
+        )}
+      {selectedIndex === 1 && schedule.completed.length === 0 && (
+        <View>
+          <CardListHeader
+            className='mb-2 ml-4 mt-6'
+            title='No completed stages'
+          />
+        </View>
+      )}
       {selectedIndex === 0 && schedule.upcomingStage && (
         <View>
           <CardListHeader
