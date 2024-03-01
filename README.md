@@ -2,6 +2,12 @@
 
 ## Ideas
 
+### GraphQL API
+
+- Add versioning to endpoints
+  - /v1/graphql
+  - /v2/graphql
+
 ### Schedule page
 
 - Horizontal GC scroller
