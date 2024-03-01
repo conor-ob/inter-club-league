@@ -13,6 +13,7 @@
 - Horizontal GC scroller
 - "Next event" card at the top
 - API response should include nextEvent, primarySchedule and secondarySchedule fields
+- Add selected schedule to route params
 
 ### Settings page
 
