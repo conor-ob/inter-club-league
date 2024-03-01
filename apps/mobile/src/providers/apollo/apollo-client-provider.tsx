@@ -71,7 +71,7 @@ export function ApolloClientProvider({ children }: ApolloProviderProps) {
     }
   })
 
-  const apolloLink = ApolloLink.from([delayLink(2500), errorLink, httpLink])
+  const apolloLink = ApolloLink.from([errorLink, httpLink])
 
   return (
     <ApolloProvider
