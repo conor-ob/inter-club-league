@@ -12,7 +12,7 @@ import {
 } from 'react-native'
 import { ScheduleList } from './schedule-list'
 
-export function ScheduleContent() {
+export function ScheduleFeature() {
   const colorScheme = useColorScheme()
   const { data, loading, error, refetch } = useScheduleQuery()
   const [refreshing, setRefreshing] = useState(false)
@@ -37,7 +37,7 @@ export function ScheduleContent() {
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
         <RefreshControl
-          refreshing={refreshing === true}
+          refreshing={refreshing}
           onRefresh={() => {
             handleRefresh()
           }}

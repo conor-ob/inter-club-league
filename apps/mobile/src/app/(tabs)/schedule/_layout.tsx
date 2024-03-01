@@ -1,9 +1,7 @@
 import { Stack, useGlobalSearchParams } from 'expo-router'
-import { useColorScheme } from 'react-native'
 
 export default function Layout() {
   const params = useGlobalSearchParams()
-  const colorScheme = useColorScheme()
 
   return (
     <Stack>

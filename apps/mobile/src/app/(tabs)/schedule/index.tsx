@@ -1,5 +1,5 @@
-import { ScheduleContent } from '@/features/schedule/schedule-content'
+import { ScheduleFeature } from '@/features/schedule/schedule-feature'
 
 export default function Schedule() {
-  return <ScheduleContent />
+  return <ScheduleFeature />
 }
