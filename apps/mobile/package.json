@@ -18,6 +18,7 @@
     "@react-native-segmented-control/segmented-control": "^2.5.0",
     "@react-navigation/native": "^6.0.2",
     "classnames": "^2.5.1",
+    "date-fns": "^3.2.0",
     "expo": "^50.0.1",
     "expo-constants": "~15.4.2",
     "expo-font": "~11.10.3",

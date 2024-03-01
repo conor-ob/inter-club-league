@@ -2,6 +2,7 @@ type Schedule {
   id: ID!
   completed: [ScheduleMonth!]!
   upcoming: [ScheduleMonth!]!
+  upcomingStage: Stage
 }
 
 type ScheduleMonth {

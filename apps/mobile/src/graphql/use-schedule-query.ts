@@ -71,6 +71,35 @@ const scheduleQuery = graphql(`
           stravaId
         }
       }
+      upcomingStage {
+        id
+        number
+        season
+        name
+        startTime
+        displayDate
+        location
+        county
+        type
+        status
+        mandatory
+        club {
+          id
+          code
+          name
+        }
+        categoryGroups {
+          id
+          categories {
+            id
+            code
+            name
+            rank
+          }
+        }
+        coordinates
+        stravaId
+      }
     }
   }
 `)
