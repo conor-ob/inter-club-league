@@ -1,14 +1,22 @@
+import { StageNavigation } from '@/components/navigation/stage-navigation'
 import { useStageQuery } from '@/graphql/use-stage-query'
+import { default as Ionicons } from '@expo/vector-icons/Ionicons'
 import cx from 'classnames'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import { Platform, RefreshControl, ScrollView, Text, View } from 'react-native'
+import {
+  Platform,
+  RefreshControl,
+  ScrollView,
+  Text,
+  View,
+  useColorScheme
+} from 'react-native'
 
 export function StageFeature() {
-  const params = useGlobalSearchParams()
-  const { data, loading, error, refetch } = useStageQuery(
-    parseStageId(params.id)
-  )
+  const { id } = useGlobalSearchParams<{ id: string }>()
+  const colorScheme = useColorScheme()
+  const { data, loading, error, refetch } = useStageQuery(id)
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -21,6 +29,8 @@ export function StageFeature() {
       setRefreshing(false)
     }
   }, [loading])
+
+  const item = data?.stage
 
   return (
     <ScrollView
@@ -39,6 +49,10 @@ export function StageFeature() {
       }
     >
       <View className='py-8'>
+        <View className='-mx-4 py-4'>
+          <StageNavigation baseUrl='/(tabs)/schedule/stage' stageId={id} />
+        </View>
+
         {data && (
           <Text className='text-primary'>
             {JSON.stringify(data.stage.id, null, 2)}
@@ -49,9 +63,30 @@ export function StageFeature() {
   )
 }
 
-function parseStageId(id: string | string[] | undefined): string | undefined {
-  if (typeof id === 'string') {
-    return id
+function getRaceIcon(
+  type: string
+): React.ComponentProps<typeof Ionicons>['name'] {
+  switch (type) {
+    case 'CRITERIUM':
+      return 'flag-outline'
+    case 'HILL_CLIMB':
+      return 'trending-up-outline'
+    case 'TIME_TRIAL':
+      return 'stopwatch-outline'
+    default:
+      return 'bicycle-outline'
   }
-  return undefined
+}
+
+function getRaceType(type: string): string {
+  switch (type) {
+    case 'CRITERIUM':
+      return 'Criterium'
+    case 'HILL_CLIMB':
+      return 'Hill Climb'
+    case 'TIME_TRIAL':
+      return 'Time Trial'
+    default:
+      return 'Road Race'
+  }
 }

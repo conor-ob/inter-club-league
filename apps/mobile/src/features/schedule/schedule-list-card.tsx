@@ -28,7 +28,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
         scrollEnabled={false}
         ItemSeparatorComponent={() => <CardDivider />}
         renderItem={({ item }) => (
-          <Link href={`/(tabs)/schedule/${item.id}`} asChild>
+          <Link href={`/(tabs)/schedule/stage?id=${item.id}`} asChild>
             <TouchableOpacity className='px-4 py-6' activeOpacity={0.6}>
               <View className='mb-2 flex flex-row items-center justify-between'>
                 {/** TODO handle long names */}
@@ -46,7 +46,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
                   />
                 </View>
               </View>
-              <Text className='font-inter-semibold text-primary mb-4 text-2xl'>{`Stage ${item.number}`}</Text>
+              <Text className='font-inter-semibold text-primary mb-4 text-2xl'>{`Stage ${item.id.split('-')[1]}`}</Text>
               <View className='-mx-1 flex flex-row flex-wrap'>
                 <View className='px-1 py-1'>
                   <IconBadge
