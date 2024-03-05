@@ -17,14 +17,6 @@ const Query: QueryResolvers = {
       throw e
     }
   },
-  schedule: (_, { seasonId }, { scheduleService }, ____) => {
-    try {
-      return scheduleService.getSchedule(seasonId)
-    } catch (e) {
-      console.log(`Query 'schedule' failed for seasonId=${seasonId}`, e)
-      throw e
-    }
-  },
   stageResults: (_, { stageId }, { stageResultsService }, ____) => {
     try {
       return stageResultsService.getStageResults(stageId)

@@ -36,5 +36,8 @@ const stagesQuery = graphql(`
 `)
 
 export function useStagesQuery(seasonId?: string) {
-  return useQuery(stagesQuery, { variables: { seasonId: seasonId } })
+  return useQuery(stagesQuery, {
+    variables: { seasonId: seasonId },
+    notifyOnNetworkStatusChange: true
+  })
 }

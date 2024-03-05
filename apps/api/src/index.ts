@@ -13,13 +13,11 @@ import { ServerContext } from './context/ServerContext'
 import { Database } from './database/Database'
 import { FileReader } from './database/FileReader'
 import { GcMapper } from './mapping/GcMapper'
-import { ScheduleMapper } from './mapping/ScheduleMapper'
 import { StageMapper } from './mapping/StageMapper'
 import { StageResultsMapper } from './mapping/StageResultsMapper'
 import { resolvers } from './resolvers'
 import { GcService } from './service/GcService'
 import { MarshallsService } from './service/MarshallsService'
-import { ScheduleService } from './service/ScheduleService'
 import { StageResultsService } from './service/StageResultsService'
 import { StagesService } from './service/StagesService'
 
@@ -27,17 +25,11 @@ async function bootstrap() {
   const fileReader = new FileReader()
   const database = new Database(fileReader)
 
-  const scheduleMapper = new ScheduleMapper()
   const stageMapper = new StageMapper(database)
   const stageResultsMapper = new StageResultsMapper(database)
   const gcMapper = new GcMapper(database)
 
   const stagesService = new StagesService(database, stageMapper)
-  const scheduleService = new ScheduleService(
-    database,
-    stagesService,
-    scheduleMapper
-  )
   const gcService = new GcService(database, gcMapper, stagesService)
   const stageResultsService = new StageResultsService(
     database,
@@ -83,7 +75,6 @@ async function bootstrap() {
         gcService: gcService,
         marshallsService: marshallsService,
         // riderStatsService: riderStatsService,
-        scheduleService: scheduleService,
         stageResultsService: stageResultsService,
         stagesService: stagesService
       })

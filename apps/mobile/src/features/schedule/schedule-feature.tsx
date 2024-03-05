@@ -1,4 +1,4 @@
-import { useScheduleQuery } from '@/graphql/use-schedule-query'
+import { useStagesQuery } from '@/graphql/use-stages-query'
 import SegmentedControl from '@react-native-segmented-control/segmented-control'
 import cx from 'classnames'
 import { Skeleton } from 'moti/skeleton'
@@ -11,10 +11,11 @@ import {
   useColorScheme
 } from 'react-native'
 import { ScheduleList } from './schedule-list'
+import { buildSchedule } from './schedule-utils'
 
 export function ScheduleFeature() {
   const colorScheme = useColorScheme()
-  const { data, loading, error, refetch } = useScheduleQuery()
+  const { data, loading, error, refetch } = useStagesQuery()
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -46,7 +47,7 @@ export function ScheduleFeature() {
     >
       <View className='py-8'>
         {data ? (
-          <ScheduleList schedule={data.schedule} />
+          <ScheduleList schedule={buildSchedule(data.stages)} />
         ) : (
           <View>
             <SegmentedControl
