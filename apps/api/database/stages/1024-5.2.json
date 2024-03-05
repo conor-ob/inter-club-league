@@ -1,0 +1,15 @@
+{
+  "id": "2024-5.2",
+  "season": 2024,
+  "number": 5,
+  "name": "Corkagh Park (Scratch & Semi Scratch)",
+  "club": "OWCC",
+  "location": "Corkagh Park",
+  "county": "Dublin",
+  "startTime": "2024-05-09T19:45:00Z",
+  "type": "CRITERIUM",
+  "mandatory": false,
+  "categoryGroups": "S+SS",
+  "coordinates": "53.306305,-6.412072",
+  "stravaId": null
+}

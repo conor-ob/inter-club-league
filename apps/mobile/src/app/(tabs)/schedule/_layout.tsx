@@ -13,7 +13,7 @@ export default function Layout() {
         }}
       />
       <Stack.Screen
-        name='[id]'
+        name='stage'
         options={{
           title: `Stage ${id?.split('-')[1]}`
         }}

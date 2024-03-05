@@ -1,14 +1,7 @@
 import { colors } from '@/design/color-theme'
 import { useStagesQuery } from '@/graphql/use-stages-query'
-import { Link, router } from 'expo-router'
-import {
-  Button,
-  Pressable,
-  Text,
-  TouchableOpacity,
-  View,
-  useColorScheme
-} from 'react-native'
+import { router } from 'expo-router'
+import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { Ionicon } from '../ionicon'
 
 type StageNavigationProps = {
@@ -26,6 +19,7 @@ export function StageNavigation({
   const { data, loading, error } = useStagesQuery()
 
   if (data && stageId) {
+    console.log('stageId=' + stageId)
     const stageIds = data.stages.map((it) => it.id)
     const currentStage = data.stages.find((it) => it.id === stageId)! // TODO !
     const currentStageIndex = stageIds.indexOf(stageId)
@@ -94,18 +88,5 @@ export function StageNavigation({
     )
   }
 
-  return (
-    <View className='flex flex-row justify-between'>
-      <Link href={`/(tabs)/schedule/2023-18`} asChild>
-        <Pressable>
-          <Text className='text-brand'>Home</Text>
-        </Pressable>
-      </Link>
-      <Button
-        title='previous'
-        onPress={() => router.replace('/(tabs)/schedule/2023-18')}
-      ></Button>
-      <Button title='next'></Button>
-    </View>
-  )
+  return null
 }

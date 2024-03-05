@@ -50,7 +50,7 @@ export function StageFeature() {
     >
       <View className='py-8'>
         <View className='-mx-4 py-4'>
-          <StageNavigation baseUrl='/(tabs)/schedule' stageId={id} />
+          <StageNavigation baseUrl='/(tabs)/schedule/stage' stageId={id} />
         </View>
 
         {data && (
