@@ -5,11 +5,8 @@ const stagesQuery = graphql(`
   query Stages($seasonId: ID) {
     stages(seasonId: $seasonId) {
       id
-      number
-      season
       name
       startTime
-      displayDate
       location
       county
       type
@@ -36,5 +33,8 @@ const stagesQuery = graphql(`
 `)
 
 export function useStagesQuery(seasonId?: string) {
-  return useQuery(stagesQuery, { variables: { seasonId: seasonId } })
+  return useQuery(stagesQuery, {
+    variables: { seasonId: seasonId },
+    notifyOnNetworkStatusChange: true
+  })
 }

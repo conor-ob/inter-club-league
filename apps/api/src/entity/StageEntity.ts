@@ -1,7 +1,5 @@
 export interface StageEntity {
   id: string
-  season: number
-  number: number
   name: string
   club: string
   location: string

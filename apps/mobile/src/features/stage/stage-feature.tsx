@@ -1,4 +1,3 @@
-import { StageNavigation } from '@/components/navigation/stage-navigation'
 import { useStageQuery } from '@/graphql/use-stage-query'
 import { default as Ionicons } from '@expo/vector-icons/Ionicons'
 import cx from 'classnames'
@@ -49,10 +48,6 @@ export function StageFeature() {
       }
     >
       <View className='py-8'>
-        <View className='-mx-4 py-4'>
-          <StageNavigation baseUrl='/(tabs)/schedule/stage' stageId={id} />
-        </View>
-
         {data && (
           <Text className='text-primary'>
             {JSON.stringify(data.stage.id, null, 2)}

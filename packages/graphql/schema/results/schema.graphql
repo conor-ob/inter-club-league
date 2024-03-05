@@ -8,7 +8,6 @@ type StageResults {
   id: ID!
   categoryResults: [CategoryResults!]!
   gcLeaderId: String!
-  stageNumber: Int!
   stageStatus: StageStatus!
 }
 

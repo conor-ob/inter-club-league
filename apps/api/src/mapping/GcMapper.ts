@@ -30,7 +30,6 @@ export class GcMapper {
     return {
       id: stageId,
       gcStatus: this.getGcStatus(stageId, stages),
-      stageNumber: Number(stageNumberFromStageId(stageId)),
       stageStatus: StageStatus.Completed,
       gcRiders: stageResultEntities
         .map((stageResultEntity) => {
@@ -108,7 +107,7 @@ export class GcMapper {
   private calculateGcPoints(stagePoints: number[], stages: Stage[]): number {
     const mandatoryStageIndexes = stages
       .filter((stage) => stage.mandatory)
-      .map((stage) => stage.number - 1)
+      .map((stage) => Number(stageNumberFromStageId(stage.id)) - 1)
       .filter((index) => index < stagePoints.length)
 
     let mandatoryStagePoints = 0

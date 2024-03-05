@@ -1,5 +1,4 @@
 import { CardListHeader } from '@/components/card/card-list-header'
-import { Schedule } from '@/generated/graphql'
 import SegmentedControl from '@react-native-segmented-control/segmented-control'
 import {
   differenceInCalendarDays,
@@ -10,6 +9,7 @@ import {
 import { useState } from 'react'
 import { View } from 'react-native'
 import { ScheduleListCard } from './schedule-list-card'
+import { Schedule } from './schedule-types'
 
 type ScheduleListProps = {
   schedule: Schedule
@@ -17,7 +17,7 @@ type ScheduleListProps = {
 
 export function ScheduleList({ schedule }: ScheduleListProps) {
   const [selectedIndex, setSelectedIndex] = useState(
-    schedule.upcomingStage || schedule.upcoming.length > 0 ? 0 : 1
+    schedule.nextStages.length > 0 || schedule.upcoming.length > 0 ? 0 : 1
   )
   const scheduleMonths =
     selectedIndex === 0 ? schedule.upcoming : schedule.completed
@@ -32,7 +32,7 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
         }}
       />
       {selectedIndex === 0 &&
-        !schedule.upcomingStage &&
+        schedule.nextStages.length === 0 &&
         schedule.upcoming.length === 0 && (
           <View>
             <CardListHeader
@@ -49,18 +49,18 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
           />
         </View>
       )}
-      {selectedIndex === 0 && schedule.upcomingStage && (
+      {selectedIndex === 0 && schedule.nextStages.length > 0 && (
         <View>
           <CardListHeader
             className='mb-2 ml-4 mt-6'
             textColor='text-brand'
-            title={getUpcomingStageTitle(schedule.upcomingStage.startTime)}
+            title={getUpcomingStageTitle(schedule.nextStages[0].startTime)}
           />
-          <ScheduleListCard stages={[schedule.upcomingStage]} />
+          <ScheduleListCard stages={schedule.nextStages} />
         </View>
       )}
       {scheduleMonths.map((scheduleMonth) => (
-        <View key={scheduleMonth.id}>
+        <View key={scheduleMonth.displayName}>
           <CardListHeader
             className='mb-2 ml-4 mt-6'
             title={scheduleMonth.displayName.toUpperCase()}

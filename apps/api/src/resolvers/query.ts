@@ -17,14 +17,6 @@ const Query: QueryResolvers = {
       throw e
     }
   },
-  schedule: (_, { seasonId }, { scheduleService }, ____) => {
-    try {
-      return scheduleService.getSchedule(seasonId)
-    } catch (e) {
-      console.log(`Query 'schedule' failed for seasonId=${seasonId}`, e)
-      throw e
-    }
-  },
   stageResults: (_, { stageId }, { stageResultsService }, ____) => {
     try {
       return stageResultsService.getStageResults(stageId)
@@ -48,17 +40,6 @@ const Query: QueryResolvers = {
       console.log(`Query 'stages' failed for seasonId=${seasonId}`, e)
       throw e
     }
-  },
-  // riderStats: (_, { riderId }, { riderStatsService }, ____) => {
-  //   try {
-  //     return riderStatsService.getRiderStats(riderId)
-  //   } catch (e) {
-  //     console.log(`Query 'riderStats' failed for seasonId=${riderId}`, e)
-  //     throw e
-  //   }
-  // }
-  riderStats: (_, { riderId }, context, ____) => {
-    throw new Error('Not yet implemented')
   }
 }
 
