@@ -35,6 +35,10 @@ const stageQuery = graphql(`
   }
 `)
 
-export function useStageQuery(stageId: string) {
-  return useQuery(stageQuery, { variables: { stageId: stageId } })
+export function useStageQuery(stageId?: string) {
+  return useQuery(stageQuery, {
+    variables: { stageId: stageId },
+    notifyOnNetworkStatusChange: true,
+    skip: stageId === undefined
+  })
 }

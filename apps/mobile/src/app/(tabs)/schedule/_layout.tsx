@@ -1,7 +1,7 @@
 import { Stack, useGlobalSearchParams } from 'expo-router'
 
 export default function Layout() {
-  const params = useGlobalSearchParams()
+  const { id } = useGlobalSearchParams<{ id: string }>()
 
   return (
     <Stack>
@@ -15,16 +15,9 @@ export default function Layout() {
       <Stack.Screen
         name='[id]'
         options={{
-          title: parseTitle(params.id)
+          title: `Stage ${id?.split('-')[1]}`
         }}
       />
     </Stack>
   )
-}
-
-function parseTitle(id: string | string[] | undefined): string | undefined {
-  if (typeof id === 'string') {
-    return `Stage ${id.split('-')[1]}`
-  }
-  return undefined
 }

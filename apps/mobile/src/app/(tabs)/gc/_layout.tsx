@@ -1,9 +1,13 @@
 import { colors } from '@/design/color-theme'
-import { Stack } from 'expo-router'
+import { Stack, router, useGlobalSearchParams } from 'expo-router'
 import { Platform, useColorScheme } from 'react-native'
 
 export default function Layout() {
+  const { id, search } = useGlobalSearchParams<{ id: string; search: string }>()
   const colorScheme = useColorScheme()
+
+  console.log('id=' + id)
+  console.log('search=' + search)
 
   return (
     <Stack>
@@ -23,7 +27,13 @@ export default function Layout() {
                   shouldShowHintSearchIcon: false
                 }
               : {
-                  placeholder: 'Search'
+                  placeholder: 'Search',
+                  onChangeText(e) {
+                    router.navigate({
+                      pathname: '/(tabs)/gc',
+                      params: { id: id, search: e.nativeEvent.text }
+                    })
+                  }
                 }
         }}
       />

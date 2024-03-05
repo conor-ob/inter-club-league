@@ -1,10 +1,13 @@
+import { StageNavigation } from '@/components/navigation/stage-navigation'
 import { useGcQuery } from '@/graphql/use-gc-query'
 import cx from 'classnames'
+import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
 import { Platform, RefreshControl, ScrollView, Text, View } from 'react-native'
 
 export function GcFeature() {
-  const { data, loading, error, refetch } = useGcQuery()
+  const { id, search } = useGlobalSearchParams<{ id: string; search: string }>()
+  const { data, loading, error, refetch } = useGcQuery(id)
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -35,6 +38,11 @@ export function GcFeature() {
       }
     >
       <View className='py-8'>
+        <StageNavigation
+          baseUrl='/(tabs)/gc'
+          stageId={id ?? data?.gc.id}
+          search={search}
+        />
         {data && (
           <Text className='text-primary'>
             {JSON.stringify(data.gc.id, null, 2)}
