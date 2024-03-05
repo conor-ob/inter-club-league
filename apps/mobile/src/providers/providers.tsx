@@ -17,6 +17,7 @@ import { ThemeProvider as ReactNativeThemeProvider } from '@react-navigation/nat
 import { SplashScreen } from 'expo-router'
 import { useEffect } from 'react'
 import { useColorScheme } from 'react-native'
+import { SafeAreaProvider } from './safe-area/safe-area-provider'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
@@ -56,11 +57,13 @@ export function Providers({ children }: ProvidersProps) {
 
   return (
     <ApolloClientProvider>
-      <ReactNativeThemeProvider
-        value={colorScheme === 'dark' ? darkTheme : lightTheme}
-      >
-        <TailwindThemeProvider>{children}</TailwindThemeProvider>
-      </ReactNativeThemeProvider>
+      <SafeAreaProvider>
+        <ReactNativeThemeProvider
+          value={colorScheme === 'dark' ? darkTheme : lightTheme}
+        >
+          <TailwindThemeProvider>{children}</TailwindThemeProvider>
+        </ReactNativeThemeProvider>
+      </SafeAreaProvider>
     </ApolloClientProvider>
   )
 }

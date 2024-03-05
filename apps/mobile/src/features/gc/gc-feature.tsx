@@ -1,8 +1,9 @@
+import { CardDivider } from '@/components/card/card-divider'
 import { useGcQuery } from '@/graphql/use-gc-query'
-import cx from 'classnames'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import { Platform, RefreshControl, ScrollView, Text, View } from 'react-native'
+import { FlatList } from 'react-native'
+import { GcRiderRow } from './gc-rider-row'
 
 export function GcFeature() {
   const { id, search } = useGlobalSearchParams<{ id: string; search: string }>()
@@ -21,28 +22,44 @@ export function GcFeature() {
   }, [loading])
 
   return (
-    <ScrollView
-      className={cx({
-        'px-4': Platform.OS === 'android',
-        'px-5': Platform.OS === 'ios'
-      })}
-      contentInsetAdjustmentBehavior='automatic'
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={() => {
-            handleRefresh()
-          }}
-        />
-      }
-    >
-      <View className='py-8'>
-        {data && (
-          <Text className='text-primary'>
-            {JSON.stringify(data.gc.id, null, 2)}
-          </Text>
-        )}
-      </View>
-    </ScrollView>
+    data && (
+      <FlatList
+        data={data.gc.gcRiders}
+        contentInsetAdjustmentBehavior='automatic'
+        ItemSeparatorComponent={() => <CardDivider />}
+        renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+        stickyHeaderIndices={[0]}
+      />
+    )
   )
+
+  // return (
+  //   <ScrollView
+  //     // className={cx({
+  //     //   'px-4': Platform.OS === 'android',
+  //     //   'px-5': Platform.OS === 'ios'
+  //     // })}
+  //     contentInsetAdjustmentBehavior='automatic'
+  //     refreshControl={
+  //       <RefreshControl
+  //         refreshing={refreshing}
+  //         onRefresh={() => {
+  //           handleRefresh()
+  //         }}
+  //       />
+  //     }
+  //   >
+  //     {/* <View className='py-8'> */}
+  //     {data && (
+  //       <FlatList
+  //         data={data.gc.gcRiders}
+  //         // scrollEnabled={false}
+  //         ItemSeparatorComponent={() => <CardDivider />}
+  //         renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+  //         stickyHeaderIndices={[1]}
+  //       />
+  //     )}
+  //     {/* </View> */}
+  //   </ScrollView>
+  // )
 }

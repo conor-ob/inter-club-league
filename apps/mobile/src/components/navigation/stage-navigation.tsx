@@ -19,7 +19,6 @@ export function StageNavigation({
   const { data, loading, error } = useStagesQuery()
 
   if (data && stageId) {
-    console.log('stageId=' + stageId)
     const stageIds = data.stages.map((it) => it.id)
     const currentStage = data.stages.find((it) => it.id === stageId)! // TODO !
     const currentStageIndex = stageIds.indexOf(stageId)

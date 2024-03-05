@@ -13,6 +13,7 @@ export default {
         brand: {
           DEFAULT: 'var(--color-brand-default)',
           blue: 'var(--color-brand-blue)',
+          green: 'var(--color-brand-green)',
           purple: 'var(--color-brand-purple)',
           red: 'var(--color-brand-red)'
         },
