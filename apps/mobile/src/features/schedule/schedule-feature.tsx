@@ -45,7 +45,7 @@ export function ScheduleFeature() {
       }
     >
       <View className='py-8'>
-        {data && !loading ? (
+        {data ? (
           <ScheduleList schedule={data.schedule} />
         ) : (
           <View>
