@@ -6,7 +6,6 @@ import { StagesService } from '../service/StagesService'
 export interface ServerContext {
   gcService: GcService
   marshallsService: MarshallsService
-  // riderStatsService: RiderStatsService
   stageResultsService: StageResultsService
   stagesService: StagesService
 }

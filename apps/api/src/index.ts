@@ -74,7 +74,6 @@ async function bootstrap() {
       context: async () => ({
         gcService: gcService,
         marshallsService: marshallsService,
-        // riderStatsService: riderStatsService,
         stageResultsService: stageResultsService,
         stagesService: stagesService
       })

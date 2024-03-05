@@ -3,12 +3,9 @@ type Stage {
   categoryGroups: [CategoryGroup!]!
   club: Club!
   county: String!
-  displayDate: String!
   location: String!
   mandatory: Boolean!
   name: String!
-  number: Int!
-  season: Int!
   startTime: String!
   status: StageStatus!
   type: RaceType!

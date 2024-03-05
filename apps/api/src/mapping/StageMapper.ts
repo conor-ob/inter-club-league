@@ -1,4 +1,4 @@
-import { addHours, format, parseISO } from 'date-fns'
+import { addHours, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageEntity } from '../entity/StageEntity'
@@ -23,11 +23,8 @@ export class StageMapper {
     const clubs = this.database.getAll<Club>(Table.CLUBS)
     return {
       id: stageEntity.id,
-      season: stageEntity.season,
-      number: stageEntity.number,
       name: stageEntity.name,
       club: clubs.find((c) => c.code === stageEntity.club)!, // TODO ! and club id
-      displayDate: this.mapDisplayDate(stageEntity.startTime),
       location: stageEntity.location,
       county: stageEntity.county,
       startTime: stageEntity.startTime,
@@ -49,11 +46,8 @@ export class StageMapper {
     return stageEntities.map((stageEntity) => {
       return {
         id: stageEntity.id,
-        season: stageEntity.season,
-        number: stageEntity.number,
         name: stageEntity.name,
         club: clubs.find((c) => c.code === stageEntity.club)!, // TODO ! and club id
-        displayDate: this.mapDisplayDate(stageEntity.startTime),
         location: stageEntity.location,
         county: stageEntity.county,
         startTime: stageEntity.startTime,
@@ -68,11 +62,6 @@ export class StageMapper {
         stravaId: stageEntity.stravaId
       }
     })
-  }
-
-  private mapDisplayDate(startTime: string): string {
-    const date = parseISO(startTime)
-    return format(date, 'MMM d')
   }
 
   private mapStatus(startTime: string): StageStatus {

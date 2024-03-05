@@ -5,11 +5,8 @@ const stagesQuery = graphql(`
   query Stages($seasonId: ID) {
     stages(seasonId: $seasonId) {
       id
-      number
-      season
       name
       startTime
-      displayDate
       location
       county
       type
