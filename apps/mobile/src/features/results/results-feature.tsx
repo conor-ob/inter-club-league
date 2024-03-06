@@ -43,7 +43,10 @@ export function ResultsFeature() {
           scrollEnabled={false}
           ItemSeparatorComponent={() => <CardDivider />}
           renderItem={({ item }) => (
-            <CategoryResultsListItem categoryResults={item} />
+            <CategoryResultsListItem
+              stageId={stageId ?? data?.stageResults.id}
+              categoryResults={item}
+            />
           )}
         />
       </Card>

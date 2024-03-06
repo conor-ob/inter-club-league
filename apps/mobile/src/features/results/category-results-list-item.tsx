@@ -5,11 +5,14 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import { Link } from 'expo-router'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 
+// TODO nullable stageId
 type CategoryResultsListItemProps = {
+  stageId?: string
   categoryResults: CategoryResults
 }
 
 export function CategoryResultsListItem({
+  stageId,
   categoryResults
 }: CategoryResultsListItemProps) {
   const colorScheme = useColorScheme()
@@ -18,9 +21,8 @@ export function CategoryResultsListItem({
       href={{
         pathname: '/(tabs)/results/category',
         params: {
-          category: categoryResults.categoryGroup.categories
-            .map((category) => category.name)
-            .join(' & ')
+          stageId: stageId,
+          categoryGroupId: categoryResults.categoryGroup.id
         }
       }}
       asChild
