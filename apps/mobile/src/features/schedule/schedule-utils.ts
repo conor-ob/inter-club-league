@@ -42,8 +42,6 @@ export function buildSchedule(stages: Stage[]): Schedule {
     return stages
   })
 
-  // console.log(JSON.stringify(upcomingByDay[3], null, 2))
-  // console.log(JSON.stringify(upcomingByDay, null, 2))
   const nextStages = upcomingByDay.length > 0 ? upcomingByDay[0] : []
   const upcomingStages =
     upcomingByDay.length > 1 ? upcomingByDay.slice(1).flatMap((it) => it) : []

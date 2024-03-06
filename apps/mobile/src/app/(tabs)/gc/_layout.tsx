@@ -6,9 +6,6 @@ export default function Layout() {
   const { id, search } = useGlobalSearchParams<{ id: string; search: string }>()
   const colorScheme = useColorScheme()
 
-  console.log('id=' + id)
-  console.log('search=' + search)
-
   return (
     <Stack>
       <Stack.Screen
@@ -16,6 +13,7 @@ export default function Layout() {
         options={{
           title: 'GC',
           headerLargeTitle: true,
+          headerShadowVisible: true,
           headerSearchBarOptions:
             Platform.OS === 'android'
               ? {
