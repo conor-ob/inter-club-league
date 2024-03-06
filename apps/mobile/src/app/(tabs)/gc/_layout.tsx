@@ -12,7 +12,7 @@ export default function Layout() {
         name='index'
         options={{
           title: 'GC',
-          headerLargeTitle: true,
+          headerLargeTitle: false,
           headerShadowVisible: true,
           headerSearchBarOptions:
             Platform.OS === 'android'
