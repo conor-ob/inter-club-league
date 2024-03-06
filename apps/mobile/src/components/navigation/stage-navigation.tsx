@@ -24,8 +24,6 @@ export function StageNavigation({
   if (data && stageId) {
     const stageIds = data.stages.map((it) => it.id)
 
-    console.log(stageIds)
-
     const currentStage = data.stages.find((it) => it.id === stageId)! // TODO !
     const currentStageIndex = stageIds.indexOf(stageId)
 
