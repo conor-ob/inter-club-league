@@ -2,7 +2,7 @@ import { CardDivider } from '@/components/card/card-divider'
 import { useGcQuery } from '@/graphql/use-gc-query'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import { FlatList, Platform, RefreshControl, View } from 'react-native'
+import { FlatList, RefreshControl, ScrollView } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { GcHeader } from './gc-header'
 import { GcRiderRow } from './gc-rider-row'
@@ -27,27 +27,53 @@ export function GcFeature() {
   }, [loading])
 
   return (
-    data && (
-      <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 98 : 0 }}>
-        <FlatList
-          data={data.gc.gcRiders}
-          contentInsetAdjustmentBehavior='automatic'
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={() => {
-                handleRefresh()
-              }}
-            />
-          }
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => <GcRiderRow gcRider={item} />}
-          ListHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
+    <ScrollView
+      contentInsetAdjustmentBehavior='automatic'
+      refreshControl={
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={() => {
+            handleRefresh()
+          }}
+          // progressViewOffset={30}
         />
-      </View>
-    )
+      }
+    >
+      {/* <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 98 : 0 }}> */}
+      <FlatList
+        data={data?.gc.gcRiders}
+        scrollEnabled={false}
+        ItemSeparatorComponent={() => <CardDivider />}
+        renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+        ListHeaderComponent={() => <GcHeader />}
+        stickyHeaderIndices={[0]}
+      />
+      {/* </View> */}
+    </ScrollView>
   )
+
+  // return (
+  //   data && (
+  //     <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 98 : 0 }}>
+  //       <FlatList
+  //         data={data.gc.gcRiders}
+  //         contentInsetAdjustmentBehavior='automatic'
+  //         refreshControl={
+  //           <RefreshControl
+  //             refreshing={refreshing}
+  //             onRefresh={() => {
+  //               handleRefresh()
+  //             }}
+  //           />
+  //         }
+  //         ItemSeparatorComponent={() => <CardDivider />}
+  //         renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+  //         ListHeaderComponent={() => <GcHeader />}
+  //         stickyHeaderIndices={[0]}
+  //       />
+  //     </View>
+  //   )
+  // )
 
   // return (
   //   <ScrollView
