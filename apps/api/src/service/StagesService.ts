@@ -3,6 +3,7 @@ import { Table } from '../database/Table'
 import { StageEntity } from '../entity/StageEntity'
 import { Stage } from '../generated/graphql'
 import { StageMapper } from '../mapping/StageMapper'
+import { stageNumberFromStageId } from '../utils/ids'
 
 export class StagesService {
   private database: Database
@@ -29,7 +30,11 @@ export class StagesService {
     )
     return this.stageMapper
       .mapAll(stageEntities)
-      .sort((a, b) => a.number - b.number)
+      .sort(
+        (a, b) =>
+          Number(stageNumberFromStageId(a.id)) -
+          Number(stageNumberFromStageId(b.id))
+      )
   }
 
   private resolveSeasonId(seasonId: string | null | undefined): string {
