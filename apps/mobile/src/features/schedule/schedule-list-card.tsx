@@ -28,7 +28,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
           <View className='px-4 py-6'>
             <View className='mb-2 flex flex-row items-center justify-between'>
               {/** TODO handle long names */}
-              <Text className='font-inter-medium text-secondary text-base'>
+              <Text className='font-inter-medium text-secondary flex flex-1 text-base'>
                 {item.name}
               </Text>
               <View className='flex flex-row items-center'>
