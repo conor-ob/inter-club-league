@@ -18,7 +18,8 @@ export default {
           red: 'var(--color-brand-red)'
         },
         gc: 'var(--color-gc)',
-        card: 'var(--color-card)'
+        card: 'var(--color-card)',
+        skeleton: 'var(--color-skeleton)'
       },
       fontFamily: {
         'inter-thin': ['inter-thin'],
