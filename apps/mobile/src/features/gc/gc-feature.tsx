@@ -43,39 +43,32 @@ export function GcFeature() {
         />
       }
     >
-      {loading && (
+      {loading ? (
         <FlatList
-          data={[1, 2, 3, 4, 5, 6]}
+          data={[1, 2, 3, 4, 5]}
           scrollEnabled={false}
           ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => {
-            if (item < 6) {
-              return (
-                <View
-                  className={cx({
-                    'py-6': true,
-                    'px-4': Platform.OS === 'android',
-                    'px-5': Platform.OS === 'ios'
-                  })}
-                >
-                  <Skeleton className='h-6' />
-                </View>
-              )
-            }
-          }}
+          renderItem={({ item }) => (
+            <View
+              className={cx({
+                'py-8': true,
+                'px-4': Platform.OS === 'android',
+                'px-5': Platform.OS === 'ios'
+              })}
+            >
+              <Skeleton className='h-6' />
+            </View>
+          )}
           ListHeaderComponent={() => <GcHeader />}
-          // StickyHeaderComponent={() => <GcHeader />}
           stickyHeaderIndices={[0]}
         />
-      )}
-      {!loading && data && (
+      ) : (
         <FlatList
           data={data?.gc.gcRiders}
           scrollEnabled={false}
           ItemSeparatorComponent={() => <CardDivider />}
           renderItem={({ item }) => <GcRiderRow gcRider={item} />}
           ListHeaderComponent={() => <GcHeader />}
-          // StickyHeaderComponent={() => <GcHeader />}
           stickyHeaderIndices={[0]}
         />
       )}
