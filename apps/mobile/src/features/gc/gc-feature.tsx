@@ -1,5 +1,7 @@
+import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { Skeleton } from '@/components/loaders/skeleton'
+import { ResultsStatus } from '@/generated/graphql'
 import { useGcQuery } from '@/graphql/use-gc-query'
 import cx from 'classnames'
 import { useGlobalSearchParams } from 'expo-router'
@@ -9,6 +11,7 @@ import {
   Platform,
   RefreshControl,
   ScrollView,
+  Text,
   View
 } from 'react-native'
 import { GcHeader } from './gc-header'
@@ -62,14 +65,27 @@ export function GcFeature() {
           stickyHeaderIndices={[0]}
         />
       ) : (
-        <FlatList
-          data={data?.gc.gcRiders}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => <GcRiderRow gcRider={item} />}
-          ListHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
-        />
+        <View>
+          {data?.gc.resultsStatus === ResultsStatus.Completed && (
+            <FlatList
+              data={data?.gc.gcRiders}
+              scrollEnabled={false}
+              ItemSeparatorComponent={() => <CardDivider />}
+              renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+              ListHeaderComponent={() => <GcHeader />}
+              stickyHeaderIndices={[0]}
+            />
+          )}
+          {data?.gc.resultsStatus !== ResultsStatus.Completed && (
+            <View className='px-5 py-8'>
+              <Card>
+                <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
+                  GC not yet started
+                </Text>
+              </Card>
+            </View>
+          )}
+        </View>
       )}
     </ScrollView>
   )

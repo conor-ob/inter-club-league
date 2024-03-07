@@ -2,10 +2,11 @@ import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { Skeleton } from '@/components/loaders/skeleton'
 import { StageNavigation } from '@/components/navigation/stage-navigation'
+import { ResultsStatus } from '@/generated/graphql'
 import { useStageResultsQuery } from '@/graphql/use-stage-results-query'
 import { useLocalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import { FlatList, RefreshControl, ScrollView, View } from 'react-native'
+import { FlatList, RefreshControl, ScrollView, Text, View } from 'react-native'
 import { CategoryResultsListItem } from './category-results-list-item'
 
 export function ResultsFeature() {
@@ -51,17 +52,30 @@ export function ResultsFeature() {
           />
           <View className='h-6' />
           <Card>
-            <FlatList
-              data={data?.stageResults.categoryResults}
-              scrollEnabled={false}
-              ItemSeparatorComponent={() => <CardDivider />}
-              renderItem={({ item }) => (
-                <CategoryResultsListItem
-                  stageId={stageId ?? data?.stageResults.id}
-                  categoryResults={item}
-                />
-              )}
-            />
+            {data?.stageResults.resultsStatus === ResultsStatus.Completed && (
+              <FlatList
+                data={data?.stageResults.categoryResults}
+                scrollEnabled={false}
+                ItemSeparatorComponent={() => <CardDivider />}
+                renderItem={({ item }) => (
+                  <CategoryResultsListItem
+                    stageId={stageId ?? data?.stageResults.id}
+                    categoryResults={item}
+                  />
+                )}
+              />
+            )}
+            {data?.stageResults.resultsStatus ===
+              ResultsStatus.AwaitingResults && (
+              <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
+                Stage completed and awaiting results
+              </Text>
+            )}
+            {data?.stageResults.resultsStatus === ResultsStatus.Upcoming && (
+              <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
+                Stage not yet started
+              </Text>
+            )}
           </Card>
         </View>
       )}

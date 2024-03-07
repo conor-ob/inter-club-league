@@ -28,6 +28,16 @@ export class GcService {
 
   public getGc(stageId: string | null | undefined): Gc {
     const resolvedStageId = this.resolveStageId(stageId)
+
+    if (resolvedStageId === undefined) {
+      return {
+        id: 'undefined',
+        gcStatus: GcStatus.InProgress,
+        resultsStatus: ResultsStatus.Upcoming,
+        gcRiders: []
+      }
+    }
+
     const stageNumber = Number(stageNumberFromStageId(resolvedStageId))
     const stages = this.stagesService.getStages(
       seasonIdFromStageId(resolvedStageId)
@@ -119,7 +129,9 @@ export class GcService {
     return previousRank - currentRank
   }
 
-  private resolveStageId(stageId: string | null | undefined): string {
+  private resolveStageId(
+    stageId: string | null | undefined
+  ): string | undefined {
     if (stageId === null || stageId === undefined) {
       return this.currentStageService.getCurrentGcStageId()
     } else {
