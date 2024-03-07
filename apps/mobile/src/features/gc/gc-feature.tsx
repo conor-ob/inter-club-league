@@ -1,8 +1,16 @@
 import { CardDivider } from '@/components/card/card-divider'
+import { Skeleton } from '@/components/loaders/skeleton'
 import { useGcQuery } from '@/graphql/use-gc-query'
+import cx from 'classnames'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import { FlatList, RefreshControl, ScrollView } from 'react-native'
+import {
+  FlatList,
+  Platform,
+  RefreshControl,
+  ScrollView,
+  View
+} from 'react-native'
 import { GcHeader } from './gc-header'
 import { GcRiderRow } from './gc-rider-row'
 
@@ -35,70 +43,70 @@ export function GcFeature() {
         />
       }
     >
-      {/* <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 98 : 0 }}> */}
-      <FlatList
-        data={data?.gc.gcRiders}
-        scrollEnabled={false}
-        ItemSeparatorComponent={() => <CardDivider />}
-        renderItem={({ item }) => <GcRiderRow gcRider={item} />}
-        ListHeaderComponent={() => <GcHeader />}
-        // StickyHeaderComponent={() => <GcHeader />}
-        stickyHeaderIndices={[0]}
-      />
-      {/* </View> */}
+      {loading ? (
+        <FlatList
+          data={[1, 2, 3, 4, 5, 6, 7]}
+          scrollEnabled={false}
+          ItemSeparatorComponent={() => <CardDivider />}
+          renderItem={({ item }) => {
+            console.log(item)
+            if (item < 7) {
+              return (
+                <View
+                  className={cx({
+                    'py-6': true,
+                    'px-4': Platform.OS === 'android',
+                    'px-5': Platform.OS === 'ios'
+                  })}
+                >
+                  <Skeleton className='h-6' />
+                </View>
+              )
+            } else {
+              return <View className='flex h-80 flex-1 bg-blue-400' />
+            }
+          }}
+          ListHeaderComponent={() => <GcHeader />}
+          stickyHeaderIndices={[0]}
+        />
+      ) : (
+        <FlatList
+          data={data?.gc.gcRiders}
+          scrollEnabled={false}
+          ItemSeparatorComponent={() => <CardDivider />}
+          renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+          ListHeaderComponent={() => <GcHeader />}
+          // StickyHeaderComponent={() => <GcHeader />}
+          stickyHeaderIndices={[0]}
+        />
+      )}
+      {/* {loading && (
+        <FlatList
+          data={[1, 2, 3, 4, 5, 6]}
+          scrollEnabled={false}
+          ItemSeparatorComponent={() => <CardDivider />}
+          renderItem={({ item }) => {
+            if (item < 6) {
+              return (
+                <View
+                  className={cx({
+                    'py-6': true,
+                    'px-4': Platform.OS === 'android',
+                    'px-5': Platform.OS === 'ios'
+                  })}
+                >
+                  <Skeleton className='h-6' />
+                </View>
+              )
+            } else {
+              return <View className='h-80 flex-1' />
+            }
+          }}
+          ListHeaderComponent={() => <GcHeader />}
+          // StickyHeaderComponent={() => <GcHeader />}
+          stickyHeaderIndices={[0]}
+        />
+      )} */}
     </ScrollView>
   )
-
-  // return (
-  //   data && (
-  //     <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 98 : 0 }}>
-  //       <FlatList
-  //         data={data.gc.gcRiders}
-  //         contentInsetAdjustmentBehavior='automatic'
-  //         refreshControl={
-  //           <RefreshControl
-  //             refreshing={refreshing}
-  //             onRefresh={() => {
-  //               handleRefresh()
-  //             }}
-  //           />
-  //         }
-  //         ItemSeparatorComponent={() => <CardDivider />}
-  //         renderItem={({ item }) => <GcRiderRow gcRider={item} />}
-  //         ListHeaderComponent={() => <GcHeader />}
-  //         stickyHeaderIndices={[0]}
-  //       />
-  //     </View>
-  //   )
-  // )
-
-  // return (
-  //   <ScrollView
-  //     // className={cx({
-  //     //   'px-4': Platform.OS === 'android',
-  //     //   'px-5': Platform.OS === 'ios'
-  //     // })}
-  //     contentInsetAdjustmentBehavior='automatic'
-  //     refreshControl={
-  //       <RefreshControl
-  //         refreshing={refreshing}
-  //         onRefresh={() => {
-  //           handleRefresh()
-  //         }}
-  //       />
-  //     }
-  //   >
-  //     {/* <View className='py-8'> */}
-  //     {data && (
-  //       <FlatList
-  //         data={data.gc.gcRiders}
-  //         // scrollEnabled={false}
-  //         ItemSeparatorComponent={() => <CardDivider />}
-  //         renderItem={({ item }) => <GcRiderRow gcRider={item} />}
-  //         stickyHeaderIndices={[1]}
-  //       />
-  //     )}
-  //     {/* </View> */}
-  //   </ScrollView>
-  // )
 }
