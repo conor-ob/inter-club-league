@@ -28,7 +28,7 @@ export class StageMapper {
       location: stageEntity.location,
       county: stageEntity.county,
       startTime: stageEntity.startTime,
-      status: this.mapStatus(stageEntity.startTime),
+      stageStatus: this.mapStatus(stageEntity.startTime),
       type: this.mapType(stageEntity.type),
       mandatory: stageEntity.mandatory,
       categoryGroups: this.mapCategoryGroups(
@@ -51,7 +51,7 @@ export class StageMapper {
         location: stageEntity.location,
         county: stageEntity.county,
         startTime: stageEntity.startTime,
-        status: this.mapStatus(stageEntity.startTime),
+        stageStatus: this.mapStatus(stageEntity.startTime),
         type: this.mapType(stageEntity.type),
         mandatory: stageEntity.mandatory,
         categoryGroups: this.mapCategoryGroups(

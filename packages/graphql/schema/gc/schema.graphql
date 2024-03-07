@@ -2,7 +2,7 @@ type Gc {
   id: ID!
   gcRiders: [GcRider!]!
   gcStatus: GcStatus!
-  stageStatus: StageStatus!
+  resultsStatus: ResultsStatus!
 }
 
 type GcRider {

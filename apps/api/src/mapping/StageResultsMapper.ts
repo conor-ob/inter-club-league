@@ -1,7 +1,13 @@
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageResultEntity } from '../entity/StageResultEntity'
-import { Category, Club, Stage, StageResults } from '../generated/graphql'
+import {
+  Category,
+  Club,
+  ResultsStatus,
+  Stage,
+  StageResults
+} from '../generated/graphql'
 
 export class StageResultsMapper {
   private database: Database
@@ -21,7 +27,7 @@ export class StageResultsMapper {
     return {
       id: stageId,
       gcLeaderId: '',
-      stageStatus: stage.status,
+      resultsStatus: ResultsStatus.Completed,
       categoryResults: stage.categoryGroups.map((c) => {
         return {
           id: `${stageId}-${c.id}`,

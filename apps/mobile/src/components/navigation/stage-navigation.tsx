@@ -1,7 +1,9 @@
 import { colors } from '@/design/color-theme'
+import { ScheduleListCard } from '@/features/schedule/schedule-list-card'
 import { useStagesQuery } from '@/graphql/use-stages-query'
-import { router } from 'expo-router'
+import { useRouter } from 'expo-router'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
+import { Card } from '../card/card'
 import { Ionicon } from '../ionicon'
 
 type StageNavigationProps = {
@@ -17,9 +19,11 @@ export function StageNavigation({
 }: StageNavigationProps) {
   const colorScheme = useColorScheme()
   const { data, loading, error } = useStagesQuery()
+  const router = useRouter()
 
   if (data && stageId) {
     const stageIds = data.stages.map((it) => it.id)
+
     const currentStage = data.stages.find((it) => it.id === stageId)! // TODO !
     const currentStageIndex = stageIds.indexOf(stageId)
 
@@ -31,60 +35,142 @@ export function StageNavigation({
         : null
 
     return (
-      <View>
-        <View className='flex items-center justify-center'>
-          <Text className='text-primary mx-2 text-lg'>{currentStage.name}</Text>
+      <Card>
+        <View>
+          <ScheduleListCard stages={[currentStage]} />
+          <View className='flex flex-row'>
+            <View className='border-quarternary flex flex-1 items-center border-r border-t p-4'>
+              {previousStageId ? (
+                // <Button
+                //   color={colors[colorScheme ?? 'light'].brandDefault}
+                //   title={`Stage ${previousStageId.split('-')[1]}`}
+                //   onPress={() =>
+                //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
+                //   }
+                // />
+                <TouchableOpacity
+                  className='flex flex-row items-center'
+                  onPress={() =>
+                    router.navigate({
+                      pathname: `${baseUrl}`,
+                      params: { stageId: previousStageId }
+                    })
+                  }
+                >
+                  <Ionicon
+                    size={24}
+                    name='chevron-back-outline'
+                    color={colors[colorScheme ?? 'light'].brandDefault}
+                  />
+                  <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
+                </TouchableOpacity>
+              ) : (
+                <View />
+              )}
+            </View>
+            <View className='border-quarternary flex flex-1 items-center border-t p-4'>
+              {nextStageId ? (
+                // <Button
+                //   color={colors[colorScheme ?? 'light'].brandDefault}
+                //   title={`Stage ${previousStageId.split('-')[1]}`}
+                //   onPress={() =>
+                //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
+                //   }
+                // />
+                <TouchableOpacity
+                  className='flex flex-row items-center'
+                  onPress={() =>
+                    router.navigate({
+                      pathname: `${baseUrl}`,
+                      params: { stageId: nextStageId }
+                    })
+                  }
+                >
+                  <Text className='text-brand font-inter-regular text-lg'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
+                  <Ionicon
+                    size={24}
+                    name='chevron-forward-outline'
+                    color={colors[colorScheme ?? 'light'].brandDefault}
+                  />
+                </TouchableOpacity>
+              ) : (
+                <View />
+              )}
+            </View>
+          </View>
+          {/* <View className='flex flex-row justify-between rounded-xl'>
+            <View className='border-quarternary border-r border-t px-4 py-4'>
+              <Pressable>
+                <Text className='text-brand font-inter-regular text-lg'>
+                  Previous
+                </Text>
+              </Pressable>
+            </View>
+            <Pressable>
+              <Text className='text-brand font-inter-regular text-lg'>
+                Next
+              </Text>
+            </Pressable>
+          </View> */}
         </View>
-
-        <View className='flex flex-row justify-between'>
-          {previousStageId ? (
-            // <Button
-            //   color={colors[colorScheme ?? 'light'].brandDefault}
-            //   title={`Stage ${previousStageId.split('-')[1]}`}
-            //   onPress={() =>
-            //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
-            //   }
-            // />
-            <TouchableOpacity
-              className='flex flex-row items-center'
-              onPress={() =>
-                router.navigate({
-                  pathname: `${baseUrl}`,
-                  params: { id: previousStageId, search: search }
-                })
-              }
-            >
-              <Ionicon
-                name='chevron-back-outline'
-                color={colors[colorScheme ?? 'light'].brandDefault}
-              />
-              <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
-            </TouchableOpacity>
-          ) : (
-            <View />
-          )}
-          {nextStageId ? (
-            <TouchableOpacity
-              className='flex flex-row items-center'
-              onPress={() =>
-                router.navigate({
-                  pathname: `${baseUrl}`,
-                  params: { id: nextStageId, search: search }
-                })
-              }
-            >
-              <Text className='text-brand font-inter-regular text-lg'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
-              <Ionicon
-                name='chevron-forward-outline'
-                color={colors[colorScheme ?? 'light'].brandDefault}
-              />
-            </TouchableOpacity>
-          ) : (
-            <View />
-          )}
-        </View>
-      </View>
+      </Card>
     )
+
+    // return (
+    //   <View>
+    //     <View className='flex items-center justify-center'>
+    //       <Text className='text-primary mx-2 text-lg'>{currentStage.name}</Text>
+    //     </View>
+
+    //     <View className='flex flex-row justify-between'>
+    //       {previousStageId ? (
+    //         // <Button
+    //         //   color={colors[colorScheme ?? 'light'].brandDefault}
+    //         //   title={`Stage ${previousStageId.split('-')[1]}`}
+    //         //   onPress={() =>
+    //         //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
+    //         //   }
+    //         // />
+    //         <TouchableOpacity
+    //           className='flex flex-row items-center'
+    //           onPress={() =>
+    //             router.navigate({
+    //               pathname: `${baseUrl}`,
+    //               params: { id: previousStageId, search: search }
+    //             })
+    //           }
+    //         >
+    //           <Ionicon
+    //             name='chevron-back-outline'
+    //             color={colors[colorScheme ?? 'light'].brandDefault}
+    //           />
+    //           <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
+    //         </TouchableOpacity>
+    //       ) : (
+    //         <View />
+    //       )}
+    //       {nextStageId ? (
+    //         <TouchableOpacity
+    //           className='flex flex-row items-center'
+    //           onPress={() =>
+    //             router.navigate({
+    //               pathname: `${baseUrl}`,
+    //               params: { id: nextStageId, search: search }
+    //             })
+    //           }
+    //         >
+    //           <Text className='text-brand font-inter-regular text-lg'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
+    //           <Ionicon
+    //             name='chevron-forward-outline'
+    //             color={colors[colorScheme ?? 'light'].brandDefault}
+    //           />
+    //         </TouchableOpacity>
+    //       ) : (
+    //         <View />
+    //       )}
+    //     </View>
+    //   </View>
+    // )
   }
 
   return null

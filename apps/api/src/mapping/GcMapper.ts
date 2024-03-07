@@ -7,8 +7,8 @@ import {
   Gc,
   GcRider,
   GcStatus,
-  Stage,
-  StageStatus
+  ResultsStatus,
+  Stage
 } from '../generated/graphql'
 import { stageNumberFromStageId } from '../utils/ids'
 import { createRiderInitials } from '../utils/riders'
@@ -30,7 +30,7 @@ export class GcMapper {
     return {
       id: stageId,
       gcStatus: this.getGcStatus(stageId, stages),
-      stageStatus: StageStatus.Completed,
+      resultsStatus: ResultsStatus.Completed,
       gcRiders: stageResultEntities
         .map((stageResultEntity) => {
           return {

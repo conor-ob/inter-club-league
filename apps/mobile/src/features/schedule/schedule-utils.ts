@@ -5,7 +5,7 @@ import { Schedule } from './schedule-types'
 export function buildSchedule(stages: Stage[]): Schedule {
   const completed = Array.from(
     stages
-      .filter((s) => s.status === StageStatus.Completed)
+      .filter((s) => s.stageStatus === StageStatus.Completed)
       .reduce((accumulator, s) => {
         const scheduleMonthId = format(parseISO(s.startTime), 'MMMM')
         let stages = accumulator.get(scheduleMonthId)
@@ -26,7 +26,7 @@ export function buildSchedule(stages: Stage[]): Schedule {
 
   const upcomingByDay = Array.from(
     stages
-      .filter((s) => s.status !== StageStatus.Completed)
+      .filter((s) => s.stageStatus !== StageStatus.Completed)
       .reduce((accumulator, s) => {
         const yyyymmdd = format(parseISO(s.startTime), 'yyyy-MM-dd')
         let stages = accumulator.get(yyyymmdd)
@@ -48,7 +48,7 @@ export function buildSchedule(stages: Stage[]): Schedule {
 
   const upcoming = Array.from(
     upcomingStages
-      .filter((s) => s.status !== StageStatus.Completed)
+      .filter((s) => s.stageStatus !== StageStatus.Completed)
       .reduce((accumulator, s) => {
         const scheduleMonthId = format(parseISO(s.startTime), 'MMMM')
         let stages = accumulator.get(scheduleMonthId)

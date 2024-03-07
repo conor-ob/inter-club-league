@@ -1,38 +1,43 @@
+import { differenceInHours, isAfter, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageResultEntity } from '../entity/StageResultEntity'
-import { Gc, GcStatus, StageStatus } from '../generated/graphql'
+import { Gc, GcStatus, ResultsStatus } from '../generated/graphql'
 import { GcMapper } from '../mapping/GcMapper'
 import { seasonIdFromStageId, stageNumberFromStageId } from '../utils/ids'
+import { CurrentStageService } from './CurrentStageService'
 import { StagesService } from './StagesService'
 
 export class GcService {
   private database: Database
   private gcMapper: GcMapper
   private stagesService: StagesService
+  private currentStageService: CurrentStageService
 
   constructor(
     database: Database,
     gcMapper: GcMapper,
-    stagesService: StagesService
+    stagesService: StagesService,
+    currentStageService: CurrentStageService
   ) {
     this.database = database
     this.gcMapper = gcMapper
     this.stagesService = stagesService
+    this.currentStageService = currentStageService
   }
 
   public getGc(stageId: string | null | undefined): Gc {
     const resolvedStageId = this.resolveStageId(stageId)
     const stageNumber = Number(stageNumberFromStageId(resolvedStageId))
+    const stages = this.stagesService.getStages(
+      seasonIdFromStageId(resolvedStageId)
+    )
     try {
       const stageResultEntities = this.database.getById<StageResultEntity[]>(
         Table.RESULTS,
         resolvedStageId
       )
 
-      const stages = this.stagesService.getStages(
-        seasonIdFromStageId(resolvedStageId)
-      )
       const gc = this.gcMapper.map(stageResultEntities, resolvedStageId, stages)
 
       if (stageNumber === 1) {
@@ -54,11 +59,20 @@ export class GcService {
       }
     } catch (e) {
       if (e instanceof Error && e.message.includes('ENOENT')) {
+        const currentStage = stages.find((it) => it.id === resolvedStageId)! // TODO !
+        const date = new Date()
+        const stageDate = parseISO(currentStage.startTime)
+        let resultsStatus = ResultsStatus.Upcoming
+        if (
+          isAfter(date, stageDate) &&
+          differenceInHours(stageDate, date) < 24
+        ) {
+          resultsStatus = ResultsStatus.AwaitingResults
+        }
         return {
           id: resolvedStageId,
           gcStatus: GcStatus.InProgress,
-          stageNumber: stageNumber,
-          stageStatus: StageStatus.Upcoming,
+          resultsStatus: resultsStatus,
           gcRiders: []
         }
       } else {
@@ -107,7 +121,7 @@ export class GcService {
 
   private resolveStageId(stageId: string | null | undefined): string {
     if (stageId === null || stageId === undefined) {
-      return this.database.getCurrentStageId()
+      return this.currentStageService.getCurrentGcStageId()
     } else {
       return stageId
     }

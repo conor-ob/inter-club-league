@@ -3,7 +3,6 @@ import { useGcQuery } from '@/graphql/use-gc-query'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
 import { FlatList, RefreshControl, ScrollView } from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { GcHeader } from './gc-header'
 import { GcRiderRow } from './gc-rider-row'
 
@@ -11,9 +10,6 @@ export function GcFeature() {
   const { id, search } = useGlobalSearchParams<{ id: string; search: string }>()
   const { data, loading, error, refetch } = useGcQuery(id)
   const [refreshing, setRefreshing] = useState(false)
-
-  const insets = useSafeAreaInsets()
-  console.log(insets)
 
   const handleRefresh = useCallback(() => {
     setRefreshing(true)
@@ -46,6 +42,7 @@ export function GcFeature() {
         ItemSeparatorComponent={() => <CardDivider />}
         renderItem={({ item }) => <GcRiderRow gcRider={item} />}
         ListHeaderComponent={() => <GcHeader />}
+        // StickyHeaderComponent={() => <GcHeader />}
         stickyHeaderIndices={[0]}
       />
       {/* </View> */}

@@ -16,6 +16,7 @@ import { GcMapper } from './mapping/GcMapper'
 import { StageMapper } from './mapping/StageMapper'
 import { StageResultsMapper } from './mapping/StageResultsMapper'
 import { resolvers } from './resolvers'
+import { CurrentStageService } from './service/CurrentStageService'
 import { GcService } from './service/GcService'
 import { MarshallsService } from './service/MarshallsService'
 import { StageResultsService } from './service/StageResultsService'
@@ -29,13 +30,24 @@ async function bootstrap() {
   const stageResultsMapper = new StageResultsMapper(database)
   const gcMapper = new GcMapper(database)
 
-  const stagesService = new StagesService(database, stageMapper)
-  const gcService = new GcService(database, gcMapper, stagesService)
+  const currentStageService = new CurrentStageService(database)
+  const stagesService = new StagesService(
+    database,
+    stageMapper,
+    currentStageService
+  )
+  const gcService = new GcService(
+    database,
+    gcMapper,
+    stagesService,
+    currentStageService
+  )
   const stageResultsService = new StageResultsService(
     database,
     stageResultsMapper,
     stagesService,
-    gcService
+    gcService,
+    currentStageService
   )
   const marshallsService = new MarshallsService(database)
 
