@@ -35,7 +35,7 @@ export function CategoryResultsListItem({
                 .map((category) => category.name)
                 .join(' & ')}
             </Text>
-            <View className='h-1' />
+            <View className='h-2' />
             <View className='flex flex-row flex-wrap'>
               <IconBadge
                 label={`${categoryResults.stageRiders.filter((it) => it.points >= 5).length} riders`}

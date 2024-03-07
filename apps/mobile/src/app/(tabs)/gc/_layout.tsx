@@ -1,3 +1,4 @@
+import { GcBadge } from '@/components/badge/gc-badge'
 import { Stack, useGlobalSearchParams } from 'expo-router'
 import { useColorScheme } from 'react-native'
 
@@ -10,7 +11,8 @@ export default function Layout() {
       <Stack.Screen
         name='index'
         options={{
-          title: 'GC'
+          title: 'GC',
+          headerTitle: ({ children, tintColor }) => <GcBadge />
           // headerLargeTitle: true,
           // headerShadowVisible: true,
           // headerSearchBarOptions:

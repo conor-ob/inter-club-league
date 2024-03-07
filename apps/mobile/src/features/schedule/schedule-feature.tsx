@@ -62,7 +62,7 @@ export function ScheduleFeature() {
             <Skeleton className='h-64' />
           </View>
         ) : (
-          <ScheduleList schedule={buildSchedule(data.stages)} />
+          <ScheduleList schedule={buildSchedule(data?.stages ?? [])} />
         )}
       </View>
     </ScrollView>
