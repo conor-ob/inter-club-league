@@ -36,6 +36,7 @@
 
 ### GC page
 
+- When stage is added for new season we should not see GC for last season
 - Filter by category (how does it work with upgrades)
 
 ### Rider stats page

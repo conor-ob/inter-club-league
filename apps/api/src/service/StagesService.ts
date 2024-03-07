@@ -4,14 +4,21 @@ import { StageEntity } from '../entity/StageEntity'
 import { Stage } from '../generated/graphql'
 import { StageMapper } from '../mapping/StageMapper'
 import { stageNumberFromStageId } from '../utils/ids'
+import { CurrentStageService } from './CurrentStageService'
 
 export class StagesService {
   private database: Database
   private stageMapper: StageMapper
+  private currentStageService: CurrentStageService
 
-  constructor(database: Database, stageMapper: StageMapper) {
+  constructor(
+    database: Database,
+    stageMapper: StageMapper,
+    currentStageService: CurrentStageService
+  ) {
     this.database = database
     this.stageMapper = stageMapper
+    this.currentStageService = currentStageService
   }
 
   public getStage(stageId: string): Stage {
@@ -39,7 +46,7 @@ export class StagesService {
 
   private resolveSeasonId(seasonId: string | null | undefined): string {
     if (seasonId === null || seasonId === undefined) {
-      return this.database.getCurrentSeasonId()
+      return this.currentStageService.getCurrentSeasonId()
     } else {
       return seasonId
     }

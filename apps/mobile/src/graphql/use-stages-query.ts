@@ -10,7 +10,7 @@ const stagesQuery = graphql(`
       location
       county
       type
-      status
+      stageStatus
       mandatory
       club {
         id

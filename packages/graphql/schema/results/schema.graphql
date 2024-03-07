@@ -4,11 +4,17 @@ type CategoryResults {
   stageRiders: [StageRider!]!
 }
 
+enum ResultsStatus {
+  UPCOMING
+  AWAITING_RESULTS
+  COMPLETED
+}
+
 type StageResults {
   id: ID!
   categoryResults: [CategoryResults!]!
   gcLeaderId: String!
-  stageStatus: StageStatus!
+  resultsStatus: ResultsStatus!
 }
 
 type StageRider {

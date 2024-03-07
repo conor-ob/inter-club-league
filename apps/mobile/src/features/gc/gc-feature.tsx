@@ -42,6 +42,7 @@ export function GcFeature() {
         ItemSeparatorComponent={() => <CardDivider />}
         renderItem={({ item }) => <GcRiderRow gcRider={item} />}
         ListHeaderComponent={() => <GcHeader />}
+        // StickyHeaderComponent={() => <GcHeader />}
         stickyHeaderIndices={[0]}
       />
       {/* </View> */}

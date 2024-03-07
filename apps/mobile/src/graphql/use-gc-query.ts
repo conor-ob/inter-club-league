@@ -6,7 +6,7 @@ const gcQuery = graphql(`
     gc(stageId: $stageId) {
       id
       gcStatus
-      stageStatus
+      resultsStatus
       gcRiders {
         id
         rider {

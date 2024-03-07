@@ -6,7 +6,7 @@ const stageResultsQuery = graphql(`
     stageResults(stageId: $stageId) {
       id
       gcLeaderId
-      stageStatus
+      resultsStatus
       categoryResults {
         id
         categoryGroup {
