@@ -43,44 +43,7 @@ export function GcFeature() {
         />
       }
     >
-      {loading ? (
-        <FlatList
-          data={[1, 2, 3, 4, 5, 6, 7]}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => {
-            console.log(item)
-            if (item < 7) {
-              return (
-                <View
-                  className={cx({
-                    'py-6': true,
-                    'px-4': Platform.OS === 'android',
-                    'px-5': Platform.OS === 'ios'
-                  })}
-                >
-                  <Skeleton className='h-6' />
-                </View>
-              )
-            } else {
-              return <View className='flex h-80 flex-1 bg-blue-400' />
-            }
-          }}
-          ListHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
-        />
-      ) : (
-        <FlatList
-          data={data?.gc.gcRiders}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => <GcRiderRow gcRider={item} />}
-          ListHeaderComponent={() => <GcHeader />}
-          // StickyHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
-        />
-      )}
-      {/* {loading && (
+      {loading && (
         <FlatList
           data={[1, 2, 3, 4, 5, 6]}
           scrollEnabled={false}
@@ -98,15 +61,24 @@ export function GcFeature() {
                   <Skeleton className='h-6' />
                 </View>
               )
-            } else {
-              return <View className='h-80 flex-1' />
             }
           }}
           ListHeaderComponent={() => <GcHeader />}
           // StickyHeaderComponent={() => <GcHeader />}
           stickyHeaderIndices={[0]}
         />
-      )} */}
+      )}
+      {!loading && data && (
+        <FlatList
+          data={data?.gc.gcRiders}
+          scrollEnabled={false}
+          ItemSeparatorComponent={() => <CardDivider />}
+          renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+          ListHeaderComponent={() => <GcHeader />}
+          // StickyHeaderComponent={() => <GcHeader />}
+          stickyHeaderIndices={[0]}
+        />
+      )}
     </ScrollView>
   )
 }
