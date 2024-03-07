@@ -39,7 +39,6 @@ export function GcFeature() {
           onRefresh={() => {
             handleRefresh()
           }}
-          // progressViewOffset={30}
         />
       }
     >
