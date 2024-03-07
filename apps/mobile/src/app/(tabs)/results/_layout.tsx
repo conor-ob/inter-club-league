@@ -1,6 +1,5 @@
-import { colors } from '@/design/color-theme'
 import { Stack, useGlobalSearchParams } from 'expo-router'
-import { Platform, useColorScheme } from 'react-native'
+import { useColorScheme } from 'react-native'
 
 export default function Layout() {
   const { categoryGroupId } = useGlobalSearchParams<{
@@ -14,7 +13,7 @@ export default function Layout() {
         name='index'
         options={{
           title: 'Results',
-          headerLargeTitle: true
+          headerLargeTitle: false
           // headerSearchBarOptions:
           //   Platform.OS === 'android'
           //     ? {
@@ -33,21 +32,21 @@ export default function Layout() {
       <Stack.Screen
         name='category'
         options={{
-          title: parseCategoryGroupId(categoryGroupId),
-          headerLargeTitle: false,
-          headerSearchBarOptions:
-            Platform.OS === 'android'
-              ? {
-                  placeholder: 'Search',
-                  hintTextColor:
-                    colors[colorScheme ?? 'light'].textColorSecondary,
-                  headerIconColor: colors[colorScheme ?? 'light'].brandDefault,
-                  textColor: colors[colorScheme ?? 'light'].textColorPrimary,
-                  shouldShowHintSearchIcon: false
-                }
-              : {
-                  placeholder: 'Search'
-                }
+          title: parseCategoryGroupId(categoryGroupId)
+          // headerLargeTitle: false,
+          // headerSearchBarOptions:
+          //   Platform.OS === 'android'
+          //     ? {
+          //         placeholder: 'Search',
+          //         hintTextColor:
+          //           colors[colorScheme ?? 'light'].textColorSecondary,
+          //         headerIconColor: colors[colorScheme ?? 'light'].brandDefault,
+          //         textColor: colors[colorScheme ?? 'light'].textColorPrimary,
+          //         shouldShowHintSearchIcon: false
+          //       }
+          //     : {
+          //         placeholder: 'Search'
+          //       }
         }}
       />
     </Stack>
