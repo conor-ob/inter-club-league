@@ -7,8 +7,6 @@ type SkeletonProps = {
 
 export function Skeleton({ className }: SkeletonProps) {
   return (
-    <View
-      className={cx('bg-quarternary animate-pulse rounded-lg', className)}
-    />
+    <View className={cx('bg-skeleton animate-pulse rounded-lg', className)} />
   )
 }

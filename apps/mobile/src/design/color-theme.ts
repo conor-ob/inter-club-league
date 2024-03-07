@@ -17,7 +17,8 @@ export const colors = {
     textColorPrimary: 'rgba(0, 0, 0, 1)',
     textColorSecondary: 'rgba(60, 60, 67, 0.6)',
     textColorTertiary: 'rgba(60, 60, 67, 0.30)',
-    textColorQuarternary: 'rgba(60, 60, 67, 0.18)'
+    textColorQuarternary: 'rgba(60, 60, 67, 0.18)',
+    skeleton: 'rgba(60, 60, 67, 0.12)'
   },
   dark: {
     brandDefault: 'rgba(253, 224, 71, 1)',
@@ -34,7 +35,8 @@ export const colors = {
     textColorPrimary: 'rgba(255, 255, 255, 1)',
     textColorSecondary: 'rgba(235, 235, 235, 0.6)',
     textColorTertiary: 'rgba(235, 235, 245, 0.30)',
-    textColorQuarternary: 'rgba(235, 235, 245, 0.18)'
+    textColorQuarternary: 'rgba(235, 235, 245, 0.18)',
+    skeleton: 'rgba(235, 235, 245, 0.12)'
   }
 }
 
@@ -50,7 +52,8 @@ export const themes = {
     '--color-brand-purple': colors.light.brandPurple,
     '--color-brand-red': colors.light.brandRed,
     '--color-gc': colors.light.gc,
-    '--color-card': colors.light.card
+    '--color-card': colors.light.card,
+    '--color-skeleton': colors.light.skeleton
   }),
   dark: vars({
     '--color-primary': colors.dark.textColorPrimary,
@@ -63,7 +66,8 @@ export const themes = {
     '--color-brand-purple': colors.dark.brandPurple,
     '--color-brand-red': colors.dark.brandRed,
     '--color-gc': colors.dark.gc,
-    '--color-card': colors.dark.card
+    '--color-card': colors.dark.card,
+    '--color-skeleton': colors.dark.skeleton
   })
 }
 

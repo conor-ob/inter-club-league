@@ -74,7 +74,7 @@ export function ApolloClientProvider({ children }: ApolloProviderProps) {
   const apolloLink =
     process.env.NODE_ENV === 'production'
       ? ApolloLink.from([errorLink, httpLink])
-      : ApolloLink.from([delayLink(0), errorLink, httpLink])
+      : ApolloLink.from([delayLink(1000), errorLink, httpLink])
 
   return (
     <ApolloProvider

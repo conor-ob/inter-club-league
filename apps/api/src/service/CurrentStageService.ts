@@ -13,19 +13,26 @@ export class CurrentStageService {
     this.database = database
   }
 
-  public getCurrentGcStageId(): string {
-    const stageIds = this.getAllIds(Table.RESULTS).sort((a, b) => {
-      const aSort =
-        Number(stageNumberFromStageId(a)) < 10
-          ? `${seasonIdFromStageId(a)}-0${stageNumberFromStageId(a)}`
-          : a
-      const bSort =
-        Number(stageNumberFromStageId(b)) < 10
-          ? `${seasonIdFromStageId(b)}-0${stageNumberFromStageId(b)}`
-          : b
-      return aSort.localeCompare(bSort)
-    })
-    return stageIds[stageIds.length - 1]! // TODO !
+  public getCurrentGcStageId(): string | undefined {
+    const currentSeasonId = this.getCurrentSeasonId()
+    const stageIds = this.getAllIds(Table.RESULTS)
+      .filter((it) => it.includes(currentSeasonId))
+      .sort((a, b) => {
+        const aSort =
+          Number(stageNumberFromStageId(a)) < 10
+            ? `${seasonIdFromStageId(a)}-0${stageNumberFromStageId(a)}`
+            : a
+        const bSort =
+          Number(stageNumberFromStageId(b)) < 10
+            ? `${seasonIdFromStageId(b)}-0${stageNumberFromStageId(b)}`
+            : b
+        return aSort.localeCompare(bSort)
+      })
+    if (stageIds.length > 0) {
+      return stageIds[stageIds.length - 1]! // TODO !
+    } else {
+      return undefined
+    }
   }
 
   public getCurrentStageId(): string {

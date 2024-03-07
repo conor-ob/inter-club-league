@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { Card } from '../card/card'
 import { Ionicon } from '../ionicon'
+import { Skeleton } from '../loaders/skeleton'
 
 type StageNavigationProps = {
   baseUrl: string
@@ -41,13 +42,6 @@ export function StageNavigation({
           <View className='flex flex-row'>
             <View className='border-quarternary flex flex-1 items-center border-r border-t p-4'>
               {previousStageId ? (
-                // <Button
-                //   color={colors[colorScheme ?? 'light'].brandDefault}
-                //   title={`Stage ${previousStageId.split('-')[1]}`}
-                //   onPress={() =>
-                //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
-                //   }
-                // />
                 <TouchableOpacity
                   className='flex flex-row items-center'
                   onPress={() =>
@@ -70,13 +64,6 @@ export function StageNavigation({
             </View>
             <View className='border-quarternary flex flex-1 items-center border-t p-4'>
               {nextStageId ? (
-                // <Button
-                //   color={colors[colorScheme ?? 'light'].brandDefault}
-                //   title={`Stage ${previousStageId.split('-')[1]}`}
-                //   onPress={() =>
-                //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
-                //   }
-                // />
                 <TouchableOpacity
                   className='flex flex-row items-center'
                   onPress={() =>
@@ -98,80 +85,10 @@ export function StageNavigation({
               )}
             </View>
           </View>
-          {/* <View className='flex flex-row justify-between rounded-xl'>
-            <View className='border-quarternary border-r border-t px-4 py-4'>
-              <Pressable>
-                <Text className='text-brand font-inter-regular text-lg'>
-                  Previous
-                </Text>
-              </Pressable>
-            </View>
-            <Pressable>
-              <Text className='text-brand font-inter-regular text-lg'>
-                Next
-              </Text>
-            </Pressable>
-          </View> */}
         </View>
       </Card>
     )
-
-    // return (
-    //   <View>
-    //     <View className='flex items-center justify-center'>
-    //       <Text className='text-primary mx-2 text-lg'>{currentStage.name}</Text>
-    //     </View>
-
-    //     <View className='flex flex-row justify-between'>
-    //       {previousStageId ? (
-    //         // <Button
-    //         //   color={colors[colorScheme ?? 'light'].brandDefault}
-    //         //   title={`Stage ${previousStageId.split('-')[1]}`}
-    //         //   onPress={() =>
-    //         //     router.navigate(`/(tabs)/schedule/${previousStageId}`)
-    //         //   }
-    //         // />
-    //         <TouchableOpacity
-    //           className='flex flex-row items-center'
-    //           onPress={() =>
-    //             router.navigate({
-    //               pathname: `${baseUrl}`,
-    //               params: { id: previousStageId, search: search }
-    //             })
-    //           }
-    //         >
-    //           <Ionicon
-    //             name='chevron-back-outline'
-    //             color={colors[colorScheme ?? 'light'].brandDefault}
-    //           />
-    //           <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
-    //         </TouchableOpacity>
-    //       ) : (
-    //         <View />
-    //       )}
-    //       {nextStageId ? (
-    //         <TouchableOpacity
-    //           className='flex flex-row items-center'
-    //           onPress={() =>
-    //             router.navigate({
-    //               pathname: `${baseUrl}`,
-    //               params: { id: nextStageId, search: search }
-    //             })
-    //           }
-    //         >
-    //           <Text className='text-brand font-inter-regular text-lg'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
-    //           <Ionicon
-    //             name='chevron-forward-outline'
-    //             color={colors[colorScheme ?? 'light'].brandDefault}
-    //           />
-    //         </TouchableOpacity>
-    //       ) : (
-    //         <View />
-    //       )}
-    //     </View>
-    //   </View>
-    // )
   }
 
-  return null
+  return <Skeleton className='h-56' />
 }

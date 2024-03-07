@@ -1,7 +1,7 @@
+import { Skeleton } from '@/components/loaders/skeleton'
 import { useStagesQuery } from '@/graphql/use-stages-query'
 import SegmentedControl from '@react-native-segmented-control/segmented-control'
 import cx from 'classnames'
-import { Skeleton } from 'moti/skeleton'
 import { useCallback, useEffect, useState } from 'react'
 import {
   Platform,
@@ -46,23 +46,23 @@ export function ScheduleFeature() {
       }
     >
       <View className='py-8'>
-        {data ? (
-          <ScheduleList schedule={buildSchedule(data.stages)} />
-        ) : (
+        {loading ? (
           <View>
             <SegmentedControl
               values={['Upcoming', 'Completed']}
               enabled={false}
             />
             <View className='h-6' />
-            <Skeleton colorMode={colorScheme} width={'20%'} height={24} />
+            <Skeleton className='h-6 w-24' />
             <View className='h-4' />
-            <Skeleton colorMode={colorScheme} width={'100%'} height={128} />
+            <Skeleton className='h-48' />
             <View className='h-6' />
-            <Skeleton colorMode={colorScheme} width={'30%'} height={24} />
+            <Skeleton className='h-6 w-32' />
             <View className='h-4' />
-            <Skeleton colorMode={colorScheme} width={'100%'} height={256} />
+            <Skeleton className='h-64' />
           </View>
+        ) : (
+          <ScheduleList schedule={buildSchedule(data?.stages ?? [])} />
         )}
       </View>
     </ScrollView>
