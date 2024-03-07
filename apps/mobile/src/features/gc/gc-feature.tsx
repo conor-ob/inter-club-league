@@ -71,7 +71,21 @@ export function GcFeature() {
               data={data?.gc.gcRiders}
               scrollEnabled={false}
               ItemSeparatorComponent={() => <CardDivider />}
-              renderItem={({ item }) => <GcRiderRow gcRider={item} />}
+              renderItem={({ item }) => {
+                // if (
+                //   data.gc.gcStatus === GcStatus.Completed &&
+                //   item.rank === 1
+                // ) {
+                //   return (
+                //     <View className='border-brand rounded-lg border'>
+                //       <GcRiderRow gcRider={item} />
+                //     </View>
+                //   )
+                // } else {
+                //   return <GcRiderRow gcRider={item} />
+                // }
+                return <GcRiderRow gcRider={item} />
+              }}
               ListHeaderComponent={() => <GcHeader />}
               stickyHeaderIndices={[0]}
             />
