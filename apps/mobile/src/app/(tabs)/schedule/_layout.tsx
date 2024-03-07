@@ -8,8 +8,8 @@ export default function Layout() {
       <Stack.Screen
         name='index'
         options={{
-          title: 'Schedule',
-          headerLargeTitle: true
+          title: 'Schedule'
+          // headerLargeTitle: true
         }}
       />
       <Stack.Screen
