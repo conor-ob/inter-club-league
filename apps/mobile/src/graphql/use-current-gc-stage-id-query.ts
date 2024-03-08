@@ -2,7 +2,7 @@ import { graphql } from '@/generated'
 import { useQuery } from '@apollo/client'
 
 const currentGcStageIdQuery = graphql(`
-  query Query {
+  query CurrentGcStageIdQuery {
     currentGcStageId
   }
 `)

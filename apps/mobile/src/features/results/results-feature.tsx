@@ -10,8 +10,8 @@ import { FlatList, RefreshControl, ScrollView, Text, View } from 'react-native'
 import { CategoryResultsListItem } from './category-results-list-item'
 
 export function ResultsFeature() {
-  const { stageId } = useLocalSearchParams<{ stageId: string }>()
-  const { data, loading, error, refetch } = useStageResultsQuery(stageId)
+  const { id } = useLocalSearchParams<{ id: string }>()
+  const { data, loading, error, refetch } = useStageResultsQuery(id)
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -46,10 +46,7 @@ export function ResultsFeature() {
         </View>
       ) : (
         <View>
-          <StageNavigation
-            baseUrl='/(tabs)/results'
-            stageId={stageId ?? data?.stageResults.id}
-          />
+          <StageNavigation baseUrl='/(tabs)/results' stageId={id} />
           <View className='h-6' />
           <Card>
             {data?.stageResults.resultsStatus === ResultsStatus.Completed && (
@@ -59,7 +56,7 @@ export function ResultsFeature() {
                 ItemSeparatorComponent={() => <CardDivider />}
                 renderItem={({ item }) => (
                   <CategoryResultsListItem
-                    stageId={stageId ?? data?.stageResults.id}
+                    stageId={id}
                     categoryResults={item}
                     gcLeaderId={data?.stageResults.gcLeaderId}
                   />

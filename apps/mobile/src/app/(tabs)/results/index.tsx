@@ -1,5 +1,5 @@
-import { ResultsFeature } from '@/features/results/results-feature'
+import { ResultsRedirect } from '@/features/results/results-redirect'
 
-export default function Results() {
-  return <ResultsFeature />
+export default function Index() {
+  return <ResultsRedirect />
 }
