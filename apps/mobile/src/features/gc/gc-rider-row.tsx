@@ -12,7 +12,7 @@ type GcRiderRowProps = {
 export function GcRiderRow({ gcRider }: GcRiderRowProps) {
   return (
     <View className='flex flex-row justify-between px-2 py-4'>
-      <View className='flex flex-row items-center'>
+      <View className='flex flex-1 flex-row items-center'>
         <GcRiderPosition rank={gcRider.rank} position={gcRider.position} />
         <View className='ml-2'>
           <Text className='text-primary font-inter-regular text-lg'>
@@ -23,6 +23,8 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
         </View>
       </View>
       <View className='flex flex-row items-center'>
+        {/* This is needed for long names for some reason */}
+        <View className='w-12' />
         <View className='w-12'>
           <GcRiderMovement movement={gcRider.movement} />
         </View>

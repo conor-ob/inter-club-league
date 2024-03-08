@@ -72,7 +72,12 @@ export function CategoryResultsFeature() {
             .filter((it) => it.points >= 5)}
           scrollEnabled={false}
           ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => <StageRiderRow stageRider={item} />}
+          renderItem={({ item }) => (
+            <StageRiderRow
+              stageRider={item}
+              gcLeaderId={data?.stageResults.gcLeaderId}
+            />
+          )}
           ListHeaderComponent={() => <StageResultsHeader />}
           stickyHeaderIndices={[0]}
         />
