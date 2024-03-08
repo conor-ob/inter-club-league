@@ -61,6 +61,7 @@ export function ResultsFeature() {
                   <CategoryResultsListItem
                     stageId={stageId ?? data?.stageResults.id}
                     categoryResults={item}
+                    gcLeaderId={data?.stageResults.gcLeaderId}
                   />
                 )}
               />
