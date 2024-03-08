@@ -40,7 +40,7 @@ export function ResultsFeature() {
     >
       {loading ? (
         <View>
-          <Skeleton className='h-56' />
+          <StageNavigation baseUrl='/(tabs)/results' stageId={id} />
           <View className='h-6' />
           <Skeleton className='h-72' />
         </View>

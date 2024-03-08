@@ -46,8 +46,7 @@ export function StageNavigation({
                   className='flex flex-row items-center'
                   onPress={() =>
                     router.navigate({
-                      pathname: `${baseUrl}`,
-                      params: { stageId: previousStageId }
+                      pathname: `${baseUrl}/${previousStageId}`
                     })
                   }
                 >
@@ -68,8 +67,7 @@ export function StageNavigation({
                   className='flex flex-row items-center'
                   onPress={() =>
                     router.navigate({
-                      pathname: `${baseUrl}`,
-                      params: { stageId: nextStageId }
+                      pathname: `${baseUrl}/${nextStageId}`
                     })
                   }
                 >
