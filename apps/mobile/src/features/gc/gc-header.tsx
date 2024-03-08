@@ -8,9 +8,7 @@ export function GcHeader() {
 
   return (
     <View>
-      <View className='bg-card'>
-        <SimpleStageNavigation baseUrl='/(tabs)/gc' />
-      </View>
+      <SimpleStageNavigation baseUrl='/(tabs)/gc' />
       <View className='bg-card flex flex-row justify-between px-2 py-4'>
         <View className='flex flex-row items-center'>
           <Text className='text-primary font-inter-medium w-12 text-center text-base'>
