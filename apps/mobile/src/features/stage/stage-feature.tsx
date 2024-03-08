@@ -5,6 +5,7 @@ import { useStageQuery } from '@/graphql/use-stage-query'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
 import { RefreshControl, ScrollView, View } from 'react-native'
+import { StageInfo } from './stage-info'
 import { StageMap } from './stage-map'
 import { StageMarshalls } from './stage-marshalls'
 
@@ -38,7 +39,7 @@ export function StageFeature() {
 
   return (
     <ScrollView
-      className='px-5 py-8'
+      className='px-5'
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
         <RefreshControl
@@ -49,26 +50,35 @@ export function StageFeature() {
         />
       }
     >
-      <StageNavigation baseUrl='/(tabs)/schedule' />
-      {stageData?.stage.coordinates && (
-        <View>
-          <View className='h-6' />
-          <StageMap stage={stageData.stage} />
-        </View>
-      )}
-      {marshallsLoading ? (
-        <View>
-          <View className='h-6' />
-          <Skeleton className='h-64' />
-        </View>
-      ) : (
-        marshallsData?.marshalls.marshalls.length > 0 && (
+      <View className='py-8'>
+        <StageNavigation baseUrl='/(tabs)/schedule' />
+        {stageData?.stage && (
           <View>
             <View className='h-6' />
-            <StageMarshalls marshalls={marshallsData.marshalls.marshalls} />
+            <StageInfo stage={stageData.stage} />
           </View>
-        )
-      )}
+        )}
+
+        {stageData?.stage.coordinates && (
+          <View>
+            <View className='h-6' />
+            <StageMap stage={stageData.stage} />
+          </View>
+        )}
+        {marshallsLoading ? (
+          <View>
+            <View className='h-6' />
+            <Skeleton className='h-64' />
+          </View>
+        ) : (
+          marshallsData?.marshalls.marshalls.length > 0 && (
+            <View>
+              <View className='h-6' />
+              <StageMarshalls marshalls={marshallsData.marshalls.marshalls} />
+            </View>
+          )
+        )}
+      </View>
     </ScrollView>
   )
 }
