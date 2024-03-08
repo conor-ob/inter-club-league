@@ -66,7 +66,7 @@ export function ResultsFeature() {
             {data?.stageResults.resultsStatus ===
               ResultsStatus.AwaitingResults && (
               <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
-                Stage completed and awaiting results
+                Stage completed and results coming soon
               </Text>
             )}
             {data?.stageResults.resultsStatus === ResultsStatus.Upcoming && (
