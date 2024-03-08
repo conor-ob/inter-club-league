@@ -1,10 +1,13 @@
+import {
+  seasonIdFromStageId,
+  stageNumberFromStageId
+} from '@inter-club-league/utils'
 import { isAfter, parseISO } from 'date-fns'
 import { sync } from 'globby'
 import path from 'path'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageEntity } from '../entity/StageEntity'
-import { seasonIdFromStageId, stageNumberFromStageId } from '../utils/ids'
 
 export class CurrentStageService {
   private database: Database

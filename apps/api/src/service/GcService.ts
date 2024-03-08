@@ -1,10 +1,13 @@
+import {
+  seasonIdFromStageId,
+  stageNumberFromStageId
+} from '@inter-club-league/utils'
 import { differenceInHours, isAfter, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageResultEntity } from '../entity/StageResultEntity'
 import { Gc, GcStatus, ResultsStatus } from '../generated/graphql'
 import { GcMapper } from '../mapping/GcMapper'
-import { seasonIdFromStageId, stageNumberFromStageId } from '../utils/ids'
 import { CurrentStageService } from './CurrentStageService'
 import { StagesService } from './StagesService'
 

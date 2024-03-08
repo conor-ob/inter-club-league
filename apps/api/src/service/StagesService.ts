@@ -1,9 +1,9 @@
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageEntity } from '../entity/StageEntity'
 import { Stage } from '../generated/graphql'
 import { StageMapper } from '../mapping/StageMapper'
-import { stageNumberFromStageId } from '../utils/ids'
 import { CurrentStageService } from './CurrentStageService'
 
 export class StagesService {

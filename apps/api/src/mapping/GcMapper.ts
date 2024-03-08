@@ -1,3 +1,4 @@
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageResultEntity } from '../entity/StageResultEntity'
@@ -10,8 +11,6 @@ import {
   ResultsStatus,
   Stage
 } from '../generated/graphql'
-import { stageNumberFromStageId } from '../utils/ids'
-import { createRiderInitials } from '../utils/riders'
 
 export class GcMapper {
   private database: Database
@@ -38,7 +37,7 @@ export class GcMapper {
             rider: {
               id: stageResultEntity.riderId,
               name: stageResultEntity.riderName,
-              initials: createRiderInitials(stageResultEntity.riderId)
+              initials: stageResultEntity.riderInitials
             },
             club: clubs.find((c) => c.id === stageResultEntity.clubId)!, // TODO !
             category: categories.find(
