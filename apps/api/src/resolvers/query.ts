@@ -33,11 +33,33 @@ const Query: QueryResolvers = {
       throw e
     }
   },
-  stages: (_, { seasonId }, { stagesService }, ____) => {
+  stages: (_, { seasonId }, { redirectService, stagesService }, ____) => {
     try {
-      return stagesService.getStages(seasonId)
+      const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
+      return stagesService.getStages(resolvedSeasonId)
     } catch (e) {
       console.log(`Query 'stages' failed for seasonId=${seasonId}`, e)
+      throw e
+    }
+  },
+  currentGcStageId: (_, { seasonId }, { redirectService }, ____) => {
+    try {
+      const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
+      return redirectService.getCurrentGcStageId(resolvedSeasonId)
+    } catch (e) {
+      console.log(`Query 'currentGcStageId' failed for seasonId=${seasonId}`, e)
+      throw e
+    }
+  },
+  currentResultsStageId: (_, { seasonId }, { redirectService }, ____) => {
+    try {
+      const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
+      return redirectService.getCurrentResultsStageId(resolvedSeasonId)
+    } catch (e) {
+      console.log(
+        `Query 'currentResultsStageId' failed for seasonId=${seasonId}`,
+        e
+      )
       throw e
     }
   }

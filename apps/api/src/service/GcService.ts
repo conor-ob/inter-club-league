@@ -1,61 +1,47 @@
+import {
+  seasonIdFromStageId,
+  stageNumberFromStageId
+} from '@inter-club-league/utils'
 import { differenceInHours, isAfter, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageResultEntity } from '../entity/StageResultEntity'
 import { Gc, GcStatus, ResultsStatus } from '../generated/graphql'
 import { GcMapper } from '../mapping/GcMapper'
-import { seasonIdFromStageId, stageNumberFromStageId } from '../utils/ids'
-import { CurrentStageService } from './CurrentStageService'
 import { StagesService } from './StagesService'
 
 export class GcService {
   private database: Database
   private gcMapper: GcMapper
   private stagesService: StagesService
-  private currentStageService: CurrentStageService
 
   constructor(
     database: Database,
     gcMapper: GcMapper,
-    stagesService: StagesService,
-    currentStageService: CurrentStageService
+    stagesService: StagesService
   ) {
     this.database = database
     this.gcMapper = gcMapper
     this.stagesService = stagesService
-    this.currentStageService = currentStageService
   }
 
-  public getGc(stageId: string | null | undefined): Gc {
-    const resolvedStageId = this.resolveStageId(stageId)
-
-    if (resolvedStageId === undefined) {
-      return {
-        id: 'undefined',
-        gcStatus: GcStatus.InProgress,
-        resultsStatus: ResultsStatus.Upcoming,
-        gcRiders: []
-      }
-    }
-
-    const stageNumber = Number(stageNumberFromStageId(resolvedStageId))
-    const stages = this.stagesService.getStages(
-      seasonIdFromStageId(resolvedStageId)
-    )
+  public getGc(stageId: string): Gc {
+    const stageNumber = Number(stageNumberFromStageId(stageId))
+    const stages = this.stagesService.getStages(seasonIdFromStageId(stageId))
     try {
       const stageResultEntities = this.database.getById<StageResultEntity[]>(
         Table.RESULTS,
-        resolvedStageId
+        stageId
       )
 
-      const gc = this.gcMapper.map(stageResultEntities, resolvedStageId, stages)
+      const gc = this.gcMapper.map(stageResultEntities, stageId, stages)
 
       if (stageNumber === 1) {
         return gc
       } else {
         const previousStageNumber = stageNumber - 1
         const previousStageId = `${seasonIdFromStageId(
-          resolvedStageId
+          stageId
         )}-${previousStageNumber.toString()}`
         const previousStageResultEntities = this.database.getById<
           StageResultEntity[]
@@ -69,7 +55,7 @@ export class GcService {
       }
     } catch (e) {
       if (e instanceof Error && e.message.includes('ENOENT')) {
-        const currentStage = stages.find((it) => it.id === resolvedStageId)! // TODO !
+        const currentStage = stages.find((it) => it.id === stageId)! // TODO !
         const date = new Date()
         const stageDate = parseISO(currentStage.startTime)
         let resultsStatus = ResultsStatus.Upcoming
@@ -80,7 +66,7 @@ export class GcService {
           resultsStatus = ResultsStatus.AwaitingResults
         }
         return {
-          id: resolvedStageId,
+          id: stageId,
           gcStatus: GcStatus.InProgress,
           resultsStatus: resultsStatus,
           gcRiders: []
@@ -127,15 +113,5 @@ export class GcService {
       currentRank = Number(currentPosition)
     }
     return previousRank - currentRank
-  }
-
-  private resolveStageId(
-    stageId: string | null | undefined
-  ): string | undefined {
-    if (stageId === null || stageId === undefined) {
-      return this.currentStageService.getCurrentGcStageId()
-    } else {
-      return stageId
-    }
   }
 }

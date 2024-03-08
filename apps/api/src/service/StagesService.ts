@@ -1,24 +1,17 @@
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageEntity } from '../entity/StageEntity'
 import { Stage } from '../generated/graphql'
 import { StageMapper } from '../mapping/StageMapper'
-import { stageNumberFromStageId } from '../utils/ids'
-import { CurrentStageService } from './CurrentStageService'
 
 export class StagesService {
   private database: Database
   private stageMapper: StageMapper
-  private currentStageService: CurrentStageService
 
-  constructor(
-    database: Database,
-    stageMapper: StageMapper,
-    currentStageService: CurrentStageService
-  ) {
+  constructor(database: Database, stageMapper: StageMapper) {
     this.database = database
     this.stageMapper = stageMapper
-    this.currentStageService = currentStageService
   }
 
   public getStage(stageId: string): Stage {
@@ -29,11 +22,10 @@ export class StagesService {
     return this.stageMapper.map(stageEntity)
   }
 
-  public getStages(seasonId: string | null | undefined): Stage[] {
-    const resolvedSeasonId = this.resolveSeasonId(seasonId)
+  public getStages(seasonId: string): Stage[] {
     const stageEntities = this.database.get<StageEntity>(
       Table.STAGES,
-      (stageId: string) => stageId.includes(resolvedSeasonId)
+      (value: string) => value.includes(seasonId)
     )
     return this.stageMapper
       .mapAll(stageEntities)
@@ -42,13 +34,5 @@ export class StagesService {
           Number(stageNumberFromStageId(a.id)) -
           Number(stageNumberFromStageId(b.id))
       )
-  }
-
-  private resolveSeasonId(seasonId: string | null | undefined): string {
-    if (seasonId === null || seasonId === undefined) {
-      return this.currentStageService.getCurrentSeasonId()
-    } else {
-      return seasonId
-    }
   }
 }

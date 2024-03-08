@@ -10,8 +10,8 @@ import { FlatList, RefreshControl, ScrollView, Text, View } from 'react-native'
 import { CategoryResultsListItem } from './category-results-list-item'
 
 export function ResultsFeature() {
-  const { stageId } = useLocalSearchParams<{ stageId: string }>()
-  const { data, loading, error, refetch } = useStageResultsQuery(stageId)
+  const { id } = useLocalSearchParams<{ id: string }>()
+  const { data, loading, error, refetch } = useStageResultsQuery(id)
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -40,16 +40,13 @@ export function ResultsFeature() {
     >
       {loading ? (
         <View>
-          <Skeleton className='h-56' />
+          <StageNavigation baseUrl='/(tabs)/results' />
           <View className='h-6' />
           <Skeleton className='h-72' />
         </View>
       ) : (
         <View>
-          <StageNavigation
-            baseUrl='/(tabs)/results'
-            stageId={stageId ?? data?.stageResults.id}
-          />
+          <StageNavigation baseUrl='/(tabs)/results' />
           <View className='h-6' />
           <Card>
             {data?.stageResults.resultsStatus === ResultsStatus.Completed && (
@@ -59,7 +56,7 @@ export function ResultsFeature() {
                 ItemSeparatorComponent={() => <CardDivider />}
                 renderItem={({ item }) => (
                   <CategoryResultsListItem
-                    stageId={stageId ?? data?.stageResults.id}
+                    stageId={id}
                     categoryResults={item}
                     gcLeaderId={data?.stageResults.gcLeaderId}
                   />
@@ -69,7 +66,7 @@ export function ResultsFeature() {
             {data?.stageResults.resultsStatus ===
               ResultsStatus.AwaitingResults && (
               <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
-                Stage completed and awaiting results
+                Stage completed and results coming soon
               </Text>
             )}
             {data?.stageResults.resultsStatus === ResultsStatus.Upcoming && (

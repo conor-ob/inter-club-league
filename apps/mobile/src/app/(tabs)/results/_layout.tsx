@@ -30,6 +30,14 @@ export default function Layout() {
         }}
       />
       <Stack.Screen
+        name='[id]'
+        options={{
+          title: 'Results',
+          headerLargeTitle: false,
+          animation: 'none'
+        }}
+      />
+      <Stack.Screen
         name='category'
         options={{
           title: parseCategoryGroupId(categoryGroupId)
