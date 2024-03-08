@@ -1,7 +1,7 @@
 import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { Skeleton } from '@/components/loaders/skeleton'
-import { useCurrentGcStageIdQuery } from '@/graphql/use-current-gc-stage-id-query'
+import { useRedirectQuery } from '@/graphql/use-redirect-query'
 import cx from 'classnames'
 import { Redirect } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
@@ -16,7 +16,7 @@ import {
 import { GcHeader } from './gc-header'
 
 export function GcRedirect() {
-  const { data, loading, error, refetch } = useCurrentGcStageIdQuery()
+  const { data, loading, error, refetch } = useRedirectQuery()
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
