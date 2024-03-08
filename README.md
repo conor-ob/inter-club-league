@@ -10,6 +10,7 @@
 
 ### Schedule page
 
+- Stage link should only work from this page
 - Horizontal GC scroller
 - "Next event" card at the top
 - API response should include nextEvent, primarySchedule and secondarySchedule fields

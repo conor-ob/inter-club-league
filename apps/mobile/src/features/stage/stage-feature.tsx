@@ -1,42 +1,45 @@
+import { Skeleton } from '@/components/loaders/skeleton'
+import { StageNavigation } from '@/components/navigation/stage-navigation'
+import { useMarshallsQuery } from '@/graphql/use-marshalls-query'
 import { useStageQuery } from '@/graphql/use-stage-query'
-import { default as Ionicons } from '@expo/vector-icons/Ionicons'
-import cx from 'classnames'
 import { useGlobalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import {
-  Platform,
-  RefreshControl,
-  ScrollView,
-  Text,
-  View,
-  useColorScheme
-} from 'react-native'
+import { RefreshControl, ScrollView, View } from 'react-native'
+import { StageInfo } from './stage-info'
+import { StageMap } from './stage-map'
+import { StageMarshalls } from './stage-marshalls'
 
 export function StageFeature() {
   const { id } = useGlobalSearchParams<{ id: string }>()
-  const colorScheme = useColorScheme()
-  const { data, loading, error, refetch } = useStageQuery(id)
+  const {
+    data: stageData,
+    loading: stageLoading,
+    error: stageError,
+    refetch: stageRefetch
+  } = useStageQuery(id)
+  const {
+    data: marshallsData,
+    loading: marshallsLoading,
+    error: marshallsError,
+    refetch: marshallsRefetch
+  } = useMarshallsQuery(id)
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
     setRefreshing(true)
-    refetch()
-  }, [refetch])
+    stageRefetch()
+    marshallsRefetch()
+  }, [stageRefetch])
 
   useEffect(() => {
-    if (!loading) {
+    if (!stageLoading) {
       setRefreshing(false)
     }
-  }, [loading])
-
-  const item = data?.stage
+  }, [stageLoading])
 
   return (
     <ScrollView
-      className={cx({
-        'px-4': Platform.OS === 'android',
-        'px-5': Platform.OS === 'ios'
-      })}
+      className='px-5'
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
         <RefreshControl
@@ -48,40 +51,34 @@ export function StageFeature() {
       }
     >
       <View className='py-8'>
-        {data && (
-          <Text className='text-primary'>
-            {JSON.stringify(data.stage.id, null, 2)}
-          </Text>
+        <StageNavigation baseUrl='/(tabs)/schedule' />
+        {stageData?.stage && (
+          <View>
+            <View className='h-6' />
+            <StageInfo stage={stageData.stage} />
+          </View>
+        )}
+
+        {stageData?.stage.coordinates && (
+          <View>
+            <View className='h-6' />
+            <StageMap stage={stageData.stage} />
+          </View>
+        )}
+        {marshallsLoading ? (
+          <View>
+            <View className='h-6' />
+            <Skeleton className='h-64' />
+          </View>
+        ) : (
+          marshallsData?.marshalls.marshalls.length > 0 && (
+            <View>
+              <View className='h-6' />
+              <StageMarshalls marshalls={marshallsData.marshalls.marshalls} />
+            </View>
+          )
         )}
       </View>
     </ScrollView>
   )
-}
-
-function getRaceIcon(
-  type: string
-): React.ComponentProps<typeof Ionicons>['name'] {
-  switch (type) {
-    case 'CRITERIUM':
-      return 'flag-outline'
-    case 'HILL_CLIMB':
-      return 'trending-up-outline'
-    case 'TIME_TRIAL':
-      return 'stopwatch-outline'
-    default:
-      return 'bicycle-outline'
-  }
-}
-
-function getRaceType(type: string): string {
-  switch (type) {
-    case 'CRITERIUM':
-      return 'Criterium'
-    case 'HILL_CLIMB':
-      return 'Hill Climb'
-    case 'TIME_TRIAL':
-      return 'Time Trial'
-    default:
-      return 'Road Race'
-  }
 }

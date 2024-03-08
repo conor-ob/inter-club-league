@@ -15,7 +15,8 @@ export default {
           blue: 'var(--color-brand-blue)',
           green: 'var(--color-brand-green)',
           purple: 'var(--color-brand-purple)',
-          red: 'var(--color-brand-red)'
+          red: 'var(--color-brand-red)',
+          orange: 'var(--color-brand-orange)'
         },
         gc: 'var(--color-gc)',
         card: 'var(--color-card)',

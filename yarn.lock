@@ -3347,6 +3347,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-native: 0.73.2
+    react-native-maps: ^1.10.3
     react-native-reanimated: ~3.6.0
     react-native-safe-area-context: 4.8.2
     react-native-screens: ~3.29.0
@@ -4717,6 +4718,13 @@ __metadata:
     "@types/qs": "*"
     "@types/serve-static": "*"
   checksum: fb238298630370a7392c7abdc80f495ae6c716723e114705d7e3fb67e3850b3859bbfd29391463a3fb8c0b32051847935933d99e719c0478710f8098ee7091c5
+  languageName: node
+  linkType: hard
+
+"@types/geojson@npm:^7946.0.13":
+  version: 7946.0.14
+  resolution: "@types/geojson@npm:7946.0.14"
+  checksum: ae511bee6488ae3bd5a3a3347aedb0371e997b14225b8983679284e22fa4ebd88627c6e3ff8b08bf4cc35068cb29310c89427311ffc9322c255615821a922e71
   languageName: node
   linkType: hard
 
@@ -11966,6 +11974,22 @@ __metadata:
     react-native-svg:
       optional: true
   checksum: 7b29bfff2c523da2dc33ad7daaf3d6a69b9814140bf512736fe90005cc98ab130cb816b1d459a3349476f04b012c3d41e0e146ea1f7367a9d33a515adbb1b490
+  languageName: node
+  linkType: hard
+
+"react-native-maps@npm:^1.10.3":
+  version: 1.10.3
+  resolution: "react-native-maps@npm:1.10.3"
+  dependencies:
+    "@types/geojson": ^7946.0.13
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+    react-native-web: ">= 0.11"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: 96070071f01a6fdc8a0ab23ad7f44775c8880283511c7d9051c67a8fa76c22ee9cc82303e511d3ca52fc5ff2aa6b9f5a63c6f72591c70ebba28920b1edb84fab
   languageName: node
   linkType: hard
 

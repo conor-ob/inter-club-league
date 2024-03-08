@@ -30,7 +30,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
 
     return (
       <View className='flex flex-row'>
-        <View className='border-quarternary flex flex-1 items-center border-b border-r border-t p-4'>
+        <View className='flex flex-1 items-center p-4'>
           {previousStageId ? (
             <TouchableOpacity
               className='flex flex-row items-center'
@@ -51,7 +51,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
             <View />
           )}
         </View>
-        <View className='border-quarternary flex flex-1 items-center border-b border-t p-4'>
+        <View className='flex flex-1 items-center p-4'>
           {nextStageId ? (
             <TouchableOpacity
               className='flex flex-row items-center'

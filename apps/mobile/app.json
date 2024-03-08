@@ -15,7 +15,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.conorob.interclubleague",
-      "userInterfaceStyle": "automatic"
+      "userInterfaceStyle": "automatic",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBnh4wUk495k-Tf6kiW9M7KorigyGtC828"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +26,12 @@
         "backgroundColor": "#ffffff"
       },
       "userInterfaceStyle": "automatic",
-      "package": "com.conorob.interclubleague"
+      "package": "com.conorob.interclubleague",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB9ZokUNZ2n2PS4dwPryZWbrLXHYaKWAtQ"
+        }
+      }
     },
     "web": {
       "bundler": "metro",
