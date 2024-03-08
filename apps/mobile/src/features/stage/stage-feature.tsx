@@ -1,13 +1,14 @@
 import { Card } from '@/components/card/card'
 import { Skeleton } from '@/components/loaders/skeleton'
 import { StageNavigation } from '@/components/navigation/stage-navigation'
+import { RefreshScrollView } from '@/components/views/RefreshScrollView'
 import { useStageFeatureQuery } from '@/graphql/use-stage-feature-query'
 import cx from 'classnames'
 import { useGlobalSearchParams } from 'expo-router'
-import { useCallback, useEffect, useState } from 'react'
-import { Platform, RefreshControl, ScrollView, Text, View } from 'react-native'
+import { Platform, Text, View } from 'react-native'
 import { StageInfo } from './stage-info'
 import { StageMap } from './stage-map'
+import { StageMarshalls } from './stage-marshalls'
 
 export function StageFeature() {
   const { id } = useGlobalSearchParams<{ id: string }>()
@@ -15,31 +16,9 @@ export function StageFeature() {
     seasonId: undefined,
     stageId: id
   })
-  const [refreshing, setRefreshing] = useState(false)
-
-  const handleRefresh = useCallback(() => {
-    setRefreshing(true)
-    refetch()
-  }, [refetch])
-
-  useEffect(() => {
-    if (!loading) {
-      setRefreshing(false)
-    }
-  }, [loading])
 
   return (
-    <ScrollView
-      contentInsetAdjustmentBehavior='automatic'
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={() => {
-            handleRefresh()
-          }}
-        />
-      }
-    >
+    <RefreshScrollView loading={loading} onRefetch={() => refetch()}>
       <View
         className={cx('py-8', {
           'px-4': Platform.OS === 'android',
@@ -48,7 +27,6 @@ export function StageFeature() {
       >
         {loading ? (
           <View>
-            {/* <Skeleton className='h-56' /> */}
             <StageNavigation baseUrl='/(tabs)/schedule' />
             <View className='h-6' />
             <Skeleton className='h-48' />
@@ -66,6 +44,12 @@ export function StageFeature() {
                 <StageMap stage={data.stage} />
               </View>
             )}
+            {data?.marshalls.marshalls.length > 0 && (
+              <View>
+                <View className='h-6' />
+                <StageMarshalls marshalls={data.marshalls.marshalls} />
+              </View>
+            )}
           </View>
         ) : (
           <View>
@@ -77,35 +61,6 @@ export function StageFeature() {
           </View>
         )}
       </View>
-      {/* <View className='py-8'>
-        <StageNavigation baseUrl='/(tabs)/schedule' />
-        {stageData?.stage && (
-          <View>
-            <View className='h-6' />
-            <StageInfo stage={stageData.stage} />
-          </View>
-        )}
-
-        {stageData?.stage.coordinates && (
-          <View>
-            <View className='h-6' />
-            <StageMap stage={stageData.stage} />
-          </View>
-        )}
-        {marshallsLoading ? (
-          <View>
-            <View className='h-6' />
-            <Skeleton className='h-64' />
-          </View>
-        ) : (
-          marshallsData?.marshalls.marshalls.length > 0 && (
-            <View>
-              <View className='h-6' />
-              <StageMarshalls marshalls={marshallsData.marshalls.marshalls} />
-            </View>
-          )
-        )}
-      </View> */}
-    </ScrollView>
+    </RefreshScrollView>
   )
 }

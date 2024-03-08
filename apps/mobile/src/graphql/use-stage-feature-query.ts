@@ -2,7 +2,7 @@ import { graphql } from '@/generated'
 import { useQuery } from '@apollo/client'
 
 const stageFeatureQuery = graphql(`
-  query Stage($seasonId: ID, $stageId: ID!) {
+  query StageFeatureQuery($seasonId: ID, $stageId: ID!) {
     stage(stageId: $stageId) {
       id
       name
@@ -73,7 +73,6 @@ export function useStageFeatureQuery({
 }: StageFeatureQueryProps) {
   return useQuery(stageFeatureQuery, {
     variables: { seasonId: seasonId, stageId: stageId },
-    notifyOnNetworkStatusChange: true,
-    skip: stageId === undefined
+    notifyOnNetworkStatusChange: true
   })
 }

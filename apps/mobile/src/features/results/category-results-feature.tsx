@@ -52,13 +52,12 @@ export function CategoryResultsFeature() {
           ItemSeparatorComponent={() => <CardDivider />}
           renderItem={({ item }) => (
             <View
-              className={cx({
-                'py-8': true,
+              className={cx('py-8', {
                 'px-4': Platform.OS === 'android',
                 'px-5': Platform.OS === 'ios'
               })}
             >
-              <Skeleton className='h-6' />
+              <Skeleton className='h-4' />
             </View>
           )}
           ListHeaderComponent={() => <StageResultsHeader />}
