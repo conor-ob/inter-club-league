@@ -1,3 +1,4 @@
+import { YellowJersey } from '@/components/image/yellow-jersey'
 import { Ionicon } from '@/components/ionicon'
 import { colors } from '@/design/color-theme'
 import { GcRider } from '@/generated/graphql'
@@ -11,10 +12,8 @@ type GcRiderRowProps = {
 export function GcRiderRow({ gcRider }: GcRiderRowProps) {
   return (
     <View className='flex flex-row justify-between px-2 py-4'>
-      <View className='flex flex-row items-center'>
-        <Text className='text-primary font-inter-medium w-12 text-center text-lg'>
-          {gcRider.position}
-        </Text>
+      <View className='flex flex-1 flex-row items-center'>
+        <GcRiderPosition rank={gcRider.rank} position={gcRider.position} />
         <View className='ml-2'>
           <Text className='text-primary font-inter-regular text-lg'>
             {gcRider.rider.name}
@@ -24,6 +23,8 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
         </View>
       </View>
       <View className='flex flex-row items-center'>
+        {/* This is needed for long names for some reason */}
+        <View className='w-12' />
         <View className='w-12'>
           <GcRiderMovement movement={gcRider.movement} />
         </View>
@@ -35,6 +36,26 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
         </Text>
       </View>
     </View>
+  )
+}
+
+type GcRiderPositionProps = {
+  rank: number
+  position: string
+}
+
+function GcRiderPosition({ rank, position }: GcRiderPositionProps) {
+  if (rank === 1) {
+    return (
+      <View className='w-12 items-center'>
+        <YellowJersey />
+      </View>
+    )
+  }
+  return (
+    <Text className='text-primary font-inter-medium w-12 text-center text-lg'>
+      {position}
+    </Text>
   )
 }
 
