@@ -1,7 +1,7 @@
 import { colors } from '@/design/color-theme'
 import { ScheduleListCard } from '@/features/schedule/schedule-list-card'
 import { useStagesQuery } from '@/graphql/use-stages-query'
-import { useRouter } from 'expo-router'
+import { useLocalSearchParams, useRouter } from 'expo-router'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { Card } from '../card/card'
 import { Ionicon } from '../ionicon'
@@ -9,20 +9,18 @@ import { Skeleton } from '../loaders/skeleton'
 
 type StageNavigationProps = {
   baseUrl: string
-  stageId?: string
   search?: string
 }
 
-export function StageNavigation({
-  baseUrl,
-  stageId,
-  search
-}: StageNavigationProps) {
+export function StageNavigation({ baseUrl, search }: StageNavigationProps) {
+  const { id } = useLocalSearchParams<{ id: string }>()
   const colorScheme = useColorScheme()
   const { data, loading, error } = useStagesQuery()
   const router = useRouter()
 
-  if (data && stageId) {
+  const stageId = id
+
+  if (data) {
     const stageIds = data.stages.map((it) => it.id)
 
     const currentStage = data.stages.find((it) => it.id === stageId)! // TODO !

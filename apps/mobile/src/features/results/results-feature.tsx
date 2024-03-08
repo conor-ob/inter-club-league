@@ -40,13 +40,13 @@ export function ResultsFeature() {
     >
       {loading ? (
         <View>
-          <StageNavigation baseUrl='/(tabs)/results' stageId={id} />
+          <StageNavigation baseUrl='/(tabs)/results' />
           <View className='h-6' />
           <Skeleton className='h-72' />
         </View>
       ) : (
         <View>
-          <StageNavigation baseUrl='/(tabs)/results' stageId={id} />
+          <StageNavigation baseUrl='/(tabs)/results' />
           <View className='h-6' />
           <Card>
             {data?.stageResults.resultsStatus === ResultsStatus.Completed && (
