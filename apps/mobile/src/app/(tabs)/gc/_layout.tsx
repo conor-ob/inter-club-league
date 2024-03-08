@@ -1,10 +1,10 @@
 import { GcBadge } from '@/components/badge/gc-badge'
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { Stack, useGlobalSearchParams } from 'expo-router'
-import { useColorScheme } from 'react-native'
+import { Text, View } from 'react-native'
 
 export default function Layout() {
-  const { id, search } = useGlobalSearchParams<{ id: string; search: string }>()
-  const colorScheme = useColorScheme()
+  const { id } = useGlobalSearchParams<{ id: string }>()
 
   return (
     <Stack>
@@ -34,6 +34,21 @@ export default function Layout() {
           //           })
           //         }
           //       }
+        }}
+      />
+      <Stack.Screen
+        name='[id]'
+        options={{
+          title: 'GC',
+          headerTitle: ({ children, tintColor }) => (
+            <View className='flex flex-row items-center'>
+              <GcBadge />
+              {id && (
+                <Text className='text-primary font-inter-semibold ml-2 text-lg'>{`Stage ${stageNumberFromStageId(id)}`}</Text>
+              )}
+            </View>
+          ),
+          animation: 'fade'
         }}
       />
     </Stack>

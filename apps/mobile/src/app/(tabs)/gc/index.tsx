@@ -1,5 +1,5 @@
-import { GcFeature } from '@/features/gc/gc-feature'
+import { GcRedirect } from '@/features/gc/gc-redirect'
 
-export default function Gc() {
-  return <GcFeature />
+export default function Index() {
+  return <GcRedirect />
 }

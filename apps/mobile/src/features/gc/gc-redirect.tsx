@@ -1,10 +1,9 @@
 import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { Skeleton } from '@/components/loaders/skeleton'
-import { ResultsStatus } from '@/generated/graphql'
-import { useGcQuery } from '@/graphql/use-gc-query'
+import { useCurrentGcStageIdQuery } from '@/graphql/use-current-gc-stage-id-query'
 import cx from 'classnames'
-import { useLocalSearchParams } from 'expo-router'
+import { Redirect } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
 import {
   FlatList,
@@ -15,11 +14,9 @@ import {
   View
 } from 'react-native'
 import { GcHeader } from './gc-header'
-import { GcRiderRow } from './gc-rider-row'
 
-export function GcFeature() {
-  const { id } = useLocalSearchParams<{ id: string }>()
-  const { data, loading, error, refetch } = useGcQuery(id)
+export function GcRedirect() {
+  const { data, loading, error, refetch } = useCurrentGcStageIdQuery()
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -32,6 +29,10 @@ export function GcFeature() {
       setRefreshing(false)
     }
   }, [loading])
+
+  if (data?.currentGcStageId) {
+    return <Redirect href={`/(tabs)/gc/${data.currentGcStageId}`} />
+  }
 
   return (
     <ScrollView
@@ -65,41 +66,22 @@ export function GcFeature() {
           stickyHeaderIndices={[0]}
         />
       ) : (
-        <View>
-          {data?.gc.resultsStatus === ResultsStatus.Completed && (
-            <FlatList
-              data={data?.gc.gcRiders}
-              scrollEnabled={false}
-              ItemSeparatorComponent={() => <CardDivider />}
-              renderItem={({ item }) => {
-                // if (
-                //   data.gc.gcStatus === GcStatus.Completed &&
-                //   item.rank === 1
-                // ) {
-                //   return (
-                //     <View className='border-brand rounded-lg border'>
-                //       <GcRiderRow gcRider={item} />
-                //     </View>
-                //   )
-                // } else {
-                //   return <GcRiderRow gcRider={item} />
-                // }
-                return <GcRiderRow gcRider={item} />
-              }}
-              ListHeaderComponent={() => <GcHeader />}
-              stickyHeaderIndices={[0]}
-            />
-          )}
-          {data?.gc.resultsStatus !== ResultsStatus.Completed && (
+        <FlatList
+          data={[1]}
+          scrollEnabled={false}
+          ItemSeparatorComponent={() => <CardDivider />}
+          renderItem={({ item }) => (
             <View className='px-5 py-8'>
               <Card>
                 <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
-                  GC not yet started
+                  GC will be available after Stage 1
                 </Text>
               </Card>
             </View>
           )}
-        </View>
+          ListHeaderComponent={() => <GcHeader />}
+          stickyHeaderIndices={[0]}
+        />
       )}
     </ScrollView>
   )

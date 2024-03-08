@@ -3301,7 +3301,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@inter-club-league/graphql@*, @inter-club-league/graphql@workspace:packages/graphql":
+"@inter-club-league/graphql@workspace:packages/graphql":
   version: 0.0.0-use.local
   resolution: "@inter-club-league/graphql@workspace:packages/graphql"
   dependencies:
@@ -3325,7 +3325,7 @@ __metadata:
     "@expo-google-fonts/inter": ^0.2.3
     "@expo/vector-icons": ^14.0.0
     "@inter-club-league/config": "*"
-    "@inter-club-league/graphql": "*"
+    "@inter-club-league/utils": "*"
     "@react-native-segmented-control/segmented-control": ^2.5.0
     "@react-navigation/native": ^6.0.2
     "@types/react": ~18.2.45
