@@ -2,7 +2,7 @@ import { graphql } from '@/generated'
 import { useQuery } from '@apollo/client'
 
 const gcQuery = graphql(`
-  query Gc($stageId: ID) {
+  query Gc($stageId: ID!) {
     gc(stageId: $stageId) {
       id
       gcStatus
@@ -35,7 +35,7 @@ const gcQuery = graphql(`
   }
 `)
 
-export function useGcQuery(stageId?: string) {
+export function useGcQuery(stageId: string) {
   return useQuery(gcQuery, {
     variables: { stageId: stageId },
     notifyOnNetworkStatusChange: true

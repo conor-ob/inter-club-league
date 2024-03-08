@@ -23,5 +23,5 @@ enum GcStatus {
 }
 
 extend type Query {
-  gc(stageId: ID): Gc!
+  gc(stageId: ID!): Gc!
 }

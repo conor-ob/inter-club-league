@@ -16,9 +16,9 @@ import { GcMapper } from './mapping/GcMapper'
 import { StageMapper } from './mapping/StageMapper'
 import { StageResultsMapper } from './mapping/StageResultsMapper'
 import { resolvers } from './resolvers'
-import { CurrentStageService } from './service/CurrentStageService'
 import { GcService } from './service/GcService'
 import { MarshallsService } from './service/MarshallsService'
+import { RedirectService } from './service/RedirectService'
 import { StageResultsService } from './service/StageResultsService'
 import { StagesService } from './service/StagesService'
 
@@ -30,26 +30,16 @@ async function bootstrap() {
   const stageResultsMapper = new StageResultsMapper(database)
   const gcMapper = new GcMapper(database)
 
-  const currentStageService = new CurrentStageService(database)
-  const stagesService = new StagesService(
-    database,
-    stageMapper,
-    currentStageService
-  )
-  const gcService = new GcService(
-    database,
-    gcMapper,
-    stagesService,
-    currentStageService
-  )
+  const stagesService = new StagesService(database, stageMapper)
+  const gcService = new GcService(database, gcMapper, stagesService)
   const stageResultsService = new StageResultsService(
     database,
     stageResultsMapper,
     stagesService,
-    gcService,
-    currentStageService
+    gcService
   )
   const marshallsService = new MarshallsService(database)
+  const redirectService = new RedirectService(database, stagesService)
 
   const app = express()
   const httpServer = http.createServer(app)
@@ -87,7 +77,8 @@ async function bootstrap() {
         gcService: gcService,
         marshallsService: marshallsService,
         stageResultsService: stageResultsService,
-        stagesService: stagesService
+        stagesService: stagesService,
+        redirectService: redirectService
       })
     })
   )
