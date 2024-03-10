@@ -4,14 +4,14 @@ import { StageNavigation } from '@/components/navigation/stage-navigation'
 import { RefreshScrollView } from '@/components/views/RefreshScrollView'
 import { useStageFeatureQuery } from '@/graphql/use-stage-feature-query'
 import cx from 'classnames'
-import { useGlobalSearchParams } from 'expo-router'
+import { useLocalSearchParams } from 'expo-router'
 import { Platform, Text, View } from 'react-native'
 import { StageInfo } from './stage-info'
 import { StageMap } from './stage-map'
 import { StageMarshalls } from './stage-marshalls'
 
 export function StageFeature() {
-  const { id } = useGlobalSearchParams<{ id: string }>()
+  const { id } = useLocalSearchParams<{ id: string }>()
   const { data, loading, error, refetch } = useStageFeatureQuery({
     seasonId: undefined,
     stageId: id
