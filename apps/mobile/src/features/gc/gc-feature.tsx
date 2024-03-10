@@ -1,21 +1,13 @@
 import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { Skeleton } from '@/components/loaders/skeleton'
-import { ResultsStatus } from '@/generated/graphql'
 import { useGcQuery } from '@/graphql/use-gc-query'
 import cx from 'classnames'
 import { useLocalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import {
-  FlatList,
-  Platform,
-  RefreshControl,
-  ScrollView,
-  Text,
-  View
-} from 'react-native'
+import { FlatList, Platform, RefreshControl, Text, View } from 'react-native'
 import { GcHeader } from './gc-header'
-import { GcRiderRow } from './gc-rider-row'
+import { GcRiderComponent } from './gc-rider-component'
 
 export function GcFeature() {
   const { id } = useLocalSearchParams<{ id: string }>()
@@ -33,8 +25,16 @@ export function GcFeature() {
     }
   }, [loading])
 
+  // TODO VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc. {"contentLength": 8472, "dt": 609, "prevDt": 6007}
   return (
-    <ScrollView
+    <FlatList
+      data={
+        loading
+          ? [undefined, undefined, undefined, undefined, undefined]
+          : data
+            ? data?.gc.gcRiders
+            : [undefined]
+      }
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
         <RefreshControl
@@ -44,62 +44,34 @@ export function GcFeature() {
           }}
         />
       }
-    >
-      {loading ? (
-        <FlatList
-          data={[1, 2, 3, 4, 5]}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => (
-            <View
-              className={cx('py-8', {
-                'px-4': Platform.OS === 'android',
-                'px-5': Platform.OS === 'ios'
-              })}
-            >
-              <Skeleton className='h-4' />
-            </View>
-          )}
-          ListHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
-        />
-      ) : (
-        <View>
-          {data?.gc.resultsStatus === ResultsStatus.Completed && (
-            <FlatList
-              data={data?.gc.gcRiders}
-              scrollEnabled={false}
-              ItemSeparatorComponent={() => <CardDivider />}
-              renderItem={({ item }) => {
-                // if (
-                //   data.gc.gcStatus === GcStatus.Completed &&
-                //   item.rank === 1
-                // ) {
-                //   return (
-                //     <View className='border-brand rounded-lg border'>
-                //       <GcRiderRow gcRider={item} />
-                //     </View>
-                //   )
-                // } else {
-                //   return <GcRiderRow gcRider={item} />
-                // }
-                return <GcRiderRow gcRider={item} />
-              }}
-              ListHeaderComponent={() => <GcHeader />}
-              stickyHeaderIndices={[0]}
-            />
-          )}
-          {data?.gc.resultsStatus !== ResultsStatus.Completed && (
-            <View className='px-5 py-8'>
-              <Card>
-                <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
-                  GC not yet started
-                </Text>
-              </Card>
-            </View>
-          )}
-        </View>
-      )}
-    </ScrollView>
+      ItemSeparatorComponent={() => <CardDivider />}
+      keyExtractor={(item, index) =>
+        loading ? `loading-${index.toString()}` : data ? item.id : 'error'
+      }
+      renderItem={({ item }) => {
+        return loading ? (
+          <View
+            className={cx('py-8', {
+              'px-4': Platform.OS === 'android',
+              'px-5': Platform.OS === 'ios'
+            })}
+          >
+            <Skeleton className='h-4' />
+          </View>
+        ) : data ? (
+          <GcRiderComponent key={item.id} gcRider={item} />
+        ) : (
+          <View>
+            <Card>
+              <Text className='text-primary px-5 py-6'>
+                {JSON.stringify(error, null, 2)}
+              </Text>
+            </Card>
+          </View>
+        )
+      }}
+      ListHeaderComponent={() => <GcHeader />}
+      stickyHeaderIndices={[0]}
+    />
   )
 }

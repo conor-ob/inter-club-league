@@ -13,7 +13,6 @@ import {
   Text,
   View
 } from 'react-native'
-import { GcHeader } from './gc-header'
 
 export function GcRedirect() {
   const { data, loading, error, refetch } = useRedirectQuery()
@@ -61,8 +60,8 @@ export function GcRedirect() {
               <Skeleton className='h-4' />
             </View>
           )}
-          ListHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
+          // ListHeaderComponent={() => <GcHeader />}
+          // stickyHeaderIndices={[0]}
         />
       ) : (
         <FlatList
@@ -78,8 +77,8 @@ export function GcRedirect() {
               </Card>
             </View>
           )}
-          ListHeaderComponent={() => <GcHeader />}
-          stickyHeaderIndices={[0]}
+          // ListHeaderComponent={() => <GcHeader />}
+          // stickyHeaderIndices={[0]}
         />
       )}
     </ScrollView>
