@@ -1,18 +1,13 @@
+import { Card } from '@/components/card/card'
 import { CardDivider } from '@/components/card/card-divider'
 import { Skeleton } from '@/components/loaders/skeleton'
 import { useStageResultsQuery } from '@/graphql/use-stage-results-query'
 import cx from 'classnames'
 import { useLocalSearchParams } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
-import {
-  FlatList,
-  Platform,
-  RefreshControl,
-  ScrollView,
-  View
-} from 'react-native'
+import { FlatList, Platform, RefreshControl, Text, View } from 'react-native'
 import { StageResultsHeader } from './stage-results-header'
-import { StageRiderRow } from './stage-rider-row'
+import { StageRiderComponent } from './stage-rider-component'
 
 export function CategoryResultsFeature() {
   const { stageId, categoryGroupId } = useLocalSearchParams<{
@@ -34,7 +29,17 @@ export function CategoryResultsFeature() {
   }, [loading])
 
   return (
-    <ScrollView
+    <FlatList
+      data={
+        loading
+          ? [undefined, undefined, undefined, undefined, undefined]
+          : data
+            ? data?.stageResults.categoryResults
+                .filter((it) => it.categoryGroup.id === categoryGroupId)
+                .flatMap((it) => it.stageRiders)
+                .filter((it) => it.points >= 5)
+            : [undefined]
+      }
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
         <RefreshControl
@@ -44,43 +49,37 @@ export function CategoryResultsFeature() {
           }}
         />
       }
-    >
-      {loading ? (
-        <FlatList
-          data={[1, 2, 3, 4, 5]}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => (
-            <View
-              className={cx('py-8', {
-                'px-4': Platform.OS === 'android',
-                'px-5': Platform.OS === 'ios'
-              })}
-            >
-              <Skeleton className='h-4' />
-            </View>
-          )}
-          ListHeaderComponent={() => <StageResultsHeader />}
-          stickyHeaderIndices={[0]}
-        />
-      ) : (
-        <FlatList
-          data={data?.stageResults.categoryResults
-            .filter((it) => it.categoryGroup.id === categoryGroupId)
-            .flatMap((it) => it.stageRiders)
-            .filter((it) => it.points >= 5)}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => <CardDivider />}
-          renderItem={({ item }) => (
-            <StageRiderRow
-              stageRider={item}
-              gcLeaderId={data?.stageResults.gcLeaderId}
-            />
-          )}
-          ListHeaderComponent={() => <StageResultsHeader />}
-          stickyHeaderIndices={[0]}
-        />
-      )}
-    </ScrollView>
+      ItemSeparatorComponent={() => <CardDivider />}
+      keyExtractor={(item, index) =>
+        loading ? `loading-${index.toString()}` : data ? item.id : 'error'
+      }
+      renderItem={({ item }) => {
+        return loading ? (
+          <View
+            className={cx('py-8', {
+              'px-4': Platform.OS === 'android',
+              'px-5': Platform.OS === 'ios'
+            })}
+          >
+            <Skeleton className='h-4' />
+          </View>
+        ) : data ? (
+          <StageRiderComponent
+            stageRider={item}
+            gcLeaderId={data?.stageResults.gcLeaderId}
+          />
+        ) : (
+          <View>
+            <Card>
+              <Text className='text-primary px-5 py-6'>
+                {JSON.stringify(error, null, 2)}
+              </Text>
+            </Card>
+          </View>
+        )
+      }}
+      ListHeaderComponent={() => <StageResultsHeader />}
+      stickyHeaderIndices={[0]}
+    />
   )
 }

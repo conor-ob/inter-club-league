@@ -25,7 +25,6 @@ export function GcFeature() {
     }
   }, [loading])
 
-  // TODO VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc. {"contentLength": 8472, "dt": 609, "prevDt": 6007}
   return (
     <FlatList
       data={
