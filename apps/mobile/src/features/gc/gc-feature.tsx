@@ -45,7 +45,11 @@ export function GcFeature() {
       }
       ItemSeparatorComponent={() => <CardDivider />}
       keyExtractor={(item, index) =>
-        loading ? `loading-${index.toString()}` : data ? item.id : 'error'
+        loading
+          ? `loading-${index.toString()}`
+          : data
+            ? item.id
+            : `error-${index.toString()}`
       }
       renderItem={({ item }) => {
         return loading ? (

@@ -9,7 +9,6 @@ export default function Layout() {
         name='index'
         options={{
           title: 'Schedule'
-          // headerLargeTitle: true
         }}
       />
       <Stack.Screen
