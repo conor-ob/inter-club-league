@@ -5,7 +5,9 @@ import { useCallback, useEffect, useState } from 'react'
 import { RefreshControl, ScrollView, View } from 'react-native'
 
 export function ResultsRedirect() {
-  const { data, loading, error, refetch } = useRedirectQuery()
+  const { data, loading, error, refetch } = useRedirectQuery({
+    seasonId: undefined
+  })
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
