@@ -1,7 +1,7 @@
 import { Card } from '@/components/card/card'
 import { Skeleton } from '@/components/loaders/skeleton'
 import { StageNavigation } from '@/components/navigation/stage-navigation'
-import { RefreshScrollView } from '@/components/views/RefreshScrollView'
+import { RefreshScrollView } from '@/components/views/refresh-scroll-view'
 import { useStageFeatureQuery } from '@/graphql/use-stage-feature-query'
 import cx from 'classnames'
 import { useLocalSearchParams } from 'expo-router'
