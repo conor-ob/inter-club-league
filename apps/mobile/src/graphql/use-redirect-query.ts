@@ -3,8 +3,9 @@ import { useQuery } from '@apollo/client'
 
 const redirectQuery = graphql(`
   query RedirectQuery($seasonId: ID) {
-    currentGcStageId
-    currentResultsStageId
+    redirects(seasonId: $seasonId) {
+      currentStageId
+    }
     stages(seasonId: $seasonId) {
       id
       name

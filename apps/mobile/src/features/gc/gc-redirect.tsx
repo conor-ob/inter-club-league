@@ -24,8 +24,8 @@ export function GcRedirect() {
     }
   }, [loading])
 
-  if (data?.currentGcStageId) {
-    return <Redirect href={`/(tabs)/gc/${data.currentGcStageId}`} />
+  if (data?.redirects.currentStageId) {
+    return <Redirect href={`/(tabs)/gc/${data.redirects.currentStageId}`} />
   }
 
   return (

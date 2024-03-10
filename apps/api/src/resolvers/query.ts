@@ -42,24 +42,12 @@ const Query: QueryResolvers = {
       throw e
     }
   },
-  currentGcStageId: (_, { seasonId }, { redirectService }, ____) => {
+  redirects: (_, { seasonId }, { redirectService }, ____) => {
     try {
       const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
-      return redirectService.getCurrentGcStageId(resolvedSeasonId)
+      return redirectService.getRedirects(resolvedSeasonId)
     } catch (e) {
       console.log(`Query 'currentGcStageId' failed for seasonId=${seasonId}`, e)
-      throw e
-    }
-  },
-  currentResultsStageId: (_, { seasonId }, { redirectService }, ____) => {
-    try {
-      const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
-      return redirectService.getCurrentResultsStageId(resolvedSeasonId)
-    } catch (e) {
-      console.log(
-        `Query 'currentResultsStageId' failed for seasonId=${seasonId}`,
-        e
-      )
       throw e
     }
   }

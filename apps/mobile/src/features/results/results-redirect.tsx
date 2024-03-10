@@ -21,8 +21,10 @@ export function ResultsRedirect() {
     }
   }, [loading])
 
-  if (data?.currentResultsStageId) {
-    return <Redirect href={`/(tabs)/results/${data.currentResultsStageId}`} />
+  if (data?.redirects.currentStageId) {
+    return (
+      <Redirect href={`/(tabs)/results/${data.redirects.currentStageId}`} />
+    )
   }
 
   return (

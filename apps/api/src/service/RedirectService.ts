@@ -3,10 +3,9 @@ import {
   stageNumberFromStageId
 } from '@inter-club-league/utils'
 import { isAfter, parseISO } from 'date-fns'
-import { sync } from 'globby'
-import path from 'path'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
+import { Redirects } from '../generated/graphql'
 import { StagesService } from './StagesService'
 
 export class RedirectService {
@@ -18,22 +17,21 @@ export class RedirectService {
     this.stagesService = stagesService
   }
 
-  public getCurrentGcStageId(seasonId: string): string | null {
-    const stageResultsIds = this.database
-      .getIds(Table.RESULTS, (value: string) => value.includes(seasonId))
-      .sort(
-        (a, b) =>
-          Number(stageNumberFromStageId(a)) - Number(stageNumberFromStageId(b))
-      )
+  public getCurrentSeasonId(): string {
+    const seasonIds = this.database
+      .getAllIds(Table.STAGES)
+      .map((it) => seasonIdFromStageId(it))
+      .sort((a, b) => Number(a) - Number(b))
+    return seasonIds[seasonIds.length - 1]
+  }
 
-    if (stageResultsIds.length > 0) {
-      return stageResultsIds[stageResultsIds.length - 1]
-    } else {
-      return null
+  public getRedirects(seasonId: string): Redirects {
+    return {
+      currentStageId: this.getCurrentStageId(seasonId)
     }
   }
 
-  getCurrentResultsStageId(seasonId: string): string {
+  private getCurrentStageId(seasonId: string): string {
     const stages = this.stagesService.getStages(seasonId)
 
     const completedStages = stages.filter((it) => {
@@ -55,19 +53,5 @@ export class RedirectService {
           Number(stageNumberFromStageId(b.id))
       )[completedStages.length - 1].id
     }
-  }
-
-  public getCurrentSeasonId(): string {
-    const seasonIds = this.getAllIds(Table.STAGES)
-      .map((it) => seasonIdFromStageId(it))
-      .sort((a, b) => Number(a) - Number(b))
-    return seasonIds[seasonIds.length - 1]
-  }
-
-  private getAllIds(table: string): string[] {
-    const paths = sync(path.resolve(process.cwd(), `database/${table}/*`))
-    return paths.map((it) =>
-      it.substring(it.lastIndexOf('/') + 1, it.lastIndexOf('.'))
-    )
   }
 }

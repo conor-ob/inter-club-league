@@ -5,6 +5,7 @@ import { StageNavigation } from '@/components/navigation/stage-navigation'
 import { RefreshScrollView } from '@/components/views/refresh-scroll-view'
 import { ResultsStatus } from '@/generated/graphql'
 import { useStageResultsQuery } from '@/graphql/use-stage-results-query'
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import cx from 'classnames'
 import { useLocalSearchParams } from 'expo-router'
 import { FlatList, Platform, Text, View } from 'react-native'
@@ -50,12 +51,12 @@ export function ResultsFeature() {
               {data?.stageResults.resultsStatus ===
                 ResultsStatus.AwaitingResults && (
                 <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
-                  Stage completed and results coming soon
+                  {`Results will be available after Stage ${stageNumberFromStageId(id)}`}
                 </Text>
               )}
               {data?.stageResults.resultsStatus === ResultsStatus.Upcoming && (
                 <Text className='text-primary font-inter-regular px-4 py-6 text-center text-base'>
-                  Stage not yet started
+                  {`Stage ${stageNumberFromStageId(id)} not yet started`}
                 </Text>
               )}
             </Card>
