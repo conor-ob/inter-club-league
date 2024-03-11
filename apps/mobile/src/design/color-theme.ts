@@ -56,7 +56,8 @@ export const themes = {
     '--color-brand-orange': colors.light.brandOrange,
     '--color-gc': colors.light.gc,
     '--color-card': colors.light.card,
-    '--color-skeleton': colors.light.skeleton
+    '--color-skeleton': colors.light.skeleton,
+    '--color-background': colors.light.background
   }),
   dark: vars({
     '--color-primary': colors.dark.textColorPrimary,
@@ -71,7 +72,8 @@ export const themes = {
     '--color-brand-orange': colors.dark.brandOrange,
     '--color-gc': colors.dark.gc,
     '--color-card': colors.dark.card,
-    '--color-skeleton': colors.dark.skeleton
+    '--color-skeleton': colors.dark.skeleton,
+    '--color-background': colors.dark.background
   })
 }
 

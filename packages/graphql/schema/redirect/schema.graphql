@@ -1,4 +1,7 @@
+type Redirects {
+  currentStageId: ID!
+}
+
 type Query {
-  currentGcStageId(seasonId: ID): ID
-  currentResultsStageId(seasonId: ID): ID!
+  redirects(seasonId: ID): Redirects!
 }

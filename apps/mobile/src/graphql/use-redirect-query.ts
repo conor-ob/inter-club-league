@@ -1,9 +1,12 @@
 import { graphql } from '@/generated'
 import { useQuery } from '@apollo/client'
 
-const stageQuery = graphql(`
-  query Stage($stageId: ID!) {
-    stage(stageId: $stageId) {
+const redirectQuery = graphql(`
+  query RedirectQuery($seasonId: ID) {
+    redirects(seasonId: $seasonId) {
+      currentStageId
+    }
+    stages(seasonId: $seasonId) {
       id
       name
       startTime
@@ -32,10 +35,13 @@ const stageQuery = graphql(`
   }
 `)
 
-export function useStageQuery(stageId?: string) {
-  return useQuery(stageQuery, {
-    variables: { stageId: stageId },
-    notifyOnNetworkStatusChange: true,
-    skip: stageId === undefined
+type RedirectQueryVariables = {
+  seasonId?: string
+}
+
+export function useRedirectQuery({ seasonId }: RedirectQueryVariables) {
+  return useQuery(redirectQuery, {
+    variables: { seasonId: seasonId },
+    notifyOnNetworkStatusChange: true
   })
 }

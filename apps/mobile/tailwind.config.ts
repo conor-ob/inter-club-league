@@ -20,7 +20,8 @@ export default {
         },
         gc: 'var(--color-gc)',
         card: 'var(--color-card)',
-        skeleton: 'var(--color-skeleton)'
+        skeleton: 'var(--color-skeleton)',
+        background: 'var(--color-background)'
       },
       fontFamily: {
         'inter-thin': ['inter-thin'],

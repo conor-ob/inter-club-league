@@ -29,7 +29,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
         : null
 
     return (
-      <View className='flex flex-row'>
+      <View className='bg-background flex flex-row'>
         <View className='flex flex-1 items-center p-4'>
           {previousStageId ? (
             <TouchableOpacity

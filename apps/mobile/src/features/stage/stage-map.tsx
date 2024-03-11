@@ -26,13 +26,14 @@ export function StageMap({ stage }: StageMapProps) {
       <View className='px-4 py-5'>
         <Text className='text-primary font-inter-medium text-xl'>Location</Text>
       </View>
-      <View className='h-72'>
+      <View className='h-64'>
         {stage.coordinates && (
           <MapView
             style={{
               width: '100%',
               height: '100%'
             }}
+            scrollEnabled={false}
             provider={PROVIDER_GOOGLE}
             camera={{
               zoom: 14,

@@ -1,11 +1,13 @@
 import { Skeleton } from '@/components/loaders/skeleton'
-import { useCurrentResultsStageIdQuery } from '@/graphql/use-current-results-stage-id-query'
+import { useRedirectQuery } from '@/graphql/use-redirect-query'
 import { Redirect } from 'expo-router'
 import { useCallback, useEffect, useState } from 'react'
 import { RefreshControl, ScrollView, View } from 'react-native'
 
 export function ResultsRedirect() {
-  const { data, loading, error, refetch } = useCurrentResultsStageIdQuery()
+  const { data, loading, error, refetch } = useRedirectQuery({
+    seasonId: undefined
+  })
   const [refreshing, setRefreshing] = useState(false)
 
   const handleRefresh = useCallback(() => {
@@ -19,8 +21,10 @@ export function ResultsRedirect() {
     }
   }, [loading])
 
-  if (data?.currentResultsStageId) {
-    return <Redirect href={`/(tabs)/results/${data.currentResultsStageId}`} />
+  if (data?.redirects.currentStageId) {
+    return (
+      <Redirect href={`/(tabs)/results/${data.redirects.currentStageId}`} />
+    )
   }
 
   return (
