@@ -4,8 +4,8 @@
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "vite build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -rf src/generated",
+    "build": "vite build",
     "dev": "cross-env NODE_ENV=development vite",
     "start": "cross-env NODE_ENV=production node dist/index.js"
   },

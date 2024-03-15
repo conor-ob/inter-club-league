@@ -3,7 +3,7 @@
   "name": "@inter-club-league/graphql",
   "scripts": {
     "clean": "rm -rf node_modules",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "build": "graphql-codegen --config codegen.ts"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
