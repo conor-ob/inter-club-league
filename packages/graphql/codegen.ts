@@ -12,8 +12,8 @@ const config: CodegenConfig = {
         contextType: '../context/ServerContext#ServerContext'
       }
     },
-    '../../apps/mobile/src/generated/': {
-      documents: ['../../apps/mobile/**/*.{ts,tsx}', '!**/node_modules/**'],
+    '../../packages/app/generated/': {
+      documents: ['../../packages/app/**/*.{ts,tsx}', '!**/node_modules/**'],
       preset: 'client',
       presetConfig: {
         persistedDocuments: true
