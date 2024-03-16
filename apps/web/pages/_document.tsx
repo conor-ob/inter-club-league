@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import type { DocumentContext } from 'next/document'
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
@@ -43,6 +44,7 @@ class Document extends NextDocument {
         <body>
           <Main />
           <NextScript />
+          <Analytics />
         </body>
       </Html>
     )
