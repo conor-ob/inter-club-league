@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import { graphql } from '@turbostack/app/generated'
+import { graphql } from '@inter-club-league/app/generated'
 
 const redirectsQuery = graphql(`
   query RedirectsQuery {

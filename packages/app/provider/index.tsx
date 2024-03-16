@@ -1,4 +1,4 @@
-import { NativewindProvider } from '@turbostack/app/provider/theme/nativewind-provider'
+import { NativewindProvider } from '@inter-club-league/app/provider/theme/nativewind-provider'
 import { ApolloClientProvider } from './apollo/apollo-client-provider'
 import { SafeArea } from './safe-area'
 import { ThemeProvider } from './theme'

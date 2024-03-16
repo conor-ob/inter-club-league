@@ -1,5 +1,5 @@
 // This is a dummy tailwind config file used to provide intellisense.
-import { theme } from '@turbostack/app/design/tailwind/theme'
+import { theme } from '@inter-club-league/app/design/tailwind/theme'
 import type { Config } from 'tailwindcss'
 
 export default {

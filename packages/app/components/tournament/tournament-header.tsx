@@ -1,5 +1,5 @@
-import { TournamentStatusBadge } from '@turbostack/app/components/tournament/tournament-status-badge'
-import { Tournament } from '@turbostack/app/generated/graphql'
+import { TournamentStatusBadge } from '@inter-club-league/app/components/tournament/tournament-status-badge'
+import { Tournament } from '@inter-club-league/app/generated/graphql'
 import { Image, Text, View } from 'react-native'
 
 type TournamentHeaderProps = {

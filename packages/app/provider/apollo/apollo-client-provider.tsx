@@ -7,7 +7,7 @@ import {
   Observable
 } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
-import { config } from '@turbostack/config'
+import { config } from '@inter-club-league/config'
 import { useMemo } from 'react'
 
 type ApolloProviderProps = {

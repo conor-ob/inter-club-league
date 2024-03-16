@@ -1,7 +1,7 @@
 import 'raf/polyfill'
 import 'setimmediate'
 
-import { Provider } from '@turbostack/app/provider'
+import { Provider } from '@inter-club-league/app/provider'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 

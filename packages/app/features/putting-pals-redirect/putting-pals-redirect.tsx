@@ -1,4 +1,4 @@
-import { useRedirectsQuery } from '@turbostack/app/graphql/use-redirects-query'
+import { useRedirectsQuery } from '@inter-club-league/app/graphql/use-redirects-query'
 import { useEffect } from 'react'
 import { useRouter } from 'solito/router'
 

@@ -1,3 +1,3 @@
-import { PuttingPalsRedirect } from '@turbostack/app/features/putting-pals-redirect/putting-pals-redirect'
+import { PuttingPalsRedirect } from '@inter-club-league/app/features/putting-pals-redirect/putting-pals-redirect'
 
 export default PuttingPalsRedirect

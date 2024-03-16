@@ -1,5 +1,5 @@
 {
-  "name": "@turbostack/app",
+  "name": "@inter-club-league/app",
   "version": "0.0.0",
   "main": "index.ts",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.10",
-    "@turbostack/config": "*",
+    "@inter-club-league/config": "*",
     "classnames": "^2.5.1",
     "jest-diff": "^29.7.0",
     "moti": "latest",
@@ -17,7 +17,7 @@
     "solito": "4.0.1"
   },
   "devDependencies": {
-    "@turbostack/graphql": "*"
+    "@inter-club-league/graphql": "*"
   },
   "sideEffects": false
 }

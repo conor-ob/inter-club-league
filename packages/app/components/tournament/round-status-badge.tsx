@@ -1,4 +1,4 @@
-import { RoundStatusColor } from '@turbostack/app/generated/graphql'
+import { RoundStatusColor } from '@inter-club-league/app/generated/graphql'
 import cx from 'classnames'
 import { Text, View } from 'react-native'
 

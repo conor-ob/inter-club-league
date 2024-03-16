@@ -10,7 +10,7 @@ import {
   Inter_900Black,
   useFonts
 } from '@expo-google-fonts/inter'
-import { Provider } from '@turbostack/app/provider'
+import { Provider } from '@inter-club-league/app/provider'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 

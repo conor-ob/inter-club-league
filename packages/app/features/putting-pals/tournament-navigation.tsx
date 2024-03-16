@@ -1,4 +1,4 @@
-import { usePuttingPalsTournamentsQuery } from '@turbostack/app/graphql/use-putting-pals-tournaments-query'
+import { usePuttingPalsTournamentsQuery } from '@inter-club-league/app/graphql/use-putting-pals-tournaments-query'
 import { Text, TouchableOpacity, View } from 'react-native'
 import { useRouter } from 'solito/router'
 

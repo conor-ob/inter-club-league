@@ -1,4 +1,7 @@
-import { Tournament, TournamentStatus } from '@turbostack/app/generated/graphql'
+import {
+  Tournament,
+  TournamentStatus
+} from '@inter-club-league/app/generated/graphql'
 import { Text, View } from 'react-native'
 import { RoundStatusBadge } from './round-status-badge'
 

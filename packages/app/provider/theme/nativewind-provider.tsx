@@ -1,4 +1,4 @@
-import { themes } from '@turbostack/app/design/colors'
+import { themes } from '@inter-club-league/app/design/colors'
 import { useColorScheme } from 'nativewind'
 import React, { createContext } from 'react'
 import { View } from 'react-native'

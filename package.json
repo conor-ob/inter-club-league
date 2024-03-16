@@ -1,5 +1,5 @@
 {
-  "name": "turbostack",
+  "name": "inter-club-league",
   "private": true,
   "workspaces": [
     "apps/*",
