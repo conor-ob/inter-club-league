@@ -10,7 +10,12 @@ export function GcRedirect() {
 
   useEffect(() => {
     if (data?.redirects.currentStageId) {
-      replace(`/gc/${data.redirects.currentStageId}`)
+      replace(`/gc/${data.redirects.currentStageId}`, undefined, {
+        experimental: {
+          nativeBehavior: 'stack-replace',
+          isNestedNavigator: false
+        }
+      })
     }
   }, [data, replace])
 

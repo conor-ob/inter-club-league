@@ -1,5 +1,6 @@
 import { Redirect } from 'expo-router'
 
-export default function Index() {
-  return <Redirect href='/putting-pals' />
+const Index = () => {
+  return <Redirect href='/(tabs)/gc' />
 }
+export default Index

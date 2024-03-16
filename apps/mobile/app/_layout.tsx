@@ -47,7 +47,7 @@ export default function Root() {
   return (
     <Provider>
       <Stack>
-        <Stack.Screen name='index' options={{ title: 'poo' }} />
+        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
       </Stack>
     </Provider>
   )
