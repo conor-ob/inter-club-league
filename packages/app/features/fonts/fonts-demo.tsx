@@ -8,7 +8,7 @@ export function FontsDemo() {
           Default-Regular
         </Text>
         <View className='w-2' />
-        <Text className='text-primary font-regular font-inter-regular font-sans text-xl'>
+        <Text className='text-primary font-inter-regular text-xl'>
           Inter-Regular
         </Text>
       </View>
