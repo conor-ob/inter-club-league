@@ -1,3 +1,3 @@
-import { GcFeature } from 'app/features/gc/gc-feature'
+import { PuttingPalsRedirect } from '@turbostack/app/features/putting-pals-redirect/putting-pals-redirect'
 
-export default GcFeature
+export default PuttingPalsRedirect

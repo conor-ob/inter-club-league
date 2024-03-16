@@ -3,14 +3,14 @@ const base = {
 }
 
 const production = {
-  allowedOrigins: [],
+  allowedOrigins: ['https://putting-pals.vercel.app'],
   graphqlEndpoint: '/',
-  graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
+  graphqlUri: 'https://putting-pals-5jwbn.ondigitalocean.app/graphql',
   ...base
 }
 
 const development = {
-  allowedOrigins: [`http://localhost:${base.graphqlPort}`],
+  allowedOrigins: [`http://localhost:3000`],
   graphqlEndpoint: '/graphql',
   graphqlUri: `http://localhost:${base.graphqlPort}/graphql`,
   ...base

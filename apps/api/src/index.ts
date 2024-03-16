@@ -5,46 +5,46 @@ import {
   ApolloServerPluginLandingPageLocalDefault,
   ApolloServerPluginLandingPageProductionDefault
 } from '@apollo/server/plugin/landingPage/default'
-import { config } from '@inter-club-league/config'
+import { config } from '@turbostack/config'
 import cors from 'cors'
 import express from 'express'
+import { readFileSync } from 'fs'
 import http from 'http'
+import path from 'path'
 import { ServerContext } from './context/ServerContext'
 import { Database } from './database/Database'
-import { FileReader } from './database/FileReader'
-import { GcMapper } from './mapping/GcMapper'
-import { StageMapper } from './mapping/StageMapper'
-import { StageResultsMapper } from './mapping/StageResultsMapper'
 import { resolvers } from './resolvers'
-import { GcService } from './service/GcService'
-import { MarshallsService } from './service/MarshallsService'
-import { RedirectService } from './service/RedirectService'
-import { StageResultsService } from './service/StageResultsService'
-import { StagesService } from './service/StagesService'
+import { PgaTourApiService } from './service/PgaTourApiService'
+import { PgaTourLeaderboardService } from './service/PgaTourLeaderboardService'
+import { PgaTourTournamentService } from './service/PgaTourTournamentService'
+import { PuttingPalsScheduleService } from './service/PuttingPalsScheduleService'
+import { RedirectsService } from './service/RedirectsService'
 
 async function bootstrap() {
-  const fileReader = new FileReader()
-  const database = new Database(fileReader)
-
-  const stageMapper = new StageMapper(database)
-  const stageResultsMapper = new StageResultsMapper(database)
-  const gcMapper = new GcMapper(database)
-
-  const stagesService = new StagesService(database, stageMapper)
-  const gcService = new GcService(database, gcMapper, stagesService)
-  const stageResultsService = new StageResultsService(
-    database,
-    stageResultsMapper,
-    stagesService,
-    gcService
+  const database = new Database()
+  const redirectsService = new RedirectsService(database)
+  const pgaTourApiService = new PgaTourApiService(
+    'https://orchestrator.pgatour.com/graphql',
+    'da2-gsrx5bibzbb4njvhl7t37wqyl4'
   )
-  const marshallsService = new MarshallsService(database)
-  const redirectService = new RedirectService(database, stagesService)
+  const pgaTourTournamentService = new PgaTourTournamentService(
+    pgaTourApiService
+  )
+  const pgaTourLeaderboardService = new PgaTourLeaderboardService(
+    pgaTourApiService,
+    pgaTourTournamentService
+  )
+  const puttingPalsScheduleService = new PuttingPalsScheduleService(database)
 
   const app = express()
   const httpServer = http.createServer(app)
   const server = new ApolloServer<ServerContext>({
-    typeDefs: fileReader.readFile('./src/generated/schema.graphql'),
+    typeDefs: readFileSync(
+      path.resolve(process.cwd(), './src/generated/schema.graphql'),
+      {
+        encoding: 'utf-8'
+      }
+    ),
     resolvers,
     plugins: [
       ApolloServerPluginDrainHttpServer({ httpServer }),
@@ -52,7 +52,23 @@ async function bootstrap() {
         ? ApolloServerPluginLandingPageProductionDefault({
             footer: false
           })
-        : ApolloServerPluginLandingPageLocalDefault()
+        : ApolloServerPluginLandingPageLocalDefault(),
+      {
+        async requestDidStart(requestContext) {
+          if (requestContext.request.operationName !== 'IntrospectionQuery') {
+            console.log(
+              JSON.stringify(
+                {
+                  query: requestContext.request.operationName,
+                  variables: requestContext.request.variables
+                },
+                null,
+                2
+              )
+            )
+          }
+        }
+      }
     ]
   })
   await server.start()
@@ -65,20 +81,19 @@ async function bootstrap() {
           // allow requests with no origin
           return callback(null, true)
         } else if (config.allowedOrigins.indexOf(origin) === -1) {
-          return callback(null, true)
+          return callback(null, true) // TODO fix cors
         } else {
-          return callback(null, false)
+          return callback(null, true)
         }
       }
     }),
     express.json(),
     expressMiddleware(server, {
       context: async () => ({
-        gcService: gcService,
-        marshallsService: marshallsService,
-        stageResultsService: stageResultsService,
-        stagesService: stagesService,
-        redirectService: redirectService
+        pgaTourLeaderboardService: pgaTourLeaderboardService,
+        pgaTourTournamentService: pgaTourTournamentService,
+        puttingPalsScheduleService: puttingPalsScheduleService,
+        redirectsService: redirectsService
       })
     })
   )

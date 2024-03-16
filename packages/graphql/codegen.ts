@@ -1,7 +1,16 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
 
 const config: CodegenConfig = {
-  schema: 'schema/**/schema.graphql',
+  schema: [
+    '**/schema.graphql',
+    {
+      'https://orchestrator.pgatour.com/graphql': {
+        headers: {
+          'X-Api-Key': 'da2-gsrx5bibzbb4njvhl7t37wqyl4'
+        }
+      }
+    }
+  ],
   generates: {
     '../../apps/api/src/generated/schema.graphql': {
       plugins: ['schema-ast']
@@ -12,8 +21,8 @@ const config: CodegenConfig = {
         contextType: '../context/ServerContext#ServerContext'
       }
     },
-    '../../packages/app/generated/': {
-      documents: ['../../packages/app/**/*.{ts,tsx}', '!**/node_modules/**'],
+    '../app/generated/': {
+      documents: ['../app/**/*.{ts,tsx}', '!**/node_modules/**'],
       preset: 'client',
       presetConfig: {
         persistedDocuments: true

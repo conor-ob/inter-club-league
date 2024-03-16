@@ -1,7 +1,7 @@
 import 'raf/polyfill'
 import 'setimmediate'
 
-import { Provider } from 'app/provider'
+import { Provider } from '@turbostack/app/provider'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Inter Club League</title>
-        <meta name='description' content='Inter Club League' />
+        <title>Putting Pals</title>
+        <meta name='description' content='Putting Pals Major Sweepstakes' />
         <link rel='icon' href={`/favicon.ico`} />
       </Head>
       <Provider>

@@ -1,5 +1,5 @@
 {
-  "name": "@inter-club-league/web",
+  "name": "@turbostack/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,11 +11,9 @@
   },
   "dependencies": {
     "@expo/next-adapter": "5.0.2",
-    "app": "*",
+    "@turbostack/app": "*",
     "next": "13.4.19",
     "raf": "^3.4.1",
-    "react-dom": "^18.2.0",
-    "react-native": "^0.73.6",
     "setimmediate": "^1.0.5"
   },
   "devDependencies": {

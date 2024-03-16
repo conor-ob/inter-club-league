@@ -1,7 +1,8 @@
 type Redirects {
-  currentStageId: ID!
+  pgaTourCurrentTournamentId: ID!
+  puttingPalsCurrentTournamentId: ID!
 }
 
-type Query {
-  redirects(seasonId: ID): Redirects!
+extend type Query {
+  redirects: Redirects!
 }

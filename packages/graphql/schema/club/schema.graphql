@@ -1,5 +1,0 @@
-type Club {
-  id: ID!
-  code: String!
-  name: String!
-}

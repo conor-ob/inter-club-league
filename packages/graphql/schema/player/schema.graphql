@@ -1,0 +1,6 @@
+type PuttingPalsPlayer {
+  id: ID!
+  shortName: String!
+  displayName: String!
+  picks: [String!]!
+}

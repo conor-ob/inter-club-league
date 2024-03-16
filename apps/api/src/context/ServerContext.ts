@@ -1,13 +1,11 @@
-import { GcService } from '../service/GcService'
-import { MarshallsService } from '../service/MarshallsService'
-import { RedirectService } from '../service/RedirectService'
-import { StageResultsService } from '../service/StageResultsService'
-import { StagesService } from '../service/StagesService'
+import { PgaTourLeaderboardService } from '../service/PgaTourLeaderboardService'
+import { PgaTourTournamentService } from '../service/PgaTourTournamentService'
+import { PuttingPalsScheduleService } from '../service/PuttingPalsScheduleService'
+import { RedirectsService } from '../service/RedirectsService'
 
 export interface ServerContext {
-  gcService: GcService
-  marshallsService: MarshallsService
-  stageResultsService: StageResultsService
-  stagesService: StagesService
-  redirectService: RedirectService
+  pgaTourLeaderboardService: PgaTourLeaderboardService
+  pgaTourTournamentService: PgaTourTournamentService
+  puttingPalsScheduleService: PuttingPalsScheduleService
+  redirectsService: RedirectsService
 }

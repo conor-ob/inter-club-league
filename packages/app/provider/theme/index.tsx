@@ -1,5 +1,5 @@
 import { ThemeProvider as ReactNativeThemeProvider } from '@react-navigation/native'
-import { darkTheme, lightTheme } from 'app/design/colors'
+import { darkTheme, lightTheme } from '@turbostack/app/design/colors'
 import { useColorScheme } from 'react-native'
 
 type ThemeProviderProps = {

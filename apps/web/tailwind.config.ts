@@ -1,4 +1,4 @@
-import { theme } from 'app/design/tailwind/theme'
+import { theme } from '@turbostack/app/design/tailwind/theme'
 import type { Config } from 'tailwindcss'
 
 export default {
