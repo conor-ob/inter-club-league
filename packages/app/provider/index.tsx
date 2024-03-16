@@ -1,4 +1,5 @@
 import { NativewindProvider } from '@inter-club-league/app/provider/theme/nativewind-provider'
+import { SolitoImageProvider } from 'solito/image'
 import { ApolloClientProvider } from './apollo/apollo-client-provider'
 import { SafeArea } from './safe-area'
 import { ThemeProvider } from './theme'
@@ -8,7 +9,9 @@ export function Provider({ children }: { children: React.ReactNode }) {
     <ApolloClientProvider>
       <ThemeProvider>
         <NativewindProvider>
-          <SafeArea>{children}</SafeArea>
+          <SolitoImageProvider nextJsURL='https://inter-club-league.vercel.app/'>
+            <SafeArea>{children}</SafeArea>
+          </SolitoImageProvider>
         </NativewindProvider>
       </ThemeProvider>
     </ApolloClientProvider>
