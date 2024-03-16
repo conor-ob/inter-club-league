@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { DocumentContext } from 'next/document'
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
@@ -45,6 +46,7 @@ class Document extends NextDocument {
           <Main />
           <NextScript />
           <Analytics />
+          <SpeedInsights />
         </body>
       </Html>
     )
