@@ -3465,6 +3465,7 @@ __metadata:
     "@inter-club-league/app": "*"
     "@types/node": 17.0.21
     "@vercel/analytics": ^1.2.2
+    "@vercel/speed-insights": ^1.0.10
     autoprefixer: ^10.4.7
     eslint-config-next: 13.2.0
     next: 13.4.19
@@ -4988,6 +4989,33 @@ __metadata:
     react:
       optional: true
   checksum: 5913caeb2077d3d9c2eddabed90e40e29762e9e53941d3e1337daa0a60423ffef2a2c0b5a743ff37ea1aa9cfe7eb3159e4dff91cd4843a8503be5680c2faa98d
+  languageName: node
+  linkType: hard
+
+"@vercel/speed-insights@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "@vercel/speed-insights@npm:1.0.10"
+  peerDependencies:
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    react: ^18 || ^19
+    svelte: ^4
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 26171c424ed725bbb82020818428a37e54715dfba58ae8ccff53c1bb58787f3713a9d8695afbbb5439555b92614f099fdb5188f80d9855818fddf7c192e8033e
   languageName: node
   linkType: hard
 
