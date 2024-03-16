@@ -1,3 +1,4 @@
+import { SimpleStageNavigation } from '@inter-club-league/app/components/navigation/simple-stage-navigation'
 import { Text, View } from 'react-native'
 import { createParam } from 'solito'
 import { useGcQuery } from '../../graphql/use-gc-query'
@@ -13,8 +14,11 @@ export function GcFeature() {
   })
 
   return (
-    <View className='bg-background flex-1 items-center justify-center'>
-      <Text className='text-brand'>{data?.gc.id}</Text>
+    <View className='bg-background flex-1'>
+      <SimpleStageNavigation baseUrl='/gc' />
+      <View className='bg-card flex-1 items-center justify-center'>
+        <Text className='text-brand'>{data?.gc.id}</Text>
+      </View>
     </View>
   )
 }
