@@ -3394,7 +3394,7 @@ __metadata:
     next-themes: 0.2.1
     react-native: 0.72.4
     react-native-svg: ^15.1.0
-    solito: 4.0.1
+    solito: ^4.2.2
   languageName: unknown
   linkType: soft
 
@@ -3430,6 +3430,7 @@ __metadata:
     "@types/react": ^18.2.21
     "@types/react-native": ^0.72.2
     expo: ^49.0.0
+    expo-image: ^1.10.6
     expo-linking: ~5.0.2
     expo-router: ^2.0.5
     expo-splash-screen: ~0.20.5
@@ -4198,6 +4199,13 @@ __metadata:
   version: 0.72.0
   resolution: "@react-native/assets-registry@npm:0.72.0"
   checksum: 94c2b842f9fcc6e2817463dd5f26a40b69a5ff10d8d10a2af95b677f88c6645e833f985db9d85c9c3d8e66fb882b2065921ad8890fe6ac7b5eb3f9d04f6e17fa
+  languageName: node
+  linkType: hard
+
+"@react-native/assets-registry@npm:~0.73.1":
+  version: 0.73.1
+  resolution: "@react-native/assets-registry@npm:0.73.1"
+  checksum: d9d09774d497bae13b1fb6a1c977bf6e442858639ee66fe4e8f955cfc903a16f79de6129471114a918a4b814eb5150bd808a5a7dc9f8b12d49795d9488d4cb67
   languageName: node
   linkType: hard
 
@@ -8007,6 +8015,17 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: a1ae635c9e0164ff5116a9e60341ea5556bac71b8a7a021e642015031a7f492010a2ae0e0791ae03ce7b991d0b9e5679d11b6d7f954435d76f80b03838415dac
+  languageName: node
+  linkType: hard
+
+"expo-image@npm:^1.10.6":
+  version: 1.11.0
+  resolution: "expo-image@npm:1.11.0"
+  dependencies:
+    "@react-native/assets-registry": ~0.73.1
+  peerDependencies:
+    expo: "*"
+  checksum: b93445e1ae2dead50d0ad02a8bfe678c83762f9545f4e4712951894411ebf217ed6385033940f02fdb721e5cc6cf69bca7afb8e5736c5771a358b07e9c8f7e12
   languageName: node
   linkType: hard
 
@@ -14456,12 +14475,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solito@npm:4.0.1":
-  version: 4.0.1
-  resolution: "solito@npm:4.0.1"
+"solito@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "solito@npm:4.2.2"
   dependencies:
     typescript: ^5.0.4
-  checksum: 2148da025f3943c78009049c362a23ea2e08b9b430dc5ba4eb3b681faf618dad513847de7f95407575e9adf6dfda3a8060d12f69a7c1e018bbcf70b3b0f5b308
+  checksum: 7caf10656fe8a770e7e1060ad2912eb95c1f3e069f69c029c6fd891c0668ec3a8e9f5956dd399e041ab967a17f856121e677d6cc7ad971c7f45b27fdf31a08d1
   languageName: node
   linkType: hard
 

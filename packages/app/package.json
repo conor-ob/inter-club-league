@@ -16,7 +16,7 @@
     "next-themes": "0.2.1",
     "react-native": "0.72.4",
     "react-native-svg": "^15.1.0",
-    "solito": "4.0.1"
+    "solito": "^4.2.2"
   },
   "devDependencies": {
     "@inter-club-league/graphql": "*"

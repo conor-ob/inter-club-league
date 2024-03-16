@@ -3,9 +3,7 @@ import { SolitoImage } from 'solito/image'
 export function YellowJersey() {
   return (
     <SolitoImage
-      src='/yellow-jersey.png'
-      width={100}
-      height={100}
+      src={{ src: '/yellow-jersey.png', height: 32, width: 32 }}
       alt='Yellow Jersey'
     />
   )

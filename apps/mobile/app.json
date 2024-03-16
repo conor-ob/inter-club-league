@@ -1,12 +1,14 @@
 {
   "expo": {
-    "name": "solito-nativewind",
-    "slug": "solito-nativewind",
+    "name": "ICL",
+    "slug": "inter-club-league",
     "version": "1.0.0",
-    "scheme": "solito-nativewind",
+    "scheme": "inter-club-league",
     "platforms": ["ios", "android"],
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "bundleIdentifier": "com.solito.nativewind"
+      "bundleIdentifier": "com.conorob.interclubleague",
+      "userInterfaceStyle": "automatic"
     }
   }
 }
