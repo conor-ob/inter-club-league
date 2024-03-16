@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Putting Pals</title>
-        <meta name='description' content='Putting Pals Major Sweepstakes' />
+        <title>ICL</title>
+        <meta name='description' content='Inter Club League' />
         <link rel='icon' href={`/favicon.ico`} />
       </Head>
       <Provider>

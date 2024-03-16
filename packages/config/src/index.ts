@@ -3,9 +3,9 @@ const base = {
 }
 
 const production = {
-  allowedOrigins: ['https://putting-pals.vercel.app'],
+  allowedOrigins: ['https://inter-club-league.vercel.app'],
   graphqlEndpoint: '/',
-  graphqlUri: 'https://putting-pals-5jwbn.ondigitalocean.app/graphql',
+  graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
   ...base
 }
 
