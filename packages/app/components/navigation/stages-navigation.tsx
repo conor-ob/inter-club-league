@@ -56,7 +56,7 @@ export function StageNavigation({ baseUrl, search }: StageNavigationProps) {
                     name='chevron-back-outline'
                     color={colors[colorScheme ?? 'light'].brandDefault}
                   /> */}
-                  <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
+                  <Text className='text-brand font-inter-regular text-base'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
                 </TouchableOpacity>
               ) : (
                 <View />
@@ -72,7 +72,7 @@ export function StageNavigation({ baseUrl, search }: StageNavigationProps) {
                     })
                   }
                 >
-                  <Text className='text-brand font-inter-regular text-lg'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
+                  <Text className='text-brand font-inter-regular text-base'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
                   {/* <Ionicon
                     size={24}
                     name='chevron-forward-outline'

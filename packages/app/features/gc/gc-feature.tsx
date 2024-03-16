@@ -38,11 +38,11 @@ export function GcFeature() {
           <SimpleStageNavigation baseUrl='/gc' />
           <View className='bg-card flex flex-row justify-between px-2 py-4'>
             <View className='flex flex-row items-center'>
-              <Text className='text-primary font-inter-medium w-12 text-center text-base'>
+              <Text className='text-primary font-inter-medium text-md w-12 text-center'>
                 POS
               </Text>
               <View className='ml-2'>
-                <Text className='text-primary font-inter-medium text-base'>
+                <Text className='text-primary font-inter-medium text-md'>
                   RIDER
                 </Text>
               </View>
@@ -55,10 +55,10 @@ export function GcFeature() {
                 color={colors[colorScheme ?? 'light'].textColorPrimary}
               /> */}
               </View>
-              <Text className='text-primary font-inter-medium w-12 text-center text-base'>
+              <Text className='text-primary font-inter-medium text-md w-12 text-center'>
                 GC
               </Text>
-              <Text className='text-primary font-inter-medium w-12 text-center text-base'>
+              <Text className='text-primary font-inter-medium text-md w-12 text-center'>
                 TOT
               </Text>
             </View>
@@ -79,11 +79,11 @@ export function GcFeature() {
           <SimpleStageNavigation baseUrl='/gc' />
           <View className='bg-card flex flex-row justify-between px-2 py-4'>
             <View className='flex flex-row items-center'>
-              <Text className='text-primary font-inter-medium w-12 text-center text-base'>
+              <Text className='text-primary font-inter-medium text-md w-12 text-center'>
                 POS
               </Text>
               <View className='ml-2'>
-                <Text className='text-primary font-inter-medium text-base'>
+                <Text className='text-primary font-inter-medium text-md'>
                   RIDER
                 </Text>
               </View>
@@ -96,10 +96,10 @@ export function GcFeature() {
               color={colors[colorScheme ?? 'light'].textColorPrimary}
             /> */}
               </View>
-              <Text className='text-primary font-inter-medium w-12 text-center text-base'>
+              <Text className='text-primary font-inter-medium text-md w-12 text-center'>
                 GC
               </Text>
-              <Text className='text-primary font-inter-medium w-12 text-center text-base'>
+              <Text className='text-primary font-inter-medium text-md w-12 text-center'>
                 TOT
               </Text>
             </View>

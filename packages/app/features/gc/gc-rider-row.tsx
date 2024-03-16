@@ -13,11 +13,11 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
       <View className='flex flex-1 flex-row items-center'>
         <GcRiderPosition rank={gcRider.rank} position={gcRider.position} />
         <View className='ml-2'>
-          <Text className='text-primary font-inter-regular text-lg'>
+          <Text className='text-primary font-inter-regular text-base'>
             {gcRider.rider.name}
           </Text>
           <View className='h-1' />
-          <Text className='text-secondary font-inter-regular text-base'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
+          <Text className='text-secondary font-inter-regular text-md'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
         </View>
       </View>
       <View className='flex flex-row items-center'>
@@ -26,10 +26,10 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
         <View className='w-12'>
           <GcRiderMovement movement={gcRider.movement} />
         </View>
-        <Text className='text-primary font-inter-medium w-12 text-center text-lg'>
+        <Text className='text-primary font-inter-medium w-12 text-center text-base'>
           {gcRider.gcPoints}
         </Text>
-        <Text className='text-secondary font-inter-regular w-12 text-center text-lg'>
+        <Text className='text-secondary font-inter-regular w-12 text-center text-base'>
           {gcRider.totalPoints}
         </Text>
       </View>
@@ -51,7 +51,7 @@ function GcRiderPosition({ rank, position }: GcRiderPositionProps) {
     )
   }
   return (
-    <Text className='text-primary font-inter-medium w-12 text-center text-lg'>
+    <Text className='text-primary font-inter-medium w-12 text-center text-base'>
       {position}
     </Text>
   )
@@ -69,7 +69,7 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
   } else if (movement > 0) {
     return (
       <View className='flex flex-row items-center justify-center'>
-        <Text className='text-secondary font-inter-regular text-lg'>
+        <Text className='text-secondary font-inter-regular text-base'>
           {movement}
         </Text>
         <View className='w-1' />
@@ -83,7 +83,7 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
   } else {
     return (
       <View className='flex flex-row items-center justify-center'>
-        <Text className='text-secondary font-inter-regular text-lg'>
+        <Text className='text-secondary font-inter-regular text-base'>
           {movement * -1}
         </Text>
         <View className='w-1' />

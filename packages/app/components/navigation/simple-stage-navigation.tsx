@@ -53,7 +53,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 width={20}
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
-              <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
+              <Text className='text-brand font-inter-regular text-base'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
             </TouchableOpacity>
           ) : (
             <View />
@@ -69,7 +69,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 })
               }
             >
-              <Text className='text-brand font-inter-regular text-lg'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
+              <Text className='text-brand font-inter-regular text-base'>{`Stage ${nextStageId.split('-')[1]}`}</Text>
               {/* <Ionicon
                 size={24}
                 name='chevron-forward-outline'
