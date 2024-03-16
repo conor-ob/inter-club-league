@@ -1,0 +1,1523 @@
+[
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "bryan-geary",
+    "riderInitials": "BG",
+    "riderName": "Bryan Geary",
+    "seasonPoints": [8, 11, 6, 10, 10, 8, 5, 8],
+    "stagePoints": 8
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "joe-nathan-matar",
+    "riderInitials": "JNM",
+    "riderName": "Joe-Nathan Matar",
+    "seasonPoints": [5, 10, 11, 0, 8, 11, 8, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "gavin-hendley",
+    "riderInitials": "GH",
+    "riderName": "Gavin Hendley",
+    "seasonPoints": [11, 5, 5, 5, 11, 7, 7, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "adam-greally",
+    "riderInitials": "AG",
+    "riderName": "Adam Greally",
+    "seasonPoints": [5, 5, 9, 6, 9, 10, 9, 10],
+    "stagePoints": 10
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "eoin-farrell",
+    "riderInitials": "EF",
+    "riderName": "Eoin Farrell",
+    "seasonPoints": [0, 5, 11, 5, 5, 11, 11, 8],
+    "stagePoints": 8
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "dick-o-brien",
+    "riderInitials": "DOB",
+    "riderName": "Dick O'Brien",
+    "seasonPoints": [5, 5, 5, 5, 9, 10, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "declan-malone",
+    "riderInitials": "DM",
+    "riderName": "Declan Malone",
+    "seasonPoints": [10, 7, 10, 0, 5, 0, 8, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "owen-o-flaherty",
+    "riderInitials": "OOF",
+    "riderName": "Owen O'Flaherty",
+    "seasonPoints": [5, 9, 5, 5, 5, 8, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "ronan-killeen",
+    "riderInitials": "RK",
+    "riderName": "Ronan Killeen",
+    "seasonPoints": [6, 10, 11, 5, 0, 0, 10, 11],
+    "stagePoints": 11
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "conor-aylmer",
+    "riderInitials": "CA",
+    "riderName": "Conor Aylmer",
+    "seasonPoints": [5, 11, 9, 0, 11, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "cesar-lopes",
+    "riderInitials": "CL",
+    "riderName": "Cesar Lopes",
+    "seasonPoints": [11, 5, 0, 5, 0, 11, 7, 10],
+    "stagePoints": 10
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "barry-fennell",
+    "riderInitials": "BF",
+    "riderName": "Barry Fennell",
+    "seasonPoints": [5, 9, 6, 5, 5, 0, 7, 9],
+    "stagePoints": 9
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "gavin-dodd",
+    "riderInitials": "GD",
+    "riderName": "Gavin Dodd",
+    "seasonPoints": [8, 6, 8, 0, 5, 0, 8, 9],
+    "stagePoints": 9
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "louis-twomey",
+    "riderInitials": "LT",
+    "riderName": "Louis Twomey",
+    "seasonPoints": [5, 5, 7, 5, 7, 0, 5, 6],
+    "stagePoints": 6
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "sean-o-leary",
+    "riderInitials": "SOL",
+    "riderName": "Sean O'Leary",
+    "seasonPoints": [5, 7, 11, 0, 0, 0, 11, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "diarmuid-collins",
+    "riderInitials": "DC",
+    "riderName": "Diarmuid Collins",
+    "seasonPoints": [5, 5, 5, 5, 8, 0, 5, 9],
+    "stagePoints": 9
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "conor-brennan",
+    "riderInitials": "CB",
+    "riderName": "Conor Brennan",
+    "seasonPoints": [5, 5, 9, 0, 0, 8, 10, 10],
+    "stagePoints": 10
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "lcrc",
+    "riderId": "federico-argento",
+    "riderInitials": "FA",
+    "riderName": "Federico Argento",
+    "seasonPoints": [0, 6, 5, 5, 5, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "harry-rochford",
+    "riderInitials": "HR",
+    "riderName": "Harry Rochford",
+    "seasonPoints": [0, 0, 5, 5, 8, 6, 6, 11],
+    "stagePoints": 11
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "john-mccormack",
+    "riderInitials": "JM",
+    "riderName": "John McCormack",
+    "seasonPoints": [0, 5, 5, 5, 5, 6, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "martin-mcnamara",
+    "riderInitials": "MM",
+    "riderName": "Martin McNamara",
+    "seasonPoints": [5, 5, 5, 5, 5, 0, 6, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "alan-o-dowd",
+    "riderInitials": "AOD",
+    "riderName": "Alan O'Dowd",
+    "seasonPoints": [5, 5, 0, 5, 5, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stt",
+    "riderId": "mark-stewart",
+    "riderInitials": "MS",
+    "riderName": "Mark Stewart",
+    "seasonPoints": [5, 5, 5, 0, 10, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "natascha-oppinger",
+    "riderInitials": "NO",
+    "riderName": "Natascha Oppinger",
+    "seasonPoints": [0, 5, 5, 5, 5, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "bwcc",
+    "riderId": "oleksandr-konkolevsky",
+    "riderInitials": "OK",
+    "riderName": "Oleksandr Konkolevsky",
+    "seasonPoints": [5, 5, 5, 5, 5, 5, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "patrick-cryan",
+    "riderInitials": "PC",
+    "riderName": "Patrick Cryan",
+    "seasonPoints": [5, 5, 5, 5, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "pierce-o-leary",
+    "riderInitials": "POL",
+    "riderName": "Pierce O'Leary",
+    "seasonPoints": [5, 5, 10, 0, 0, 0, 10, 7],
+    "stagePoints": 7
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "luke-mcmullan",
+    "riderInitials": "LM",
+    "riderName": "Luke McMullan",
+    "seasonPoints": [5, 0, 0, 5, 5, 9, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "bwcc",
+    "riderId": "pat-beere",
+    "riderInitials": "PB",
+    "riderName": "Pat Beere",
+    "seasonPoints": [0, 0, 5, 5, 0, 9, 9, 6],
+    "stagePoints": 6
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "ryan-dunne",
+    "riderInitials": "RD",
+    "riderName": "Ryan Dunne",
+    "seasonPoints": [5, 5, 9, 5, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "bwcc",
+    "riderId": "john-mcauliffe",
+    "riderInitials": "JM",
+    "riderName": "John McAuliffe",
+    "seasonPoints": [0, 5, 0, 5, 5, 7, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "rob-jennings",
+    "riderInitials": "RJ",
+    "riderName": "Rob Jennings",
+    "seasonPoints": [5, 5, 5, 0, 6, 6, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "adam-mcconnell",
+    "riderInitials": "AM",
+    "riderName": "Adam McConnell",
+    "seasonPoints": [0, 0, 0, 5, 11, 5, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "lcrc",
+    "riderId": "luke-kehoe",
+    "riderInitials": "LK",
+    "riderName": "Luke Kehoe",
+    "seasonPoints": [0, 10, 0, 5, 11, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "lcrc",
+    "riderId": "matthew-walls",
+    "riderInitials": "MW",
+    "riderName": "Matthew Walls",
+    "seasonPoints": [0, 11, 0, 5, 10, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "paul-rogers",
+    "riderInitials": "PR",
+    "riderName": "Paul Rogers",
+    "seasonPoints": [5, 5, 0, 7, 0, 0, 7, 7],
+    "stagePoints": 7
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "ronan-conway",
+    "riderInitials": "RC",
+    "riderName": "Ronan Conway",
+    "seasonPoints": [7, 0, 5, 5, 9, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "anthony-dunne",
+    "riderInitials": "AD",
+    "riderName": "Anthony Dunne",
+    "seasonPoints": [0, 5, 0, 5, 5, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "barry-greene",
+    "riderInitials": "BG",
+    "riderName": "Barry Greene",
+    "seasonPoints": [0, 0, 5, 5, 5, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "colm-o-neill",
+    "riderInitials": "CON",
+    "riderName": "Colm O'Neill",
+    "seasonPoints": [5, 5, 0, 5, 5, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "daragh-o-toole",
+    "riderInitials": "DOT",
+    "riderName": "Daragh O'Toole",
+    "seasonPoints": [5, 5, 5, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "ellen-desmond",
+    "riderInitials": "ED",
+    "riderName": "Ellen Desmond",
+    "seasonPoints": [5, 5, 0, 5, 5, 5, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "bwcc",
+    "riderId": "gareth-jones",
+    "riderInitials": "GJ",
+    "riderName": "Gareth Jones",
+    "seasonPoints": [0, 5, 0, 0, 5, 10, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "hannah-roche",
+    "riderInitials": "HR",
+    "riderName": "Hannah Roche",
+    "seasonPoints": [0, 5, 5, 5, 5, 5, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "ian-o-hara",
+    "riderInitials": "IOH",
+    "riderName": "Ian O'Hara",
+    "seasonPoints": [5, 5, 0, 0, 5, 5, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "marc-farrelly",
+    "riderInitials": "MF",
+    "riderName": "Marc Farrelly",
+    "seasonPoints": [5, 5, 0, 5, 0, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "michael-monahan",
+    "riderInitials": "MM",
+    "riderName": "Michael Monahan",
+    "seasonPoints": [0, 5, 0, 5, 5, 5, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "killian-o-brien",
+    "riderInitials": "KOB",
+    "riderName": "Killian O'Brien",
+    "seasonPoints": [7, 6, 0, 0, 0, 0, 11, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "peadar-corbally",
+    "riderInitials": "PC",
+    "riderName": "Peadar Corbally",
+    "seasonPoints": [0, 5, 0, 0, 5, 9, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "simon-ward",
+    "riderInitials": "SW",
+    "riderName": "Simon Ward",
+    "seasonPoints": [5, 5, 0, 0, 9, 0, 5, 10],
+    "stagePoints": 10
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "david-fox",
+    "riderInitials": "DF",
+    "riderName": "David Fox",
+    "seasonPoints": [6, 8, 0, 0, 0, 0, 9, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "gerard-daly",
+    "riderInitials": "GD",
+    "riderName": "Gerard Daly",
+    "seasonPoints": [0, 5, 6, 0, 5, 7, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "bwcc",
+    "riderId": "kieran-sweeney",
+    "riderInitials": "KS",
+    "riderName": "Kieran Sweeney",
+    "seasonPoints": [0, 10, 0, 5, 8, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "oisin-purcell",
+    "riderInitials": "OP",
+    "riderName": "Oisin Purcell",
+    "seasonPoints": [5, 8, 0, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "pawel-rybak",
+    "riderInitials": "PR",
+    "riderName": "Pawel Rybak",
+    "seasonPoints": [5, 8, 0, 5, 0, 0, 11, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stt",
+    "riderId": "sean-curtis",
+    "riderInitials": "SC",
+    "riderName": "Sean Curtis",
+    "seasonPoints": [0, 5, 0, 8, 5, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "adriaan-pretorius",
+    "riderInitials": "AP",
+    "riderName": "Adriaan Pretorius",
+    "seasonPoints": [5, 0, 0, 5, 7, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "andy-grehan",
+    "riderInitials": "AG",
+    "riderName": "Andy Grehan",
+    "seasonPoints": [0, 0, 7, 5, 5, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "conor-brophy",
+    "riderInitials": "CB",
+    "riderName": "Conor Brophy",
+    "seasonPoints": [0, 0, 8, 5, 9, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "alan-lyne",
+    "riderInitials": "AL",
+    "riderName": "Alan Lyne",
+    "seasonPoints": [0, 8, 8, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "andrew-keogh",
+    "riderInitials": "AK",
+    "riderName": "Andrew Keogh",
+    "seasonPoints": [0, 5, 0, 11, 5, 0, 0, 6],
+    "stagePoints": 6
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "brendan-bonnie",
+    "riderInitials": "BB",
+    "riderName": "Brendan Bonnie",
+    "seasonPoints": [5, 5, 5, 0, 0, 6, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "darran-kearney",
+    "riderInitials": "DK",
+    "riderName": "Darran Kearney",
+    "seasonPoints": [5, 6, 5, 0, 0, 5, 0, 9],
+    "stagePoints": 9
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "eoin-ahern",
+    "riderInitials": "EA",
+    "riderName": "Eoin Ahern",
+    "seasonPoints": [0, 0, 10, 0, 5, 0, 6, 7],
+    "stagePoints": 7
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "ken-o-neill",
+    "riderInitials": "KON",
+    "riderName": "Ken O'Neill",
+    "seasonPoints": [5, 5, 0, 0, 0, 11, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "luca-holmes",
+    "riderInitials": "LH",
+    "riderName": "Luca Holmes",
+    "seasonPoints": [11, 5, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "ronan-flannery",
+    "riderInitials": "RF",
+    "riderName": "Ronan Flannery",
+    "seasonPoints": [0, 5, 5, 0, 0, 0, 9, 8],
+    "stagePoints": 8
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "alan-killian",
+    "riderInitials": "AK",
+    "riderName": "Alan Killian",
+    "seasonPoints": [5, 5, 0, 0, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "austin-o-hagan",
+    "riderInitials": "AOH",
+    "riderName": "Austin O'Hagan",
+    "seasonPoints": [5, 5, 0, 5, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "sdcc",
+    "riderId": "brian-reynolds",
+    "riderInitials": "BR",
+    "riderName": "Brian Reynolds",
+    "seasonPoints": [5, 0, 0, 5, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "conor-o-brien",
+    "riderInitials": "COB",
+    "riderName": "Conor O'Brien",
+    "seasonPoints": [5, 5, 5, 0, 5, 0, 0, 11],
+    "stagePoints": 11
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "david-harrington",
+    "riderInitials": "DH",
+    "riderName": "David Harrington",
+    "seasonPoints": [10, 5, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "david-kirby",
+    "riderInitials": "DK",
+    "riderName": "David Kirby",
+    "seasonPoints": [0, 5, 0, 5, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "david-ryan",
+    "riderInitials": "DR",
+    "riderName": "David Ryan",
+    "seasonPoints": [5, 5, 0, 5, 5, 0, 0, 6],
+    "stagePoints": 6
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "bwcc",
+    "riderId": "des-smyth",
+    "riderInitials": "DS",
+    "riderName": "Des Smyth",
+    "seasonPoints": [5, 0, 0, 5, 5, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "garrett-greene",
+    "riderInitials": "GG",
+    "riderName": "Garrett Greene",
+    "seasonPoints": [0, 5, 5, 0, 5, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "isabelle-cairns",
+    "riderInitials": "IC",
+    "riderName": "Isabelle Cairns",
+    "seasonPoints": [5, 5, 0, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "james-kelly",
+    "riderInitials": "JK",
+    "riderName": "James Kelly",
+    "seasonPoints": [5, 5, 0, 0, 0, 5, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "john-anslow",
+    "riderInitials": "JA",
+    "riderName": "John Anslow",
+    "seasonPoints": [0, 5, 5, 5, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "jonathan-hudson",
+    "riderInitials": "JH",
+    "riderName": "Jonathan Hudson",
+    "seasonPoints": [0, 5, 0, 5, 0, 5, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "bwcc",
+    "riderId": "owen-kennedy",
+    "riderInitials": "OK",
+    "riderName": "Owen Kennedy",
+    "seasonPoints": [0, 5, 5, 5, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "padraic-o-flynn",
+    "riderInitials": "POF",
+    "riderName": "Padraic O'Flynn",
+    "seasonPoints": [0, 5, 5, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "sean-harte",
+    "riderInitials": "SH",
+    "riderName": "Sean Harte",
+    "seasonPoints": [0, 5, 5, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "sean-ward",
+    "riderInitials": "SW",
+    "riderName": "Sean Ward",
+    "seasonPoints": [5, 0, 0, 5, 10, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "shaun-kelly",
+    "riderInitials": "SK",
+    "riderName": "Shaun Kelly",
+    "seasonPoints": [0, 0, 0, 5, 0, 7, 6, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "lcrc",
+    "riderId": "thomas-freeman",
+    "riderInitials": "TF",
+    "riderName": "Thomas Freeman",
+    "seasonPoints": [0, 5, 10, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "aine-kelly",
+    "riderInitials": "AK",
+    "riderName": "Aine Kelly",
+    "seasonPoints": [0, 5, 0, 0, 5, 0, 8, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "john-sheridan",
+    "riderInitials": "JS",
+    "riderName": "John Sheridan",
+    "seasonPoints": [0, 9, 0, 5, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "bwcc",
+    "riderId": "brian-nolan",
+    "riderInitials": "BN",
+    "riderName": "Brian Nolan",
+    "seasonPoints": [0, 0, 0, 5, 7, 0, 5, 7],
+    "stagePoints": 7
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "mark-donnelly-orr",
+    "riderInitials": "MDO",
+    "riderName": "Mark Donnelly-Orr",
+    "seasonPoints": [0, 0, 0, 0, 5, 8, 10, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "colum-bradley",
+    "riderInitials": "CB",
+    "riderName": "Colum Bradley",
+    "seasonPoints": [0, 5, 7, 0, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "shane-o-neill",
+    "riderInitials": "SON",
+    "riderName": "Shane O'Neill",
+    "seasonPoints": [5, 5, 0, 0, 7, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "martyn-holmes",
+    "riderInitials": "MH",
+    "riderName": "Martyn Holmes",
+    "seasonPoints": [0, 5, 0, 5, 6, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "alan-dempsey",
+    "riderInitials": "AD",
+    "riderName": "Alan Dempsey",
+    "seasonPoints": [0, 5, 0, 0, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "alessandro-stapleton",
+    "riderInitials": "AS",
+    "riderName": "Alessandro Stapleton",
+    "seasonPoints": [5, 5, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "aoife-reilly",
+    "riderInitials": "AR",
+    "riderName": "Aoife Reilly",
+    "seasonPoints": [5, 0, 0, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "connor-fennell",
+    "riderInitials": "CF",
+    "riderName": "Connor Fennell",
+    "seasonPoints": [5, 0, 0, 0, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "declan-brassil",
+    "riderInitials": "DB",
+    "riderName": "Declan Brassil",
+    "seasonPoints": [5, 5, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "lcrc",
+    "riderId": "eamon-quigley",
+    "riderInitials": "EQ",
+    "riderName": "Eamon Quigley",
+    "seasonPoints": [0, 5, 0, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "lcrc",
+    "riderId": "ivan-casey",
+    "riderInitials": "IC",
+    "riderName": "Ivan Casey",
+    "seasonPoints": [0, 0, 0, 0, 0, 10, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "jim-carey",
+    "riderInitials": "JC",
+    "riderName": "Jim Carey",
+    "seasonPoints": [5, 0, 0, 5, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "kilian-doyle",
+    "riderInitials": "KD",
+    "riderName": "Kilian Doyle",
+    "seasonPoints": [0, 5, 5, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "mark-nicholls",
+    "riderInitials": "MN",
+    "riderName": "Mark Nicholls",
+    "seasonPoints": [0, 5, 0, 5, 0, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "niall-kelly",
+    "riderInitials": "NK",
+    "riderName": "Niall Kelly",
+    "seasonPoints": [0, 0, 0, 5, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "paul-heynen",
+    "riderInitials": "PH",
+    "riderName": "Paul Heynen",
+    "seasonPoints": [0, 5, 0, 0, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "robert-farrell",
+    "riderInitials": "RF",
+    "riderName": "Robert Farrell",
+    "seasonPoints": [0, 0, 0, 5, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "sean-killeen",
+    "riderInitials": "SK",
+    "riderName": "Sean Killeen",
+    "seasonPoints": [5, 5, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "tiit-talumaa",
+    "riderInitials": "TT",
+    "riderName": "Tiit Talumaa",
+    "seasonPoints": [5, 5, 5, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "edward-kelly",
+    "riderInitials": "EK",
+    "riderName": "Edward Kelly",
+    "seasonPoints": [0, 9, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "uirc",
+    "riderId": "eoin-rheinisch",
+    "riderInitials": "ER",
+    "riderName": "Eoin Rheinisch",
+    "seasonPoints": [0, 5, 0, 9, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "ian-devlin",
+    "riderInitials": "ID",
+    "riderName": "Ian Devlin",
+    "seasonPoints": [0, 0, 0, 5, 0, 9, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "grainne-o-callaghan",
+    "riderInitials": "GOC",
+    "riderName": "Gráinne O'Callaghan",
+    "seasonPoints": [0, 7, 0, 0, 0, 5, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "niall-kieran",
+    "riderInitials": "NK",
+    "riderName": "Niall Kieran",
+    "seasonPoints": [0, 0, 7, 0, 0, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "darren-guy",
+    "riderInitials": "DG",
+    "riderName": "Darren Guy",
+    "seasonPoints": [0, 0, 6, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "eddie-lynch",
+    "riderInitials": "EL",
+    "riderName": "Eddie Lynch",
+    "seasonPoints": [0, 11, 0, 0, 0, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "aine-reilly",
+    "riderInitials": "AR",
+    "riderName": "Aine Reilly",
+    "seasonPoints": [0, 5, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "bernard-collins",
+    "riderInitials": "BC",
+    "riderName": "Bernard Collins",
+    "seasonPoints": [5, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "chris-bigley",
+    "riderInitials": "CB",
+    "riderName": "Chris Bigley",
+    "seasonPoints": [0, 0, 5, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "colm-thomas-dunne",
+    "riderInitials": "CTD",
+    "riderName": "Colm Thomas Dunne",
+    "seasonPoints": [0, 5, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "danya-el-gahzel",
+    "riderInitials": "DEG",
+    "riderName": "Danya El Gahzel",
+    "seasonPoints": [0, 5, 0, 0, 0, 5, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "darragh-murphy",
+    "riderInitials": "DM",
+    "riderName": "Darragh Murphy",
+    "seasonPoints": [5, 5, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "eamon-peregrine",
+    "riderInitials": "EP",
+    "riderName": "Eamon Peregrine",
+    "seasonPoints": [0, 0, 0, 5, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "eric-wilson",
+    "riderInitials": "EW",
+    "riderName": "Eric Wilson",
+    "seasonPoints": [5, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "jonathan-o-brien",
+    "riderInitials": "JOB",
+    "riderName": "Jonathan O'Brien",
+    "seasonPoints": [0, 0, 5, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "jonathan-wagner-coffey",
+    "riderInitials": "JWC",
+    "riderName": "Jonathan Wagner Coffey",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 5, 8],
+    "stagePoints": 8
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "jules-de-meester",
+    "riderInitials": "JDM",
+    "riderName": "Jules De Meester",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "luke-potter",
+    "riderInitials": "LP",
+    "riderName": "Luke Potter",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "mark-leonard",
+    "riderInitials": "ML",
+    "riderName": "Mark Leonard",
+    "seasonPoints": [0, 5, 0, 0, 0, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "bwcc",
+    "riderId": "mark-o-connor",
+    "riderInitials": "MOC",
+    "riderName": "Mark O'Connor",
+    "seasonPoints": [0, 0, 0, 5, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "lcrc",
+    "riderId": "michael-haynes",
+    "riderInitials": "MH",
+    "riderName": "Michael Haynes",
+    "seasonPoints": [0, 5, 0, 0, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "michael-stack",
+    "riderInitials": "MS",
+    "riderName": "Michael Stack",
+    "seasonPoints": [0, 5, 0, 0, 5, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "nigel-burke",
+    "riderInitials": "NB",
+    "riderName": "Nigel Burke",
+    "seasonPoints": [0, 0, 0, 0, 5, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "sdcc",
+    "riderId": "noel-moloney",
+    "riderInitials": "NM",
+    "riderName": "Noel Moloney",
+    "seasonPoints": [5, 0, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "paul-o-brien",
+    "riderInitials": "POB",
+    "riderName": "Paul O'Brien",
+    "seasonPoints": [0, 5, 0, 0, 0, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "peter-gibbons",
+    "riderInitials": "PG",
+    "riderName": "Peter Gibbons",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "richard-magnier",
+    "riderInitials": "RM",
+    "riderName": "Richard Magnier",
+    "seasonPoints": [0, 5, 0, 0, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "bwcc",
+    "riderId": "simon-crowe",
+    "riderInitials": "SC",
+    "riderName": "Simon Crowe",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stt",
+    "riderId": "thomas-o-brien",
+    "riderInitials": "TOB",
+    "riderName": "Thomas O'Brien",
+    "seasonPoints": [5, 0, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stt",
+    "riderId": "george-sevastopulo",
+    "riderInitials": "GS",
+    "riderName": "George Sevastopulo",
+    "seasonPoints": [9, 0, 0, 0, 0, 0, 0, 11],
+    "stagePoints": 11
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "barry-cronin",
+    "riderInitials": "BC",
+    "riderName": "Barry Cronin",
+    "seasonPoints": [0, 0, 8, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "eugene-murtagh",
+    "riderInitials": "EM",
+    "riderName": "Eugene Murtagh",
+    "seasonPoints": [0, 7, 0, 0, 0, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "uirc",
+    "riderId": "adam-nelson",
+    "riderInitials": "AN",
+    "riderName": "Adam Nelson",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "aidan-collins",
+    "riderInitials": "AC",
+    "riderName": "Aidan Collins",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "bwcc",
+    "riderId": "alan-waters",
+    "riderInitials": "AW",
+    "riderName": "Alan Waters",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stt",
+    "riderId": "andrew-kavanagh",
+    "riderInitials": "AK",
+    "riderName": "Andrew Kavanagh",
+    "seasonPoints": [0, 5, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "andrew-lomax",
+    "riderInitials": "AL",
+    "riderName": "Andrew Lomax",
+    "seasonPoints": [0, 0, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "aonghus-o-heocha",
+    "riderInitials": "AOH",
+    "riderName": "Aonghus O'hEocha",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "cillian-mchugh",
+    "riderInitials": "CM",
+    "riderName": "Cillian McHugh",
+    "seasonPoints": [0, 0, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "dan-coulcher",
+    "riderInitials": "DC",
+    "riderName": "Dan Coulcher",
+    "seasonPoints": [0, 5, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "daniel-mcelroy",
+    "riderInitials": "DM",
+    "riderName": "Daniel McElroy",
+    "seasonPoints": [0, 5, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "david-kelly",
+    "riderInitials": "DK",
+    "riderName": "David Kelly",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "davis-quinn",
+    "riderInitials": "DQ",
+    "riderName": "Davis Quinn",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "declan-quigley",
+    "riderInitials": "DQ",
+    "riderName": "Declan Quigley",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "dermot-cooney",
+    "riderInitials": "DC",
+    "riderName": "Dermot Cooney",
+    "seasonPoints": [0, 0, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "stcc",
+    "riderId": "fergal-may",
+    "riderInitials": "FM",
+    "riderName": "Fergal May",
+    "seasonPoints": [0, 0, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "john-macaree",
+    "riderInitials": "JM",
+    "riderName": "John MacAree",
+    "seasonPoints": [0, 0, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "owcc",
+    "riderId": "josephine-lynch",
+    "riderInitials": "JL",
+    "riderName": "Josephine Lynch",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "kieran-regan",
+    "riderInitials": "KR",
+    "riderName": "Kieran Regan",
+    "seasonPoints": [0, 5, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "uirc",
+    "riderId": "leslie-walpole",
+    "riderInitials": "LW",
+    "riderName": "Leslie Walpole",
+    "seasonPoints": [0, 0, 0, 0, 5, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "owcc",
+    "riderId": "liam-denvir",
+    "riderInitials": "LD",
+    "riderName": "Liam Denvir",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "owcc",
+    "riderId": "manuel-fontan-garcia",
+    "riderInitials": "MFG",
+    "riderName": "Manuel Fontan Garcia",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "stcc",
+    "riderId": "marcus-dowling",
+    "riderInitials": "MD",
+    "riderName": "Marcus Dowling",
+    "seasonPoints": [0, 0, 0, 0, 5, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "stcc",
+    "riderId": "martin-casey",
+    "riderInitials": "MC",
+    "riderName": "Martin Casey",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "mathieu-fragniere",
+    "riderInitials": "MF",
+    "riderName": "Mathieu Fragniere",
+    "seasonPoints": [0, 0, 0, 0, 0, 0, 5, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "semi-limit",
+    "clubId": "lcrc",
+    "riderId": "michael-leonard",
+    "riderInitials": "ML",
+    "riderName": "Michael Leonard",
+    "seasonPoints": [0, 0, 0, 0, 0, 0, 5, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "patrick-o-sullivan",
+    "riderInitials": "POS",
+    "riderName": "Patrick O'Sullivan",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "scratch",
+    "clubId": "lcrc",
+    "riderId": "sean-flynn",
+    "riderInitials": "SF",
+    "riderName": "Sean Flynn",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 5],
+    "stagePoints": 5
+  },
+  {
+    "categoryId": "limit",
+    "clubId": "stcc",
+    "riderId": "shane-byrne",
+    "riderInitials": "SB",
+    "riderName": "Shane Byrne",
+    "seasonPoints": [5, 0, 0, 0, 0, 0, 0, 0],
+    "stagePoints": 0
+  },
+  {
+    "categoryId": "semi-scratch",
+    "clubId": "owcc",
+    "riderId": "yvonne-doran",
+    "riderInitials": "YD",
+    "riderName": "Yvonne Doran",
+    "seasonPoints": [0, 0, 0, 5, 0, 0, 0, 0],
+    "stagePoints": 0
+  }
+]

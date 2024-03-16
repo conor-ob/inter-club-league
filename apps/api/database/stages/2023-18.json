@@ -1,0 +1,13 @@
+{
+  "id": "2023-18",
+  "name": "Prize Giving",
+  "club": "STCC",
+  "location": "Blessington",
+  "county": "Dublin",
+  "startTime": "2023-08-17T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}

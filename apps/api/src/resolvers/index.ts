@@ -1,7 +1,6 @@
 import { Resolvers } from '../generated/graphql'
-import LeaderboardRowV2 from './leaderboardRowV2'
 import { Query } from './query'
 
-const resolvers: Resolvers = { Query, LeaderboardRowV2 }
+const resolvers: Resolvers = { Query }
 
 export { resolvers }

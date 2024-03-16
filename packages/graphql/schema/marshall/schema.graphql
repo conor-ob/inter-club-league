@@ -1,0 +1,8 @@
+type StageMarshalls {
+  id: ID!
+  marshalls: [String!]!
+}
+
+extend type Query {
+  marshalls(stageId: ID!): StageMarshalls!
+}

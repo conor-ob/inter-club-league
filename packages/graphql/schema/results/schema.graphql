@@ -1,0 +1,31 @@
+type CategoryResults {
+  id: ID!
+  categoryGroup: CategoryGroup!
+  stageRiders: [StageRider!]!
+}
+
+enum ResultsStatus {
+  UPCOMING
+  AWAITING_RESULTS
+  COMPLETED
+}
+
+type StageResults {
+  id: ID!
+  categoryResults: [CategoryResults!]!
+  gcLeaderId: String!
+  resultsStatus: ResultsStatus!
+}
+
+type StageRider {
+  id: ID!
+  category: Category!
+  club: Club!
+  points: Int!
+  position: String!
+  rider: Rider!
+}
+
+extend type Query {
+  stageResults(stageId: ID!): StageResults!
+}

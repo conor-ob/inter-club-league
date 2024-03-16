@@ -1,0 +1,13 @@
+{
+  "id": "2023-9",
+  "name": "Devil takes the Hindmost",
+  "club": "STT",
+  "location": "Corkagh Park",
+  "county": "Dublin",
+  "startTime": "2023-06-15T19:00:00Z",
+  "type": "CRITERIUM",
+  "mandatory": false,
+  "categoryGroups": "S+SS,SL+L",
+  "coordinates": "53.306305,-6.412072",
+  "stravaId": null
+}

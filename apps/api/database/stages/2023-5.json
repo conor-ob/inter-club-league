@@ -1,0 +1,13 @@
+{
+  "id": "2023-5",
+  "name": "Coolquay",
+  "club": "LCRC",
+  "location": "Coolquay",
+  "county": "Dublin",
+  "startTime": "2023-05-11T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.463518,-6.344188",
+  "stravaId": null
+}

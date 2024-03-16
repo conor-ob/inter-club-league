@@ -1,0 +1,13 @@
+{
+  "id": "2023-7",
+  "name": "Sally Gap Finish",
+  "club": "LCRC",
+  "location": "Brittas",
+  "county": "Dublin",
+  "startTime": "2023-06-01T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}

@@ -1,41 +1,53 @@
 import { QueryResolvers } from '../generated/graphql'
 
 const Query: QueryResolvers = {
-  leaderboardV2: (_, { id }, { pgaTourLeaderboardService }, { operation }) => {
+  gc: (_, { stageId }, { gcService }, ____) => {
     try {
-      return pgaTourLeaderboardService.getLeaderboard(
-        id,
-        operation.loc?.source.body
-      )
+      return gcService.getGc(stageId)
     } catch (e) {
-      console.log(`Query 'leaderboardV2' failed for leaderboardV2Id=${id}`, e)
+      console.log(`Query 'gc' failed for stageId=${stageId}`, e)
       throw e
     }
   },
-  tournaments: (_, { ids }, { pgaTourTournamentService }, { operation }) => {
+  marshalls: (_, { stageId }, { marshallsService }, ____) => {
     try {
-      return pgaTourTournamentService.getTournaments(
-        ids ?? [],
-        operation.loc?.source.body
-      )
+      return marshallsService.getMarshalls(stageId)
     } catch (e) {
-      console.log(`Query 'tournaments' failed for ids=${ids}`, e)
+      console.log(`Query 'marshalls' failed for stageId=${stageId}`, e)
       throw e
     }
   },
-  puttingPalsTournaments: (_, __, { puttingPalsScheduleService }, ____) => {
+  stageResults: (_, { stageId }, { stageResultsService }, ____) => {
     try {
-      return puttingPalsScheduleService.getTournaments()
+      return stageResultsService.getStageResults(stageId)
     } catch (e) {
-      console.log(`Query 'puttingPalsSchedule' failed`, e)
+      console.log(`Query 'stageResults' failed for stageId=${stageId}`, e)
       throw e
     }
   },
-  redirects: (_, __, { redirectsService }, ____) => {
+  stage: (_, { stageId }, { stagesService }, ____) => {
     try {
-      return redirectsService.getRedirects()
+      return stagesService.getStage(stageId)
     } catch (e) {
-      console.log(`Query 'puttingPalsSchedule' failed`, e)
+      console.log(`Query 'stage' failed for stageId=${stageId}`, e)
+      throw e
+    }
+  },
+  stages: (_, { seasonId }, { redirectService, stagesService }, ____) => {
+    try {
+      const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
+      return stagesService.getStages(resolvedSeasonId)
+    } catch (e) {
+      console.log(`Query 'stages' failed for seasonId=${seasonId}`, e)
+      throw e
+    }
+  },
+  redirects: (_, { seasonId }, { redirectService }, ____) => {
+    try {
+      const resolvedSeasonId = seasonId ?? redirectService.getCurrentSeasonId()
+      return redirectService.getRedirects(resolvedSeasonId)
+    } catch (e) {
+      console.log(`Query 'currentGcStageId' failed for seasonId=${seasonId}`, e)
       throw e
     }
   }

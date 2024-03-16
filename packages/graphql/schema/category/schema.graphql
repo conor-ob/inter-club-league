@@ -1,0 +1,11 @@
+type Category {
+  id: ID!
+  code: String!
+  name: String!
+  rank: Int!
+}
+
+type CategoryGroup {
+  id: ID!
+  categories: [Category!]!
+}

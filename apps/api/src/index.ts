@@ -8,43 +8,43 @@ import {
 import { config } from '@inter-club-league/config'
 import cors from 'cors'
 import express from 'express'
-import { readFileSync } from 'fs'
 import http from 'http'
-import path from 'path'
 import { ServerContext } from './context/ServerContext'
 import { Database } from './database/Database'
+import { FileReader } from './database/FileReader'
+import { GcMapper } from './mapping/GcMapper'
+import { StageMapper } from './mapping/StageMapper'
+import { StageResultsMapper } from './mapping/StageResultsMapper'
 import { resolvers } from './resolvers'
-import { PgaTourApiService } from './service/PgaTourApiService'
-import { PgaTourLeaderboardService } from './service/PgaTourLeaderboardService'
-import { PgaTourTournamentService } from './service/PgaTourTournamentService'
-import { PuttingPalsScheduleService } from './service/PuttingPalsScheduleService'
-import { RedirectsService } from './service/RedirectsService'
+import { GcService } from './service/GcService'
+import { MarshallsService } from './service/MarshallsService'
+import { RedirectService } from './service/RedirectService'
+import { StageResultsService } from './service/StageResultsService'
+import { StagesService } from './service/StagesService'
 
 async function bootstrap() {
-  const database = new Database()
-  const redirectsService = new RedirectsService(database)
-  const pgaTourApiService = new PgaTourApiService(
-    'https://orchestrator.pgatour.com/graphql',
-    'da2-gsrx5bibzbb4njvhl7t37wqyl4'
+  const fileReader = new FileReader()
+  const database = new Database(fileReader)
+
+  const stageMapper = new StageMapper(database)
+  const stageResultsMapper = new StageResultsMapper(database)
+  const gcMapper = new GcMapper(database)
+
+  const stagesService = new StagesService(database, stageMapper)
+  const gcService = new GcService(database, gcMapper, stagesService)
+  const stageResultsService = new StageResultsService(
+    database,
+    stageResultsMapper,
+    stagesService,
+    gcService
   )
-  const pgaTourTournamentService = new PgaTourTournamentService(
-    pgaTourApiService
-  )
-  const pgaTourLeaderboardService = new PgaTourLeaderboardService(
-    pgaTourApiService,
-    pgaTourTournamentService
-  )
-  const puttingPalsScheduleService = new PuttingPalsScheduleService(database)
+  const marshallsService = new MarshallsService(database)
+  const redirectService = new RedirectService(database, stagesService)
 
   const app = express()
   const httpServer = http.createServer(app)
   const server = new ApolloServer<ServerContext>({
-    typeDefs: readFileSync(
-      path.resolve(process.cwd(), './src/generated/schema.graphql'),
-      {
-        encoding: 'utf-8'
-      }
-    ),
+    typeDefs: fileReader.readFile('./src/generated/schema.graphql'),
     resolvers,
     plugins: [
       ApolloServerPluginDrainHttpServer({ httpServer }),
@@ -52,23 +52,7 @@ async function bootstrap() {
         ? ApolloServerPluginLandingPageProductionDefault({
             footer: false
           })
-        : ApolloServerPluginLandingPageLocalDefault(),
-      {
-        async requestDidStart(requestContext) {
-          if (requestContext.request.operationName !== 'IntrospectionQuery') {
-            console.log(
-              JSON.stringify(
-                {
-                  query: requestContext.request.operationName,
-                  variables: requestContext.request.variables
-                },
-                null,
-                2
-              )
-            )
-          }
-        }
-      }
+        : ApolloServerPluginLandingPageLocalDefault()
     ]
   })
   await server.start()
@@ -81,7 +65,7 @@ async function bootstrap() {
           // allow requests with no origin
           return callback(null, true)
         } else if (config.allowedOrigins.indexOf(origin) === -1) {
-          return callback(null, true) // TODO fix cors
+          return callback(null, true) // TODO cors
         } else {
           return callback(null, true)
         }
@@ -90,10 +74,11 @@ async function bootstrap() {
     express.json(),
     expressMiddleware(server, {
       context: async () => ({
-        pgaTourLeaderboardService: pgaTourLeaderboardService,
-        pgaTourTournamentService: pgaTourTournamentService,
-        puttingPalsScheduleService: puttingPalsScheduleService,
-        redirectsService: redirectsService
+        gcService: gcService,
+        marshallsService: marshallsService,
+        stageResultsService: stageResultsService,
+        stagesService: stagesService,
+        redirectService: redirectService
       })
     })
   )

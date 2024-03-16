@@ -1,0 +1,13 @@
+{
+  "id": "2023-12",
+  "name": "Club Champs",
+  "club": "STCC",
+  "location": "Curragh",
+  "county": "Kildare",
+  "startTime": "2023-07-01T10:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": true,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}

@@ -1,16 +1,7 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
 
 const config: CodegenConfig = {
-  schema: [
-    '**/schema.graphql',
-    {
-      'https://orchestrator.pgatour.com/graphql': {
-        headers: {
-          'X-Api-Key': 'da2-gsrx5bibzbb4njvhl7t37wqyl4'
-        }
-      }
-    }
-  ],
+  schema: 'schema/**/schema.graphql',
   generates: {
     '../../apps/api/src/generated/schema.graphql': {
       plugins: ['schema-ast']
