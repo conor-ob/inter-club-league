@@ -1,6 +1,4 @@
-import { colors } from '@inter-club-league/app/design/colors'
 import { useStagesQuery } from '@inter-club-league/app/graphql/use-stages-query'
-import { ChevronLeft, ChevronRight } from '@nandorojo/heroicons/24/outline'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { useRouter } from 'solito/router'
@@ -50,11 +48,11 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 name='chevron-back-outline'
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
-              <ChevronLeft
+              {/* <ChevronLeft
                 height={20}
                 width={20}
                 color={colors[colorScheme ?? 'light'].brandDefault}
-              />
+              /> */}
               <Text className='text-brand font-inter-regular text-lg'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
             </TouchableOpacity>
           ) : (
@@ -77,11 +75,11 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 name='chevron-forward-outline'
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
-              <ChevronRight
+              {/* <ChevronRight
                 height={20}
                 width={20}
                 color={colors[colorScheme ?? 'light'].brandDefault}
-              />
+              /> */}
             </TouchableOpacity>
           ) : (
             <View />
