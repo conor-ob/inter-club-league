@@ -66,8 +66,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
                       item.startTime.lastIndexOf(':')
                     )}
                     icon='time-outline'
-                    // color={colors[colorScheme ?? 'light'].brandPurple}
-                    color={colors[colorScheme ?? 'light'].brandBlue}
+                    color={colors[colorScheme ?? 'light'].brandPurple}
                   />
                 </View>
                 <View className='px-1 py-1'>

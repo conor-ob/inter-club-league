@@ -10,6 +10,7 @@ const nextConfig = {
   reactStrictMode: false,
   transpilePackages: [
     '@react-native-segmented-control/segmented-control',
+    '@nandorojo/heroicons',
     'react-native',
     'react-native-web',
     'solito',

@@ -7,6 +7,7 @@ export const theme = {
       brand: {
         DEFAULT: 'var(--color-brand-default)',
         blue: 'var(--color-brand-blue)',
+        purple: 'var(--color-brand-purple)',
         gray: 'var(--color-brand-gray)',
         green: 'var(--color-brand-green)',
         red: 'var(--color-brand-red)',
