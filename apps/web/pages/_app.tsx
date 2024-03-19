@@ -344,7 +344,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         </Popover>
         <main className='-mt-24 pb-8'>
           <div className='mx-auto max-w-3xl sm:px-6 lg:max-w-5xl lg:px-8'>
-            <div className='overflow-hidden bg-white shadow sm:rounded-lg'>
+            <div className='overflow-hidden shadow sm:rounded-lg'>
               <div>{children}</div>
             </div>
           </div>
