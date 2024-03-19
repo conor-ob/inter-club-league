@@ -307,7 +307,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                               Download the app
                             </div>
                           </div>
-                          <div className='mt-2 space-y-1 px-2 pb-2'>
+                          <div className='mt-2 space-y-1 px-2'>
                             <Image
                               className='px-3 py-2'
                               src={'/app-store-badge.png'}

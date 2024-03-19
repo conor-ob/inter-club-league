@@ -1,5 +1,3 @@
-function Schedule() {
-  return <div className='bg-background h-80 p-6'>Schedule</div>
-}
+import { ScheduleFeature } from '@inter-club-league/app/features/schedule/schedule-feature'
 
-export default Schedule
+export default ScheduleFeature
