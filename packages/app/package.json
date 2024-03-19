@@ -9,6 +9,7 @@
     "@apollo/client": "^3.8.10",
     "@inter-club-league/config": "*",
     "@nandorojo/heroicons": "^0.3.0",
+    "@react-native-segmented-control/segmented-control": "^2.5.0",
     "classnames": "^2.5.1",
     "jest-diff": "^29.7.0",
     "moti": "latest",

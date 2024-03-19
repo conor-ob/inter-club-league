@@ -9,6 +9,7 @@ const nextConfig = {
   // once that gets fixed, set this back to true
   reactStrictMode: false,
   transpilePackages: [
+    '@react-native-segmented-control/segmented-control',
     'react-native',
     'react-native-web',
     'solito',
@@ -18,7 +19,14 @@ const nextConfig = {
     'nativewind',
     'react-native-css-interop',
     'react-native-gesture-handler'
-  ]
+  ],
+  webpack: (c) => {
+    c.module.rules.push({
+      test: /\.jsx?$/,
+      use: ['remove-flow-types-loader']
+    })
+    return c
+  }
 }
 
 module.exports = withExpo(nextConfig)
