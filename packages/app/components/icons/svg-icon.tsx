@@ -1,5 +1,7 @@
 import {
   AcademicCap,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   MapPin,
   Trophy
@@ -15,6 +17,10 @@ export function SvgIcon({
   size: number
 }) {
   switch (name) {
+    case 'chevron-left':
+      return <ChevronLeft color={color} width={size} height={size} />
+    case 'chevron-right':
+      return <ChevronRight color={color} width={size} height={size} />
     case 'location-outline':
       return <MapPin color={color} width={size} height={size} />
     case 'time-outline':

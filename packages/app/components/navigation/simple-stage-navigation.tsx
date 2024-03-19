@@ -1,7 +1,9 @@
+import { colors } from '@inter-club-league/app/design/colors'
 import { useStagesQuery } from '@inter-club-league/app/graphql/use-stages-query'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { useRouter } from 'solito/router'
+import { SvgIcon } from '../icons/svg-icon'
 
 type SimpleStageNavigationProps = {
   baseUrl: string
@@ -53,6 +55,12 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 width={20}
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
+              <SvgIcon
+                name='chevron-left'
+                size={20}
+                color={colors[colorScheme ?? 'light'].brandDefault}
+              />
+              <View className='w-2' />
               <Text className='text-brand font-inter-regular text-base'>{`Stage ${previousStageId.split('-')[1]}`}</Text>
             </TouchableOpacity>
           ) : (
@@ -80,6 +88,12 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 width={20}
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
+              <View className='w-2' />
+              <SvgIcon
+                name='chevron-right'
+                size={20}
+                color={colors[colorScheme ?? 'light'].brandDefault}
+              />
             </TouchableOpacity>
           ) : (
             <View />
