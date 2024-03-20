@@ -34,8 +34,8 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
         : null
 
     return (
-      <View className='bg-card flex flex-row'>
-        <View className='flex flex-1 items-center p-4'>
+      <View className='bg-card flex-row justify-between'>
+        <View className='p-4'>
           {previousStageId ? (
             <TouchableOpacity
               className='flex flex-row items-center'
@@ -67,7 +67,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
             <View />
           )}
         </View>
-        <View className='flex flex-1 items-center p-4'>
+        <View className='p-4'>
           {nextStageId ? (
             <TouchableOpacity
               className='flex flex-row items-center'

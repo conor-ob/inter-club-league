@@ -1,5 +1,7 @@
 import {
   AcademicCap,
+  ArrowDown,
+  ArrowUp,
   ChevronLeft,
   ChevronRight,
   Clock,
@@ -18,6 +20,10 @@ export function SvgIcon({
   size: number
 }) {
   switch (name) {
+    case 'arrow-up-outline':
+      return <ArrowUp color={color} width={size} height={size} />
+    case 'arrow-down-outline':
+      return <ArrowDown color={color} width={size} height={size} />
     case 'bicycle-outline':
       return <Icon name='Bicycle' height={size} width={size} fill={color} />
     case 'chevron-left':
