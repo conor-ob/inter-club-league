@@ -76,7 +76,7 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
         </Text>
         <View className='w-1' />
         <SvgIcon
-          size={20}
+          size={16}
           name='arrow-up-outline'
           color={colors[colorScheme ?? 'light'].brandGreen}
         />
@@ -90,7 +90,7 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
         </Text>
         <View className='w-1' />
         <SvgIcon
-          size={20}
+          size={16}
           name='arrow-down-outline'
           color={colors[colorScheme ?? 'light'].brandRed}
         />

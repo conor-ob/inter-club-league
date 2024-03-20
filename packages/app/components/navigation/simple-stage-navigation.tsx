@@ -57,7 +57,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
               /> */}
               <SvgIcon
                 name='chevron-left'
-                size={20}
+                size={24}
                 color={colors[colorScheme ?? 'light'].brandDefault}
               />
               <View className='w-2' />
@@ -91,7 +91,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
               <View className='w-2' />
               <SvgIcon
                 name='chevron-right'
-                size={20}
+                size={24}
                 color={colors[colorScheme ?? 'light'].brandDefault}
               />
             </TouchableOpacity>
