@@ -3417,6 +3417,7 @@ __metadata:
     next-themes: 0.2.1
     react-native: 0.72.4
     react-native-svg: ^15.1.0
+    react-native-svg-icon: ^0.10.0
     solito: ^4.2.2
   languageName: unknown
   linkType: soft
@@ -13507,6 +13508,17 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 3b592ff31d9dfde5e2ce967f85f3ad17a94f4f3bee2248a3dad9ec791e7cda72a431f86b468b3b2a70ebeffb49b462f8162668a58fb9ddabb10b5a369816850d
+  languageName: node
+  linkType: hard
+
+"react-native-svg-icon@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "react-native-svg-icon@npm:0.10.0"
+  peerDependencies:
+    prop-types: ^15.5.10
+    react-native: ^0.64.0
+    react-native-svg: ">=5.3"
+  checksum: 70a5698c2a6c684af66b40ce4463c220d8055f90254d96da8069179e8dfab98f439c18b78cd2ecb1b0c66d1d264230972128d92096d154e640e65dc8037ecf4d
   languageName: node
   linkType: hard
 

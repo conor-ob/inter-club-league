@@ -11,6 +11,8 @@ const nextConfig = {
   transpilePackages: [
     '@react-native-segmented-control/segmented-control',
     '@nandorojo/heroicons',
+    'react-native-svg',
+    'react-native-svg-icon',
     'react-native',
     'react-native-web',
     'solito',

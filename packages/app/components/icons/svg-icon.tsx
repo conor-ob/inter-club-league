@@ -6,6 +6,7 @@ import {
   MapPin,
   Trophy
 } from '@nandorojo/heroicons/24/outline'
+import Icon from './icon'
 
 export function SvgIcon({
   name,
@@ -17,6 +18,8 @@ export function SvgIcon({
   size: number
 }) {
   switch (name) {
+    case 'bicycle-outline':
+      return <Icon name='Bicycle' height={size} width={size} fill={color} />
     case 'chevron-left':
       return <ChevronLeft color={color} width={size} height={size} />
     case 'chevron-right':
