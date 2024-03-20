@@ -71,7 +71,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         <body class="h-full">
         ```
       */}
-      <div className='min-h-full'>
+      <div className='bg-background min-h-full'>
         <Popover as='header' className='bg-card pb-24'>
           {({ open }) => (
             <>
@@ -342,23 +342,11 @@ function Layout({ children }: { children: React.ReactNode }) {
             </>
           )}
         </Popover>
-        <main className='-mt-24 pb-8'>
+        <main className='bg-background -mt-24'>
           <div className='mx-auto max-w-3xl sm:px-6 lg:max-w-5xl lg:px-8'>
-            <div className='overflow-hidden shadow sm:rounded-lg'>
-              <div>{children}</div>
-            </div>
+            <div>{children}</div>
           </div>
         </main>
-        <footer>
-          <div className='mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
-            <div className=' py-8 text-center text-sm text-gray-500 sm:text-left'>
-              <span className='block sm:inline'>
-                &copy; 2021 Your Company, Inc.
-              </span>{' '}
-              <span className='block sm:inline'>All rights reserved.</span>
-            </div>
-          </div>
-        </footer>
       </div>
     </>
   )
