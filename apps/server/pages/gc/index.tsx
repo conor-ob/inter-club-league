@@ -1,8 +1,8 @@
+import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
 import { useEffect } from 'react'
 import { useRouter } from 'solito/router'
-import { useRedirectQuery } from '../../graphql/use-redirect-query'
 
-export function GcRedirect() {
+export default function GcRedirect() {
   const { loading, data, error, refetch } = useRedirectQuery({
     seasonId: undefined
   })
@@ -10,14 +10,9 @@ export function GcRedirect() {
 
   useEffect(() => {
     if (data?.redirects.currentStageId) {
-      replace(`/gc/${data.redirects.currentStageId}`, undefined, {
-        experimental: {
-          nativeBehavior: 'stack-replace',
-          isNestedNavigator: false
-        }
-      })
+      replace(`/gc/${data.redirects.currentStageId}`)
     }
   }, [data, replace])
 
-  return null
+  return null // TODO loading skeleton
 }

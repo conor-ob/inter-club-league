@@ -7,7 +7,5 @@ type SkeletonProps = {
 
 // TODO animate-pulse only works on "react-native-reanimated": "3.3.0",
 export function Skeleton({ className }: SkeletonProps) {
-  return (
-    <View className={cx('bg-skeleton animate-pulse rounded-xl', className)} />
-  )
+  return <View className={cx('bg-skeleton animate-pulse', className)} />
 }

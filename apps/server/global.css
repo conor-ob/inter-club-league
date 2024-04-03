@@ -47,3 +47,26 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -ms-overflow-style: scrollbar;
 }
+
+@font-face {
+    font-family: 'inter-regular';
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-regular.otf');
+}
+
+
+@font-face {
+    font-family: 'inter-medium';
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-medium.otf');
+}
+
+
+@font-face {
+    font-family: 'inter-semibold';
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-semibold.otf');
+}
+
+
+@font-face {
+    font-family: 'inter-bold';
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-bold.otf');
+}

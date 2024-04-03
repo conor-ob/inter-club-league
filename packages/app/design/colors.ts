@@ -3,8 +3,9 @@ import { vars } from 'nativewind'
 
 export const colors = {
   light: {
-    background: 'rgb(242, 242, 242)',
+    background: 'rgb(246, 246, 246)',
     brandDefault: 'rgba(252, 76, 2, 1)',
+    brandGc: 'rgba(253, 224, 71, 1)',
     brandBlue: '#004c95',
     brandGray: '#949494',
     brandGreen: 'rgba(52, 199, 89, 1)',
@@ -22,6 +23,7 @@ export const colors = {
   dark: {
     background: 'rgb(1, 1, 1)',
     brandDefault: 'rgba(253, 224, 71, 1)',
+    brandGc: 'rgba(253, 224, 71, 1)',
     brandPurple: 'rgba(191, 90, 242, 1)',
     brandBlue: '#004c95',
     brandGray: '#949494',
@@ -42,6 +44,7 @@ export const themes = {
   light: vars({
     '--color-background': colors.light.background,
     '--color-brand-default': colors.light.brandDefault,
+    '--color-brand-gc': colors.light.brandGc,
     '--color-brand-blue': colors.light.brandBlue,
     '--color-brand-purple': colors.light.brandPurple,
     '--color-brand-gray': colors.light.brandGray,
@@ -58,6 +61,7 @@ export const themes = {
   dark: vars({
     '--color-background': colors.dark.background,
     '--color-brand-default': colors.dark.brandDefault,
+    '--color-brand-gc': colors.dark.brandGc,
     '--color-brand-blue': colors.dark.brandBlue,
     '--color-brand-purple': colors.dark.brandPurple,
     '--color-brand-gray': colors.dark.brandGray,

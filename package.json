@@ -18,6 +18,7 @@
   "scripts": {
     "clean": "turbo run clean && rm -rf yarn.lock",
     "build": "turbo run build",
+    "dev": "turbo run dev",
     "start": "turbo run start"
   },
   "resolutions": {
