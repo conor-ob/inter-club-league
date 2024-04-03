@@ -6,7 +6,7 @@ import { createParam } from 'solito'
 import { useRouter } from 'solito/router'
 import { Skeleton } from '../loading/skeleton'
 
-type StageNavigationProps = {
+type StagesNavigationProps = {
   baseUrl: string
   search?: string
 }
@@ -15,7 +15,7 @@ const { useParams } = createParam<{
   id: string
 }>()
 
-export function StageNavigation({ baseUrl, search }: StageNavigationProps) {
+export function StageNavigations({ baseUrl, search }: StagesNavigationProps) {
   const { params } = useParams()
   const colorScheme = useColorScheme()
   const { data, loading, error } = useStagesQuery()

@@ -8,6 +8,7 @@
   "dependencies": {
     "@apollo/client": "^3.8.10",
     "@inter-club-league/config": "*",
+    "@inter-club-league/utils": "*",
     "@nandorojo/heroicons": "^0.3.0",
     "@react-native-segmented-control/segmented-control": "^2.5.0",
     "classnames": "^2.5.1",

@@ -15,7 +15,7 @@ import { CardDivider } from '../../components/card/card-divider'
 import { YellowJersey } from '../../components/image/yellow-jersey'
 import { Column } from '../../components/layout/column'
 import { Row } from '../../components/layout/row'
-import { StageNavigation1 } from '../../components/navigation/stage-navigation'
+import { StageNavigation } from '../../components/navigation/stage-navigation'
 import { GcStatus } from '../../generated/graphql'
 import { useGcQuery } from '../../graphql/use-gc-query'
 import { StageCard } from '../stage/stage-card'
@@ -67,7 +67,7 @@ export function GcFeature() {
         <View>
           <StageCard stage={data.stage} href={`/schedule/${data.stage.id}`} />
           <View className='h-6' />
-          <StageNavigation1 disabled={loading} />
+          <StageNavigation baseUrl='/gc' disabled={loading} />
           <View className='h-6' />
           {data.gc.gcStatus === GcStatus.Completed && (
             <Column>
