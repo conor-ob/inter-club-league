@@ -7,8 +7,10 @@ import {
 } from '@apollo/server/plugin/landingPage/default'
 import { config } from '@inter-club-league/config'
 import cors from 'cors'
-import express from 'express'
+import { default as compression, default as express } from 'express'
 import http from 'http'
+import next from 'next'
+import { parse } from 'url'
 import { ServerContext } from './context/ServerContext'
 import { Database } from './database/Database'
 import { FileReader } from './database/FileReader'
@@ -22,7 +24,11 @@ import { RedirectService } from './service/RedirectService'
 import { StageResultsService } from './service/StageResultsService'
 import { StagesService } from './service/StagesService'
 
-async function bootstrap() {
+async function startServer() {
+  const dev = process.env.NODE_ENV !== 'production'
+  const hostname = config.hostname
+  const port = config.port
+
   const fileReader = new FileReader()
   const database = new Database(fileReader)
 
@@ -41,9 +47,10 @@ async function bootstrap() {
   const marshallsService = new MarshallsService(database)
   const redirectService = new RedirectService(database, stagesService)
 
-  const app = express()
-  const httpServer = http.createServer(app)
-  const server = new ApolloServer<ServerContext>({
+  const server = express()
+  const httpServer = http.createServer(server)
+
+  const apolloServer = new ApolloServer<ServerContext>({
     typeDefs: fileReader.readFile('./src/generated/schema.graphql'),
     resolvers,
     plugins: [
@@ -55,24 +62,14 @@ async function bootstrap() {
         : ApolloServerPluginLandingPageLocalDefault()
     ]
   })
-  await server.start()
+  await apolloServer.start()
 
-  app.use(
+  server.use(compression())
+  server.use(
     config.graphqlEndpoint,
-    cors({
-      origin: function (origin, callback) {
-        if (!origin) {
-          // allow requests with no origin
-          return callback(null, true)
-        } else if (config.allowedOrigins.indexOf(origin) === -1) {
-          return callback(null, true) // TODO cors
-        } else {
-          return callback(null, true)
-        }
-      }
-    }),
+    cors({ origin: config.allowedOrigins }),
     express.json(),
-    expressMiddleware(server, {
+    expressMiddleware(apolloServer, {
       context: async () => ({
         gcService: gcService,
         marshallsService: marshallsService,
@@ -83,16 +80,35 @@ async function bootstrap() {
     })
   )
 
-  if (process.env.NODE_ENV === 'production') {
-    await new Promise<void>((resolve) =>
-      httpServer.listen({ port: config.graphqlPort }, resolve)
-    )
-  }
+  const app = next({
+    dev,
+    hostname,
+    port
+  })
+  const handle = app.getRequestHandler()
 
-  console.log(`🚀 Server ready at ${config.graphqlUri}`)
+  app
+    .prepare()
+    .then(() => {
+      server.get('*', (req, res) => {
+        const parsedUrl = parse(req.url, true)
+        return handle(req, res, parsedUrl)
+      })
 
-  return app
+      httpServer.listen(port, () => {
+        console.log(
+          `🚀 Server ready at ${
+            process.env.NODE_ENV === 'production' ? 'https' : 'http'
+          }://${hostname}:${port}`
+        )
+      })
+    })
+    .catch((ex) => {
+      console.error(ex.stack)
+    })
+
+  return server
 }
 
-const app = bootstrap()
-export const viteNodeApp = app
+const server = startServer()
+export const viteNodeApp = server

@@ -1,18 +1,24 @@
 const base = {
-  graphqlPort: 4000
+  graphqlEndpoint: '/graphql',
+  googleAnalyticsId: 'G-TODO'
 }
 
 const production = {
-  allowedOrigins: ['https://inter-club-league.vercel.app'],
-  graphqlEndpoint: '/',
-  graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql',
+  hostname: '0.0.0.0',
+  port: 8080,
+  allowedOrigins: [
+    'https://inter-club-league-jtmtu.ondigitalocean.app',
+    'https://clubleague.conorob.ie'
+  ],
+  graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql', // TODO
   ...base
 }
 
 const development = {
-  allowedOrigins: [`http://localhost:3000`],
-  graphqlEndpoint: '/graphql',
-  graphqlUri: `http://localhost:${base.graphqlPort}/graphql`,
+  hostname: 'localhost',
+  port: 3000,
+  allowedOrigins: ['http://localhost:3000'],
+  graphqlUri: `http://localhost:3000/graphql`,
   ...base
 }
 
