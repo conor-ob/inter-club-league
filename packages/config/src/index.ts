@@ -1,6 +1,6 @@
 const base = {
   graphqlEndpoint: '/graphql',
-  googleAnalyticsId: 'G-TODO'
+  googleAnalyticsId: 'G-78W6EQTCKS'
 }
 
 const production = {

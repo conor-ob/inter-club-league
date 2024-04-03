@@ -5,6 +5,8 @@ import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
 import { Provider } from '@inter-club-league/app/provider'
+import { config } from '@inter-club-league/config'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import cx from 'classnames'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -25,9 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Provider>
         <Layout>
           <Component {...pageProps} />
-          {/* TODO {process.env.NODE_ENV === 'production' && (
+          {process.env.NODE_ENV === 'production' && (
             <GoogleAnalytics gaId={config.googleAnalyticsId} />
-          )} */}
+          )}
         </Layout>
       </Provider>
     </>
