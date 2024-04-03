@@ -1,5 +1,5 @@
 {
-  "name": "@inter-club-league/web",
+  "name": "@inter-club-league/server",
   "version": "0.1.0",
   "private": true,
   "scripts": {
