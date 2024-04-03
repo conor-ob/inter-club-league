@@ -3373,34 +3373,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@inter-club-league/api@workspace:apps/api":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/api@workspace:apps/api"
-  dependencies:
-    "@apollo/server": ^4.10.0
-    "@inter-club-league/config": "*"
-    "@inter-club-league/graphql": "*"
-    "@inter-club-league/utils": "*"
-    "@types/body-parser": ^1.19.5
-    "@types/cors": ^2.8.17
-    "@types/express": ^4.17.21
-    "@types/node": ^20.11.5
-    "@types/papaparse": ^5.3.14
-    body-parser: ^1.20.2
-    cors: ^2.8.5
-    cross-env: ^7.0.3
-    date-fns: ^3.2.0
-    express: ^4.18.2
-    globby: 11.0.4
-    graphql: ^16.8.1
-    papaparse: ^5.4.1
-    ts-node: ^10.9.2
-    typescript: ^5.3.3
-    vite: ^5.1.4
-    vite-plugin-node: ^3.1.0
-  languageName: unknown
-  linkType: soft
-
 "@inter-club-league/app@*, @inter-club-league/app@workspace:packages/app":
   version: 0.0.0-use.local
   resolution: "@inter-club-league/app@workspace:packages/app"
@@ -4668,7 +4640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/body-parser@npm:*, @types/body-parser@npm:^1.19.5":
+"@types/body-parser@npm:*":
   version: 1.19.5
   resolution: "@types/body-parser@npm:1.19.5"
   dependencies:
@@ -6019,7 +5991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:1.20.2, body-parser@npm:^1.20.1, body-parser@npm:^1.20.2":
+"body-parser@npm:1.20.2, body-parser@npm:^1.20.1":
   version: 1.20.2
   resolution: "body-parser@npm:1.20.2"
   dependencies:
@@ -8353,7 +8325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:^4.17.1, express@npm:^4.18.2":
+"express@npm:^4.17.1":
   version: 4.18.3
   resolution: "express@npm:4.18.3"
   dependencies:
