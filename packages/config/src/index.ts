@@ -10,7 +10,7 @@ const production = {
     'https://inter-club-league-jtmtu.ondigitalocean.app',
     'https://clubleague.conorob.ie'
   ],
-  graphqlUri: 'https://inter-club-league-jtmtu.ondigitalocean.app/graphql', // TODO
+  graphqlUri: 'https://clubleague.conorob.ie/graphql',
   ...base
 }
 
