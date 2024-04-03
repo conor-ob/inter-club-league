@@ -11,7 +11,7 @@ type GcRiderRowProps = {
 
 export function GcRiderRow({ gcRider }: GcRiderRowProps) {
   return (
-    <View className='flex flex-row justify-between px-2 py-4'>
+    <View className='flex flex-row justify-between px-2 py-3'>
       <View className='flex-1 flex-row items-center'>
         <GcRiderPosition rank={gcRider.rank} position={gcRider.position} />
         <View className='flex-1 px-2'>
