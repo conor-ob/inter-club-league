@@ -1,9 +1,10 @@
 {
-  "version": "0.0.0",
   "name": "@inter-club-league/graphql",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "clean": "rm -rf node_modules",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "build": "graphql-codegen --config codegen.ts"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
@@ -12,7 +13,6 @@
     "@graphql-codegen/schema-ast": "^4.0.0",
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-resolvers": "^4.0.1",
-    "graphql": "^16.8.1",
-    "typescript": "^5.3.3"
+    "graphql": "^16.8.1"
   }
 }

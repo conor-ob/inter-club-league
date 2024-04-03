@@ -1,0 +1,27 @@
+{
+  "name": "@inter-club-league/app",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "clean": "rm -rf generated && rm -rf node_modules"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.10",
+    "@inter-club-league/config": "*",
+    "@nandorojo/heroicons": "^0.3.0",
+    "@react-native-segmented-control/segmented-control": "^2.5.0",
+    "classnames": "^2.5.1",
+    "jest-diff": "^29.7.0",
+    "moti": "latest",
+    "nativewind": "^4.0.1",
+    "next-themes": "0.2.1",
+    "react-native": "0.72.4",
+    "react-native-svg": "^15.1.0",
+    "react-native-svg-icon": "^0.10.0",
+    "solito": "^4.2.2"
+  },
+  "devDependencies": {
+    "@inter-club-league/graphql": "*"
+  },
+  "sideEffects": false
+}

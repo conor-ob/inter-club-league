@@ -45,3 +45,5 @@
 - Show list of races and results, medals, position, unplaced, DNS etc
 - Show GC winner
 - Stats like number of wins, medals, places, races finished, upgrades etc
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=76989c1fc36c&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)

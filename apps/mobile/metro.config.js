@@ -12,7 +12,7 @@ const projectRoot = __dirname
 // This can be replaced with `find-yarn-workspace-root`
 const workspaceRoot = path.resolve(projectRoot, '../..')
 
-const config = getDefaultConfig(projectRoot)
+const config = getDefaultConfig(projectRoot, { isCSSEnabled: true })
 
 // 1. Watch all files within the monorepo
 config.watchFolders = [workspaceRoot]
@@ -25,6 +25,6 @@ config.resolver.nodeModulesPaths = [
 config.resolver.disableHierarchicalLookup = true
 
 module.exports = withNativeWind(config, {
-  input: './src/global.css',
+  input: './global.css',
   configPath: 'tailwind.config.ts'
 })

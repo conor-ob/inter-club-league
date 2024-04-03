@@ -65,9 +65,9 @@ async function bootstrap() {
           // allow requests with no origin
           return callback(null, true)
         } else if (config.allowedOrigins.indexOf(origin) === -1) {
-          return callback(null, false)
+          return callback(null, true) // TODO cors
         } else {
-          return callback(null, false)
+          return callback(null, true)
         }
       }
     }),
