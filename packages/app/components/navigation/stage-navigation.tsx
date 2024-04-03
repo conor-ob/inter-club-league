@@ -7,7 +7,7 @@ import { useRouter } from 'solito/router'
 import { colors } from '../../design/colors'
 import { useStagesQuery } from '../../graphql/use-stages-query'
 import { Card } from '../card/card'
-import { HeroIcon } from '../icons/heroicon'
+import { HeroIcon } from '../icon/heroicon'
 import { Row } from '../layout/row'
 import { Skeleton } from '../loading/skeleton'
 

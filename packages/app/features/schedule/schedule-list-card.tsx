@@ -115,7 +115,7 @@ function getRaceIcon(
     case 'TIME_TRIAL':
       return 'stopwatch-outline'
     default:
-      return 'bicycle-outline'
+      return 'bicycle'
   }
 }
 

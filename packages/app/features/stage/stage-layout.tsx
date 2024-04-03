@@ -2,6 +2,7 @@ import { default as Ionicons } from '@expo/vector-icons/Ionicons'
 import { format, parseISO } from 'date-fns'
 import { Text, View, useColorScheme } from 'react-native'
 import { IconBadge } from '../../components/badge/icon-badge'
+import { Ionicon } from '../../components/icon/ionicon'
 import { Column } from '../../components/layout/column'
 import { Row } from '../../components/layout/row'
 import { colors } from '../../design/colors'
@@ -21,13 +22,14 @@ export function StageLayout({ stage }: { stage: Stage }) {
           <Text className='font-inter-medium text-secondary mr-2 text-sm'>
             {getisplayDate(stage.startTime)}
           </Text>
-          {/* <Ionicon
-                    size={16}
-                    name='calendar-outline'
-                    color={colors[colorScheme ?? 'light'].textColorPrimary}
-                  /> */}
+          <Ionicon
+            size={18}
+            name='calendar-outline'
+            color={colors[colorScheme ?? 'light'].textColorPrimary}
+          />
         </View>
       </Row>
+      <View className='h-1.5' />
       <Text className='font-inter-semibold text-primary text-lg'>{`Stage ${stage.id.split('-')[1]}`}</Text>
       <View className='h-2' />
       <View className='-mx-1 flex flex-row flex-wrap'>
@@ -81,7 +83,7 @@ function getRaceIcon(
     case 'TIME_TRIAL':
       return 'stopwatch-outline'
     default:
-      return 'bicycle-outline'
+      return 'bicycle'
   }
 }
 

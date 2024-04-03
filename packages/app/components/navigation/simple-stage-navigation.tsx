@@ -3,7 +3,7 @@ import { useStagesQuery } from '@inter-club-league/app/graphql/use-stages-query'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { useRouter } from 'solito/router'
-import { SvgIcon } from '../icons/svg-icon'
+import { Ionicon } from '../icon/ionicon'
 
 type SimpleStageNavigationProps = {
   baseUrl: string
@@ -55,7 +55,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 width={20}
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
-              <SvgIcon
+              <Ionicon
                 name='chevron-left'
                 size={24}
                 color={colors[colorScheme ?? 'light'].brandDefault}
@@ -89,7 +89,7 @@ export function SimpleStageNavigation({ baseUrl }: SimpleStageNavigationProps) {
                 color={colors[colorScheme ?? 'light'].brandDefault}
               /> */}
               <View className='w-2' />
-              <SvgIcon
+              <Ionicon
                 name='chevron-right'
                 size={24}
                 color={colors[colorScheme ?? 'light'].brandDefault}

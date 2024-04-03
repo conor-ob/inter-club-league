@@ -1,7 +1,7 @@
 import { YellowJersey } from '../../components/image/yellow-jersey'
 // import { Ionicon } from '../components/ionicon'
 import { Text, View, useColorScheme } from 'react-native'
-import { SvgIcon } from '../../components/icons/svg-icon'
+import { HeroIcon } from '../../components/icon/heroicon'
 import { colors } from '../../design/colors'
 import { GcRider } from '../../generated/graphql'
 
@@ -75,9 +75,9 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
           {movement}
         </Text>
         <View className='w-1' />
-        <SvgIcon
-          size={18}
-          name='arrow-up-outline'
+        <HeroIcon
+          size={16}
+          name='arrow-up'
           color={colors[colorScheme ?? 'light'].brandGreen}
         />
       </View>
@@ -89,9 +89,9 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
           {movement * -1}
         </Text>
         <View className='w-1' />
-        <SvgIcon
-          size={18}
-          name='arrow-down-outline'
+        <HeroIcon
+          size={16}
+          name='arrow-down'
           color={colors[colorScheme ?? 'light'].brandRed}
         />
       </View>
