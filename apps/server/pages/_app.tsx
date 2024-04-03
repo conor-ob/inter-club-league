@@ -3,16 +3,21 @@ import 'setimmediate'
 
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { GcBadge } from '@inter-club-league/app/components/gc/gc-badge'
+import { Skeleton } from '@inter-club-league/app/components/loading/skeleton'
 import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
 import { Provider } from '@inter-club-league/app/provider'
 import { config } from '@inter-club-league/config'
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import cx from 'classnames'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Fragment } from 'react'
+import type { ParsedUrlQuery } from 'querystring'
+import React, { Fragment } from 'react'
+import { Text, View } from 'react-native'
 
 import '../global.css'
 
@@ -65,18 +70,49 @@ function Navigation() {
 
   const router = useRouter()
   const pathname = router.pathname
+  const query = router.query
 
   function isCurrent(path: string): boolean {
     return pathname.startsWith(path)
   }
 
-  function getTitle(pathname: string): string {
+  function getTitle(pathname: string, query: ParsedUrlQuery): React.ReactNode {
     if (pathname.startsWith('/gc')) {
-      return 'GC'
+      const stageId = query?.id
+      if (typeof stageId === 'string') {
+        console.log(stageId as string)
+      }
+      return (
+        <View className='flex-row items-center'>
+          <GcBadge />
+          <View className='w-2' />
+          {typeof stageId === 'string' && stageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
+        </View>
+      )
     } else if (pathname.startsWith('/results')) {
-      return 'Results'
+      const stageId = query?.id
+      if (typeof stageId === 'string') {
+        console.log(stageId as string)
+      }
+      return (
+        <View className='flex-row items-center'>
+          <GcBadge text='Results' />
+          <View className='w-2' />
+          {typeof stageId === 'string' && stageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
+        </View>
+      )
     } else if (pathname.startsWith('/schedule')) {
-      return 'Schedule'
+      return (
+        <Text className='text-primary font-inter-medium text-lg'>Schedule</Text>
+      )
     } else {
       return 'ICL'
     }
@@ -88,9 +124,7 @@ function Navigation() {
         <>
           <div className='mx-auto max-w-7xl px-2 '>
             <div className='relative flex h-16 items-center justify-between'>
-              <div className='text-primary font-inter-medium px-2 text-lg'>
-                {getTitle(pathname)}
-              </div>
+              <div className='px-2'>{getTitle(pathname, query)}</div>
               <div className='absolute inset-y-0 right-0 flex items-center sm:hidden'>
                 {/* Mobile menu button*/}
                 <Popover.Button className='hover:bg-card text-secondary hover:text-primary relative inline-flex items-center justify-center rounded-xl p-2 focus:outline-none focus:ring-0'>
