@@ -14,12 +14,12 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
     <View className='flex flex-row justify-between px-2 py-4'>
       <View className='flex-1 flex-row items-center'>
         <GcRiderPosition rank={gcRider.rank} position={gcRider.position} />
-        <View className='ml-2 flex-1'>
+        <View className='flex-1 px-2'>
           <Text className='text-primary font-inter-regular text-sm'>
             {gcRider.rider.name}
           </Text>
           <View className='h-1' />
-          <Text className='text-secondary font-inter-regular text-sm'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
+          <Text className='text-secondary font-inter-regular text-sm tracking-tight'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
         </View>
       </View>
       <View className='flex flex-row items-center'>

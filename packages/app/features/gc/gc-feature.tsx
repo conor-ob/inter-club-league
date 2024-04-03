@@ -5,13 +5,21 @@ import {
   Platform,
   RefreshControl,
   ScrollView,
+  Text,
   View,
   useColorScheme
 } from 'react-native'
 import { createParam } from 'solito'
+import { Card } from '../../components/card/card'
 import { CardDivider } from '../../components/card/card-divider'
+import { YellowJersey } from '../../components/image/yellow-jersey'
+import { Column } from '../../components/layout/column'
+import { Row } from '../../components/layout/row'
+import { StageNavigation1 } from '../../components/navigation/stage-navigation'
+import { GcStatus } from '../../generated/graphql'
 import { useGcQuery } from '../../graphql/use-gc-query'
 import { StageCard } from '../stage/stage-card'
+import { GcHeader } from './gc-header'
 import { GcRiderComponent } from './gc-rider-component'
 
 const { useParams } = createParam<{
@@ -42,7 +50,7 @@ export function GcFeature() {
   return (
     <ScrollView
       contentContainerClassName={cx({
-        'px-2 pt-2 pb-6': Platform.OS === 'web',
+        'px-4 pt-2 pb-6': Platform.OS === 'web',
         'px-3 py-6': Platform.OS !== 'web'
       })}
       contentInsetAdjustmentBehavior='automatic'
@@ -58,7 +66,44 @@ export function GcFeature() {
       {data ? (
         <View>
           <StageCard stage={data.stage} href={`/schedule/${data.stage.id}`} />
-          <View className='h-8' />
+          <View className='h-6' />
+          <StageNavigation1 disabled={loading} />
+          <View className='h-6' />
+          {data.gc.gcStatus === GcStatus.Completed && (
+            <Column>
+              <Text className='text-primary font-inter-medium ml-2 text-xl'>
+                Winner
+              </Text>
+              <View className='h-2' />
+              <Card>
+                <Row className='items-center justify-between px-4 py-4'>
+                  <Row className='flex-1 items-center'>
+                    <YellowJersey />
+                    <View className='w-3' />
+                    <Column className='flex-1'>
+                      <Text className='text-primary font-inter-medium text-base'>
+                        {data.gc.gcRiders[0]!.rider.name}
+                      </Text>
+                      <View className='h-0' />
+                      <Text className='text-secondary font-inter-regular text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
+                    </Column>
+                  </Row>
+                  <Column>
+                    <Text className='text-primary font-inter-medium text-right text-base'>
+                      {data.gc.gcRiders[0]!.gcPoints}
+                    </Text>
+                    <View className='h-0' />
+                    <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
+                      Points
+                    </Text>
+                  </Column>
+                </Row>
+              </Card>
+              <View className='h-6' />
+            </Column>
+          )}
+          <GcHeader />
+          <View className='h-2' />
           <FlatList
             contentContainerClassName={cx({
               'bg-card rounded-xl': colorScheme === 'light'
