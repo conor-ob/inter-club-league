@@ -3,7 +3,7 @@ import { vars } from 'nativewind'
 
 export const colors = {
   light: {
-    background: 'rgb(242, 242, 242)',
+    background: 'rgb(246, 246, 246)',
     brandDefault: 'rgba(252, 76, 2, 1)',
     brandBlue: '#004c95',
     brandGray: '#949494',
