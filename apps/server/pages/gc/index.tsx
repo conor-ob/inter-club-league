@@ -1,4 +1,18 @@
-import { GcRedirect } from '@inter-club-league/app/features/gc/gc-redirect'
-// import { FontsDemo } from '@inter-club-league/app/features/fonts/fonts-demo'
+import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
+import { useEffect } from 'react'
+import { useRouter } from 'solito/router'
 
-export default GcRedirect
+export default function GcRedirect() {
+  const { loading, data, error, refetch } = useRedirectQuery({
+    seasonId: undefined
+  })
+  const { push, replace, back, parseNextPath } = useRouter()
+
+  useEffect(() => {
+    if (data?.redirects.currentStageId) {
+      replace(`/gc/${data.redirects.currentStageId}`)
+    }
+  }, [data, replace])
+
+  return null // TODO loading skeleton
+}

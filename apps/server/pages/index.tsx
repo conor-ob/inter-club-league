@@ -1,4 +1,3 @@
-import { GcRedirect } from '@inter-club-league/app/features/gc/gc-redirect'
-// import { FontsDemo } from '@inter-club-league/app/features/fonts/fonts-demo'
+import GcRedirect from './gc/index'
 
 export default GcRedirect
