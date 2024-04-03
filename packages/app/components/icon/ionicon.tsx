@@ -31,8 +31,8 @@ export function Ionicon({
           <Rect
             fill='none'
             stroke={color}
-            stroke-linejoin='round'
-            stroke-width='32'
+            strokeLinejoin='round'
+            strokeWidth='32'
             x='48'
             y='80'
             width='416'
@@ -51,16 +51,16 @@ export function Ionicon({
           <Path
             fill='none'
             stroke={color}
-            stroke-linejoin='round'
-            stroke-width='32'
-            stroke-linecap='round'
+            strokeLinejoin='round'
+            strokeWidth='32'
+            strokeLinecap='round'
             d='M128 48v32M384 48v32'
           />
           <Path
             fill='none'
             stroke={color}
-            stroke-linejoin='round'
-            stroke-width='32'
+            strokeLinejoin='round'
+            strokeWidth='32'
             d='M464 160H48'
           />
         </Svg>

@@ -15,11 +15,11 @@ import { CardDivider } from '../../components/card/card-divider'
 import { YellowJersey } from '../../components/image/yellow-jersey'
 import { Column } from '../../components/layout/column'
 import { Row } from '../../components/layout/row'
-import { Skeleton } from '../../components/loading/skeleton'
 import { StageNavigation } from '../../components/navigation/stage-navigation'
 import { GcStatus } from '../../generated/graphql'
 import { useGcQuery } from '../../graphql/use-gc-query'
 import { StageCard } from '../stage/stage-card'
+import { GcFeatureSkeleton } from './gc-feature-skeleton'
 import { GcHeader } from './gc-header'
 import { GcRiderComponent } from './gc-rider-component'
 
@@ -117,44 +117,7 @@ export function GcFeature() {
       ) : error ? (
         <View></View>
       ) : (
-        <View>
-          <Skeleton className='h-32 rounded-xl' />
-          <View className='h-6' />
-          <StageNavigation baseUrl='/gc' disabled={loading} />
-          <View className='h-6' />
-          <Row className='justify-between px-2'>
-            <Row>
-              <View className='w-10 items-center'>
-                <Skeleton className='h-5 w-6 rounded-md' />
-              </View>
-              <View className='px-2'>
-                <Skeleton className='h-5 w-12 rounded-md' />
-              </View>
-            </Row>
-            <Row>
-              <View className='w-10 items-center'>
-                <Skeleton className='h-5 w-6 rounded-md' />
-              </View>
-              <View className='w-10 items-center'>
-                <Skeleton className='h-5 w-6 rounded-md' />
-              </View>
-              <View className='w-10 items-center'>
-                <Skeleton className='h-5 w-6 rounded-md' />
-              </View>
-            </Row>
-          </Row>
-          <View className='h-2' />
-          <FlatList
-            data={[1, 2, 3, 4, 5]}
-            // scrollEnabled={false}
-            renderItem={({ item }) => (
-              <View className='py-7'>
-                <Skeleton className='h-3 rounded-md' />
-              </View>
-            )}
-            ItemSeparatorComponent={() => <CardDivider />}
-          />
-        </View>
+        <GcFeatureSkeleton />
       )}
     </ScrollView>
   )

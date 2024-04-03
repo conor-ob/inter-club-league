@@ -84,12 +84,13 @@ export function StageNavigation({
               <View className='w-2' />
               <Text
                 className={cx('font-inter-medium text-primary text-base', {
-                  'text-quarternary': disabled
+                  'text-quarternary': disabled,
+                  invisible: previousStageId === null
                 })}
               >
                 {previousStageId
                   ? `Stage ${stageNumberFromStageId(previousStageId)}`
-                  : ''}
+                  : 'Previous'}
               </Text>
             </Row>
           </Link>
@@ -102,12 +103,13 @@ export function StageNavigation({
             <Row className='items-center'>
               <Text
                 className={cx('font-inter-medium text-primary text-base', {
-                  'text-quarternary': disabled
+                  'text-quarternary': disabled,
+                  invisible: nextStageId === null
                 })}
               >
                 {nextStageId
                   ? `Stage ${stageNumberFromStageId(nextStageId)}`
-                  : ''}
+                  : 'Next'}
               </Text>
               <View className='w-2' />
               {nextStageId && (
