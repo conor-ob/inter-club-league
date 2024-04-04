@@ -7,6 +7,7 @@ import { YellowJersey } from '../../components/image/yellow-jersey'
 import { Column } from '../../components/layout/column'
 import { Row } from '../../components/layout/row'
 import { Skeleton } from '../../components/loading/skeleton'
+import { Stage } from '../../generated/graphql'
 import { useStageResultsQuery } from '../../graphql/use-stage-results-query'
 
 const { useParams } = createParam<{
@@ -58,7 +59,7 @@ export function CategoryResultsFeature() {
       {results ? (
         <Column>
           <Text className='text-primary font-inter-medium ml-2 text-xl'>
-            {`${parseCategoryGroupId(params.group)} Winner`}
+            {`${parseCategoryGroupId(data?.stage, params.group)} Winner`}
           </Text>
           <View className='h-2' />
           <Card>
@@ -101,26 +102,16 @@ export function CategoryResultsFeature() {
   )
 }
 
-function parseCategoryGroupId(categoryGroupId?: string): string | undefined {
-  if (categoryGroupId === undefined) {
+function parseCategoryGroupId(
+  stage?: Stage,
+  categoryGroupId?: string
+): string | undefined {
+  if (stage === undefined || categoryGroupId === undefined) {
     return undefined
   }
 
-  const categoryIds = categoryGroupId.split('+')
-  return categoryIds
-    .map((it) => {
-      switch (it) {
-        case 'S':
-          return 'Scratch'
-        case 'SS':
-          return 'Semi Scratch'
-        case 'SL':
-          return 'Semi Limit'
-        case 'L':
-          return 'Limit'
-        default:
-          return it
-      }
-    })
+  return stage.categoryGroups
+    .find((it) => it.id === categoryGroupId)
+    ?.categories.map((it) => it.name)
     .join(' & ')
 }
