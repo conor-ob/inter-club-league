@@ -100,7 +100,7 @@ export function CategoryResultsFeature() {
                   {results[0]!.points}
                 </Text>
                 <View className='h-0' />
-                <Text className='text-secondary font-inter-medium text-sm uppercase tracking-tight'>
+                <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
                   Points
                 </Text>
               </Column>

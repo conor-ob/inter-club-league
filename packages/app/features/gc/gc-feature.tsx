@@ -95,7 +95,7 @@ export function GcFeature() {
                       {data.gc.gcRiders[0]!.gcPoints}
                     </Text>
                     <View className='h-0' />
-                    <Text className='text-secondary font-inter-medium text-sm uppercase tracking-tight'>
+                    <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
                       Points
                     </Text>
                   </Column>
