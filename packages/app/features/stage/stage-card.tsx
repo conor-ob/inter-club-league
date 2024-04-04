@@ -14,7 +14,7 @@ export function StageCard({ stage, href }: { stage: Stage; href?: string }) {
     <Card>
       <TouchableOpacity activeOpacity={0.6}>
         <Link href={href}>
-          <Row className='flex-row items-center justify-between px-4 py-4'>
+          <Row className='flex-row items-center justify-between p-4'>
             <StageLayout stage={stage} />
             <View className='w-2' />
             <HeroIcon
@@ -28,7 +28,9 @@ export function StageCard({ stage, href }: { stage: Stage; href?: string }) {
     </Card>
   ) : (
     <Card>
-      <StageLayout stage={stage} />
+      <View className='p-4'>
+        <StageLayout stage={stage} />
+      </View>
     </Card>
   )
 }

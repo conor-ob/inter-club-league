@@ -74,7 +74,7 @@ export function GcFeature() {
           {data.gc.gcStatus === GcStatus.Completed && (
             <Column>
               <Text className='text-primary font-inter-medium ml-2 text-xl'>
-                Winner
+                GC Winner
               </Text>
               <View className='h-2' />
               <Card>
@@ -87,7 +87,7 @@ export function GcFeature() {
                         {data.gc.gcRiders[0]!.rider.name}
                       </Text>
                       <View className='h-0' />
-                      <Text className='text-secondary font-inter-regular text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
+                      <Text className='text-secondary font-inter-medium text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
                     </Column>
                   </Row>
                   <Column>
@@ -95,7 +95,7 @@ export function GcFeature() {
                       {data.gc.gcRiders[0]!.gcPoints}
                     </Text>
                     <View className='h-0' />
-                    <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
+                    <Text className='text-secondary font-inter-medium text-sm uppercase tracking-tight'>
                       Points
                     </Text>
                   </Column>

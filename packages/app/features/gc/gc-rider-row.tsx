@@ -19,7 +19,7 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
             {gcRider.rider.name}
           </Text>
           <View className='h-1' />
-          <Text className='text-secondary font-inter-regular text-sm tracking-tight'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
+          <Text className='text-secondary font-inter-medium text-sm tracking-tight'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
         </View>
       </View>
       <View className='flex flex-row items-center'>
@@ -31,7 +31,7 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
         <Text className='text-primary font-inter-medium w-10 text-center text-sm'>
           {gcRider.gcPoints}
         </Text>
-        <Text className='text-secondary font-inter-regular w-10 text-center text-sm'>
+        <Text className='text-secondary font-inter-medium w-10 text-center text-sm'>
           {gcRider.totalPoints}
         </Text>
       </View>

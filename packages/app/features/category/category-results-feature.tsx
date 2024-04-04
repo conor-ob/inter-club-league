@@ -81,7 +81,7 @@ export function CategoryResultsFeature() {
                   <YellowJersey />
                 ) : (
                   <View className='w-8 items-center'>
-                    <Text className='text-primary font-inter-regular text-base'>
+                    <Text className='text-primary font-inter-medium text-base'>
                       1st
                     </Text>
                   </View>
@@ -92,7 +92,7 @@ export function CategoryResultsFeature() {
                     {results[0]!.rider.name}
                   </Text>
                   <View className='h-0' />
-                  <Text className='text-secondary font-inter-regular text-sm'>{`${results[0]!.club.code} • ${results[0]!.category.name}`}</Text>
+                  <Text className='text-secondary font-inter-medium text-sm'>{`${results[0]!.club.code} • ${results[0]!.category.name}`}</Text>
                 </Column>
               </Row>
               <Column>
@@ -100,7 +100,7 @@ export function CategoryResultsFeature() {
                   {results[0]!.points}
                 </Text>
                 <View className='h-0' />
-                <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
+                <Text className='text-secondary font-inter-medium text-sm uppercase tracking-tight'>
                   Points
                 </Text>
               </Column>

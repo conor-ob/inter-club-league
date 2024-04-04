@@ -25,7 +25,7 @@ export function StageRiderRow({ stageRider, gcLeaderId }: StageRiderRowProps) {
             {stageRider.rider.name}
           </Text>
           <View className='h-1' />
-          <Text className='text-secondary font-inter-regular text-sm'>{`${stageRider.club.code} • ${stageRider.category.name}`}</Text>
+          <Text className='text-secondary font-inter-medium text-sm'>{`${stageRider.club.code} • ${stageRider.category.name}`}</Text>
         </View>
       </View>
       <View className='flex flex-row items-center'>
