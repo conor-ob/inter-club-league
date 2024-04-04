@@ -19,7 +19,7 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
             {gcRider.rider.name}
           </Text>
           <View className='h-1' />
-          <Text className='text-secondary font-inter-medium text-sm tracking-tight'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
+          <Text className='text-secondary font-inter-regular text-sm tracking-tight'>{`${gcRider.club.code} • ${gcRider.category.name}`}</Text>
         </View>
       </View>
       <View className='flex flex-row items-center'>

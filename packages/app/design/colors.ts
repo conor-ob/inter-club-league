@@ -14,7 +14,7 @@ export const colors = {
     card: 'rgba(255, 255, 255, 1)',
     skeleton: 'rgba(60, 60, 67, 0.12)',
     textColorPrimary: 'rgba(0, 0, 0, 1)',
-    textColorSecondary: 'rgba(60, 60, 67, 0.67)',
+    textColorSecondary: 'rgba(60, 60, 67, 0.7)',
     textColorTertiary: 'rgba(60, 60, 67, 0.30)',
     textColorQuarternary: 'rgba(60, 60, 67, 0.18)'
   },

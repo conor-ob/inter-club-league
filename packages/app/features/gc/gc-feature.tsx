@@ -87,7 +87,7 @@ export function GcFeature() {
                         {data.gc.gcRiders[0]!.rider.name}
                       </Text>
                       <View className='h-0' />
-                      <Text className='text-secondary font-inter-medium text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
+                      <Text className='text-secondary font-inter-regular text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
                     </Column>
                   </Row>
                   <Column>
