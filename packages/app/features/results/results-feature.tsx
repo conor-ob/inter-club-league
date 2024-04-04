@@ -87,7 +87,7 @@ export function ResultsFeature() {
               {data?.stageResults.resultsStatus === ResultsStatus.Completed && (
                 <FlatList
                   data={data?.stageResults.categoryResults}
-                  scrollEnabled={false}
+                  // scrollEnabled={false}
                   ItemSeparatorComponent={() => <CardDivider />}
                   renderItem={({ item }) => (
                     <CategoryResultsListItem
