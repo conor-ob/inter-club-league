@@ -1,3 +1,4 @@
+import { stageNumberFromStageId } from '@inter-club-league/utils'
 import cx from 'classnames'
 import { useCallback, useEffect, useState } from 'react'
 import {
@@ -16,7 +17,7 @@ import { YellowJersey } from '../../components/image/yellow-jersey'
 import { Column } from '../../components/layout/column'
 import { Row } from '../../components/layout/row'
 import { StageNavigation } from '../../components/navigation/stage-navigation'
-import { GcStatus } from '../../generated/graphql'
+import { GcStatus, ResultsStatus } from '../../generated/graphql'
 import { useGcQuery } from '../../graphql/use-gc-query'
 import { StageCard } from '../stage/stage-card'
 import { GcFeatureSkeleton } from './gc-feature-skeleton'
@@ -103,16 +104,34 @@ export function GcFeature() {
               <View className='h-6' />
             </Column>
           )}
-          <GcHeader />
-          <View className='h-2' />
-          <FlatList
-            contentContainerClassName={cx({
-              'bg-card rounded-xl': colorScheme === 'light'
-            })}
-            data={data.gc.gcRiders}
-            renderItem={({ item }) => <GcRiderComponent gcRider={item} />}
-            ItemSeparatorComponent={() => <CardDivider />}
-          />
+          {data.gc.resultsStatus === ResultsStatus.Upcoming && (
+            <Card>
+              <Text className='text-secondary font-inter-regular p-4 text-center text-base'>
+                {`Stage ${stageNumberFromStageId(data.stage.id)} not yet started`}
+              </Text>
+            </Card>
+          )}
+          {data.gc.resultsStatus === ResultsStatus.AwaitingResults && (
+            <Card>
+              <Text className='text-primary font-inter-regular p-4 text-center text-base'>
+                {`Results will be available after Stage ${stageNumberFromStageId(data.stage.id)}`}
+              </Text>
+            </Card>
+          )}
+          {data.gc.resultsStatus === ResultsStatus.Completed && (
+            <View>
+              <GcHeader />
+              <View className='h-2' />
+              <FlatList
+                contentContainerClassName={cx({
+                  'bg-card rounded-xl': colorScheme === 'light'
+                })}
+                data={data.gc.gcRiders}
+                renderItem={({ item }) => <GcRiderComponent gcRider={item} />}
+                ItemSeparatorComponent={() => <CardDivider />}
+              />
+            </View>
+          )}
         </View>
       ) : error ? (
         <View></View>
