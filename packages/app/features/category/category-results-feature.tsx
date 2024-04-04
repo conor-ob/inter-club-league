@@ -6,6 +6,7 @@ import { Card } from '../../components/card/card'
 import { YellowJersey } from '../../components/image/yellow-jersey'
 import { Column } from '../../components/layout/column'
 import { Row } from '../../components/layout/row'
+import { Skeleton } from '../../components/loading/skeleton'
 import { useStageResultsQuery } from '../../graphql/use-stage-results-query'
 
 const { useParams } = createParam<{
@@ -88,7 +89,13 @@ export function CategoryResultsFeature() {
       ) : error ? (
         <View></View>
       ) : (
-        <View></View>
+        <View>
+          <Skeleton className='ml-2 h-6 w-40 rounded-md' />
+          <View className='h-3' />
+          <Skeleton className='h-8 rounded-t-xl' />
+          <Skeleton className='h-3' />
+          <Skeleton className='h-8 rounded-b-xl' />
+        </View>
       )}
     </ScrollView>
   )
