@@ -80,7 +80,7 @@ export function GcFeature() {
               <Card>
                 <Row className='items-center justify-between px-4 py-4'>
                   <Row className='flex-1 items-center'>
-                    <YellowJersey />
+                    <YellowJersey className='h-10 w-10' />
                     <View className='w-3' />
                     <Column className='flex-1'>
                       <Text className='text-primary font-inter-medium text-base'>

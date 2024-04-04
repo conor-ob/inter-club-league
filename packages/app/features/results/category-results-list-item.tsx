@@ -50,7 +50,7 @@ export function CategoryResultsListItem({
               .map((it) => it.rider.id)
               .includes(gcLeaderId ?? '') && (
               <View className='flex flex-row'>
-                <YellowJersey />
+                <YellowJersey className='h-10 w-10' />
                 <View className='w-2' />
               </View>
             )}

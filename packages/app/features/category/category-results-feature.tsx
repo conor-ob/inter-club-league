@@ -78,7 +78,7 @@ export function CategoryResultsFeature() {
             <Row className='items-center justify-between px-4 py-4'>
               <Row className='flex-1 items-center'>
                 {results[0]!.rider.id === data?.stageResults.gcLeaderId ? (
-                  <YellowJersey />
+                  <YellowJersey className='h-10 w-10' />
                 ) : (
                   <View className='w-8 items-center'>
                     <Text className='text-primary font-inter-medium text-base'>
