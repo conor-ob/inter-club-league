@@ -105,14 +105,27 @@ function Navigation() {
       )
     } else if (pathname.startsWith('/schedule')) {
       const stageId = query?.id
-      // return (
-      //   <Text className='text-primary font-inter-medium text-lg'>Schedule</Text>
-      // )
+
+      // TODO don't harcode year
 
       return typeof stageId === 'string' && stageId ? (
-        <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+        <View className='flex-row items-center'>
+          <GcBadge text='2023' />
+          <View className='w-2' />
+          {typeof stageId === 'string' && stageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
+        </View>
       ) : (
-        <Text className='text-primary font-inter-medium text-lg'>Schedule</Text>
+        <View className='flex-row items-center'>
+          <GcBadge text='2023' />
+          <View className='w-2' />
+          <Text className='text-primary font-inter-medium text-lg'>
+            Schedule
+          </Text>
+        </View>
       )
     } else {
       return 'ICL'
