@@ -92,9 +92,6 @@ function Navigation() {
       )
     } else if (pathname.startsWith('/results')) {
       const stageId = query?.id
-      if (typeof stageId === 'string') {
-        console.log(stageId as string)
-      }
       return (
         <View className='flex-row items-center'>
           <GcBadge text='Results' />
@@ -107,7 +104,14 @@ function Navigation() {
         </View>
       )
     } else if (pathname.startsWith('/schedule')) {
-      return (
+      const stageId = query?.id
+      // return (
+      //   <Text className='text-primary font-inter-medium text-lg'>Schedule</Text>
+      // )
+
+      return typeof stageId === 'string' && stageId ? (
+        <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+      ) : (
         <Text className='text-primary font-inter-medium text-lg'>Schedule</Text>
       )
     } else {

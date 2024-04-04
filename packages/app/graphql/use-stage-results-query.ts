@@ -41,12 +41,39 @@ const stageResultsQuery = graphql(`
         }
       }
     }
+    stage(stageId: $stageId) {
+      id
+      name
+      startTime
+      location
+      county
+      type
+      stageStatus
+      mandatory
+      club {
+        id
+        code
+        name
+      }
+      categoryGroups {
+        id
+        categories {
+          id
+          code
+          name
+          rank
+        }
+      }
+      coordinates
+      stravaId
+    }
   }
 `)
 
-export function useStageResultsQuery(stageId: string) {
+export function useStageResultsQuery({ stageId }: { stageId: string }) {
   return useQuery(stageResultsQuery, {
     variables: { stageId: stageId },
-    notifyOnNetworkStatusChange: true
+    notifyOnNetworkStatusChange: true,
+    skip: stageId === undefined
   })
 }

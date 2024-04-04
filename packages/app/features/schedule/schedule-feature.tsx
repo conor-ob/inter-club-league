@@ -12,13 +12,13 @@ export function ScheduleFeature() {
 
   if (data?.stages) {
     return (
-      <ScrollView className='px-4 py-6'>
+      <ScrollView className='px-4 pb-6 pt-2'>
         <ScheduleList schedule={buildSchedule(data?.stages ?? [])} />
       </ScrollView>
     )
   } else {
     return (
-      <ScrollView className='px-4 py-6'>
+      <ScrollView className='px-4 pb-6 pt-2'>
         <SegmentedControl
           values={['Upcoming', 'Completed']}
           enabled={false}
