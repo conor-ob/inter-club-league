@@ -1,3 +1,4 @@
+import cx from 'classnames'
 import { FlatList, View } from 'react-native'
 import { CardDivider } from '../../components/card/card-divider'
 import { Row } from '../../components/layout/row'
@@ -7,7 +8,7 @@ import { StageNavigation } from '../../components/navigation/stage-navigation'
 export function GcFeatureSkeleton() {
   return (
     <View>
-      <Skeleton className='h-40 rounded-xl' />
+      <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
       <View className='h-6' />
       <StageNavigation baseUrl='/gc' disabled={true} />
       <View className='h-6' />
