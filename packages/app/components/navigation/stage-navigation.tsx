@@ -66,9 +66,12 @@ export function StageNavigation({
       <Row>
         <TouchableOpacity
           className='flex-1 flex-row items-center justify-start px-4 py-3'
-          disabled={disabled || previousStageId === undefined}
+          disabled={disabled || previousStageId === null}
         >
-          <Link href={`${baseUrl}/${previousStageId}`}>
+          <LinkButton
+            href={`${baseUrl}/${previousStageId}`}
+            disabled={disabled || previousStageId === null}
+          >
             <Row className='items-center'>
               {previousStageId && (
                 <HeroIcon
@@ -93,13 +96,16 @@ export function StageNavigation({
                   : 'Previous'}
               </Text>
             </Row>
-          </Link>
+          </LinkButton>
         </TouchableOpacity>
         <TouchableOpacity
           className='flex-1 flex-row items-center justify-end px-4 py-3'
-          disabled={disabled || nextStageId === undefined}
+          disabled={disabled || nextStageId === null}
         >
-          <Link href={`${baseUrl}/${nextStageId}`}>
+          <LinkButton
+            href={`${baseUrl}/${nextStageId}`}
+            disabled={disabled || nextStageId === null}
+          >
             <Row className='items-center'>
               <Text
                 className={cx('font-inter-medium text-primary text-base', {
@@ -124,9 +130,21 @@ export function StageNavigation({
                 />
               )}
             </Row>
-          </Link>
+          </LinkButton>
         </TouchableOpacity>
       </Row>
     </Card>
   )
+}
+
+function LinkButton({
+  href,
+  disabled,
+  children
+}: {
+  href: string
+  disabled: boolean
+  children: React.ReactNode
+}): React.ReactNode {
+  return disabled ? children : <Link href={href}>{children}</Link>
 }

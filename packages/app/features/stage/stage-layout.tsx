@@ -2,9 +2,7 @@ import { default as Ionicons } from '@expo/vector-icons/Ionicons'
 import { format, parseISO } from 'date-fns'
 import { Text, View, useColorScheme } from 'react-native'
 import { IconBadge } from '../../components/badge/icon-badge'
-import { Ionicon } from '../../components/icon/ionicon'
 import { Column } from '../../components/layout/column'
-import { Row } from '../../components/layout/row'
 import { colors } from '../../design/colors'
 import { Stage } from '../../generated/graphql'
 
@@ -13,12 +11,12 @@ export function StageLayout({ stage }: { stage: Stage }) {
 
   return (
     <Column className='flex-1'>
-      <Row className='items-center justify-between'>
-        {/** TODO handle long names */}
-        <Text className='font-inter-medium text-secondary flex flex-1 text-sm'>
-          {stage.name}
-        </Text>
-        <View className='flex flex-row items-center'>
+      {/* <Row className='items-center justify-between'> */}
+      {/** TODO handle long names */}
+      <Text className='font-inter-medium text-secondary flex flex-1 text-sm'>
+        {stage.name}
+      </Text>
+      {/* <View className='flex flex-row items-center'>
           <Text className='font-inter-medium text-secondary mr-2 text-sm'>
             {getisplayDate(stage.startTime)}
           </Text>
@@ -27,20 +25,26 @@ export function StageLayout({ stage }: { stage: Stage }) {
             name='calendar-outline'
             color={colors[colorScheme ?? 'light'].textColorPrimary}
           />
-        </View>
-      </Row>
+        </View> */}
+      {/* </Row> */}
       <View className='h-1.5' />
-      <Text className='font-inter-semibold text-primary text-lg'>{`Stage ${stage.id.split('-')[1]}`}</Text>
-      <View className='h-2' />
+      <Text className='font-inter-medium text-primary text-lg'>{`Stage ${stage.id.split('-')[1]}`}</Text>
+      <View className='h-1.5' />
       <View className='-mx-1 flex flex-row flex-wrap'>
         <View className='px-1 py-1'>
           <IconBadge
             label={stage.location}
             icon='location-outline'
+            color={colors[colorScheme ?? 'light'].brandGreen}
+          />
+        </View>
+        <View className='px-1 py-1'>
+          <IconBadge
+            label={getisplayDate(stage.startTime)}
+            icon='calendar-outline'
             color={colors[colorScheme ?? 'light'].brandBlue}
           />
         </View>
-
         <View className='px-1 py-1'>
           <IconBadge
             label={stage.startTime.substring(
@@ -102,5 +106,5 @@ function getRaceType(type: string): string {
 
 function getisplayDate(startTime: string): string {
   const date = parseISO(startTime)
-  return format(date, 'MMMM d')
+  return format(date, 'MMM d')
 }

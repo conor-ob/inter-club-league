@@ -7,7 +7,7 @@ import { StageNavigation } from '../../components/navigation/stage-navigation'
 export function GcFeatureSkeleton() {
   return (
     <View>
-      <Skeleton className='h-32 rounded-xl' />
+      <Skeleton className='h-40 rounded-xl' />
       <View className='h-6' />
       <StageNavigation baseUrl='/gc' disabled={true} />
       <View className='h-6' />
