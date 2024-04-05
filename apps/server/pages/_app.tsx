@@ -32,11 +32,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='description' content='Inter Club League' />
         <link rel='icon' href='/favicon.ico' />
 
-        <meta name='application-name' content='Putting Pals' />
+        <meta name='application-name' content='ICL' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-        <meta name='apple-mobile-web-app-title' content='Putting Pals' />
-        <meta name='description' content='Putting Pals Major Sweepstakes' />
+        <meta name='apple-mobile-web-app-title' content='ICL' />
+        <meta name='description' content='Inter Club League' />
         <meta name='format-detection' content='telephone=no' />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta
