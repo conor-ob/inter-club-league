@@ -5,7 +5,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**", "generated/**"]
+      "outputs": [".next/**", "dist/**", "generated/**", "public/**"]
     },
     "dev": {
       "cache": false,

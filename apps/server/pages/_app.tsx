@@ -3,11 +3,11 @@ import 'setimmediate'
 
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { config } from '@inter-club-league/config'
 import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { GcBadge } from 'app/components/gc/gc-badge'
 import { Skeleton } from 'app/components/loading/skeleton'
+import { colors } from 'app/design/colors'
 import { useRedirectQuery } from 'app/graphql/use-redirect-query'
 import { Provider } from 'app/provider'
 import cx from 'classnames'
@@ -17,25 +17,62 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ParsedUrlQuery } from 'querystring'
 import React, { Fragment } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, useColorScheme } from 'react-native'
+import PWAInstallComponent from '../components/pwa-install.jsx'
 
 import '../global.css'
 
 export default function App({ Component, pageProps }: AppProps) {
+  const colorScheme = useColorScheme()
+
   return (
     <>
       <Head>
         <title>ICL</title>
         <meta name='description' content='Inter Club League' />
-        <link rel='icon' href={`/favicon.ico`} />
+        <link rel='icon' href='/favicon.ico' />
+
+        <meta name='application-name' content='Putting Pals' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+        <meta name='apple-mobile-web-app-title' content='Putting Pals' />
+        <meta name='description' content='Putting Pals Major Sweepstakes' />
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta
+          name='theme-color'
+          content={colors[colorScheme ?? 'light'].background}
+        />
+        <meta
+          name='background-color'
+          content={colors[colorScheme ?? 'light'].background}
+        />
+
+        <link rel='manifest' href='/manifest.json' />
+        <link rel='apple-touch-icon' href='/assets/icon/apple-touch-icon.png' />
+        <link rel='shortcut icon' href='/favicon.ico' />
+
+        <meta
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+        />
       </Head>
       <Provider>
-        <Layout>
-          <Component {...pageProps} />
-          {process.env.NODE_ENV === 'production' && (
-            <GoogleAnalytics gaId='G-78W6EQTCKS' />
-          )}
-        </Layout>
+        <PWAInstallComponent
+          install-description='Install the app for the best experience'
+          disable-screenshots='true'
+          onInstallSuccess={undefined}
+          onInstallFail={undefined}
+          onUserChoiceResult={undefined}
+          onInstallAvailable={undefined}
+          onInstallHowTo={undefined}
+          onInstallGallery={undefined}
+        />
+        <Navigation />
+        <Component {...pageProps} />
+        {process.env.NODE_ENV === 'production' && (
+          <GoogleAnalytics gaId='G-78W6EQTCKS' />
+        )}
       </Provider>
     </>
   )
@@ -133,7 +170,7 @@ function Navigation() {
   }
 
   return (
-    <Popover as='header' className='bg-background'>
+    <Popover as='header'>
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-4'>
