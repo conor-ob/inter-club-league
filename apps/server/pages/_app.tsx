@@ -3,13 +3,13 @@ import 'setimmediate'
 
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { GcBadge } from '@inter-club-league/app/components/gc/gc-badge'
-import { Skeleton } from '@inter-club-league/app/components/loading/skeleton'
-import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
-import { Provider } from '@inter-club-league/app/provider'
 import { config } from '@inter-club-league/config'
 import { stageNumberFromStageId } from '@inter-club-league/utils'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { GcBadge } from 'app/components/gc/gc-badge'
+import { Skeleton } from 'app/components/loading/skeleton'
+import { useRedirectQuery } from 'app/graphql/use-redirect-query'
+import { Provider } from 'app/provider'
 import cx from 'classnames'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Component {...pageProps} />
           {process.env.NODE_ENV === 'production' && (
-            <GoogleAnalytics gaId={config.googleAnalyticsId} />
+            <GoogleAnalytics gaId='G-78W6EQTCKS' />
           )}
         </Layout>
       </Provider>

@@ -1,5 +1,5 @@
-import { GcBadge } from '@inter-club-league/app/components/gc/gc-badge'
 import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { GcBadge } from 'app/components/gc/gc-badge'
 import { Stack, useGlobalSearchParams } from 'expo-router'
 import { Text, View } from 'react-native'
 

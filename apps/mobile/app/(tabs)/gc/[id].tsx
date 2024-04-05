@@ -1,4 +1,4 @@
-import { GcFeature } from '@inter-club-league/app/features/gc/gc-feature'
+import { GcFeature } from 'app/features/gc/gc-feature'
 
 export default function Id() {
   return <GcFeature />

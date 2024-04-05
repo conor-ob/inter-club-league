@@ -1,3 +1,3 @@
-import { StageFeature } from '@inter-club-league/app/features/stage/stage-feature'
+import { StageFeature } from 'app/features/stage/stage-feature'
 
 export default StageFeature
