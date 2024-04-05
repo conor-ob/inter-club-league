@@ -5,11 +5,16 @@
 ### Server
 
 - Server should use async functions
+- Modify resolvers to use them properly
+  - https://www.apollographql.com/docs/apollo-server/data/fetching-rest#batching-with-rest-apis
+  - https://github.com/graphql/dataloader/tree/main
 
 ### UI
 
 - Experiment with slightly bigger font sizes. text-md maybe
 - Create yellow jersey app icon
+- We need a back button on some pages
+- Add more padding to stage view card
 
 ### GraphQL API
 
@@ -19,6 +24,7 @@
 
 ### Schedule page
 
+- Redirect to schedule/${seasonId}
 - Stage link should only work from this page
 - Horizontal GC scroller
 - "Next event" card at the top
