@@ -72,7 +72,7 @@ const PWAInstallComponent = ({
         {...nonNullProps}
       />
       {!(window.matchMedia('(display-mode: standalone)').matches || ('standalone' in navigator && (navigator).standalone === true)) && <button className='text-secondary text-sm font-inter-regular pt-0.5' onClick={() => pwaInstallRef.current.showDialog(true)}>Install app</button>}
-      </>
+    </>
   );
 };
 
