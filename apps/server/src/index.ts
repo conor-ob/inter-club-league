@@ -26,94 +26,96 @@ import { RedirectService } from './service/RedirectService'
 import { StageResultsService } from './service/StageResultsService'
 import { StagesService } from './service/StagesService'
 
-async function startServer() {
-  const dev = process.env.NODE_ENV !== 'production'
-  const hostname = config.hostname
-  const port = config.port
-
+function startServer() {
   const server = express()
   const httpServer = http.createServer(server)
 
-  const apolloServer = new ApolloServer<ServerContext>({
-    typeDefs: readFileSync(
-      path.resolve(process.cwd(), './src/generated/schema.graphql'),
-      {
-        encoding: 'utf-8'
-      }
-    ),
-    resolvers,
-    plugins: [
-      ApolloServerPluginDrainHttpServer({ httpServer }),
-      process.env.NODE_ENV === 'production'
-        ? ApolloServerPluginLandingPageProductionDefault({
-            footer: false
-          })
-        : ApolloServerPluginLandingPageLocalDefault()
-    ]
+  const application = next({
+    dev: process.env.NODE_ENV !== 'production',
+    hostname: config.hostname,
+    port: config.port
   })
-  await apolloServer.start()
+  const requestHandler = application.getRequestHandler()
 
-  server.use(compression())
-  server.use(
-    '/graphql',
-    cors({ origin: config.allowedOrigins }),
-    express.json(),
-    expressMiddleware(apolloServer, {
-      context: async () => {
-        const fileReader = new FileReader()
-        const database = new Database(fileReader)
-
-        const stageMapper = new StageMapper(database)
-        const stageResultsMapper = new StageResultsMapper(database)
-        const gcMapper = new GcMapper(database)
-
-        const stagesService = new StagesService(database, stageMapper)
-        const gcService = new GcService(database, gcMapper, stagesService)
-        const stageResultsService = new StageResultsService(
-          database,
-          stageResultsMapper,
-          stagesService,
-          gcService
-        )
-        const marshallsService = new MarshallsService(database)
-        const redirectService = new RedirectService(database, stagesService)
-
-        return {
-          gcService: gcService,
-          marshallsService: marshallsService,
-          stageResultsService: stageResultsService,
-          stagesService: stagesService,
-          redirectService: redirectService
-        }
-      }
-    })
-  )
-
-  const app = next({
-    dev,
-    hostname,
-    port
-  })
-  const handle = app.getRequestHandler()
-
-  app
+  application
     .prepare()
-    .then(() => {
+    .then(async () => {
+      const apollo = new ApolloServer<ServerContext>({
+        typeDefs: readFileSync(
+          path.resolve(process.cwd(), './src/generated/schema.graphql'),
+          {
+            encoding: 'utf-8'
+          }
+        ),
+        resolvers,
+        plugins: [
+          ApolloServerPluginDrainHttpServer({ httpServer }),
+          process.env.NODE_ENV === 'production'
+            ? ApolloServerPluginLandingPageProductionDefault({
+                footer: false
+              })
+            : ApolloServerPluginLandingPageLocalDefault()
+        ]
+      })
+      await apollo.start()
+
+      server.use(compression())
+      server.use(
+        '/graphql',
+        cors({ origin: config.allowedOrigins }),
+        express.json(),
+        expressMiddleware(apollo, {
+          context: async () => {
+            const fileReader = new FileReader()
+            const database = new Database(fileReader)
+
+            const stageMapper = new StageMapper(database)
+            const stageResultsMapper = new StageResultsMapper(database)
+            const gcMapper = new GcMapper(database)
+
+            const stagesService = new StagesService(database, stageMapper)
+            const gcService = new GcService(database, gcMapper, stagesService)
+            const stageResultsService = new StageResultsService(
+              database,
+              stageResultsMapper,
+              stagesService,
+              gcService
+            )
+            const marshallsService = new MarshallsService(database)
+            const redirectService = new RedirectService(database, stagesService)
+
+            return {
+              gcService: gcService,
+              marshallsService: marshallsService,
+              stageResultsService: stageResultsService,
+              stagesService: stagesService,
+              redirectService: redirectService
+            }
+          }
+        })
+      )
+
+      server.get('/health', (req, res) => {
+        res.status(200).send('Okay!')
+      })
+
       server.get('*', (req, res) => {
         const parsedUrl = parse(req.url, true)
-        return handle(req, res, parsedUrl)
+        return requestHandler(req, res, parsedUrl)
       })
 
-      httpServer.listen(port, () => {
-        console.log(
-          `🚀 Server ready at ${
-            process.env.NODE_ENV === 'production' ? 'https' : 'http'
-          }://${hostname}:${port}`
-        )
-      })
+      await new Promise<void>((resolve) =>
+        httpServer.listen({ port: config.port }, resolve)
+      )
+
+      console.log(
+        `🚀 Server ready at ${
+          process.env.NODE_ENV === 'production' ? 'https' : 'http'
+        }://${config.hostname}:${config.port}`
+      )
     })
-    .catch((ex) => {
-      console.error(ex.stack)
+    .catch((e) => {
+      console.error('Error starting server', e)
     })
 
   return server
