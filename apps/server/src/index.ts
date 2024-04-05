@@ -35,7 +35,7 @@ function startServer() {
     hostname: config.hostname,
     port: config.port
   })
-  const requestHandler = application.getRequestHandler()
+  const handleNextRequest = application.getRequestHandler()
 
   application
     .prepare()
@@ -95,10 +95,9 @@ function startServer() {
         })
       )
 
-      server.get('*', (req, res) => {
-        const parsedUrl = parse(req.url, true)
-        return requestHandler(req, res, parsedUrl)
-      })
+      server.get('*', (req, res) =>
+        handleNextRequest(req, res, parse(req.url, true))
+      )
 
       await new Promise<void>((resolve) =>
         httpServer.listen({ port: config.port }, resolve)
