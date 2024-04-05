@@ -9,10 +9,8 @@ export const theme = {
         gc: 'var(--color-brand-gc)',
         blue: 'var(--color-brand-blue)',
         purple: 'var(--color-brand-purple)',
-        gray: 'var(--color-brand-gray)',
         green: 'var(--color-brand-green)',
-        red: 'var(--color-brand-red)',
-        yellow: 'var(--color-brand-yellow)'
+        red: 'var(--color-brand-red)'
       },
       card: 'var(--color-card)',
       skeleton: 'var(--color-skeleton)',

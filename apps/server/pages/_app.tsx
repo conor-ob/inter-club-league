@@ -79,9 +79,6 @@ function Navigation() {
   function getTitle(pathname: string, query: ParsedUrlQuery): React.ReactNode {
     if (pathname.startsWith('/gc')) {
       const stageId = query?.id
-      if (typeof stageId === 'string') {
-        console.log(stageId as string)
-      }
       return (
         <View className='flex-row items-center'>
           <GcBadge />
@@ -95,9 +92,6 @@ function Navigation() {
       )
     } else if (pathname.startsWith('/results')) {
       const stageId = query?.id
-      if (typeof stageId === 'string') {
-        console.log(stageId as string)
-      }
       return (
         <View className='flex-row items-center'>
           <GcBadge text='Results' />
@@ -110,8 +104,28 @@ function Navigation() {
         </View>
       )
     } else if (pathname.startsWith('/schedule')) {
-      return (
-        <Text className='text-primary font-inter-medium text-lg'>Schedule</Text>
+      const stageId = query?.id
+
+      // TODO don't harcode year
+
+      return typeof stageId === 'string' && stageId ? (
+        <View className='flex-row items-center'>
+          <GcBadge text='2023' />
+          <View className='w-2' />
+          {typeof stageId === 'string' && stageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
+        </View>
+      ) : (
+        <View className='flex-row items-center'>
+          <GcBadge text='2023' />
+          <View className='w-2' />
+          <Text className='text-primary font-inter-medium text-lg'>
+            Schedule
+          </Text>
+        </View>
       )
     } else {
       return 'ICL'
@@ -122,7 +136,7 @@ function Navigation() {
     <Popover as='header' className='bg-background'>
       {({ open }) => (
         <>
-          <div className='mx-auto max-w-7xl px-2 '>
+          <div className='mx-auto max-w-7xl px-4'>
             <div className='relative flex h-16 items-center justify-between'>
               <div className='px-2'>{getTitle(pathname, query)}</div>
               <div className='absolute inset-y-0 right-0 flex items-center sm:hidden'>
@@ -186,9 +200,9 @@ function Navigation() {
               >
                 <Popover.Panel
                   focus
-                  className='top-18 absolute inset-x-0 z-30 mx-auto w-full max-w-3xl origin-top transform px-2 transition sm:hidden'
+                  className='top-18 absolute inset-x-0 z-30 mx-auto w-full max-w-3xl origin-top transform px-4 transition sm:hidden'
                 >
-                  <div className='bg-background space-y-2 rounded-xl px-2 py-4'>
+                  <div className='bg-background space-y-2 rounded-xl px-4 py-4'>
                     {navigation.map((item) => (
                       <Popover.Button
                         key={item.name}

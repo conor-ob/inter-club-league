@@ -6,8 +6,9 @@ import {
   parseISO
 } from 'date-fns'
 import { useState } from 'react'
-import { View } from 'react-native'
+import { View, useColorScheme } from 'react-native'
 import { CardListHeader } from '../../components/card/card-list-header'
+import { colors } from '../../design/colors'
 import { ScheduleListCard } from './schedule-list-card'
 import { Schedule } from './schedule-types'
 
@@ -16,6 +17,7 @@ type ScheduleListProps = {
 }
 
 export function ScheduleList({ schedule }: ScheduleListProps) {
+  const colorScheme = useColorScheme()
   const [selectedIndex, setSelectedIndex] = useState(
     schedule.nextStages.length > 0 || schedule.upcoming.length > 0 ? 0 : 1
   )
@@ -26,6 +28,14 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
     <View>
       <SegmentedControl
         values={['Upcoming', 'Completed']}
+        fontStyle={{
+          fontWeight: '500',
+          color: colors[colorScheme ?? 'light'].textColorSecondary
+        }}
+        activeFontStyle={{
+          fontWeight: '600',
+          color: colors[colorScheme ?? 'light'].textColorPrimary
+        }}
         selectedIndex={selectedIndex}
         onChange={(event) => {
           setSelectedIndex(event.nativeEvent.selectedSegmentIndex)

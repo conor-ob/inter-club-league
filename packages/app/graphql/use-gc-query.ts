@@ -32,12 +32,39 @@ const gcQuery = graphql(`
         movement
       }
     }
+    stage(stageId: $stageId) {
+      id
+      name
+      startTime
+      location
+      county
+      type
+      stageStatus
+      mandatory
+      club {
+        id
+        code
+        name
+      }
+      categoryGroups {
+        id
+        categories {
+          id
+          code
+          name
+          rank
+        }
+      }
+      coordinates
+      stravaId
+    }
   }
 `)
 
 export function useGcQuery({ stageId }: { stageId: string }) {
   return useQuery(gcQuery, {
     variables: { stageId: stageId },
-    notifyOnNetworkStatusChange: true
+    notifyOnNetworkStatusChange: true,
+    skip: stageId === undefined
   })
 }

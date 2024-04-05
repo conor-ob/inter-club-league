@@ -15,7 +15,7 @@ export function CardListHeader({
   return (
     <Text
       className={cx(
-        'font-inter-regular text-xl',
+        'font-inter-regular text-base',
         className,
         textColor ?? 'text-secondary'
       )}
