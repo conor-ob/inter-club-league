@@ -9,6 +9,7 @@
 ### UI
 
 - Experiment with slightly bigger font sizes. text-md maybe
+- Create yellow jersey app icon
 
 ### GraphQL API
 
