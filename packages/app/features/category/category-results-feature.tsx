@@ -1,14 +1,6 @@
+import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import cx from 'classnames'
-import { useCallback, useEffect, useState } from 'react'
-import {
-  FlatList,
-  Platform,
-  RefreshControl,
-  ScrollView,
-  Text,
-  View,
-  useColorScheme
-} from 'react-native'
+import { FlatList, Platform, Text, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { Card } from '../../components/card/card'
 import { CardDivider } from '../../components/card/card-divider'
@@ -34,41 +26,56 @@ export function CategoryResultsFeature() {
     stageId: params.id
   })
 
-  const [refreshing, setRefreshing] = useState(false)
-
-  const handleRefresh = useCallback(() => {
-    setRefreshing(true)
-    refetch()
-  }, [refetch])
-
-  useEffect(() => {
-    if (!loading) {
-      setRefreshing(false)
-    }
-  }, [loading])
-
   const results = data?.stageResults.categoryResults
     .filter((it) => it.categoryGroup.id === params.group)
     .flatMap((it) => it.stageRiders)
     .filter((it) => it.points >= 5)
 
   return (
-    <ScrollView
+    <RefreshScrollView
       contentContainerClassName={cx({
         'px-4 pt-2 pb-6': Platform.OS === 'web',
         'px-3 py-6': Platform.OS !== 'web'
       })}
-      contentInsetAdjustmentBehavior='automatic'
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={() => {
-            handleRefresh()
-          }}
-        />
-      }
+      loading={loading}
+      onRefresh={() => refetch()}
     >
-      {results ? (
+      {loading ? (
+        <View>
+          <Skeleton className='ml-2 h-6 w-40 rounded-md' />
+          <View className='h-3' />
+          <Skeleton className='h-8 rounded-t-xl' />
+          <Skeleton className='h-3' />
+          <Skeleton className='h-8 rounded-b-xl' />
+          <View className='h-6' />
+          <Row className='justify-between px-2'>
+            <Row>
+              <View className='w-12 items-center'>
+                <Skeleton className='h-5 w-8 rounded-md' />
+              </View>
+              <View className='px-2'>
+                <Skeleton className='h-5 w-10 rounded-md' />
+              </View>
+            </Row>
+            <Row>
+              <View className='w-16 items-center'>
+                <Skeleton className='h-5 w-12 rounded-md' />
+              </View>
+            </Row>
+          </Row>
+          <View className='h-2' />
+          <FlatList
+            data={[1, 2, 3, 4, 5]}
+            // scrollEnabled={false}
+            renderItem={({ item }) => (
+              <View className='py-7'>
+                <Skeleton className='mx-2 h-3 rounded-md' />
+              </View>
+            )}
+            ItemSeparatorComponent={() => <CardDivider />}
+          />
+        </View>
+      ) : results ? (
         <Column>
           <Text className='text-primary font-inter-medium ml-2 text-xl'>
             {`${parseCategoryGroupId(data?.stage, params.group)} Winner`}
@@ -126,42 +133,9 @@ export function CategoryResultsFeature() {
       ) : error ? (
         <View></View>
       ) : (
-        <View>
-          <Skeleton className='ml-2 h-6 w-40 rounded-md' />
-          <View className='h-3' />
-          <Skeleton className='h-8 rounded-t-xl' />
-          <Skeleton className='h-3' />
-          <Skeleton className='h-8 rounded-b-xl' />
-          <View className='h-6' />
-          <Row className='justify-between px-2'>
-            <Row>
-              <View className='w-12 items-center'>
-                <Skeleton className='h-5 w-8 rounded-md' />
-              </View>
-              <View className='px-2'>
-                <Skeleton className='h-5 w-10 rounded-md' />
-              </View>
-            </Row>
-            <Row>
-              <View className='w-16 items-center'>
-                <Skeleton className='h-5 w-12 rounded-md' />
-              </View>
-            </Row>
-          </Row>
-          <View className='h-2' />
-          <FlatList
-            data={[1, 2, 3, 4, 5]}
-            // scrollEnabled={false}
-            renderItem={({ item }) => (
-              <View className='py-7'>
-                <Skeleton className='mx-2 h-3 rounded-md' />
-              </View>
-            )}
-            ItemSeparatorComponent={() => <CardDivider />}
-          />
-        </View>
+        <View />
       )}
-    </ScrollView>
+    </RefreshScrollView>
   )
 }
 

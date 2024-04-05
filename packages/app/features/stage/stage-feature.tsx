@@ -1,12 +1,6 @@
+import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import cx from 'classnames'
-import { useCallback, useEffect, useState } from 'react'
-import {
-  Platform,
-  RefreshControl,
-  ScrollView,
-  View,
-  useColorScheme
-} from 'react-native'
+import { Platform, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { Skeleton } from '../../components/loading/skeleton'
 import { StageNavigation } from '../../components/navigation/stage-navigation'
@@ -25,36 +19,24 @@ export function StageFeature() {
     stageId: params.id
   })
 
-  const [refreshing, setRefreshing] = useState(false)
-
-  const handleRefresh = useCallback(() => {
-    setRefreshing(true)
-    refetch()
-  }, [refetch])
-
-  useEffect(() => {
-    if (!loading) {
-      setRefreshing(false)
-    }
-  }, [loading])
-
   return (
-    <ScrollView
+    <RefreshScrollView
       contentContainerClassName={cx({
         'px-4 pt-2 pb-6': Platform.OS === 'web',
         'px-3 py-6': Platform.OS !== 'web'
       })}
-      contentInsetAdjustmentBehavior='automatic'
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={() => {
-            handleRefresh()
-          }}
-        />
-      }
+      loading={loading}
+      onRefresh={() => refetch()}
     >
-      {data ? (
+      {loading ? (
+        <View>
+          <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
+          <View className='h-6' />
+          <StageNavigation baseUrl='/results' disabled={true} />
+          <View className='h-6' />
+          <Skeleton className='h-64 rounded-xl' />
+        </View>
+      ) : data ? (
         <View>
           <StageCard stage={data.stage} />
           <View className='h-6' />
@@ -64,14 +46,8 @@ export function StageFeature() {
       ) : error ? (
         <View></View>
       ) : (
-        <View>
-          <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
-          <View className='h-6' />
-          <StageNavigation baseUrl='/results' disabled={true} />
-          <View className='h-6' />
-          <Skeleton className='h-64 rounded-xl' />
-        </View>
+        <View />
       )}
-    </ScrollView>
+    </RefreshScrollView>
   )
 }

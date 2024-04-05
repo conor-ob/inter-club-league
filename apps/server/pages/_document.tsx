@@ -14,6 +14,7 @@ class Document extends NextDocument {
     return { ...initialProps, styles: React.Children.toArray(styles) }
   }
 
+  // TODO bg-background color
   render() {
     return (
       <Html lang='en'>
@@ -51,7 +52,7 @@ class Document extends NextDocument {
             crossOrigin='anonymous'
           />
         </Head>
-        <body>
+        <body className='bg-[#f6f6f6] dark:bg-[#010101]'>
           <Main />
           <NextScript />
         </body>

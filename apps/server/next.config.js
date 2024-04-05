@@ -1,4 +1,8 @@
 const { withExpo } = require('@expo/next-adapter')
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development'
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,18 +13,19 @@ const nextConfig = {
   // once that gets fixed, set this back to true
   reactStrictMode: false,
   transpilePackages: [
-    '@react-native-segmented-control/segmented-control',
     '@nandorojo/heroicons',
-    'react-native-svg',
-    'react-native',
-    'react-native-web',
-    'solito',
-    'moti',
+    '@react-native-segmented-control/segmented-control',
     'app',
-    'react-native-reanimated',
+    'moti',
     'nativewind',
+    'react-native',
     'react-native-css-interop',
-    'react-native-gesture-handler'
+    'react-native-gesture-handler',
+    'react-native-reanimated',
+    'react-native-svg',
+    'react-native-web',
+    'react-native-web-refresh-control',
+    'solito'
   ],
   webpack: (c) => {
     c.module.rules.push({
@@ -31,4 +36,4 @@ const nextConfig = {
   }
 }
 
-module.exports = withExpo(nextConfig)
+module.exports = withPWA(withExpo(nextConfig))
