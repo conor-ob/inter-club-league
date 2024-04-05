@@ -2,6 +2,15 @@
 
 ## Ideas
 
+### Server
+
+- Server should use async functions
+
+### UI
+
+- Experiment with slightly bigger font sizes. text-md maybe
+- Create yellow jersey app icon
+
 ### GraphQL API
 
 - Add versioning to endpoints

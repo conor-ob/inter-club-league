@@ -8,8 +8,10 @@ import {
 import { config } from '@inter-club-league/config'
 import cors from 'cors'
 import { default as compression, default as express } from 'express'
+import { readFileSync } from 'fs'
 import http from 'http'
 import next from 'next'
+import path from 'path'
 import { parse } from 'url'
 import { ServerContext } from './context/ServerContext'
 import { Database } from './database/Database'
@@ -29,29 +31,16 @@ async function startServer() {
   const hostname = config.hostname
   const port = config.port
 
-  const fileReader = new FileReader()
-  const database = new Database(fileReader)
-
-  const stageMapper = new StageMapper(database)
-  const stageResultsMapper = new StageResultsMapper(database)
-  const gcMapper = new GcMapper(database)
-
-  const stagesService = new StagesService(database, stageMapper)
-  const gcService = new GcService(database, gcMapper, stagesService)
-  const stageResultsService = new StageResultsService(
-    database,
-    stageResultsMapper,
-    stagesService,
-    gcService
-  )
-  const marshallsService = new MarshallsService(database)
-  const redirectService = new RedirectService(database, stagesService)
-
   const server = express()
   const httpServer = http.createServer(server)
 
   const apolloServer = new ApolloServer<ServerContext>({
-    typeDefs: fileReader.readFile('./src/generated/schema.graphql'),
+    typeDefs: readFileSync(
+      path.resolve(process.cwd(), './src/generated/schema.graphql'),
+      {
+        encoding: 'utf-8'
+      }
+    ),
     resolvers,
     plugins: [
       ApolloServerPluginDrainHttpServer({ httpServer }),
@@ -66,17 +55,37 @@ async function startServer() {
 
   server.use(compression())
   server.use(
-    config.graphqlEndpoint,
+    '/graphql',
     cors({ origin: config.allowedOrigins }),
     express.json(),
     expressMiddleware(apolloServer, {
-      context: async () => ({
-        gcService: gcService,
-        marshallsService: marshallsService,
-        stageResultsService: stageResultsService,
-        stagesService: stagesService,
-        redirectService: redirectService
-      })
+      context: async () => {
+        const fileReader = new FileReader()
+        const database = new Database(fileReader)
+
+        const stageMapper = new StageMapper(database)
+        const stageResultsMapper = new StageResultsMapper(database)
+        const gcMapper = new GcMapper(database)
+
+        const stagesService = new StagesService(database, stageMapper)
+        const gcService = new GcService(database, gcMapper, stagesService)
+        const stageResultsService = new StageResultsService(
+          database,
+          stageResultsMapper,
+          stagesService,
+          gcService
+        )
+        const marshallsService = new MarshallsService(database)
+        const redirectService = new RedirectService(database, stagesService)
+
+        return {
+          gcService: gcService,
+          marshallsService: marshallsService,
+          stageResultsService: stageResultsService,
+          stagesService: stagesService,
+          redirectService: redirectService
+        }
+      }
     })
   )
 

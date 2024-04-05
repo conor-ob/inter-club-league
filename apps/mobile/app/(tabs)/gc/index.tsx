@@ -1,4 +1,4 @@
-import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
+import { useRedirectQuery } from 'app/graphql/use-redirect-query'
 import { Redirect } from 'expo-router'
 
 export default function Index() {

@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rm -rf dist && rm -rf .next && rm -rf node_modules",
     "build": "vite build && next build",
-    "dev": "cross-env NODE_ENV=development node dist/index.mjs",
+    "dev": "cross-env NODE_ENV=development vite",
     "start": "cross-env NODE_ENV=production node dist/index.mjs -H 0.0.0.0 -p ${PORT:-8080}",
     "lint": "next lint"
   },

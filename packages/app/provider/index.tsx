@@ -1,4 +1,4 @@
-import { NativewindProvider } from '@inter-club-league/app/provider/theme/nativewind-provider'
+import { NativewindProvider } from 'app/provider/theme/nativewind-provider'
 import { SolitoImageProvider } from 'solito/image'
 import { ApolloClientProvider } from './apollo/apollo-client-provider'
 import { SafeArea } from './safe-area'

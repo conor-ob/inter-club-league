@@ -1,5 +1,5 @@
-import { ResultsFeatureSkeleton } from '@inter-club-league/app/features/results/results-feature-skeleton'
-import { useRedirectQuery } from '@inter-club-league/app/graphql/use-redirect-query'
+import { ResultsFeatureSkeleton } from 'app/features/results/results-feature-skeleton'
+import { useRedirectQuery } from 'app/graphql/use-redirect-query'
 import cx from 'classnames'
 import { useEffect } from 'react'
 import { Platform, ScrollView } from 'react-native'
