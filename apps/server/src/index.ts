@@ -95,10 +95,6 @@ function startServer() {
         })
       )
 
-      server.get('/health', (req, res) => {
-        res.status(200).send('Okay!')
-      })
-
       server.get('*', (req, res) => {
         const parsedUrl = parse(req.url, true)
         return requestHandler(req, res, parsedUrl)
