@@ -211,11 +211,9 @@ function Navigation() {
     } else {
       return (
         <View className='flex-row items-center'>
-          <GcBadge text='ICL' />
+          <GcBadge />
           <View className='w-2' />
-          <Text className='text-primary font-inter-medium text-lg'>
-            Inter Club League
-          </Text>
+          <Skeleton className='h-6 w-20 rounded-md' />
         </View>
       )
     }
