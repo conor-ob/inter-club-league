@@ -95,6 +95,19 @@ function startServer() {
         })
       )
 
+      server.get('/healthcheck', (_, res) => {
+        const healthcheck = {
+          message: 'OK',
+          uptime: process.uptime(),
+          timestamp: Date.now()
+        }
+        try {
+          res.status(200).send(healthcheck)
+        } catch (e) {
+          res.status(503).send()
+        }
+      })
+
       server.get('*', (req, res) =>
         handleNextRequest(req, res, parse(req.url, true))
       )

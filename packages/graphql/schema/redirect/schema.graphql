@@ -1,4 +1,5 @@
 type Redirects {
+  currentSeasonId: ID!
   currentStageId: ID!
 }
 

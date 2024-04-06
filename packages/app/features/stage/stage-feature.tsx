@@ -1,5 +1,4 @@
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
-import cx from 'classnames'
 import { View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { Skeleton } from '../../components/loading/skeleton'
@@ -27,9 +26,11 @@ export function StageFeature() {
     >
       {loading ? (
         <View>
-          <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
+          <Skeleton className='h-20 rounded-t-xl' />
+          <Skeleton className='h-1' />
+          <Skeleton className='h-20 rounded-b-xl' />
           <View className='h-6' />
-          <StageNavigation baseUrl='/results' disabled={true} />
+          <StageNavigation baseUrl='/schedule/stage' disabled={true} />
           <View className='h-12' />
           <Skeleton className='h-64 rounded-xl' />
         </View>
@@ -37,7 +38,7 @@ export function StageFeature() {
         <View>
           <StageCard stage={data.stage} />
           <View className='h-6' />
-          <StageNavigation baseUrl='/schedule' disabled={loading} />
+          <StageNavigation baseUrl='/schedule/stage' disabled={loading} />
           <View className='h-12' />
         </View>
       ) : error ? (

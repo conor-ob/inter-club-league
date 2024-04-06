@@ -2,8 +2,15 @@ import 'raf/polyfill'
 import 'setimmediate'
 
 import { Popover, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { stageNumberFromStageId } from '@inter-club-league/utils'
+import {
+  Bars3Icon,
+  ChevronLeftIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline'
+import {
+  seasonIdFromStageId,
+  stageNumberFromStageId
+} from '@inter-club-league/utils'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { GcBadge } from 'app/components/gc/gc-badge'
 import { Skeleton } from 'app/components/loading/skeleton'
@@ -17,7 +24,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ParsedUrlQuery } from 'querystring'
 import React, { Fragment } from 'react'
-import { Text, View, useColorScheme } from 'react-native'
+import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import PWAInstallComponent from '../components/pwa-install.jsx'
 
 import '../global.css'
@@ -102,7 +109,11 @@ function Navigation() {
       path: '/results',
       href: `/results/${data?.redirects.currentStageId ? data.redirects.currentStageId : ''}`
     },
-    { name: 'Schedule', path: '/schedule', href: '/schedule' }
+    {
+      name: 'Schedule',
+      path: '/schedule',
+      href: `/schedule/${data?.redirects.currentSeasonId ? data.redirects.currentSeasonId : ''}`
+    }
   ]
 
   const router = useRouter()
@@ -127,6 +138,23 @@ function Navigation() {
           )}
         </View>
       )
+    } else if (pathname.startsWith('/results/category')) {
+      const stageId = query?.id
+      return (
+        <View className='flex-row items-center'>
+          <TouchableOpacity activeOpacity={0.6} onPress={() => router.back()}>
+            <ChevronLeftIcon className='h-6 w-6' />
+          </TouchableOpacity>
+          <View className='w-4' />
+          <GcBadge text='Results' />
+          <View className='w-2' />
+          {typeof stageId === 'string' && stageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
+        </View>
+      )
     } else if (pathname.startsWith('/results')) {
       const stageId = query?.id
       return (
@@ -140,14 +168,23 @@ function Navigation() {
           )}
         </View>
       )
-    } else if (pathname.startsWith('/schedule')) {
+    } else if (pathname.startsWith('/schedule/stage')) {
       const stageId = query?.id
-
-      // TODO don't harcode year
-
-      return typeof stageId === 'string' && stageId ? (
+      return (
         <View className='flex-row items-center'>
-          <GcBadge text='2023' />
+          <TouchableOpacity activeOpacity={0.6}>
+            <Link
+              href={`/schedule/${data?.redirects.currentSeasonId ? data.redirects.currentSeasonId : ''}`}
+            >
+              <ChevronLeftIcon className='h-6 w-6' />
+            </Link>
+          </TouchableOpacity>
+          <View className='w-4' />
+          {typeof stageId === 'string' && stageId ? (
+            <GcBadge text={seasonIdFromStageId(stageId)} />
+          ) : (
+            <Skeleton className='h-6 w-10 rounded-md' />
+          )}
           <View className='w-2' />
           {typeof stageId === 'string' && stageId ? (
             <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
@@ -155,9 +192,16 @@ function Navigation() {
             <Skeleton className='h-6 w-20 rounded-md' />
           )}
         </View>
-      ) : (
+      )
+    } else if (pathname.startsWith('/schedule')) {
+      const seasonId = query?.id
+      return (
         <View className='flex-row items-center'>
-          <GcBadge text='2023' />
+          {typeof seasonId === 'string' && seasonId ? (
+            <GcBadge text={seasonId} />
+          ) : (
+            <Skeleton className='h-6 w-10 rounded-md' />
+          )}
           <View className='w-2' />
           <Text className='text-primary font-inter-medium text-lg'>
             Schedule
@@ -165,7 +209,13 @@ function Navigation() {
         </View>
       )
     } else {
-      return 'ICL'
+      return (
+        <View className='flex-row items-center'>
+          <GcBadge />
+          <View className='w-2' />
+          <Skeleton className='h-6 w-20 rounded-md' />
+        </View>
+      )
     }
   }
 

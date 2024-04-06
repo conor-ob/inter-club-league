@@ -34,7 +34,7 @@ export function RefreshScrollView({
       contentInsetAdjustmentBehavior='automatic'
       refreshControl={
         <RefreshControl
-          tintColor={colors[colorScheme ?? 'light'].brandGc}
+          tintColor={colors[colorScheme ?? 'light'].textColorSecondary}
           refreshing={refreshing}
           onRefresh={() => {
             handleRefresh()
