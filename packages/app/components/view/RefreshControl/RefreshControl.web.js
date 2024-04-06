@@ -185,7 +185,7 @@ export default function RefreshControl({
             <ActivityIndicator
               color={refreshIndicatorColor || undefined}
               size={size || undefined}
-              style={{ marginVertical: 10 }}
+              // style={{ marginVertical: 10 }}
             />
             {title && (
               <Text
