@@ -13,6 +13,7 @@
 
 - Create yellow jersey app icon
 - We need a back button on some pages
+- Check youtube video by sam selikoff about optimising for PWA like disbaled test highlighting etc
 
 ### GraphQL API
 

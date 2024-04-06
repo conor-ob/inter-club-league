@@ -165,7 +165,7 @@ function Navigation() {
         </View>
       )
     } else {
-      return 'ICL'
+      return <GcBadge text='ICL' />
     }
   }
 
