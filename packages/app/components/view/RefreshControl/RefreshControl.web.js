@@ -11,9 +11,10 @@ import {
 } from 'react-native'
 
 const arrowIconLight =
-  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzNjM2M0M2IzIiBjbGFzcz0idy02IGgtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTMuNSA0LjUgMjEgMTJtMCAwLTcuNSA3LjVNMjEgMTJIMyIgLz4KPC9zdmc+Cg=='
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzNjM2M0M2IzIiBjbGFzcz0idy02IGgtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJtOC4yNSA0LjUgNy41IDcuNS03LjUgNy41IiAvPgo8L3N2Zz4K'
+
 const arrowIconDark =
-  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iI2ViZWJlYjk5IiBjbGFzcz0idy02IGgtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTMuNSA0LjUgMjEgMTJtMCAwLTcuNSA3LjVNMjEgMTJIMyIgLz4KPC9zdmc+Cg=='
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iI2ViZWJlYjk5IiBjbGFzcz0idy02IGgtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJtOC4yNSA0LjUgNy41IDcuNS03LjUgNy41IiAvPgo8L3N2Zz4K'
 
 RefreshControl.propTypes = {
   colors: PropTypes.array,
@@ -129,8 +130,8 @@ export default function RefreshControl({
   )
   const pullDownIconStyle = useMemo(
     () => ({
-      width: 22,
-      height: 22,
+      width: 28,
+      height: 28,
       marginBottom: 18,
       transform: [
         {
