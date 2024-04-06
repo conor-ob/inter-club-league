@@ -1,3 +1,3 @@
-import { StageFeature } from 'app/features/stage/stage-feature'
+import { ScheduleFeature } from 'app/features/schedule/schedule-feature'
 
-export default StageFeature
+export default ScheduleFeature

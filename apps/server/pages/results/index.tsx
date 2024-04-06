@@ -1,8 +1,7 @@
 import { ResultsFeatureSkeleton } from 'app/features/results/results-feature-skeleton'
 import { useRedirectQuery } from 'app/graphql/use-redirect-query'
-import cx from 'classnames'
 import { useEffect } from 'react'
-import { Platform, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
 import { useRouter } from 'solito/router'
 
 export default function ResultsRedirect() {
@@ -19,10 +18,7 @@ export default function ResultsRedirect() {
 
   return (
     <ScrollView
-      contentContainerClassName={cx({
-        'px-4 pt-2 pb-6': Platform.OS === 'web',
-        'px-3 py-6': Platform.OS !== 'web'
-      })}
+      contentContainerClassName='px-4 py-6'
       contentInsetAdjustmentBehavior='automatic'
     >
       <ResultsFeatureSkeleton />

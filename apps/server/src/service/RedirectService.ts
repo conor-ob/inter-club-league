@@ -27,6 +27,7 @@ export class RedirectService {
 
   public getRedirects(seasonId: string): Redirects {
     return {
+      currentSeasonId: seasonId,
       currentStageId: this.getCurrentStageId(seasonId)
     }
   }

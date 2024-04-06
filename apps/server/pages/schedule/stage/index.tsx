@@ -1,18 +1,17 @@
-import { GcFeatureSkeleton } from 'app/features/gc/gc-feature-skeleton'
 import { useRedirectQuery } from 'app/graphql/use-redirect-query'
 import { useEffect } from 'react'
 import { ScrollView } from 'react-native'
 import { useRouter } from 'solito/router'
 
-export default function GcRedirect() {
+export default function ScheduleRedirect() {
   const { loading, data, error, refetch } = useRedirectQuery({
     seasonId: undefined
   })
   const { push, replace, back, parseNextPath } = useRouter()
 
   useEffect(() => {
-    if (data?.redirects.currentStageId) {
-      replace(`/gc/${data.redirects.currentStageId}`)
+    if (data?.redirects.currentSeasonId) {
+      replace(`/schedle/${data.redirects.currentSeasonId}`)
     }
   }, [data, replace])
 
@@ -21,7 +20,7 @@ export default function GcRedirect() {
       contentContainerClassName='px-4 py-6'
       contentInsetAdjustmentBehavior='automatic'
     >
-      <GcFeatureSkeleton />
+      {/* <ResultsFeatureSkeleton /> */}
     </ScrollView>
   )
 }

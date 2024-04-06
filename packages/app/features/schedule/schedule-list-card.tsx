@@ -26,7 +26,7 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
         ItemSeparatorComponent={() => <CardDivider />}
         renderItem={({ item }) => (
           <TouchableOpacity activeOpacity={0.6}>
-            <Link href={`/schedule/${item.id}`}>
+            <Link href={`/schedule/stage/${item.id}`}>
               <Row className='flex-row items-center justify-between px-4 py-4'>
                 <StageLayout stage={item} />
                 <View className='w-2' />

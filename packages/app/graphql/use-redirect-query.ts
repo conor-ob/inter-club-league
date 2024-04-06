@@ -4,6 +4,7 @@ import { graphql } from '../generated'
 const redirectQuery = graphql(`
   query RedirectQuery($seasonId: ID) {
     redirects(seasonId: $seasonId) {
+      currentSeasonId
       currentStageId
     }
     stages(seasonId: $seasonId) {
