@@ -199,7 +199,7 @@ function Navigation() {
                           isCurrent(item.path)
                             ? 'bg-card text-primary'
                             : 'text-secondary hover:bg-card hover:text-primary',
-                          'font-inter-medium rounded-xl px-3 py-2 text-sm'
+                          'font-inter-medium rounded-xl px-3 py-2 text-base'
                         )}
                         aria-current={isCurrent(item.path) ? 'page' : undefined}
                       >

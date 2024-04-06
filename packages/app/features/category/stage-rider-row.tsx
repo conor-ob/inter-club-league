@@ -14,14 +14,14 @@ export function StageRiderRow({ stageRider, gcLeaderId }: StageRiderRowProps) {
       <View className='flex flex-1 flex-row items-center'>
         <Text
           className={cx(
-            'text-primary font-inter-medium w-12 text-center text-sm',
+            'text-primary font-inter-regular w-12 text-center text-base',
             { 'text-secondary': stageRider.position === '-' }
           )}
         >
           {stageRider.position}
         </Text>
         <View className='ml-2'>
-          <Text className='text-primary font-inter-regular text-sm'>
+          <Text className='text-primary font-inter-regular text-base'>
             {stageRider.rider.name}
           </Text>
           <View className='h-1' />
@@ -34,7 +34,7 @@ export function StageRiderRow({ stageRider, gcLeaderId }: StageRiderRowProps) {
             <YellowJersey />
           </View>
         )}
-        <Text className='text-primary font-inter-medium w-16 text-center text-sm'>
+        <Text className='text-primary font-inter-medium w-16 text-center text-base'>
           {stageRider.points}
         </Text>
       </View>

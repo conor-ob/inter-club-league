@@ -11,7 +11,7 @@ export function GcFeatureSkeleton() {
       <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
       <View className='h-6' />
       <StageNavigation baseUrl='/gc' disabled={true} />
-      <View className='h-6' />
+      <View className='h-12' />
       <Row className='justify-between px-2'>
         <Row>
           <View className='w-10 items-center'>

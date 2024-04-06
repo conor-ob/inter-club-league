@@ -15,7 +15,7 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
       <View className='flex-1 flex-row items-center'>
         <GcRiderPosition rank={gcRider.rank} position={gcRider.position} />
         <View className='flex-1 px-2'>
-          <Text className='text-primary font-inter-regular text-sm'>
+          <Text className='text-primary font-inter-regular text-base'>
             {gcRider.rider.name}
           </Text>
           <View className='h-1' />
@@ -28,10 +28,10 @@ export function GcRiderRow({ gcRider }: GcRiderRowProps) {
         <View className='w-10'>
           <GcRiderMovement movement={gcRider.movement} />
         </View>
-        <Text className='text-primary font-inter-medium w-10 text-center text-sm'>
+        <Text className='text-primary font-inter-medium w-10 text-center text-base'>
           {gcRider.gcPoints}
         </Text>
-        <Text className='text-secondary font-inter-medium w-10 text-center text-sm'>
+        <Text className='text-secondary font-inter-regular w-10 text-center text-base'>
           {gcRider.totalPoints}
         </Text>
       </View>
@@ -53,7 +53,7 @@ function GcRiderPosition({ rank, position }: GcRiderPositionProps) {
     )
   }
   return (
-    <Text className='text-secondary font-inter-medium w-10 text-center text-sm'>
+    <Text className='text-secondary font-inter-regular w-10 text-center text-base'>
       {position}
     </Text>
   )
@@ -71,12 +71,12 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
   } else if (movement > 0) {
     return (
       <View className='flex flex-row items-center justify-center'>
-        <Text className='text-secondary font-inter-regular text-sm'>
+        <Text className='text-secondary font-inter-regular text-base'>
           {movement}
         </Text>
         <View className='w-1' />
         <HeroIcon
-          size={16}
+          size={18}
           name='arrow-up'
           color={colors[colorScheme ?? 'light'].brandGreen}
         />
@@ -90,7 +90,7 @@ function GcRiderMovement({ movement }: GcRiderMovementProps) {
         </Text>
         <View className='w-1' />
         <HeroIcon
-          size={16}
+          size={18}
           name='arrow-down'
           color={colors[colorScheme ?? 'light'].brandRed}
         />

@@ -11,10 +11,8 @@
 
 ### UI
 
-- Experiment with slightly bigger font sizes. text-md maybe
 - Create yellow jersey app icon
 - We need a back button on some pages
-- Add more padding to stage view card
 
 ### GraphQL API
 
@@ -25,7 +23,6 @@
 ### Schedule page
 
 - Redirect to schedule/${seasonId}
-- Stage link should only work from this page
 - Horizontal GC scroller
 - "Next event" card at the top
 - API response should include nextEvent, primarySchedule and secondarySchedule fields
@@ -45,15 +42,10 @@
   - list of strings which are separated into paragraphs in the UI
 - "Add to calendar" feature
 
-### Stage results page
-
-- Main page should show a list of races / groups
-- User can click on group to view results
-
 ### GC page
 
-- When stage is added for new season we should not see GC for last season
 - Filter by category (how does it work with upgrades)
+- Display first name inital and category code on smaller screens
 
 ### Rider stats page
 
