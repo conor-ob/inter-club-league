@@ -30,7 +30,7 @@ export function StageFeature() {
           <Skeleton className='h-1' />
           <Skeleton className='h-20 rounded-b-xl' />
           <View className='h-6' />
-          <StageNavigation baseUrl='/schedule' disabled={true} />
+          <StageNavigation baseUrl='/schedule/stage' disabled={true} />
           <View className='h-12' />
           <Skeleton className='h-64 rounded-xl' />
         </View>
@@ -38,7 +38,7 @@ export function StageFeature() {
         <View>
           <StageCard stage={data.stage} />
           <View className='h-6' />
-          <StageNavigation baseUrl='/schedule' disabled={loading} />
+          <StageNavigation baseUrl='/schedule/stage' disabled={loading} />
           <View className='h-12' />
         </View>
       ) : error ? (

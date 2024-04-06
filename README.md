@@ -12,7 +12,6 @@
 ### UI
 
 - Create yellow jersey app icon
-- We need a back button on some pages
 - Check youtube video by sam selikoff about optimising for PWA like disbaled test highlighting etc
 
 ### GraphQL API
@@ -23,7 +22,6 @@
 
 ### Schedule page
 
-- Redirect to schedule/${seasonId}
 - Horizontal GC scroller
 - "Next event" card at the top
 - API response should include nextEvent, primarySchedule and secondarySchedule fields

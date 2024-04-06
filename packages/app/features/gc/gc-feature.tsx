@@ -44,10 +44,7 @@ export function GcFeature() {
         dataView={
           data ? (
             <View>
-              <StageCard
-                stage={data.stage}
-                href={`/schedule/stage/${data.stage.id}`}
-              />
+              <StageCard stage={data.stage} />
               <View className='h-6' />
               <StageNavigation baseUrl='/gc' disabled={loading} />
               <View className='h-12' />

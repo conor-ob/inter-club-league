@@ -11,7 +11,7 @@ export default function ScheduleRedirect() {
 
   useEffect(() => {
     if (data?.redirects.currentSeasonId) {
-      replace(`/schedle/${data.redirects.currentSeasonId}`)
+      replace(`/schedule/${data.redirects.currentSeasonId}`)
     }
   }, [data, replace])
 

@@ -2,7 +2,11 @@ import 'raf/polyfill'
 import 'setimmediate'
 
 import { Popover, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import {
+  Bars3Icon,
+  ChevronLeftIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline'
 import {
   seasonIdFromStageId,
   stageNumberFromStageId
@@ -20,7 +24,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ParsedUrlQuery } from 'querystring'
 import React, { Fragment } from 'react'
-import { Text, View, useColorScheme } from 'react-native'
+import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import PWAInstallComponent from '../components/pwa-install.jsx'
 
 import '../global.css'
@@ -138,6 +142,10 @@ function Navigation() {
       const stageId = query?.id
       return (
         <View className='flex-row items-center'>
+          <TouchableOpacity activeOpacity={0.6} onPress={() => router.back()}>
+            <ChevronLeftIcon className='h-6 w-6' />
+          </TouchableOpacity>
+          <View className='w-4' />
           <GcBadge text='Results' />
           <View className='w-2' />
           {typeof stageId === 'string' && stageId ? (
@@ -164,6 +172,14 @@ function Navigation() {
       const stageId = query?.id
       return (
         <View className='flex-row items-center'>
+          <TouchableOpacity activeOpacity={0.6}>
+            <Link
+              href={`/schedule/${data?.redirects.currentSeasonId ? data.redirects.currentSeasonId : ''}`}
+            >
+              <ChevronLeftIcon className='h-6 w-6' />
+            </Link>
+          </TouchableOpacity>
+          <View className='w-4' />
           {typeof stageId === 'string' && stageId ? (
             <GcBadge text={seasonIdFromStageId(stageId)} />
           ) : (

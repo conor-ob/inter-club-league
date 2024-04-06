@@ -33,10 +33,7 @@ export function ResultsFeature() {
         <ResultsFeatureSkeleton />
       ) : data ? (
         <View>
-          <StageCard
-            stage={data.stage}
-            href={`/schedule/stage/${data.stage.id}`}
-          />
+          <StageCard stage={data.stage} />
           <View className='h-6' />
           <StageNavigation baseUrl='/results' disabled={loading} />
           <View className='h-12' />
