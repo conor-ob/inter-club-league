@@ -1,6 +1,6 @@
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import cx from 'classnames'
-import { Platform, View, useColorScheme } from 'react-native'
+import { View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { Skeleton } from '../../components/loading/skeleton'
 import { StageNavigation } from '../../components/navigation/stage-navigation'
@@ -21,10 +21,7 @@ export function StageFeature() {
 
   return (
     <RefreshScrollView
-      contentContainerClassName={cx({
-        'px-4 pt-2 pb-6': Platform.OS === 'web',
-        'px-3 py-6': Platform.OS !== 'web'
-      })}
+      contentContainerClassName='px-4 py-6'
       loading={loading}
       onRefresh={() => refetch()}
     >
@@ -33,7 +30,7 @@ export function StageFeature() {
           <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
           <View className='h-6' />
           <StageNavigation baseUrl='/results' disabled={true} />
-          <View className='h-6' />
+          <View className='h-12' />
           <Skeleton className='h-64 rounded-xl' />
         </View>
       ) : data ? (
@@ -41,7 +38,7 @@ export function StageFeature() {
           <StageCard stage={data.stage} />
           <View className='h-6' />
           <StageNavigation baseUrl='/schedule' disabled={loading} />
-          <View className='h-6' />
+          <View className='h-12' />
         </View>
       ) : error ? (
         <View></View>

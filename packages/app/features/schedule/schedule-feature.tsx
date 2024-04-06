@@ -13,7 +13,7 @@ export function ScheduleFeature() {
 
   return (
     <RefreshScrollView
-      contentContainerClassName='px-4 pb-6 pt-2'
+      contentContainerClassName='px-4 py-6'
       loading={loading}
       onRefresh={() => refetch()}
     >
@@ -31,11 +31,11 @@ export function ScheduleFeature() {
               color: colors[colorScheme ?? 'light'].textColorPrimary
             }}
           />
-          <View className='h-6' />
+          <View className='h-12' />
           <Skeleton className='mx-3 h-5 w-12 rounded-md' />
           <View className='h-3' />
           <Skeleton className='h-40 rounded-xl' />
-          <View className='h-6' />
+          <View className='h-12' />
           <Skeleton className='mx-3 h-5 w-12 rounded-md' />
           <View className='h-3' />
           <Skeleton className='h-80 rounded-xl' />

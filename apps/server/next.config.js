@@ -24,7 +24,6 @@ const nextConfig = {
     'react-native-reanimated',
     'react-native-svg',
     'react-native-web',
-    'react-native-web-refresh-control',
     'solito'
   ],
   webpack: (c) => {

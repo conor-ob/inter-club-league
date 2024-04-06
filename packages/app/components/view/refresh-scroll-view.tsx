@@ -1,5 +1,7 @@
-import React from 'react'
-import { CustomRefreshScrollView } from './custom-refresh-scroll-view'
+import { colors } from 'app/design/colors'
+import React, { useCallback, useEffect, useState } from 'react'
+import { ScrollView, useColorScheme } from 'react-native'
+import { RefreshControl } from './RefreshControl'
 
 export function RefreshScrollView({
   contentContainerClassName,
@@ -12,13 +14,35 @@ export function RefreshScrollView({
   onRefresh: () => void
   children: React.ReactNode
 }) {
+  const colorScheme = useColorScheme()
+  const [refreshing, setRefreshing] = useState(false)
+
+  const handleRefresh = useCallback(() => {
+    setRefreshing(true)
+    onRefresh()
+  }, [onRefresh])
+
+  useEffect(() => {
+    if (!loading) {
+      setRefreshing(false)
+    }
+  }, [loading])
+
   return (
-    <CustomRefreshScrollView
+    <ScrollView
       contentContainerClassName={contentContainerClassName}
-      loading={loading}
-      onRefresh={onRefresh}
+      contentInsetAdjustmentBehavior='automatic'
+      refreshControl={
+        <RefreshControl
+          tintColor={colors[colorScheme ?? 'light'].brandGc}
+          refreshing={refreshing}
+          onRefresh={() => {
+            handleRefresh()
+          }}
+        />
+      }
     >
       {children}
-    </CustomRefreshScrollView>
+    </ScrollView>
   )
 }

@@ -46,7 +46,7 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
         schedule.upcoming.length === 0 && (
           <View>
             <CardListHeader
-              className='mb-2 ml-4 mt-6'
+              className='mb-2 ml-4 mt-12'
               title='No upcoming stages'
             />
           </View>
@@ -54,7 +54,7 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
       {selectedIndex === 1 && schedule.completed.length === 0 && (
         <View>
           <CardListHeader
-            className='mb-2 ml-4 mt-6'
+            className='mb-2 ml-4 mt-12'
             title='No completed stages'
           />
         </View>
@@ -62,7 +62,7 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
       {selectedIndex === 0 && schedule.nextStages.length > 0 && (
         <View>
           <CardListHeader
-            className='mb-2 ml-4 mt-6'
+            className='mb-2 ml-4 mt-12'
             textColor='text-brand'
             title={getUpcomingStageTitle(schedule.nextStages[0]!.startTime)}
           />
@@ -72,7 +72,7 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
       {scheduleMonths.map((scheduleMonth) => (
         <View key={scheduleMonth.displayName}>
           <CardListHeader
-            className='mb-2 ml-4 mt-6'
+            className='mb-2 ml-4 mt-12'
             title={scheduleMonth.displayName.toUpperCase()}
           />
 

@@ -28,7 +28,7 @@ export function StageCard({ stage, href }: { stage: Stage; href?: string }) {
     </Card>
   ) : (
     <Card>
-      <View className='p-4'>
+      <View className='pb-4 pl-4 pr-12 pt-4'>
         <StageLayout stage={stage} />
       </View>
     </Card>

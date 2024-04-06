@@ -9,7 +9,7 @@ export function ResultsFeatureSkeleton() {
       <Skeleton className={cx('h-40 rounded-xl', 'sm:h-32')} />
       <View className='h-6' />
       <StageNavigation baseUrl='/results' disabled={true} />
-      <View className='h-6' />
+      <View className='h-12' />
       <Skeleton className='h-64 rounded-xl' />
     </View>
   )
