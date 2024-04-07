@@ -25,7 +25,7 @@ export function ResultsFeature() {
 
   return (
     <RefreshScrollView
-      contentContainerClassName='px-4 py-6'
+      contentContainerClassName='px-4 pt-6 pb-12'
       loading={loading}
       onRefresh={() => refetch()}
     >

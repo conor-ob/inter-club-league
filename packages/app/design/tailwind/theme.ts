@@ -10,7 +10,8 @@ export const theme = {
         blue: 'var(--color-brand-blue)',
         purple: 'var(--color-brand-purple)',
         green: 'var(--color-brand-green)',
-        red: 'var(--color-brand-red)'
+        red: 'var(--color-brand-red)',
+        strava: 'var(--color-brand-strava)'
       },
       card: 'var(--color-card)',
       skeleton: 'var(--color-skeleton)',
