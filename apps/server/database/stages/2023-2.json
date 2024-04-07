@@ -9,5 +9,14 @@
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
   "coordinates": "53.236587,-6.454378",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "Sign on is accross from the Blue Gardenia. If you're driving up, please take care not to block any entrances/exits to houses or laneways etc",
+    "Sign on closes at 18:50 with first race off at 19:00",
+    "The format on the night will be dependent on numbers but most likely will be:",
+    "• 3.5 laps for Scratch and Semi Scratch (45km)",
+    "• 2.5 laps for Semi Limit (35km)",
+    "• 1.5 laps for Limit (25km)",
+    "Races will finish at the cottage / turn for Ballysmuttan"
+  ]
 }

@@ -15,12 +15,6 @@ import {
 export function StageInfoCard({ stage }: { stage: Stage }) {
   const colorScheme = useColorScheme()
 
-  const info = [
-    'Race info line 1',
-    'Race info line 2',
-    'Some much longer race info that might possibly span over 2 lines'
-  ]
-
   return (
     <Column>
       <Text className='text-primary font-inter-medium ml-4 text-xl'>
@@ -30,7 +24,7 @@ export function StageInfoCard({ stage }: { stage: Stage }) {
       <Card>
         <Column className='p-4'>
           <FlatList
-            data={info}
+            data={stage.info}
             // scrollEnabled={false}
             ItemSeparatorComponent={() => <View className='h-2' />}
             renderItem={({ item }) => (

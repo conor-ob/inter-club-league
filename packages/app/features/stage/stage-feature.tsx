@@ -50,10 +50,12 @@ export function StageFeature() {
           <View className='h-6' />
           <StageNavigation baseUrl='/schedule/stage' disabled={loading} />
 
-          <View>
-            <View className='h-12' />
-            <StageInfoCard stage={data.stage} />
-          </View>
+          {data.stage.info && data.stage.info.length > 0 && (
+            <View>
+              <View className='h-12' />
+              <StageInfoCard stage={data.stage} />
+            </View>
+          )}
 
           <View className='h-12' />
           <StageGroupsCard stage={data.stage} />

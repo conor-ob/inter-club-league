@@ -10,4 +10,5 @@ export interface StageEntity {
   categoryGroups: string
   coordinates?: string
   stravaId?: string
+  info?: string[]
 }
