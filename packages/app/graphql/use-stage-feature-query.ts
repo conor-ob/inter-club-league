@@ -55,6 +55,7 @@ const stageFeatureQuery = graphql(`
       }
       coordinates
       stravaId
+      info
     }
     marshalls(stageId: $stageId) {
       id
