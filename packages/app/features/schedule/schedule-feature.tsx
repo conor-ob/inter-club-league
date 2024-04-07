@@ -13,7 +13,7 @@ export function ScheduleFeature() {
 
   return (
     <RefreshScrollView
-      contentContainerClassName='px-4 pt-6 pb-12'
+      contentContainerClassName='px-4 py-6'
       loading={loading}
       onRefresh={() => refetch()}
     >
