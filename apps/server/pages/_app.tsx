@@ -26,6 +26,7 @@ import type { ParsedUrlQuery } from 'querystring'
 import React, { Fragment } from 'react'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import PWAInstallComponent from '../components/pwa-install.jsx'
+import { PwaTabBar } from '../components/pwa-tab-bar'
 
 import '../global.css'
 
@@ -81,9 +82,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <div id='pwa-safe-area' className='h-14' />
         <footer
           id='pwa-safe-area'
-          className='bg-background border-t-quarternary fixed bottom-0 left-0 right-0 z-50 h-20 border-t'
+          className='bg-background border-t-quarternary fixed bottom-0 left-0 right-0 z-50 border-t'
         >
-          <p className='text-center text-white'>Footer</p>
+          <PwaTabBar />
         </footer>
         {process.env.NODE_ENV === 'production' && (
           <GoogleAnalytics gaId='G-78W6EQTCKS' />
