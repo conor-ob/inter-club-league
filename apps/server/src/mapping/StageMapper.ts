@@ -36,7 +36,8 @@ export class StageMapper {
         categories
       ),
       coordinates: stageEntity.coordinates,
-      stravaId: stageEntity.stravaId
+      stravaId: stageEntity.stravaId,
+      info: stageEntity.info
     }
   }
 

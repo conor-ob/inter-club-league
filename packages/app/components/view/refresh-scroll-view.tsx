@@ -1,5 +1,5 @@
 import { colors } from 'app/design/colors'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import { ScrollView, useColorScheme } from 'react-native'
 import { RefreshControl } from './RefreshControl'
 
@@ -39,10 +39,24 @@ export function RefreshScrollView({
           onRefresh={() => {
             handleRefresh()
           }}
+          enabled={useWindowPosition() === 0}
         />
       }
     >
       {children}
     </ScrollView>
   )
+}
+
+function useWindowPosition() {
+  const [scrollPosition, setPosition] = useState(0)
+  useLayoutEffect(() => {
+    function updatePosition() {
+      setPosition(window.pageYOffset)
+    }
+    window.addEventListener('scroll', updatePosition)
+    updatePosition()
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
+  return scrollPosition
 }

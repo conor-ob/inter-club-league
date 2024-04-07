@@ -9,5 +9,13 @@
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
   "coordinates": "53.252700,-6.214372",
-  "stravaId": "3170841669440238186"
+  "stravaId": "3170841669440238186",
+  "info": [
+    "No need for numbers on Bikes or Jersey. The only number you need to remember is your sign-on number",
+    "If you aren’t used to TTs it’s really important to shout that number as you go across the line",
+    "If you're parked up at the finish we suggest to ride down to the start via Burrow Road and loop around rather than going down Stepaside Lane (in the wet)",
+    "Once you're signed on don’t hang around the start until a few minutes before you're off. It’s a narrow road and we don’t want to annoy the locals",
+    "DO NOT go back to the finish looking for your time. We will be busy taking times for everyone else",
+    "It’s a very hard start. Give yourself plenty of time to do a warmup before"
+  ]
 }

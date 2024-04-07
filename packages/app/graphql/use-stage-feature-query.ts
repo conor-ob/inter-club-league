@@ -28,6 +28,7 @@ const stageFeatureQuery = graphql(`
       }
       coordinates
       stravaId
+      info
     }
     stages(seasonId: $seasonId) {
       id
