@@ -49,6 +49,10 @@ body {
     -ms-overflow-style: scrollbar;
 }
 
+#pwa-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
 @font-face {
     font-family: 'inter-regular';
     src: url('https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-regular.otf');

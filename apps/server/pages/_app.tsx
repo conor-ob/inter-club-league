@@ -76,7 +76,15 @@ export default function App({ Component, pageProps }: AppProps) {
           onInstallGallery={undefined}
         />
         <Navigation />
+        <div className='h-16' />
         <Component {...pageProps} />
+        <div id='pwa-safe-area' className='h-14' />
+        <footer
+          id='pwa-safe-area'
+          className='bg-background border-t-quarternary fixed bottom-0 left-0 right-0 z-50 h-20 border-t'
+        >
+          <p className='text-center text-white'>Footer</p>
+        </footer>
         {process.env.NODE_ENV === 'production' && (
           <GoogleAnalytics gaId='G-78W6EQTCKS' />
         )}
@@ -220,7 +228,10 @@ function Navigation() {
   }
 
   return (
-    <Popover as='header'>
+    <Popover
+      as='header'
+      className='bg-background border-b-quarternary fixed left-0 right-0 top-0 z-50 border-b'
+    >
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-4'>
