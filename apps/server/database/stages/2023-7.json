@@ -8,6 +8,13 @@
   "type": "ROAD_RACE",
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.236587,-6.454378",
+  "stravaId": null,
+  "info": [
+    "We're meeting up across the road from the Blue Gardenia for sign on as usual",
+    "The type of race will depend on rider numbers, whether it's 4 separate races or two handicap races",
+    "The route is around the lake and up to the Sally Gap. The number of laps around the lakes will be determined on the night and also depends on group and rider numbers",
+    "Marshals please arrive by 6:45pm at the latest",
+    "Ambulance will follow the last group that will make it to the top"
+  ]
 }

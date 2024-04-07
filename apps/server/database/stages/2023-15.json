@@ -8,6 +8,10 @@
   "type": "ROAD_RACE",
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.500740,-6.590326",
+  "stravaId": null,
+  "info": [
+    "Doreys Forge lap, sign on is after Batterstown and turn right at the roundabout, the same one we have used for the green sheds circuit",
+    "Finish and laps will be announced on the night"
+  ]
 }

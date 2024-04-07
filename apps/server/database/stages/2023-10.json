@@ -8,6 +8,13 @@
   "type": "ROAD_RACE",
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.1800593,-6.8853348",
+  "stravaId": null,
+  "info": [
+    "Running 4 races (numbers dependent). Sign on by 7.20pm, first race rolls out at 7.30pm",
+    "Scratch and Semi Scratch races will be 3 laps (51km) assuming weather stays bright",
+    "Limit and Semi Limit races will be 2 laps (35km)",
+    "Finish will be the usual finish near crossroads",
+    "Marshals sign on by 7.10pm"
+  ]
 }

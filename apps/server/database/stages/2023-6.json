@@ -8,6 +8,14 @@
   "type": "TIME_TRIAL",
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.396432,-6.878640",
+  "stravaId": null,
+  "info": [
+    "We're meeting up at Max Pallets just outside Johnstown Bridge",
+    "Sign on opens at 7pm and first rider off at 7:30pm",
+    "TT bikes are allowed",
+    "There is a reasonable amount of parking in the area but please don't block driveways or entrances to fields",
+    "Marshals please arrive by 7:15pm at the latest",
+    "Ambulance will follow the last rider"
+  ]
 }

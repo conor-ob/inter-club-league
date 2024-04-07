@@ -1,6 +1,6 @@
 {
   "id": "2023-17",
-  "name": "Dorey's Forge / Green Sheds",
+  "name": "Culmullin",
   "club": "BWCC",
   "location": "Dunshaughlin",
   "county": "Meath",
@@ -8,6 +8,13 @@
   "type": "ROAD_RACE",
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.500740,-6.590326",
+  "stravaId": null,
+  "info": [
+    "Penultimate race week and in a change to the planned circuit, we'll do Culmullin circuit which we haven't done this year yet",
+    "Race will be 2 laps and will have the usual finish on the Dunshaughlin road (~43km)",
+    "Plan is for 4 races depending on numbers",
+    "Sign-on in usual place on R125. Sign on closes at 6.50pm, races start at 7pm sharp",
+    "Marshals please be there for 6.30pm"
+  ]
 }

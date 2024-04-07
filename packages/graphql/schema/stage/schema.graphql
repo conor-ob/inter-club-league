@@ -3,7 +3,7 @@ type Stage {
   categoryGroups: [CategoryGroup!]!
   club: Club!
   county: String!
-  info: [String!]
+  info: [String!]!
   location: String!
   mandatory: Boolean!
   name: String!

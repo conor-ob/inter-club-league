@@ -9,5 +9,12 @@
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
   "coordinates": "53.463518,-6.344188",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "This week's race will be 4 separate races on the Coolquay circuit (number dependent)",
+    "It will most likely be 3 laps for Limit & Semi Limit and 4 laps for Scratch & Semi Scratch",
+    "Please park on the old Ashbourne road on the opposite side we are racing on",
+    "Sign on will close at 6:50pm, Limit group off at 7pm",
+    "Marshals please arrive by 6:30pm"
+  ]
 }

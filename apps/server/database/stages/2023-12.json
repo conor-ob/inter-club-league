@@ -8,6 +8,14 @@
   "type": "ROAD_RACE",
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.1800593,-6.8853348",
+  "stravaId": null,
+  "info": [
+    "This will be a handicapped race around the Newbridge GP circuit with the finish line at the quarry on Boston Hill",
+    "Sign on open from 9:30am with race start at 10am",
+    "Handicap will be determined by group numbers. There will be 4 laps in total",
+    "For those who haven't done the club champs before, it's different than other races in that there are sign on points but there are no placement points",
+    "The first over the finish line for each club is this years club champ for their club. There are no 2nd or 3rd places. You are only racing your clubmates inside of the race. So keep an eye out for who in your club is in the groups in front of you",
+    "Marshals are asked to be there at 9:40am to give them time to get to their positions and if any wish to do lead car, please let us know"
+  ]
 }
