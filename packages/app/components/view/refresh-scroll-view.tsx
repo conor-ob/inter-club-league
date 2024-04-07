@@ -50,6 +50,9 @@ export function RefreshScrollView({
 
 function useWindowPosition() {
   const [scrollPosition, setPosition] = useState(0)
+
+  console.log(scrollPosition)
+
   useLayoutEffect(() => {
     function updatePosition() {
       setPosition(window.pageYOffset)

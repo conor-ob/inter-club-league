@@ -49,9 +49,9 @@ body {
     -ms-overflow-style: scrollbar;
 }
 
-#pwa-safe-area {
+/* #pwa-safe-area {
     padding-bottom: env(safe-area-inset-bottom);
-}
+} */
 
 @font-face {
     font-family: 'inter-regular';
