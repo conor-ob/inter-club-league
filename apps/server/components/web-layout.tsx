@@ -3,7 +3,6 @@ import { Navigation } from './web-navigation'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const screenSize = useScreenSize()
-  console.log(screenSize)
   if (screenSize.width > 600) {
     return (
       <div className='bg-background flex min-h-screen w-full justify-center'>
