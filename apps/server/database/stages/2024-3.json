@@ -1,0 +1,13 @@
+{
+  "id": "2024-3",
+  "name": "Coolquay",
+  "club": "LCRC",
+  "location": "Coolquay",
+  "county": "Dublin",
+  "startTime": "2024-04-25T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.463518,-6.344188",
+  "stravaId": null
+}
