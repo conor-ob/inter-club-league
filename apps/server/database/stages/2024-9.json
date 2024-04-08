@@ -1,0 +1,13 @@
+{
+  "id": "2024-9",
+  "name": "Mondello",
+  "club": "CCC",
+  "location": "Mondello",
+  "county": "Kildare",
+  "startTime": "2024-06-06T19:30:00Z",
+  "type": "CRITERIUM",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.257027,-6.745262",
+  "stravaId": null
+}

@@ -1,0 +1,13 @@
+{
+  "id": "2024-12",
+  "name": "Russborough",
+  "club": "OWCC",
+  "location": "Blessington",
+  "county": "Dublin",
+  "startTime": "2024-06-27T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.164441,-6.541175",
+  "stravaId": null
+}

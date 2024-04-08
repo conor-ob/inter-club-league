@@ -1,0 +1,13 @@
+{
+  "id": "2024-10",
+  "name": "Hill Climb TT",
+  "club": "STCC",
+  "location": "TBD",
+  "county": "Dublin",
+  "startTime": "2024-06-13T19:00:00Z",
+  "type": "HILL_CLIMB",
+  "mandatory": true,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}

@@ -1,0 +1,13 @@
+{
+  "id": "2024-6",
+  "name": "10 Mile TT",
+  "club": "LCRC",
+  "location": "Dunboyne",
+  "county": "Meath",
+  "startTime": "2024-05-16T19:00:00Z",
+  "type": "TIME_TRIAL",
+  "mandatory": true,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": null,
+  "stravaId": null
+}
