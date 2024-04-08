@@ -1,6 +1,6 @@
 {
   "id": "2024-1.2",
-  "name": "Corkagh Park",
+  "name": "Corkagh Park (S & SS)",
   "club": "OWCC",
   "location": "Corkagh Park",
   "county": "Dublin",
@@ -10,5 +10,9 @@
   "categoryGroups": "S+SS",
   "coordinates": "53.306305,-6.412072",
   "stravaId": null,
-  "info": ["Scratch and Semi Scratch groups only"]
+  "info": [
+    "Scratch and Semi Scratch groups only",
+    "40 mins + 2 laps handicapped race",
+    "Sign on opens at 6:30pm with race starting at 7pm"
+  ]
 }
