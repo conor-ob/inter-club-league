@@ -26,7 +26,7 @@ export function StageInfoCard({ stage }: { stage: Stage }) {
           <FlatList
             data={stage.info}
             // scrollEnabled={false}
-            ItemSeparatorComponent={() => <View className='h-3' />}
+            ItemSeparatorComponent={() => <View className='h-2' />}
             renderItem={({ item }) => (
               <Text className='text-primary font-inter-regular text-base'>
                 {item}
