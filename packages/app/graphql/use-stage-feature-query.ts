@@ -61,6 +61,11 @@ const stageFeatureQuery = graphql(`
       id
       marshalls
     }
+    routes(stageId: $stageId) {
+      id
+      label
+      type
+    }
   }
 `)
 

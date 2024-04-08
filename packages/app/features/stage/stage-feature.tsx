@@ -7,6 +7,7 @@ import { useStageFeatureQuery } from '../../graphql/use-stage-feature-query'
 import { MarshallsCard } from './components/marshalls-card'
 import { StageInfoCard } from './components/stage-info-card'
 import { StageMap } from './components/stage-map/stage-map'
+import { StageRoutes } from './components/stage-routes'
 import { StageCard } from './stage-card'
 
 const { useParams } = createParam<{
@@ -59,6 +60,13 @@ export function StageFeature() {
             <View>
               <View className='h-12' />
               <StageMap stage={data.stage} />
+            </View>
+          )}
+
+          {data.routes.length > 0 && (
+            <View>
+              <View className='h-12' />
+              <StageRoutes routes={data.routes} />
             </View>
           )}
 
