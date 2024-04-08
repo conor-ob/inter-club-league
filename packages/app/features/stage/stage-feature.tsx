@@ -5,7 +5,6 @@ import { Skeleton } from '../../components/loading/skeleton'
 import { StageNavigation } from '../../components/navigation/stage-navigation'
 import { useStageFeatureQuery } from '../../graphql/use-stage-feature-query'
 import { MarshallsCard } from './components/marshalls-card'
-import { StageGroupsCard } from './components/stage-groups-card'
 import { StageInfoCard } from './components/stage-info-card'
 import { StageMap } from './components/stage-map/stage-map'
 import { StageCard } from './stage-card'
@@ -53,8 +52,8 @@ export function StageFeature() {
           <View className='h-12' />
           <StageInfoCard stage={data.stage} />
 
-          <View className='h-12' />
-          <StageGroupsCard stage={data.stage} />
+          {/* <View className='h-12' />
+          <StageGroupsCard stage={data.stage} /> */}
 
           {data?.stage.coordinates && (
             <View>
