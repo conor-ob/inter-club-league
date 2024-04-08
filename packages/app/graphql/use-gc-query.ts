@@ -57,6 +57,7 @@ const gcQuery = graphql(`
       }
       coordinates
       stravaId
+      info
     }
   }
 `)

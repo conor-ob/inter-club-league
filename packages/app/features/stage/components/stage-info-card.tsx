@@ -18,7 +18,7 @@ export function StageInfoCard({ stage }: { stage: Stage }) {
   return (
     <Column>
       <Text className='text-primary font-inter-medium ml-4 text-xl'>
-        Race Info
+        Stage Info
       </Text>
       <View className='h-2' />
       <Card>
@@ -26,7 +26,7 @@ export function StageInfoCard({ stage }: { stage: Stage }) {
           <FlatList
             data={stage.info}
             // scrollEnabled={false}
-            ItemSeparatorComponent={() => <View className='h-2' />}
+            ItemSeparatorComponent={() => <View className='h-3' />}
             renderItem={({ item }) => (
               <Text className='text-primary font-inter-regular text-base'>
                 {item}

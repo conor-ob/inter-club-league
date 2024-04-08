@@ -9,5 +9,8 @@
   "mandatory": false,
   "categoryGroups": "S+SS,SL+L",
   "coordinates": "53.306305,-6.412072",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "There will be an intro session before the first race at 6:15pm for new riders, covering marshalling and a few drills"
+  ]
 }

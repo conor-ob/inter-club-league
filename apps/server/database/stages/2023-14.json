@@ -8,6 +8,10 @@
   "type": "TIME_TRIAL",
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.445325,-6.477471",
+  "stravaId": null,
+  "info": [
+    "Sign on closes at 6:50pm to give time for the timekeepers to get into position up the road",
+    "TT bikes are allowed"
+  ]
 }

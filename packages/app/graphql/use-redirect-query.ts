@@ -32,6 +32,7 @@ const redirectQuery = graphql(`
       }
       coordinates
       stravaId
+      info
     }
   }
 `)

@@ -24,7 +24,7 @@ export function StageFeature() {
 
   return (
     <RefreshScrollView
-      contentContainerClassName='px-4 pt-6 pb-12'
+      contentContainerClassName='px-4 py-6'
       loading={loading}
       onRefresh={() => refetch()}
     >
@@ -36,7 +36,7 @@ export function StageFeature() {
           <View className='h-6' />
           <StageNavigation baseUrl='/schedule/stage' disabled={true} />
           <View className='h-12' />
-          <Skeleton className='ml-4 h-6 w-16 rounded-md' />
+          <Skeleton className='ml-4 h-6 w-20 rounded-md' />
           <View className='h-3' />
           <Skeleton className='h-40 rounded-xl' />
           <View className='h-12' />
@@ -50,12 +50,8 @@ export function StageFeature() {
           <View className='h-6' />
           <StageNavigation baseUrl='/schedule/stage' disabled={loading} />
 
-          {data.stage.info && data.stage.info.length > 0 && (
-            <View>
-              <View className='h-12' />
-              <StageInfoCard stage={data.stage} />
-            </View>
-          )}
+          <View className='h-12' />
+          <StageInfoCard stage={data.stage} />
 
           <View className='h-12' />
           <StageGroupsCard stage={data.stage} />
@@ -66,12 +62,9 @@ export function StageFeature() {
               <StageMap stage={data.stage} />
             </View>
           )}
-          {data.marshalls.marshalls.length > 0 && (
-            <View>
-              <View className='h-12' />
-              <MarshallsCard marshalls={data.marshalls.marshalls} />
-            </View>
-          )}
+
+          <View className='h-12' />
+          <MarshallsCard marshalls={data.marshalls.marshalls} />
         </View>
       ) : error ? (
         <View></View>

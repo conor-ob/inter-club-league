@@ -17,7 +17,7 @@ export default function ScheduleRedirect() {
 
   return (
     <ScrollView
-      contentContainerClassName='px-4 pt-6 pb-12'
+      contentContainerClassName='px-4 py-6'
       contentInsetAdjustmentBehavior='automatic'
     >
       {/* <ResultsFeatureSkeleton /> */}

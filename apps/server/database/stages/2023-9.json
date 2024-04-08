@@ -9,5 +9,12 @@
   "mandatory": false,
   "categoryGroups": "S+SS,SL+L",
   "coordinates": "53.306305,-6.412072",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "2x Handicap points race. First race is Limit & Semi Limit off at 6.45pm. Second race is Scratch & Semi Scratch off at 7.30pm",
+    "The points race will work that there will be several sprints (6 in first race, 8 in second race)",
+    "Points for 1st, 2nd and 3rd over the line in each of the sprints",
+    "All of the points you collect from all of the sprints will be accumulated to determine your overall position in the race",
+    "Handicap will be set so that Limit and Semi Scratch likely stay away for first couple of sprints"
+  ]
 }

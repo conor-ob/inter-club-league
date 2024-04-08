@@ -28,6 +28,7 @@ const stagesQuery = graphql(`
       }
       coordinates
       stravaId
+      info
     }
   }
 `)
