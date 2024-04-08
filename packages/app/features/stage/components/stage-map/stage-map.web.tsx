@@ -4,13 +4,12 @@ import { Column } from 'app/components/layout/column'
 import { Row } from 'app/components/layout/row'
 import { colors } from 'app/design/colors'
 import { Stage } from 'app/generated/graphql'
-import { useEffect, useState } from 'react'
+import useAppleDevice from 'app/hooks/use-apple-device'
+import useScreenSize from 'app/hooks/use-screen-size'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { Link } from 'solito/link'
 
 export function StageMap({ stage }: { stage: Stage }) {
-  const colorScheme = useColorScheme()
-
   const screenSize = useScreenSize()
   const mapWidth = screenSize.width - 32 // hack for padding of px-4 on each side - 16 + 16 =  32px
   const marginLeft = `-${Math.floor(mapWidth / 2)}px`
@@ -43,71 +42,193 @@ export function StageMap({ stage }: { stage: Stage }) {
               src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${stage.coordinates}&center=${stage.coordinates}&zoom=${zoom}`}
             />
           </div>
-          <Row className='items-center justify-between px-4 py-4'>
-            <Text className='text-secondary font-inter-regular text-base'>
-              {stage.location}
-            </Text>
-            <TouchableOpacity>
-              <Link
-                href={
-                  isAppleMobile()
-                    ? `maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
-                    : `https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
-                }
-              >
-                <Row>
-                  <Text className='text-brand-blue font-inter-regular text-base'>
-                    Directions
-                  </Text>
-                  <View className='w-2' />
-                  <HeroIcon
-                    name={'chevron-right'}
-                    color={colors[colorScheme ?? 'light'].brandBlue}
-                    size={24}
-                  />
-                </Row>
-              </Link>
-            </TouchableOpacity>
-          </Row>
+          <Directions stage={stage} />
         </Column>
       </Card>
     </Column>
   )
 }
 
-function isAppleMobile(): boolean {
-  if (
-    (['iPhone', 'iPad', 'iPod'].includes(navigator.platform) ||
-      (navigator.userAgent.match(/Mac/) &&
-        navigator.maxTouchPoints &&
-        navigator.maxTouchPoints > 2)) &&
-    'serviceWorker' in navigator
+function Directions({ stage }: { stage: Stage }) {
+  const colorScheme = useColorScheme()
+  // const isAppleDevice = useAppleDevice()
+
+  return (
+    <Row className='items-center justify-between px-4 py-4'>
+      <Text className='text-secondary font-inter-regular text-base'>
+        {stage.location}
+      </Text>
+      <TouchableOpacity>
+        <Link
+          href={
+            useAppleDevice()
+              ? `maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+              : `https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+          }
+        >
+          <Row>
+            <Text className='text-brand-blue font-inter-regular text-base'>
+              Directions
+            </Text>
+            <HeroIcon
+              name={'chevron-right'}
+              color={colors[colorScheme ?? 'light'].brandBlue}
+              size={24}
+            />
+          </Row>
+        </Link>
+      </TouchableOpacity>
+    </Row>
   )
-    return true
-  return false
+
+  // if (isAppleDevice) {
+  //   return (
+  //     <Row className='items-center justify-between px-4'>
+  //       <Text className='text-secondary font-inter-regular pr-4 text-base'>
+  //         {`Directions to ${stage.location}`}
+  //       </Text>
+  //       <View className='h-4' />
+  //       <Column>
+  //         <TouchableOpacity className='flex-1 items-end py-4'>
+  //           <Link
+  //             href={`maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`}
+  //           >
+  //             <Row>
+  //               <Text className='text-brand-blue font-inter-regular text-base'>
+  //                 Apple Maps
+  //               </Text>
+  //               <View className='w-2' />
+  //               <HeroIcon
+  //                 name={'chevron-right'}
+  //                 color={colors[colorScheme ?? 'light'].brandBlue}
+  //                 size={24}
+  //               />
+  //             </Row>
+  //           </Link>
+  //         </TouchableOpacity>
+  //         <TouchableOpacity className='flex-1 items-end py-4'>
+  //           <Link
+  //             href={`https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`}
+  //           >
+  //             <Row>
+  //               <Text className='font-inter-regular text-brand-blue text-base'>
+  //                 Google Maps
+  //               </Text>
+  //               <View className='w-2' />
+  //               <HeroIcon
+  //                 name={'chevron-right'}
+  //                 color={colors[colorScheme ?? 'light'].brandBlue}
+  //                 size={24}
+  //               />
+  //             </Row>
+  //           </Link>
+  //         </TouchableOpacity>
+  //       </Column>
+  //     </Row>
+  //   )
+  // } else {
+  //   return (
+  //     <Row className='items-center justify-between px-4 py-4'>
+  //       <Text className='text-secondary font-inter-regular text-base'>
+  //         {stage.location}
+  //       </Text>
+  //       <TouchableOpacity>
+  //         <Link
+  //           href={
+  //             useAppleDevice()
+  //               ? `maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+  //               : `https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+  //           }
+  //         >
+  //           <Row>
+  //             <Text className='text-brand-blue font-inter-regular text-base'>
+  //               Directions
+  //             </Text>
+  //             <HeroIcon
+  //               name={'chevron-right'}
+  //               color={colors[colorScheme ?? 'light'].brandBlue}
+  //               size={24}
+  //             />
+  //           </Row>
+  //         </Link>
+  //       </TouchableOpacity>
+  //     </Row>
+  //   )
+  // }
 }
 
-const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  })
+// function Directions({ stage }: { stage: Stage }) {
+//   const colorScheme = useColorScheme()
+//   const isAppleDevice = useAppleDevice()
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      })
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
-  return screenSize
-}
+//   if (isAppleDevice) {
+//     return (
+//       <Column>
+//         {/* <Text className='text-secondary font-inter-regular p-4 pb-0 text-base'>
+//           Directions
+//         </Text> */}
+//         <Column>
+//           <FlatList
+//             data={[
+//               {
+//                 label: 'Apple Maps',
+//                 href: `maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+//               },
+//               {
+//                 label: 'Google Maps',
+//                 href: `https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+//               }
+//             ]}
+//             renderItem={({ item }) => (
+//               <TouchableOpacity className='items-end p-4'>
+//                 <Link href={item.href}>
+//                   <Row>
+//                     <Text className='text-brand-blue font-inter-regular text-base'>
+//                       {item.label}
+//                     </Text>
+//                     <View className='w-2' />
+//                     <HeroIcon
+//                       name={'chevron-right'}
+//                       color={colors[colorScheme ?? 'light'].brandBlue}
+//                       size={24}
+//                     />
+//                   </Row>
+//                 </Link>
+//               </TouchableOpacity>
+//             )}
+//             ItemSeparatorComponent={() => <CardDivider />}
+//           />
+//         </Column>
+//       </Column>
+//     )
+//   } else {
+//     return (
+//       <Row className='items-center justify-between px-4 py-4'>
+//         <Text className='text-secondary font-inter-regular text-base'>
+//           {stage.location}
+//         </Text>
+//         <TouchableOpacity>
+//           <Link
+//             href={
+//               useAppleDevice()
+//                 ? `maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+//                 : `https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`
+//             }
+//           >
+//             <Row>
+//               <Text className='text-brand-blue font-inter-regular text-base'>
+//                 Directions
+//               </Text>
+//               <View className='w-2' />
+//               <HeroIcon
+//                 name={'chevron-right'}
+//                 color={colors[colorScheme ?? 'light'].brandBlue}
+//                 size={24}
+//               />
+//             </Row>
+//           </Link>
+//         </TouchableOpacity>
+//       </Row>
+//     )
+//   }
+// }
