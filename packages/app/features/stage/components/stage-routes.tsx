@@ -13,6 +13,7 @@ import {
   View,
   useColorScheme
 } from 'react-native'
+import { Link } from 'solito/link'
 
 export function StageRoutes({ routes }: { routes: Route[] }) {
   const colorScheme = useColorScheme()
@@ -29,36 +30,34 @@ export function StageRoutes({ routes }: { routes: Route[] }) {
           // scrollEnabled={false}
           ItemSeparatorComponent={() => <CardDivider />}
           renderItem={({ item }) => (
-            <TouchableOpacity
-              onPress={() =>
-                window.open(`https://www.strava.com/routes/${item.id}`)
-              }
-            >
-              <Row className='justify-between p-4'>
-                <Text className='text-primary font-inter-medium text-base'>
-                  {item.label}
-                </Text>
-                <Row>
-                  <Text
-                    className={cx(
-                      'font-inter-regular text-base',
-                      getTextClassName({ type: item.type })
-                    )}
-                  >
-                    Route
+            <TouchableOpacity>
+              <Link href={`https://www.strava.com/routes/${item.id}`}>
+                <Row className='justify-between p-4'>
+                  <Text className='text-primary font-inter-medium text-base'>
+                    {item.label}
                   </Text>
-                  <View className='w-2' />
-                  <HeroIcon
-                    name={'chevron-right'}
-                    color={
-                      item.type === RouteType.Strava
-                        ? colors[colorScheme ?? 'light'].brandStrava
-                        : colors[colorScheme ?? 'light'].textColorSecondary
-                    }
-                    size={24}
-                  />
+                  <Row>
+                    <Text
+                      className={cx(
+                        'font-inter-regular text-base',
+                        getTextClassName({ type: item.type })
+                      )}
+                    >
+                      Route
+                    </Text>
+                    <View className='w-2' />
+                    <HeroIcon
+                      name={'chevron-right'}
+                      color={
+                        item.type === RouteType.Strava
+                          ? colors[colorScheme ?? 'light'].brandStrava
+                          : colors[colorScheme ?? 'light'].textColorSecondary
+                      }
+                      size={24}
+                    />
+                  </Row>
                 </Row>
-              </Row>
+              </Link>
             </TouchableOpacity>
           )}
         />
