@@ -21,9 +21,11 @@ const { useParams } = createParam<{
 }>()
 
 export function StageNavigation({
+  providedStageId,
   baseUrl,
   disabled
 }: {
+  providedStageId?: string
   baseUrl: string
   disabled: boolean
 }) {
@@ -32,7 +34,7 @@ export function StageNavigation({
   const { data, loading, error } = useStagesQuery()
   const { replace } = useRouter()
 
-  const stageId = params.id
+  const stageId = providedStageId ?? params.id
 
   useEffect(() => {
     if (shouldRedirect({ id: stageId, stages: data?.stages })) {

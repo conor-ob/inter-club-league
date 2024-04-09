@@ -1,4 +1,5 @@
 import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { GenericErrorView } from 'app/components/view/generic-error-view'
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import { StatefulView } from 'app/components/view/stateful-view'
 import cx from 'classnames'
@@ -21,12 +22,12 @@ const { useParams } = createParam<{
   id: string
 }>()
 
-export function GcFeature() {
+export function GcFeature({ providedStageId }: { providedStageId: string }) {
   const { params } = useParams()
   const colorScheme = useColorScheme()
 
   const { loading, data, error, refetch } = useGcQuery({
-    stageId: params.id
+    stageId: providedStageId ?? params.id
   })
 
   return (
@@ -40,13 +41,17 @@ export function GcFeature() {
         displayError={error !== undefined}
         displayData={data !== undefined}
         loadingView={<GcFeatureSkeleton />}
-        errorView={<View />}
+        errorView={<GenericErrorView basePath='/gc' />}
         dataView={
           data ? (
             <View>
               <StageCard stage={data.stage} />
               <View className='h-6' />
-              <StageNavigation baseUrl='/gc' disabled={loading} />
+              <StageNavigation
+                providedStageId={providedStageId}
+                baseUrl='/gc'
+                disabled={loading}
+              />
               <View className='h-12' />
               {data.gc.gcStatus === GcStatus.Completed && (
                 <Column>

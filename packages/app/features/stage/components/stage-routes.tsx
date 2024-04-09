@@ -43,7 +43,7 @@ export function StageRoutes({ routes }: { routes: Route[] }) {
                         getTextClassName({ type: item.type })
                       )}
                     >
-                      Route
+                      Strava
                     </Text>
                     <View className='w-2' />
                     <HeroIcon

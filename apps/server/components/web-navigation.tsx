@@ -43,7 +43,11 @@ export function Navigation() {
   const query = router.query
 
   function isCurrent(path: string): boolean {
-    return pathname.startsWith(path)
+    if (pathname === '/' && path === '/gc') {
+      return true
+    } else {
+      return pathname.startsWith(path)
+    }
   }
 
   function getTitle(pathname: string, query: ParsedUrlQuery): React.ReactNode {
@@ -135,7 +139,11 @@ export function Navigation() {
         <View className='flex-row items-center'>
           <GcBadge />
           <View className='w-2' />
-          <Skeleton className='h-6 w-20 rounded-md' />
+          {data?.redirects.currentStageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(data.redirects.currentStageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
         </View>
       )
     }

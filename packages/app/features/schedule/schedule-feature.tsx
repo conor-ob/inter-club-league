@@ -1,15 +1,23 @@
 import SegmentedControl from '@react-native-segmented-control/segmented-control'
+import { GenericErrorView } from 'app/components/view/generic-error-view'
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import { View, useColorScheme } from 'react-native'
+import { createParam } from 'solito'
 import { Skeleton } from '../../components/loading/skeleton'
 import { colors } from '../../design/colors'
 import { useStagesQuery } from '../../graphql/use-stages-query'
 import { ScheduleList } from './schedule-list'
 import { buildSchedule } from './schedule-utils'
 
+const { useParams } = createParam<{
+  id: string
+}>()
+
 export function ScheduleFeature() {
+  const { params } = useParams()
+  const { data, loading, error, refetch } = useStagesQuery(params.id)
+
   const colorScheme = useColorScheme()
-  const { data, loading, error, refetch } = useStagesQuery(undefined)
 
   return (
     <RefreshScrollView
@@ -42,6 +50,8 @@ export function ScheduleFeature() {
         </View>
       ) : data ? (
         <ScheduleList schedule={buildSchedule(data?.stages ?? [])} />
+      ) : error ? (
+        <GenericErrorView basePath='/schedule' />
       ) : (
         <View />
       )}

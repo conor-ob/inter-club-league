@@ -9,6 +9,5 @@ export interface StageEntity {
   mandatory: boolean
   categoryGroups: string
   coordinates?: string
-  stravaId?: string
   info?: string[]
 }
