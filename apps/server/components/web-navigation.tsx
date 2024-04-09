@@ -43,7 +43,11 @@ export function Navigation() {
   const query = router.query
 
   function isCurrent(path: string): boolean {
-    return pathname.startsWith(path)
+    if (pathname === '/' && path === '/gc') {
+      return true
+    } else {
+      return pathname.startsWith(path)
+    }
   }
 
   function getTitle(pathname: string, query: ParsedUrlQuery): React.ReactNode {
