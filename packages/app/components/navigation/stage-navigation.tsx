@@ -1,5 +1,10 @@
-import { stageNumberFromStageId } from '@inter-club-league/utils'
+import {
+  seasonIdFromStageId,
+  stageNumberFromStageId
+} from '@inter-club-league/utils'
+import { Stage } from 'app/generated/graphql'
 import cx from 'classnames'
+import { useEffect } from 'react'
 import { Text, TouchableOpacity, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
 import { Link } from 'solito/link'
@@ -27,9 +32,15 @@ export function StageNavigation({
   const { params } = useParams()
   const colorScheme = useColorScheme()
   const { data, loading, error } = useStagesQuery()
-  const { push } = useRouter()
+  const { replace } = useRouter()
 
   const stageId = providedStageId ?? params.id
+
+  useEffect(() => {
+    if (shouldRedirect({ id: stageId, stages: data?.stages })) {
+      replace(`/`)
+    }
+  }, [stageId, data, replace])
 
   let previousStageId: string | null | undefined = undefined
   let nextStageId: string | null | undefined = undefined
@@ -149,4 +160,18 @@ function LinkButton({
   children: React.ReactNode
 }): React.ReactNode {
   return disabled ? children : <Link href={href}>{children}</Link>
+}
+
+function shouldRedirect({
+  id,
+  stages
+}: {
+  id?: string
+  stages?: Stage[]
+}): boolean {
+  if (id === undefined || stages === undefined || stages.length === 0) {
+    return false
+  } else {
+    return seasonIdFromStageId(stages[0]!.id) != seasonIdFromStageId(id)
+  }
 }
