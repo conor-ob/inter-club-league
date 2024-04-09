@@ -1,3 +1,4 @@
+import { GenericErrorView } from 'app/components/view/generic-error-view'
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import { View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
@@ -74,7 +75,7 @@ export function StageFeature() {
           <MarshallsCard marshalls={data.marshalls.marshalls} />
         </View>
       ) : error ? (
-        <View></View>
+        <GenericErrorView basePath='/schedule' />
       ) : (
         <View />
       )}
