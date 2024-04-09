@@ -11,7 +11,11 @@ import { Link } from 'solito/link'
 
 export function StageMap({ stage }: { stage: Stage }) {
   const screenSize = useScreenSize()
-  const mapWidth = screenSize.width - 32 // hack for padding of px-4 on each side - 16 + 16 =  32px
+
+  // hack for padding of px-4 on each side - 16 + 16 =  32px
+  // 768px = max-w-3xl
+  const maxMapWidth = 768
+  const mapWidth = Math.min(screenSize.width, maxMapWidth) - 32
   const marginLeft = `-${Math.floor(mapWidth / 2)}px`
 
   const apiKey = 'AIzaSyAcdXzRjKbuTL6DCbjR9r74lAmZhppaW_M'
