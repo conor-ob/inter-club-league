@@ -1,7 +1,4 @@
-import {
-  seasonIdFromStageId,
-  stageNumberFromStageId
-} from '@inter-club-league/utils'
+import { seasonIdFromStageId } from '@inter-club-league/utils'
 import { differenceInHours, isAfter, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
@@ -26,7 +23,7 @@ export class GcService {
   }
 
   public getGc(stageId: string): Gc {
-    const stageNumber = Number(stageNumberFromStageId(stageId))
+    // const stageNumber = Number(stageNumberFromStageId(stageId))
     const stages = this.stagesService.getStages(seasonIdFromStageId(stageId))
     try {
       const stageResultEntities = this.database.getById<StageResultEntity[]>(
@@ -36,13 +33,11 @@ export class GcService {
 
       const gc = this.gcMapper.map(stageResultEntities, stageId, stages)
 
-      if (stageNumber === 1) {
+      if (stageId === stages[0].id) {
         return gc
       } else {
-        const previousStageNumber = stageNumber - 1
-        const previousStageId = `${seasonIdFromStageId(
-          stageId
-        )}-${previousStageNumber.toString()}`
+        const currentStageIndex = stages.findIndex((it) => it.id === stageId)
+        const previousStageId = stages[currentStageIndex - 1].id
         const previousStageResultEntities = this.database.getById<
           StageResultEntity[]
         >(Table.RESULTS, previousStageId)
