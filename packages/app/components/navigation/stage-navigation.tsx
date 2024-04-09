@@ -40,7 +40,7 @@ export function StageNavigation({
     if (shouldRedirect({ id: stageId, stages: data?.stages })) {
       replace(`/`)
     }
-  }, [data, replace])
+  }, [stageId, data, replace])
 
   let previousStageId: string | null | undefined = undefined
   let nextStageId: string | null | undefined = undefined
