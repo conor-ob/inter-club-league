@@ -23,6 +23,7 @@ import { resolvers } from './resolvers'
 import { GcService } from './service/GcService'
 import { MarshallsService } from './service/MarshallsService'
 import { RedirectService } from './service/RedirectService'
+import { RoutesService } from './service/RoutesService'
 import { StageResultsService } from './service/StageResultsService'
 import { StagesService } from './service/StagesService'
 
@@ -82,11 +83,13 @@ function startServer() {
               gcService
             )
             const marshallsService = new MarshallsService(database)
+            const routesService = new RoutesService(database)
             const redirectService = new RedirectService(database, stagesService)
 
             return {
               gcService: gcService,
               marshallsService: marshallsService,
+              routesService: routesService,
               stageResultsService: stageResultsService,
               stagesService: stagesService,
               redirectService: redirectService

@@ -34,7 +34,7 @@ export function MarshallsCard({ marshalls }: { marshalls: string[] }) {
               {marshalls.slice(0, slice).map((it) => (
                 <Text
                   key={it}
-                  className='text-secondary font-inter-regular py-1 text-base'
+                  className='text-primary font-inter-regular py-1 text-base'
                 >
                   {it}
                 </Text>
@@ -44,7 +44,7 @@ export function MarshallsCard({ marshalls }: { marshalls: string[] }) {
               {marshalls.slice(slice).map((it) => (
                 <Text
                   key={it}
-                  className='text-secondary font-inter-regular py-1 text-base'
+                  className='text-primary font-inter-regular py-1 text-base'
                 >
                   {it}
                 </Text>

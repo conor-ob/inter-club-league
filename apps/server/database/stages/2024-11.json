@@ -1,0 +1,13 @@
+{
+  "id": "2024-11",
+  "name": "Newbridge GP Circuit",
+  "club": "BWCC",
+  "location": "Curragh",
+  "county": "Kildare",
+  "startTime": "2024-06-20T19:30:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.1800593,-6.8853348",
+  "stravaId": null
+}

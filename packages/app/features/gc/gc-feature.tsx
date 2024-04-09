@@ -1,4 +1,5 @@
 import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { GenericErrorView } from 'app/components/view/generic-error-view'
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import { StatefulView } from 'app/components/view/stateful-view'
 import cx from 'classnames'
@@ -40,7 +41,7 @@ export function GcFeature({ providedStageId }: { providedStageId: string }) {
         displayError={error !== undefined}
         displayData={data !== undefined}
         loadingView={<GcFeatureSkeleton />}
-        errorView={<View />}
+        errorView={<GenericErrorView basePath='/gc' />}
         dataView={
           data ? (
             <View>

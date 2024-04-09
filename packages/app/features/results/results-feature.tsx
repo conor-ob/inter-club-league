@@ -1,4 +1,5 @@
 import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { GenericErrorView } from 'app/components/view/generic-error-view'
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import { FlatList, Text, View, useColorScheme } from 'react-native'
 import { createParam } from 'solito'
@@ -72,7 +73,7 @@ export function ResultsFeature() {
           )}
         </View>
       ) : error ? (
-        <View></View>
+        <GenericErrorView basePath='/results' />
       ) : (
         <View></View>
       )}

@@ -1,0 +1,13 @@
+{
+  "id": "2024-5",
+  "name": "Corkagh Park",
+  "club": "CCC",
+  "location": "Corkagh Park",
+  "county": "Dublin",
+  "startTime": "2024-05-09T19:00:00Z",
+  "type": "CRITERIUM",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.306305,-6.412072",
+  "stravaId": null
+}

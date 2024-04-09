@@ -27,7 +27,7 @@ enum StageStatus {
   COMPLETED
 }
 
-type Query {
+extend type Query {
   stage(stageId: ID!): Stage!
   stages(seasonId: ID): [Stage!]!
 }

@@ -19,7 +19,7 @@ type ScheduleListProps = {
 export function ScheduleList({ schedule }: ScheduleListProps) {
   const colorScheme = useColorScheme()
   const [selectedIndex, setSelectedIndex] = useState(
-    schedule.nextStages.length > 0 || schedule.upcoming.length > 0 ? 0 : 1
+    schedule.nextStage || schedule.upcoming.length > 0 ? 0 : 1
   )
   const scheduleMonths =
     selectedIndex === 0 ? schedule.upcoming : schedule.completed
@@ -42,7 +42,7 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
         }}
       />
       {selectedIndex === 0 &&
-        schedule.nextStages.length === 0 &&
+        !schedule.nextStage &&
         schedule.upcoming.length === 0 && (
           <View>
             <CardListHeader
@@ -59,14 +59,14 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
           />
         </View>
       )}
-      {selectedIndex === 0 && schedule.nextStages.length > 0 && (
+      {selectedIndex === 0 && schedule.nextStage && (
         <View>
           <CardListHeader
             className='mb-2 ml-4 mt-12'
             textColor='text-brand'
-            title={getUpcomingStageTitle(schedule.nextStages[0]!.startTime)}
+            title={getUpcomingStageTitle(schedule.nextStage.startTime)}
           />
-          <ScheduleListCard stages={schedule.nextStages} />
+          <ScheduleListCard stages={[schedule.nextStage]} showInfo={true} />
         </View>
       )}
       {scheduleMonths.map((scheduleMonth) => (

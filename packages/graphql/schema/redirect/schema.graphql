@@ -3,6 +3,6 @@ type Redirects {
   currentStageId: ID!
 }
 
-type Query {
+extend type Query {
   redirects(seasonId: ID): Redirects!
 }

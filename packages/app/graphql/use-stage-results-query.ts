@@ -65,7 +65,6 @@ const stageResultsQuery = graphql(`
         }
       }
       coordinates
-      stravaId
       info
     }
   }

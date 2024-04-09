@@ -1,0 +1,13 @@
+type Route {
+  id: ID!
+  label: String!
+  type: RouteType!
+}
+
+enum RouteType {
+  STRAVA
+}
+
+extend type Query {
+  routes(stageId: ID!): [Route!]!
+}

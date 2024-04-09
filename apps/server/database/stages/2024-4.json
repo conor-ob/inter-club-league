@@ -1,0 +1,13 @@
+{
+  "id": "2024-4",
+  "name": "Donal Gleeson Memorial",
+  "club": "BWCC",
+  "location": "Dunboyne",
+  "county": "Meath",
+  "startTime": "2024-05-02T19:00:00Z",
+  "type": "ROAD_RACE",
+  "mandatory": false,
+  "categoryGroups": "S,SS,SL,L",
+  "coordinates": "53.500740,-6.590326",
+  "stravaId": null
+}

@@ -1,7 +1,7 @@
 import { Stage } from '../../generated/graphql'
 
 export type Schedule = {
-  nextStages: Stage[]
+  nextStage?: Stage
   upcoming: ScheduleMonth[]
   completed: ScheduleMonth[]
 }

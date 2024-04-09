@@ -17,6 +17,14 @@ const Query: QueryResolvers = {
       throw e
     }
   },
+  routes: (_, { stageId }, { routesService }, ____) => {
+    try {
+      return routesService.getRoutes(stageId)
+    } catch (e) {
+      console.log(`Query 'routes' failed for stageId=${stageId}`, e)
+      throw e
+    }
+  },
   stageResults: (_, { stageId }, { stageResultsService }, ____) => {
     try {
       return stageResultsService.getStageResults(stageId)

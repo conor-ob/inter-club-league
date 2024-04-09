@@ -1,10 +1,15 @@
 import { Card } from '../../components/card/card'
 import { CardDivider } from '../../components/card/card-divider'
 // import { Ionicon } from '@/components/ionicon'
-import { default as Ionicons } from '@expo/vector-icons/Ionicons'
-import { format, parseISO } from 'date-fns'
 // import { Link } from 'expo-router'
-import { FlatList, TouchableOpacity, View, useColorScheme } from 'react-native'
+import { Column } from 'app/components/layout/column'
+import {
+  FlatList,
+  Text,
+  TouchableOpacity,
+  View,
+  useColorScheme
+} from 'react-native'
 import { Link } from 'solito/link'
 import { HeroIcon } from '../../components/icon/heroicon'
 import { Row } from '../../components/layout/row'
@@ -12,11 +17,13 @@ import { colors } from '../../design/colors'
 import { Stage } from '../../generated/graphql'
 import { StageLayout } from '../stage/stage-layout'
 
-type ScheduleListCardProps = {
+export function ScheduleListCard({
+  stages,
+  showInfo
+}: {
   stages: Stage[]
-}
-
-export function ScheduleListCard({ stages }: ScheduleListCardProps) {
+  showInfo?: boolean
+}) {
   const colorScheme = useColorScheme()
 
   return (
@@ -27,52 +34,36 @@ export function ScheduleListCard({ stages }: ScheduleListCardProps) {
         renderItem={({ item }) => (
           <TouchableOpacity activeOpacity={0.6}>
             <Link href={`/schedule/stage/${item.id}`}>
-              <Row className='flex-row items-center justify-between px-4 py-4'>
-                <StageLayout stage={item} />
-                <View className='w-2' />
-                <HeroIcon
-                  name='chevron-right'
-                  color={colors[colorScheme ?? 'light'].textColorSecondary}
-                  size={24}
-                />
-              </Row>
+              <Column className='px-4 py-4'>
+                <Row className='flex-row items-center justify-between'>
+                  <StageLayout stage={item} />
+                  <View className='w-2' />
+                  <HeroIcon
+                    name='chevron-right'
+                    color={colors[colorScheme ?? 'light'].textColorSecondary}
+                    size={24}
+                  />
+                </Row>
+                {showInfo && item.info.length > 0 && (
+                  <Column>
+                    <View className='h-4' />
+                    <FlatList
+                      data={item.info}
+                      // scrollEnabled={false}
+                      ItemSeparatorComponent={() => <View className='h-2' />}
+                      renderItem={({ item }) => (
+                        <Text className='text-primary font-inter-regular text-base'>
+                          {item}
+                        </Text>
+                      )}
+                    />
+                  </Column>
+                )}
+              </Column>
             </Link>
           </TouchableOpacity>
         )}
       />
     </Card>
   )
-}
-
-function getRaceIcon(
-  type: string
-): React.ComponentProps<typeof Ionicons>['name'] {
-  switch (type) {
-    case 'CRITERIUM':
-      return 'flag-outline'
-    case 'HILL_CLIMB':
-      return 'trending-up-outline'
-    case 'TIME_TRIAL':
-      return 'stopwatch-outline'
-    default:
-      return 'bicycle'
-  }
-}
-
-function getRaceType(type: string): string {
-  switch (type) {
-    case 'CRITERIUM':
-      return 'Criterium'
-    case 'HILL_CLIMB':
-      return 'Hill Climb'
-    case 'TIME_TRIAL':
-      return 'Time Trial'
-    default:
-      return 'Road Race'
-  }
-}
-
-function getisplayDate(startTime: string): string {
-  const date = parseISO(startTime)
-  return format(date, 'MMMM d')
 }

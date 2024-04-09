@@ -7,33 +7,6 @@ const redirectQuery = graphql(`
       currentSeasonId
       currentStageId
     }
-    stages(seasonId: $seasonId) {
-      id
-      name
-      startTime
-      location
-      county
-      type
-      stageStatus
-      mandatory
-      club {
-        id
-        code
-        name
-      }
-      categoryGroups {
-        id
-        categories {
-          id
-          code
-          name
-          rank
-        }
-      }
-      coordinates
-      stravaId
-      info
-    }
   }
 `)
 
