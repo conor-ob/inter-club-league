@@ -135,7 +135,11 @@ export function Navigation() {
         <View className='flex-row items-center'>
           <GcBadge />
           <View className='w-2' />
-          <Skeleton className='h-6 w-20 rounded-md' />
+          {data?.redirects.currentStageId ? (
+            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(data.redirects.currentStageId)}`}</Text>
+          ) : (
+            <Skeleton className='h-6 w-20 rounded-md' />
+          )}
         </View>
       )
     }
