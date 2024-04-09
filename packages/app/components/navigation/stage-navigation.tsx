@@ -16,9 +16,11 @@ const { useParams } = createParam<{
 }>()
 
 export function StageNavigation({
+  providedStageId,
   baseUrl,
   disabled
 }: {
+  providedStageId?: string
   baseUrl: string
   disabled: boolean
 }) {
@@ -27,7 +29,7 @@ export function StageNavigation({
   const { data, loading, error } = useStagesQuery()
   const { push } = useRouter()
 
-  const stageId = params.id
+  const stageId = providedStageId ?? params.id
 
   let previousStageId: string | null | undefined = undefined
   let nextStageId: string | null | undefined = undefined

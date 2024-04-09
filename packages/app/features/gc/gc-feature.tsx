@@ -21,12 +21,12 @@ const { useParams } = createParam<{
   id: string
 }>()
 
-export function GcFeature() {
+export function GcFeature({ providedStageId }: { providedStageId: string }) {
   const { params } = useParams()
   const colorScheme = useColorScheme()
 
   const { loading, data, error, refetch } = useGcQuery({
-    stageId: params.id
+    stageId: providedStageId ?? params.id
   })
 
   return (
@@ -46,7 +46,11 @@ export function GcFeature() {
             <View>
               <StageCard stage={data.stage} />
               <View className='h-6' />
-              <StageNavigation baseUrl='/gc' disabled={loading} />
+              <StageNavigation
+                providedStageId={providedStageId}
+                baseUrl='/gc'
+                disabled={loading}
+              />
               <View className='h-12' />
               {data.gc.gcStatus === GcStatus.Completed && (
                 <Column>
