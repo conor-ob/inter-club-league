@@ -69,16 +69,18 @@ export function ScheduleList({ schedule }: ScheduleListProps) {
           <ScheduleListCard stages={[schedule.nextStage]} showInfo={true} />
         </View>
       )}
-      {scheduleMonths.map((scheduleMonth) => (
-        <View key={scheduleMonth.displayName}>
-          <CardListHeader
-            className='mb-2 ml-4 mt-12'
-            title={scheduleMonth.displayName.toUpperCase()}
-          />
+      {scheduleMonths
+        .filter((it) => it.stages.length > 0)
+        .map((scheduleMonth) => (
+          <View key={scheduleMonth.displayName}>
+            <CardListHeader
+              className='mb-2 ml-4 mt-12'
+              title={scheduleMonth.displayName.toUpperCase()}
+            />
 
-          <ScheduleListCard stages={scheduleMonth.stages} />
-        </View>
-      ))}
+            <ScheduleListCard stages={scheduleMonth.stages} />
+          </View>
+        ))}
     </View>
   )
 }
