@@ -6,8 +6,8 @@
     "riderInitials": "AG",
     "riderName": "Adam Greally",
     "riderShortName": "A. Greally",
-    "seasonPoints": [7],
-    "stagePoints": 7
+    "seasonPoints": [7, 11],
+    "stagePoints": 11
   },
   {
     "categoryId": "scratch",
@@ -16,7 +16,7 @@
     "riderInitials": "AP",
     "riderName": "Adriaan Pretorius",
     "riderShortName": "A. Pretorius",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -26,8 +26,8 @@
     "riderInitials": "AOB",
     "riderName": "Aimhirghin O'Brannagain",
     "riderShortName": "A. O'Brannagain",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 9],
+    "stagePoints": 9
   },
   {
     "categoryId": "scratch",
@@ -36,7 +36,7 @@
     "riderInitials": "AG",
     "riderName": "Andy Grehan",
     "riderShortName": "A. Grehan",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -46,7 +46,7 @@
     "riderInitials": "BH",
     "riderName": "Bob Hall",
     "riderShortName": "B. Hall",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -56,7 +56,7 @@
     "riderInitials": "BG",
     "riderName": "Bryan Geary",
     "riderShortName": "B. Geary",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -66,8 +66,8 @@
     "riderInitials": "COH",
     "riderName": "Cahir O'Higgins",
     "riderShortName": "C. O'Higgins",
-    "seasonPoints": [6],
-    "stagePoints": 6
+    "seasonPoints": [6, 0],
+    "stagePoints": 0
   },
   {
     "categoryId": "scratch",
@@ -76,7 +76,7 @@
     "riderInitials": "CS",
     "riderName": "Colm Sevastopulo",
     "riderShortName": "C. Sevastopulo",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -86,8 +86,8 @@
     "riderInitials": "DR",
     "riderName": "David Ryan",
     "riderShortName": "D. Ryan",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 8],
+    "stagePoints": 8
   },
   {
     "categoryId": "scratch",
@@ -96,7 +96,7 @@
     "riderInitials": "DS",
     "riderName": "Des Smyth",
     "riderShortName": "D. Smyth",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -106,7 +106,7 @@
     "riderInitials": "DC",
     "riderName": "Diarmuid Collins",
     "riderShortName": "D. Collins",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -116,7 +116,7 @@
     "riderInitials": "DOB",
     "riderName": "Dick O'Brien",
     "riderShortName": "D. O'Brien",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -126,7 +126,7 @@
     "riderInitials": "EF",
     "riderName": "Eoin Farrell",
     "riderShortName": "E. Farrell",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -136,7 +136,7 @@
     "riderInitials": "EM",
     "riderName": "Eugene Murtagh",
     "riderShortName": "E. Murtagh",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -146,7 +146,7 @@
     "riderInitials": "GH",
     "riderName": "Gavin Hendley",
     "riderShortName": "G. Hendley",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -156,7 +156,7 @@
     "riderInitials": "JK",
     "riderName": "James Kelly",
     "riderShortName": "J. Kelly",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -166,8 +166,8 @@
     "riderInitials": "JS",
     "riderName": "John Sheridan",
     "riderShortName": "J. Sheridan",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 6],
+    "stagePoints": 6
   },
   {
     "categoryId": "scratch",
@@ -176,7 +176,7 @@
     "riderInitials": "JM",
     "riderName": "John McCormack",
     "riderShortName": "J. McCormack",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -186,7 +186,7 @@
     "riderInitials": "JC",
     "riderName": "Josh Callaly",
     "riderShortName": "J. Callaly",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -196,7 +196,7 @@
     "riderInitials": "MS",
     "riderName": "Mark Stewart",
     "riderShortName": "M. Stewart",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -206,8 +206,8 @@
     "riderInitials": "MDO",
     "riderName": "Mark Donnelly-Orr",
     "riderShortName": "M. Donnelly-Orr",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 10],
+    "stagePoints": 10
   },
   {
     "categoryId": "scratch",
@@ -216,7 +216,7 @@
     "riderInitials": "MC",
     "riderName": "Martin Casey",
     "riderShortName": "M. Casey",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -226,7 +226,7 @@
     "riderInitials": "PR",
     "riderName": "Pawel Rybak",
     "riderShortName": "P. Rybak",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -236,7 +236,7 @@
     "riderInitials": "RF",
     "riderName": "Robert Farrell",
     "riderShortName": "R. Farrell",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -246,7 +246,7 @@
     "riderInitials": "RK",
     "riderName": "Ronan Killeen",
     "riderShortName": "R. Killeen",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -256,7 +256,7 @@
     "riderInitials": "SC",
     "riderName": "Sean Curtis",
     "riderShortName": "S. Curtis",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -266,8 +266,8 @@
     "riderInitials": "TT",
     "riderName": "Tiit Talumaa",
     "riderShortName": "T. Talumaa",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 7],
+    "stagePoints": 7
   },
   {
     "categoryId": "semi-scratch",
@@ -276,7 +276,7 @@
     "riderInitials": "AN",
     "riderName": "Adam Nelson",
     "riderShortName": "A. Nelson",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -286,7 +286,7 @@
     "riderInitials": "AM",
     "riderName": "Adam McConnell",
     "riderShortName": "A. McConnell",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -296,7 +296,7 @@
     "riderInitials": "AC",
     "riderName": "Aidan Collins",
     "riderShortName": "A. Collins",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -306,7 +306,7 @@
     "riderInitials": "AK",
     "riderName": "Andrew Keogh",
     "riderShortName": "A. Keogh",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -316,7 +316,7 @@
     "riderInitials": "AD",
     "riderName": "Anthony Dunne",
     "riderShortName": "A. Dunne",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -326,7 +326,7 @@
     "riderInitials": "BG",
     "riderName": "Barry Greene",
     "riderShortName": "B. Greene",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -336,7 +336,7 @@
     "riderInitials": "BC",
     "riderName": "Barry Cronin",
     "riderShortName": "B. Cronin",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -346,8 +346,8 @@
     "riderInitials": "BW",
     "riderName": "Brendan Ward",
     "riderShortName": "B. Ward",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 7],
+    "stagePoints": 7
   },
   {
     "categoryId": "semi-scratch",
@@ -356,7 +356,7 @@
     "riderInitials": "BM",
     "riderName": "Brian McNally",
     "riderShortName": "B. McNally",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -366,7 +366,7 @@
     "riderInitials": "CB",
     "riderName": "Callum Byrne",
     "riderShortName": "C. Byrne",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -376,7 +376,7 @@
     "riderInitials": "CL",
     "riderName": "Cesar Lopes",
     "riderShortName": "C. Lopes",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -386,7 +386,7 @@
     "riderInitials": "CM",
     "riderName": "Colly Murray",
     "riderShortName": "C. Murray",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -396,7 +396,7 @@
     "riderInitials": "CF",
     "riderName": "Connor Fennell",
     "riderShortName": "C. Fennell",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -406,7 +406,7 @@
     "riderInitials": "COB",
     "riderName": "Conor O'Brien",
     "riderShortName": "C. O'Brien",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -416,7 +416,7 @@
     "riderInitials": "CB",
     "riderName": "Conor Brennan",
     "riderShortName": "C. Brennan",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -426,8 +426,8 @@
     "riderInitials": "DM",
     "riderName": "Daniel McGuinness",
     "riderShortName": "D. McGuinness",
-    "seasonPoints": [11],
-    "stagePoints": 11
+    "seasonPoints": [11, 0],
+    "stagePoints": 0
   },
   {
     "categoryId": "semi-scratch",
@@ -436,7 +436,7 @@
     "riderInitials": "DK",
     "riderName": "Darran Kearney",
     "riderShortName": "D. Kearney",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -446,7 +446,7 @@
     "riderInitials": "DS",
     "riderName": "Davi Silva",
     "riderShortName": "D. Silva",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -456,7 +456,7 @@
     "riderInitials": "DB",
     "riderName": "Declan Brassil",
     "riderShortName": "D. Brassil",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -466,7 +466,7 @@
     "riderInitials": "DD",
     "riderName": "Derek Daly",
     "riderShortName": "D. Daly",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -476,7 +476,7 @@
     "riderInitials": "DC",
     "riderName": "Dermot Cooney",
     "riderShortName": "D. Cooney",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -486,7 +486,7 @@
     "riderInitials": "ER",
     "riderName": "Eoin Rheinisch",
     "riderShortName": "E. Rheinisch",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -496,7 +496,7 @@
     "riderInitials": "FR",
     "riderName": "Frederick Roberts",
     "riderShortName": "F. Roberts",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -506,8 +506,8 @@
     "riderInitials": "GD",
     "riderName": "Gavin Dodd",
     "riderShortName": "G. Dodd",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 6],
+    "stagePoints": 6
   },
   {
     "categoryId": "semi-scratch",
@@ -516,7 +516,7 @@
     "riderInitials": "IOH",
     "riderName": "Ian O'Hara",
     "riderShortName": "I. O'Hara",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -526,7 +526,7 @@
     "riderInitials": "ID",
     "riderName": "Ian Devlin",
     "riderShortName": "I. Devlin",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -536,7 +536,7 @@
     "riderInitials": "JM",
     "riderName": "John McGettigan",
     "riderShortName": "J. McGettigan",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -546,7 +546,7 @@
     "riderInitials": "JOB",
     "riderName": "Jonathan O'Brien",
     "riderShortName": "J. O'Brien",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -556,7 +556,7 @@
     "riderInitials": "KON",
     "riderName": "Ken O'Neill",
     "riderShortName": "K. O'Neill",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -566,7 +566,7 @@
     "riderInitials": "LK",
     "riderName": "Luke Keogh",
     "riderShortName": "L. Keogh",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -576,7 +576,7 @@
     "riderInitials": "MN",
     "riderName": "Mark Nicholls",
     "riderShortName": "M. Nicholls",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -586,7 +586,7 @@
     "riderInitials": "ML",
     "riderName": "Mark Leonard",
     "riderShortName": "M. Leonard",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -596,7 +596,7 @@
     "riderInitials": "MF",
     "riderName": "Mathieu Fragniere",
     "riderShortName": "M. Fragniere",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -606,7 +606,7 @@
     "riderInitials": "NK",
     "riderName": "Niall Kieran",
     "riderShortName": "N. Kieran",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -616,7 +616,7 @@
     "riderInitials": "NK",
     "riderName": "Niall Kelly",
     "riderShortName": "N. Kelly",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -626,7 +626,7 @@
     "riderInitials": "OP",
     "riderName": "Oisin Purcell",
     "riderShortName": "O. Purcell",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -636,7 +636,7 @@
     "riderInitials": "OK",
     "riderName": "Owen Kennedy",
     "riderShortName": "O. Kennedy",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -646,7 +646,7 @@
     "riderInitials": "PB",
     "riderName": "Pat Beere",
     "riderShortName": "P. Beere",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -656,7 +656,7 @@
     "riderInitials": "PR",
     "riderName": "Paul Rogers",
     "riderShortName": "P. Rogers",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -666,7 +666,7 @@
     "riderInitials": "POL",
     "riderName": "Pierce O'Leary",
     "riderShortName": "P. O'Leary",
-    "seasonPoints": [10],
+    "seasonPoints": [10, 10],
     "stagePoints": 10
   },
   {
@@ -676,7 +676,7 @@
     "riderInitials": "RMW",
     "riderName": "Rich Matthew Walls",
     "riderShortName": "R. Matthew Walls",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -686,7 +686,7 @@
     "riderInitials": "RJ",
     "riderName": "Rob Jennings",
     "riderShortName": "R. Jennings",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -696,7 +696,7 @@
     "riderInitials": "RB",
     "riderName": "Robert Bowen",
     "riderShortName": "R. Bowen",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -706,7 +706,7 @@
     "riderInitials": "RF",
     "riderName": "Ronan Flannery",
     "riderShortName": "R. Flannery",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -716,7 +716,7 @@
     "riderInitials": "SW",
     "riderName": "Sean Ward",
     "riderShortName": "S. Ward",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -726,8 +726,8 @@
     "riderInitials": "SOL",
     "riderName": "Sean O'Leary",
     "riderShortName": "S. O'Leary",
-    "seasonPoints": [9],
-    "stagePoints": 9
+    "seasonPoints": [9, 0],
+    "stagePoints": 0
   },
   {
     "categoryId": "semi-scratch",
@@ -736,7 +736,7 @@
     "riderInitials": "SF",
     "riderName": "Sean Flynn",
     "riderShortName": "S. Flynn",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -746,7 +746,7 @@
     "riderInitials": "SON",
     "riderName": "Shane O'Neill",
     "riderShortName": "S. O'Neill",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -756,7 +756,7 @@
     "riderInitials": "SK",
     "riderName": "Shaun Kelly",
     "riderShortName": "S. Kelly",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -766,7 +766,7 @@
     "riderInitials": "SW",
     "riderName": "Simon Ward",
     "riderShortName": "S. Ward",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -776,7 +776,7 @@
     "riderInitials": "SO",
     "riderName": "Stephen Oglesby",
     "riderShortName": "S. Oglesby",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -786,7 +786,7 @@
     "riderInitials": "YD",
     "riderName": "Yvonne Doran",
     "riderShortName": "Y. Doran",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -796,18 +796,18 @@
     "riderInitials": "AOD",
     "riderName": "Alan O'Dowd",
     "riderShortName": "A. O'Dowd",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
-    "categoryId": "semi-limit",
+    "categoryId": "semi-scratch",
     "clubId": "owcc",
     "riderId": "alan-clarke",
     "riderInitials": "AC",
     "riderName": "Alan Clarke",
     "riderShortName": "A. Clarke",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 8],
+    "stagePoints": 8
   },
   {
     "categoryId": "semi-limit",
@@ -816,7 +816,7 @@
     "riderInitials": "AL",
     "riderName": "Andrew Lomax",
     "riderShortName": "A. Lomax",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -826,7 +826,7 @@
     "riderInitials": "BF",
     "riderName": "Barry Fennell",
     "riderShortName": "B. Fennell",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -836,7 +836,7 @@
     "riderInitials": "CB",
     "riderName": "Conor Brophy",
     "riderShortName": "C. Brophy",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -846,7 +846,7 @@
     "riderInitials": "DB",
     "riderName": "Daragh Boyd",
     "riderShortName": "D. Boyd",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -856,7 +856,7 @@
     "riderInitials": "DM",
     "riderName": "Darragh Murphy",
     "riderShortName": "D. Murphy",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -866,7 +866,7 @@
     "riderInitials": "DM",
     "riderName": "David Maher",
     "riderShortName": "D. Maher",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -876,18 +876,18 @@
     "riderInitials": "DF",
     "riderName": "David Fox",
     "riderShortName": "D. Fox",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
-    "categoryId": "semi-limit",
+    "categoryId": "semi-scratch",
     "clubId": "lcrc",
     "riderId": "edward-kelly",
     "riderInitials": "EK",
     "riderName": "Edward Kelly",
     "riderShortName": "E. Kelly",
-    "seasonPoints": [11],
-    "stagePoints": 11
+    "seasonPoints": [11, 9],
+    "stagePoints": 9
   },
   {
     "categoryId": "semi-limit",
@@ -896,7 +896,7 @@
     "riderInitials": "FA",
     "riderName": "Federico Argento",
     "riderShortName": "F. Argento",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -906,7 +906,7 @@
     "riderInitials": "FM",
     "riderName": "Fergal May",
     "riderShortName": "F. May",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -916,7 +916,7 @@
     "riderInitials": "FL",
     "riderName": "Filippo Lin",
     "riderShortName": "F. Lin",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -926,7 +926,7 @@
     "riderInitials": "GM",
     "riderName": "Gareth Muldowney",
     "riderShortName": "G. Muldowney",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -936,8 +936,8 @@
     "riderInitials": "GJ",
     "riderName": "Gareth Jones",
     "riderShortName": "G. Jones",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 7],
+    "stagePoints": 7
   },
   {
     "categoryId": "semi-limit",
@@ -946,7 +946,7 @@
     "riderInitials": "GG",
     "riderName": "Garrett Greene",
     "riderShortName": "G. Greene",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -956,8 +956,8 @@
     "riderInitials": "GS",
     "riderName": "George Sevastopulo",
     "riderShortName": "G. Sevastopulo",
-    "seasonPoints": [8],
-    "stagePoints": 8
+    "seasonPoints": [8, 11],
+    "stagePoints": 11
   },
   {
     "categoryId": "semi-limit",
@@ -966,7 +966,7 @@
     "riderInitials": "HR",
     "riderName": "Harry Rochford",
     "riderShortName": "H. Rochford",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -976,7 +976,7 @@
     "riderInitials": "IC",
     "riderName": "Ivan Casey",
     "riderShortName": "I. Casey",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -986,7 +986,7 @@
     "riderInitials": "JB",
     "riderName": "Jennifer Bates",
     "riderShortName": "J. Bates",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -996,7 +996,7 @@
     "riderInitials": "JC",
     "riderName": "Jim Carey",
     "riderShortName": "J. Carey",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1006,7 +1006,7 @@
     "riderInitials": "JL",
     "riderName": "John Lalor",
     "riderShortName": "J. Lalor",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1016,7 +1016,7 @@
     "riderInitials": "JH",
     "riderName": "Jonathan Hudson",
     "riderShortName": "J. Hudson",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1026,7 +1026,7 @@
     "riderInitials": "JC",
     "riderName": "Joshua Chambers",
     "riderShortName": "J. Chambers",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1036,7 +1036,7 @@
     "riderInitials": "JDM",
     "riderName": "Jules De Meester",
     "riderShortName": "J. De Meester",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1046,8 +1046,8 @@
     "riderInitials": "KS",
     "riderName": "Kieran Sweeney",
     "riderShortName": "K. Sweeney",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 6],
+    "stagePoints": 6
   },
   {
     "categoryId": "semi-limit",
@@ -1056,7 +1056,7 @@
     "riderInitials": "KD",
     "riderName": "Kilian Doyle",
     "riderShortName": "K. Doyle",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1066,7 +1066,7 @@
     "riderInitials": "LDL",
     "riderName": "Leonardo De Llamas",
     "riderShortName": "L. De Llamas",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1076,7 +1076,7 @@
     "riderInitials": "LT",
     "riderName": "Louis Twomey",
     "riderShortName": "L. Twomey",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1086,7 +1086,7 @@
     "riderInitials": "MD",
     "riderName": "Mark Dillon",
     "riderShortName": "M. Dillon",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1096,7 +1096,7 @@
     "riderInitials": "MM",
     "riderName": "Mark Mearns",
     "riderShortName": "M. Mearns",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1106,7 +1106,7 @@
     "riderInitials": "MM",
     "riderName": "Martin McNamara",
     "riderShortName": "M. McNamara",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1116,7 +1116,7 @@
     "riderInitials": "MH",
     "riderName": "Martyn Holmes",
     "riderShortName": "M. Holmes",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1126,18 +1126,18 @@
     "riderInitials": "NB",
     "riderName": "Nigel Burke",
     "riderShortName": "N. Burke",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
-    "categoryId": "semi-limit",
+    "categoryId": "limit",
     "clubId": "bwcc",
     "riderId": "oleksandr-konkolevsky",
     "riderInitials": "OK",
     "riderName": "Oleksandr Konkolevsky",
     "riderShortName": "O. Konkolevsky",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 6],
+    "stagePoints": 6
   },
   {
     "categoryId": "semi-limit",
@@ -1146,7 +1146,7 @@
     "riderInitials": "OS",
     "riderName": "Oscar Sevastopulo",
     "riderShortName": "O. Sevastopulo",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1156,8 +1156,8 @@
     "riderInitials": "OOF",
     "riderName": "Owen O'Flaherty",
     "riderShortName": "O. O'Flaherty",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 10],
+    "stagePoints": 10
   },
   {
     "categoryId": "semi-limit",
@@ -1166,7 +1166,7 @@
     "riderInitials": "PK",
     "riderName": "Paul Kane",
     "riderShortName": "P. Kane",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1176,7 +1176,7 @@
     "riderInitials": "PN",
     "riderName": "Paul Needham",
     "riderShortName": "P. Needham",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1186,7 +1186,7 @@
     "riderInitials": "PH",
     "riderName": "Paul Heynen",
     "riderShortName": "P. Heynen",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1196,7 +1196,7 @@
     "riderInitials": "POB",
     "riderName": "Paul O'Brien",
     "riderShortName": "P. O'Brien",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1206,7 +1206,7 @@
     "riderInitials": "PB",
     "riderName": "Peter Bates",
     "riderShortName": "P. Bates",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1216,7 +1216,7 @@
     "riderInitials": "PO",
     "riderName": "Pierce Oconnor",
     "riderShortName": "P. Oconnor",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1226,8 +1226,8 @@
     "riderInitials": "RC",
     "riderName": "Ronan Conway",
     "riderShortName": "R. Conway",
-    "seasonPoints": [8],
-    "stagePoints": 8
+    "seasonPoints": [8, 0],
+    "stagePoints": 0
   },
   {
     "categoryId": "semi-limit",
@@ -1236,7 +1236,7 @@
     "riderInitials": "RD",
     "riderName": "Ryan Dunne",
     "riderShortName": "R. Dunne",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1246,7 +1246,7 @@
     "riderInitials": "SS",
     "riderName": "Stephen Seagrave",
     "riderShortName": "S. Seagrave",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1256,8 +1256,8 @@
     "riderInitials": "TM",
     "riderName": "Terence McCartan",
     "riderShortName": "T. McCartan",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 11],
+    "stagePoints": 11
   },
   {
     "categoryId": "limit",
@@ -1266,7 +1266,7 @@
     "riderInitials": "AT",
     "riderName": "Abily Tudal",
     "riderShortName": "A. Tudal",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1276,7 +1276,7 @@
     "riderInitials": "AB",
     "riderName": "Aishling Barry",
     "riderShortName": "A. Barry",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1286,7 +1286,7 @@
     "riderInitials": "AD",
     "riderName": "Alan Dempsey",
     "riderShortName": "A. Dempsey",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1296,7 +1296,7 @@
     "riderInitials": "AW",
     "riderName": "Alan Waters",
     "riderShortName": "A. Waters",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1306,7 +1306,7 @@
     "riderInitials": "BW",
     "riderName": "Bart Wijn",
     "riderShortName": "B. Wijn",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1316,7 +1316,7 @@
     "riderInitials": "BH",
     "riderName": "Billy Harney",
     "riderShortName": "B. Harney",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1326,7 +1326,7 @@
     "riderInitials": "BB",
     "riderName": "Brendan Bonnie",
     "riderShortName": "B. Bonnie",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1336,7 +1336,7 @@
     "riderInitials": "BR",
     "riderName": "Brian Reynolds",
     "riderShortName": "B. Reynolds",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1346,7 +1346,7 @@
     "riderInitials": "BH",
     "riderName": "Brian Hammond",
     "riderShortName": "B. Hammond",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1356,8 +1356,8 @@
     "riderInitials": "BN",
     "riderName": "Brian Nolan",
     "riderShortName": "B. Nolan",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 7],
+    "stagePoints": 7
   },
   {
     "categoryId": "limit",
@@ -1366,7 +1366,7 @@
     "riderInitials": "BS",
     "riderName": "Brian Stafford",
     "riderShortName": "B. Stafford",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1376,7 +1376,7 @@
     "riderInitials": "CS",
     "riderName": "Clinton Slowey",
     "riderShortName": "C. Slowey",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1386,7 +1386,7 @@
     "riderInitials": "CTD",
     "riderName": "Colm Thomas Dunne",
     "riderShortName": "C. Thomas Dunne",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1396,7 +1396,7 @@
     "riderInitials": "CB",
     "riderName": "Colum Bradley",
     "riderShortName": "C. Bradley",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1406,7 +1406,7 @@
     "riderInitials": "COC",
     "riderName": "Cormac O'Connor",
     "riderShortName": "C. O'Connor",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1416,7 +1416,7 @@
     "riderInitials": "DEG",
     "riderName": "Danya El Gahzel",
     "riderShortName": "D. El Gahzel",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1426,7 +1426,7 @@
     "riderInitials": "DOT",
     "riderName": "Daragh O'Toole",
     "riderShortName": "D. O'Toole",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1436,18 +1436,18 @@
     "riderInitials": "DS",
     "riderName": "Dave Smyth",
     "riderShortName": "D. Smyth",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
-    "categoryId": "limit",
+    "categoryId": "semi-limit",
     "clubId": "owcc",
     "riderId": "david-cahill",
     "riderInitials": "DC",
     "riderName": "David Cahill",
     "riderShortName": "D. Cahill",
-    "seasonPoints": [9],
-    "stagePoints": 9
+    "seasonPoints": [9, 8],
+    "stagePoints": 8
   },
   {
     "categoryId": "limit",
@@ -1456,7 +1456,7 @@
     "riderInitials": "EP",
     "riderName": "Eamon Peregrine",
     "riderShortName": "E. Peregrine",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1466,7 +1466,7 @@
     "riderInitials": "EQ",
     "riderName": "Eamon Quigley",
     "riderShortName": "E. Quigley",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1476,7 +1476,7 @@
     "riderInitials": "EW",
     "riderName": "Eric Wilson",
     "riderShortName": "E. Wilson",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1486,7 +1486,7 @@
     "riderInitials": "GH",
     "riderName": "Gary Hanlon",
     "riderShortName": "G. Hanlon",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1496,18 +1496,18 @@
     "riderInitials": "HR",
     "riderName": "Hannah Roche",
     "riderShortName": "H. Roche",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
-    "categoryId": "limit",
+    "categoryId": "semi-limit",
     "clubId": "owcc",
     "riderId": "ilie-gabuja",
     "riderInitials": "IG",
     "riderName": "Ilie Gabuja",
     "riderShortName": "I. Gabuja",
-    "seasonPoints": [6],
-    "stagePoints": 6
+    "seasonPoints": [6, 9],
+    "stagePoints": 9
   },
   {
     "categoryId": "limit",
@@ -1516,7 +1516,7 @@
     "riderInitials": "IC",
     "riderName": "Isabelle Cairns",
     "riderShortName": "I. Cairns",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1526,7 +1526,7 @@
     "riderInitials": "JM",
     "riderName": "John McAuliffe",
     "riderShortName": "J. McAuliffe",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1536,7 +1536,7 @@
     "riderInitials": "JA",
     "riderName": "John Anslow",
     "riderShortName": "J. Anslow",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1546,7 +1546,7 @@
     "riderInitials": "KN",
     "riderName": "Ken Nelson",
     "riderShortName": "K. Nelson",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1556,7 +1556,7 @@
     "riderInitials": "LM",
     "riderName": "Lorraine McGill",
     "riderShortName": "L. McGill",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1566,8 +1566,8 @@
     "riderInitials": "LK",
     "riderName": "Luke Keaney",
     "riderShortName": "L. Keaney",
-    "seasonPoints": [10],
-    "stagePoints": 10
+    "seasonPoints": [10, 0],
+    "stagePoints": 0
   },
   {
     "categoryId": "limit",
@@ -1576,7 +1576,7 @@
     "riderInitials": "LP",
     "riderName": "Luke Potter",
     "riderShortName": "L. Potter",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1586,7 +1586,7 @@
     "riderInitials": "MF",
     "riderName": "Marc Farrelly",
     "riderShortName": "M. Farrelly",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1596,7 +1596,7 @@
     "riderInitials": "MOC",
     "riderName": "Mark O'Connor",
     "riderShortName": "M. O'Connor",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1606,8 +1606,8 @@
     "riderInitials": "MB",
     "riderName": "Matthew Broadstock",
     "riderShortName": "M. Broadstock",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 10],
+    "stagePoints": 10
   },
   {
     "categoryId": "limit",
@@ -1616,7 +1616,7 @@
     "riderInitials": "ML",
     "riderName": "Matthew Lane",
     "riderShortName": "M. Lane",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1626,8 +1626,8 @@
     "riderInitials": "MH",
     "riderName": "Michael Hickey",
     "riderShortName": "M. Hickey",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 9],
+    "stagePoints": 9
   },
   {
     "categoryId": "limit",
@@ -1636,7 +1636,7 @@
     "riderInitials": "ML",
     "riderName": "Michael Leonard",
     "riderShortName": "M. Leonard",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1646,7 +1646,7 @@
     "riderInitials": "NC",
     "riderName": "Niall Connaughton",
     "riderShortName": "N. Connaughton",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1656,7 +1656,7 @@
     "riderInitials": "PD",
     "riderName": "Padraig Donohoe",
     "riderShortName": "P. Donohoe",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1666,8 +1666,8 @@
     "riderInitials": "PC",
     "riderName": "Peadar Corbally",
     "riderShortName": "P. Corbally",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 8],
+    "stagePoints": 8
   },
   {
     "categoryId": "limit",
@@ -1676,7 +1676,7 @@
     "riderInitials": "PG",
     "riderName": "Peter Gibbons",
     "riderShortName": "P. Gibbons",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1686,7 +1686,7 @@
     "riderInitials": "RH",
     "riderName": "Richard Hart",
     "riderShortName": "R. Hart",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1696,7 +1696,7 @@
     "riderInitials": "RM",
     "riderName": "Richard Magnier",
     "riderShortName": "R. Magnier",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1706,7 +1706,7 @@
     "riderInitials": "RS",
     "riderName": "Ronan Simms",
     "riderShortName": "R. Simms",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1716,8 +1716,8 @@
     "riderInitials": "SC",
     "riderName": "Samuel Curtis",
     "riderShortName": "S. Curtis",
-    "seasonPoints": [0],
-    "stagePoints": 0
+    "seasonPoints": [0, 11],
+    "stagePoints": 11
   },
   {
     "categoryId": "limit",
@@ -1726,7 +1726,7 @@
     "riderInitials": "SOK",
     "riderName": "Sean O'Kane",
     "riderShortName": "S. O'Kane",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1736,8 +1736,8 @@
     "riderInitials": "SB",
     "riderName": "Shane Burke",
     "riderShortName": "S. Burke",
-    "seasonPoints": [7],
-    "stagePoints": 7
+    "seasonPoints": [7, 0],
+    "stagePoints": 0
   },
   {
     "categoryId": "limit",
@@ -1746,7 +1746,7 @@
     "riderInitials": "SC",
     "riderName": "Simon Crowe",
     "riderShortName": "S. Crowe",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1756,7 +1756,7 @@
     "riderInitials": "SOS",
     "riderName": "Stephen O'Shea",
     "riderShortName": "S. O'Shea",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1766,7 +1766,7 @@
     "riderInitials": "SF",
     "riderName": "Stephen Finnegan",
     "riderShortName": "S. Finnegan",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1776,7 +1776,7 @@
     "riderInitials": "TD",
     "riderName": "Trevor Duffy",
     "riderShortName": "T. Duffy",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1786,7 +1786,7 @@
     "riderInitials": "YH",
     "riderName": "Ysabella Huele",
     "riderShortName": "Y. Huele",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   },
   {
@@ -1796,7 +1796,7 @@
     "riderInitials": "ZG",
     "riderName": "Zoe Greene",
     "riderShortName": "Z. Greene",
-    "seasonPoints": [0],
+    "seasonPoints": [0, 0],
     "stagePoints": 0
   }
 ]
