@@ -9,5 +9,13 @@
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
   "coordinates": "53.236587,-6.454378",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "Racing order and length:",
+    "• Scratch - 4 times over the bridge",
+    "• Semi Scratch - 3 times",
+    "• Semi Limit - 3 times",
+    "• Limit - 2 times",
+    "Sign on opens at 6:30pm with races starting at 7pm"
+  ]
 }
