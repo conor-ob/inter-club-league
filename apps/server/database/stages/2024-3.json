@@ -9,5 +9,11 @@
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
   "coordinates": "53.463518,-6.344188",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "Aiming for 4 separate races depending on numbers",
+    "• Scratch & Semi Scratch: 4 laps",
+    "• Semi Limit & Limit: 3 laps",
+    "Sign on closes at 6:55pm"
+  ]
 }
