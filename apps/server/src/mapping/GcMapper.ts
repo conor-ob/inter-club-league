@@ -50,12 +50,19 @@ export class GcMapper {
             totalPoints: this.calcualteTotalPoints(
               stageResultEntity.seasonPoints
             ),
+            seasonPoints: stageResultEntity.seasonPoints,
             movement: 0
           }
         })
         .sort((a, b) => {
           if (a.gcPoints === b.gcPoints) {
-            return a.category.rank - b.category.rank
+            const aMax = Math.max(...a.seasonPoints)
+            const bMax = Math.max(...b.seasonPoints)
+            if (aMax === bMax) {
+              return a.category.rank - b.category.rank
+            } else {
+              return bMax - aMax
+            }
           } else {
             return b.gcPoints - a.gcPoints
           }

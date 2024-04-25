@@ -3,186 +3,108 @@ import Papa from 'papaparse'
 import { StageResultEntity } from '../server/src/entity/StageResultEntity'
 
 const csvString = `Name,Club,Group,1,2
-Adam Greally,St Tiernans Cycling Club,Scratch,7,11
-Adriaan Pretorius,Lucan Cycling Road Club,Scratch,0,0
-Aimhirghin O Brannagain,Orwell Wheelers Cycling Club,Scratch,0,9
-Andy Grehan,Lucan Cycling Road Club,Scratch,0,0
-Bob Hall,Clondalkin CC,Scratch,0,0
-Bryan Geary,St Tiernans Cycling Club,Scratch,0,0
-Cahir O Higgins,Orwell Wheelers Cycling Club,Scratch,6,0
-Colm Sevastopulo,Sundrive Track Team,Scratch,0,0
-David Ryan,St Tiernans Cycling Club,Scratch,0,8
-Des Smyth,Blanch Wheelies CC,Scratch,0,0
-Diarmuid Collins,Orwell Wheelers Cycling Club,Scratch,0,0
-Dick O Brien,Orwell Wheelers Cycling Club,Scratch,0,0
-Eoin Farrell,St Tiernans Cycling Club,Scratch,0,0
-Eugene Murtagh,Lucan Cycling Road Club,Scratch,0,0
-Gavin Hendley,Lucan Cycling Road Club,Scratch,0,0
-James Kelly,St Tiernans Cycling Club,Scratch,0,0
-John Sheridan,St Tiernans Cycling Club,Scratch,0,6
-John Mc Cormack,St Tiernans Cycling Club,Scratch,0,0
-Josh Callaly,Lucan Cycling Road Club,Scratch,0,0
-Mark Stewart,Sundrive Track Team,Scratch,0,0
-Mark Donnelly-Orr,Lucan Cycling Road Club,Scratch,0,10
-Martin Casey,St Tiernans Cycling Club,Scratch,0,0
-Pawel Rybak,Lucan Cycling Road Club,Scratch,0,0
-Robert Farrell,Lucan Cycling Road Club,Scratch,0,0
-Ronan Killeen,Lucan Cycling Road Club,Scratch,0,0
-Sean Curtis,Sundrive Track Team,Scratch,0,0
-Tiit Talumaa,St Tiernans Cycling Club,Scratch,0,7
-Adam Nelson,Usher Irish Road Club,Semi Scratch,0,0
-Adam Mc Connell,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Aidan Collins,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Andrew Keogh,Lucan Cycling Road Club,Semi Scratch,0,0
-Anthony Dunne,Lucan Cycling Road Club,Semi Scratch,0,0
-Barry Greene,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Barry Cronin,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Brendan Ward,Clondalkin CC,Semi Scratch,0,7
-Brian Mc Nally,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Callum Byrne,Lucan Cycling Road Club,Semi Scratch,0,0
-Cesar Lopes,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Colly Murray,St Tiernans Cycling Club,Semi Scratch,0,0
-Connor Fennell,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Conor O Brien,St Tiernans Cycling Club,Semi Scratch,0,0
-Conor Brennan,St Tiernans Cycling Club,Semi Scratch,0,0
-Daniel Mc Guinness,Clondalkin CC,Semi Scratch,11,0
-Darran Kearney,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Davi Silva,Clondalkin CC,Semi Scratch,0,0
-Declan Brassil,Lucan Cycling Road Club,Semi Scratch,0,0
-Derek Daly,Clondalkin CC,Semi Scratch,0,0
-Dermot Cooney,St Tiernans Cycling Club,Semi Scratch,0,0
-Eoin Rheinisch,Usher Irish Road Club,Semi Scratch,0,0
-Frederick Roberts,St Tiernans Cycling Club,Semi Scratch,0,0
-Gavin Dodd,Orwell Wheelers Cycling Club,Semi Scratch,0,6
-Ian O Hara,Lucan Cycling Road Club,Semi Scratch,0,0
-Ian Devlin,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-John Mc Gettigan,Lucan Cycling Road Club,Semi Scratch,0,0
-Jonathan O Brien,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Ken O Neill,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Luke Keogh,Lucan Cycling Road Club,Semi Scratch,0,0
-Mark Nicholls,Lucan Cycling Road Club,Semi Scratch,0,0
-Mark Leonard,St Tiernans Cycling Club,Semi Scratch,0,0
-Mathieu Fragniere,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Niall Kieran,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Niall Kelly,St Tiernans Cycling Club,Semi Scratch,0,0
-Oisin Purcell,St Tiernans Cycling Club,Semi Scratch,0,0
-Owen Kennedy,Blanch Wheelies CC,Semi Scratch,0,0
-Pat Beere,Blanch Wheelies CC,Semi Scratch,0,0
-Paul Rogers,Lucan Cycling Road Club,Semi Scratch,0,0
-Pierce O Leary,Lucan Cycling Road Club,Semi Scratch,10,10
-Rich Matthew Walls,Lucan Cycling Road Club,Semi Scratch,0,0
-Rob Jennings,Lucan Cycling Road Club,Semi Scratch,0,0
-Robert Bowen,St Tiernans Cycling Club,Semi Scratch,0,0
-Ronan Flannery,St Tiernans Cycling Club,Semi Scratch,0,0
-Sean Ward,Lucan Cycling Road Club,Semi Scratch,0,0
-Sean O Leary,Lucan Cycling Road Club,Semi Scratch,9,0
-Sean Flynn,Lucan Cycling Road Club,Semi Scratch,0,0
-Shane O Neill,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Shaun Kelly,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Simon Ward,Lucan Cycling Road Club,Semi Scratch,0,0
-Stephen Oglesby,Clondalkin CC,Semi Scratch,0,0
-Yvonne Doran,Orwell Wheelers Cycling Club,Semi Scratch,0,0
-Alan O Dowd,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Alan Clarke,Orwell Wheelers Cycling Club,Semi Scratch,0,8
-Andrew Lomax,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Barry Fennell,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Conor Brophy,St Tiernans Cycling Club,Semi Limit,0,0
-Daragh Boyd,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Darragh Murphy,Orwell Wheelers Cycling Club,Semi Limit,0,0
-David Maher,Orwell Wheelers Cycling Club,Semi Limit,0,0
-David Fox,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Edward Kelly,Lucan Cycling Road Club,Semi Scratch,11,9
-Federico Argento,Lucan Cycling Road Club,Semi Limit,0,0
-Fergal May,St Tiernans Cycling Club,Semi Limit,0,0
-Filippo Lin,Lucan Cycling Road Club,Semi Limit,0,0
-Gareth Muldowney,Clondalkin CC,Semi Limit,0,0
-Gareth Jones,Blanch Wheelies CC,Semi Limit,0,7
-Garrett Greene,Orwell Wheelers Cycling Club,Semi Limit,0,0
-George Sevastopulo,Sundrive Track Team,Semi Scratch,8,11
-Harry Rochford,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Ivan Casey,Lucan Cycling Road Club,Semi Limit,0,0
-Jennifer Bates,Clondalkin CC,Semi Limit,0,0
-Jim Carey,Orwell Wheelers Cycling Club,Semi Limit,0,0
-John Lalor,Usher Irish Road Club,Semi Limit,0,0
-Jonathan Hudson,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Joshua Chambers,Lucan Cycling Road Club,Semi Limit,0,0
-Jules De Meester,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Kieran Sweeney,Blanch Wheelies CC,Semi Limit,0,6
-Kilian Doyle,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Leonardo De Llamas,Blanch Wheelies CC,Semi Limit,0,0
-Louis Twomey,St Tiernans Cycling Club,Semi Limit,0,0
-Mark Dillon,Clondalkin CC,Semi Limit,0,0
-Mark Mearns,Lucan Cycling Road Club,Semi Limit,0,0
-Martin Mc Namara,Lucan Cycling Road Club,Semi Limit,0,0
-Martyn Holmes,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Nigel Burke,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Oleksandr Konkolevsky,Blanch Wheelies CC,Limit,0,6
-Oscar Sevastopulo,Sundrive Track Team,Semi Limit,0,0
-Owen O Flaherty,Orwell Wheelers Cycling Club,Semi Limit,0,10
-Paul Kane,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Paul Needham,Usher Irish Road Club,Semi Limit,0,0
-Paul Heynen,Lucan Cycling Road Club,Semi Limit,0,0
-Paul O Brien,Orwell Wheelers Cycling Club,Semi Limit,0,0
-Peter Bates,Clondalkin CC,Semi Limit,0,0
-Pierce Oconnor,Clondalkin CC,Semi Limit,0,0
-Ronan Conway,Lucan Cycling Road Club,Semi Limit,8,0
-Ryan Dunne,Lucan Cycling Road Club,Semi Limit,0,0
-Stephen Seagrave,Clondalkin CC,Semi Limit,0,0
-Terence Mc Cartan,St Tiernans Cycling Club,Semi Limit,0,11
-Abily Tudal,St Tiernans Cycling Club,Limit,0,0
-Aishling Barry,Lucan Cycling Road Club,Limit,0,0
-Alan Dempsey,St Tiernans Cycling Club,Limit,0,0
-Alan Waters,Blanch Wheelies CC,Limit,0,0
-Bart Wijn,Orwell Wheelers Cycling Club,Limit,0,0
-Billy Harney,Blanch Wheelies CC,Limit,0,0
-Brendan Bonnie,St Tiernans Cycling Club,Limit,0,0
-Brian Reynolds,South Dublin Cycling Club,Limit,0,0
-Brian Hammond,Lucan Cycling Road Club,Limit,0,0
-Brian Nolan,Blanch Wheelies CC,Limit,0,7
-Brian Stafford,Clondalkin CC,Limit,0,0
-Clinton Slowey,Lucan Cycling Road Club,Limit,0,0
-Colm Thomas Dunne,Lucan Cycling Road Club,Limit,0,0
-Colum Bradley,Orwell Wheelers Cycling Club,Limit,0,0
-Cormac O Connor,St Tiernans Cycling Club,Limit,0,0
-Danya El Gahzel,Orwell Wheelers Cycling Club,Limit,0,0
-Daragh O'Toole,St Tiernans Cycling Club,Limit,0,0
-Dave Smyth,Orwell Wheelers Cycling Club,Limit,0,0
-David Cahill,Orwell Wheelers Cycling Club,Semi Limit,9,8
-Eamon Peregrine,St Tiernans Cycling Club,Limit,0,0
-Eamon Quigley,Lucan Cycling Road Club,Limit,0,0
-Eric Wilson,Orwell Wheelers Cycling Club,Limit,0,0
-Gary Hanlon,Orwell Wheelers Cycling Club,Limit,0,0
-Hannah Roche,Orwell Wheelers Cycling Club,Limit,0,0
-Ilie Gabuja,Orwell Wheelers Cycling Club,Semi Limit,6,9
-Isabelle Cairns,Orwell Wheelers Cycling Club,Limit,0,0
-John Mc Auliffe,Blanch Wheelies CC,Limit,0,0
-John Anslow,Orwell Wheelers Cycling Club,Limit,0,0
-Ken Nelson,Usher Irish Road Club,Limit,0,0
-Lorraine Mc Gill,Blanch Wheelies CC,Limit,0,0
-Luke Keaney,Orwell Wheelers Cycling Club,Limit,10,0
-Luke Potter,Orwell Wheelers Cycling Club,Limit,0,0
-Marc Farrelly,St Tiernans Cycling Club,Limit,0,0
-Mark O Connor,Blanch Wheelies CC,Limit,0,0
-Matthew Broadstock,Orwell Wheelers Cycling Club,Limit,0,10
-Matthew Lane,Orwell Wheelers Cycling Club,Limit,0,0
-Michael Hickey,Orwell Wheelers Cycling Club,Limit,0,9
-Michael Leonard,Lucan Cycling Road Club,Limit,0,0
-Niall Connaughton,Clondalkin CC,Limit,0,0
-Padraig Donohoe,St Tiernans Cycling Club,Limit,0,0
-Peadar Corbally,Orwell Wheelers Cycling Club,Limit,0,8
-Peter Gibbons,Lucan Cycling Road Club,Limit,0,0
-Richard Hart,Lucan Cycling Road Club,Limit,0,0
-Richard Magnier,St Tiernans Cycling Club,Limit,0,0
-Ronan Simms,Orwell Wheelers Cycling Club,Limit,0,0
-Samuel Curtis,Usher Irish Road Club,Limit,0,11
-Sean O Kane,Orwell Wheelers Cycling Club,Limit,0,0
-Shane Burke,Orwell Wheelers Cycling Club,Limit,7,0
-Simon Crowe,Blanch Wheelies CC,Limit,0,0
-Stephen O Shea,Orwell Wheelers Cycling Club,Limit,0,0
-Stephen Finnegan,Clondalkin CC,Limit,0,0
-Trevor Duffy,St Tiernans Cycling Club,Limit,0,0
-Ysabella Huele,Orwell Wheelers Cycling Club,Limit,0,0
-Zoe Greene,Orwell Wheelers Cycling Club,Limit,0,0`
+Ed Kelly,LCRC,Semi Scratch,11,9
+Pierce O Leary,LCRC,Semi Scratch,10,10
+George Sevastopulo,Sundrive,Semi Scratch,8,11
+Adam Greally,STCC,Scratch,7,11
+David Cahill,Orwell,Semi Limit,9,8
+Terence Mc Cartan,STCC,Semi Limit,5,11
+Ilie Gabuja,Orwell,Semi Limit,6,9
+Owen O Flaherty,Orwell,Semi Limit,5,10
+Michael Hickey,Orwell,Limit,5,9
+Sean Oleary,LCRC,Semi Scratch,9,5
+David Ryan,STCC,Scratch,5,8
+Brian Nolan,Blanch Wheelies,Limit,5,7
+Bryan Geary,STCC,Scratch,5,7
+Samuel Curtis,Usher IRC,Limit,,11
+Kieran Sweeney,Blanch Wheelies,Semi Limit,5,6
+Oleksandr Konkolevsky,Blanch Wheelies,Limit,5,6
+Daniel Mc Guinness,Clondalkin CC,Semi Scratch,11,
+Gavin Dodd,Orwell,Semi Scratch,5,6
+Cahir O Higgins,Orwell,Scratch,6,5
+Brian Reynolds,South Dublin,Limit,5,5
+Colum Bradley,Orwell,Limit,5,5
+Matthew Broadstock,Orwell,Limit,,10
+Paul Needham,Usher IRC,Limit,5,5
+Stephen O Shea,Orwell,Limit,5,5
+Alan O Dowd,Orwell,Semi Limit,5,5
+Daragh Boyd,Orwell,Semi Limit,5,5
+Filippo Lin,LCRC,Semi Limit,5,5
+Gareth Muldowney,Clondalkin CC,Semi Limit,5,5
+Luke Keaney,Orwell,Semi Limit,10,
+Paul Kane,Orwell,Semi Limit,5,5
+Stephen Seagrave,Clondalkin CC,Semi Limit,5,5
+Callum Byrne,LCRC,Semi Scratch,5,5
+Cesar Lopes,Orwell,Semi Scratch,5,5
+Colm Sevastopulo,Sundrive,Semi Scratch,5,5
+Connor Fennell,Orwell,Semi Scratch,5,5
+Dick O Brien,Orwell,Semi Scratch,5,5
+John Mc Gettigan,LCRC,Semi Scratch,5,5
+Jonathan O Brien,Orwell,Semi Scratch,5,5
+Ken O Neill,Orwell,Semi Scratch,5,5
+Rob Jennings,LCRC,Semi Scratch,5,5
+Sean Ward,LCRC,Semi Scratch,5,5
+Adriaan Pretorius,LCRC,Scratch,5,5
+Bob Hall,Clondalkin CC,Scratch,5,5
+Mark Donnelly-Orr,LCRC,Scratch,,10
+Martin Casey,STCC,Scratch,5,5
+Aimhirghin O Brannagain,Orwell,Scratch,,9
+Peadar Corbally,Orwell,Limit,,8
+Ronan Conway,LCRC,Semi Limit,8,
+Alan Clarke,Orwell,Semi Scratch,,8
+Gareth Jones,Blanch Wheelies,Semi Limit,,7
+Shane Burke,Orwell,Semi Limit,7,
+Brendan Ward,Clondalkin CC,Semi Scratch,,7
+John Sheridan,STCC,Scratch,,6
+Abily Tudal,STCC,Limit,5,
+Aishling Barry,LCRC,Limit,,5
+Alan Dempsey,STCC,Semi Limit,5,
+Bart Wijn,Orwell,Limit,5,
+Brendan Bonnie,STCC,Limit,,5
+Brian Stafford,Clondalkin CC,Limit,,5
+Danya El Gahzel,Orwell,Limit,,5
+Daragh O'Toole,STCC,Limit,,5
+Eamon Quigley,LCRC,Semi Limit,,5
+John Mc Auliffe,Blanch Wheelies,Limit,,5
+Mark O Connor,Blanch Wheelies,Limit,,5
+Padraig Donohoe,STCC,Limit,5,
+Peter Gibbons,LCRC,Limit,,5
+Richard Magnier,STCC,Limit,,5
+Ronan Simms,Orwell,Limit,,5
+Ysabella Huele,Orwell,Limit,5,
+Andrew Lomax,Orwell,Semi Limit,5,
+Barry Fennell,Orwell,Semi Limit,5,
+David Maher,Orwell,Semi Limit,5,
+Harry Rochford,Orwell,Semi Limit,,5
+Jim Carey,Orwell,Semi Limit,5,
+Jonathan Hudson,Orwell,Semi Limit,,5
+Joshua Chambers,LCRC,Semi Limit,5,
+Louis Twomey,STCC,Semi Limit,5,
+Marc Farrelly,STCC,Semi Limit,5,
+Mark Dillon,Clondalkin CC,Semi Limit,,5
+Paul O Brien,Orwell,Semi Limit,5,
+Peter Bates,Clondalkin CC,Semi Limit,5,
+Pierce Oconnor,Clondalkin CC,Semi Limit,,5
+Adam Mc Connell,Orwell,Semi Scratch,5,
+Adam Nelson,Usher IRC,Semi Scratch,,5
+Andrew Keogh,LCRC,Semi Scratch,,5
+Anthony Dunne,LCRC,Semi Scratch,,5
+Dave Smyth,Orwell,Semi Scratch,,5
+Davi Silva,Clondalkin CC,Semi Scratch,5,
+Frederick Roberts,STCC,Semi Scratch,5,
+Luke Keogh,LCRC,Semi Scratch,,5
+Mark Nicholls,LCRC,Semi Scratch,,5
+Niall Kelly,STCC,Semi Scratch,,5
+Oscar Sevastopulo,Sundrive,Semi Scratch,5,
+Paul Rogers,LCRC,Semi Scratch,5,
+Robert Bowen,STCC,Semi Scratch,5,
+Ronan Flannery,STCC,Semi Scratch,,5
+Des,Blanch Wheelies,Scratch,,5
+Eoin Farrell,STCC,Scratch,5,
+Gavin Hendley,LCRC,Scratch,,5
+James Kelly,STCC,Scratch,5,
+Pawel Rybak,LCRC,Scratch,5,
+Tiit Talumaa,STCC,Scratch,,5`
 
 function convertCsvToJson() {
   const parseResult = Papa.parse<CsvRow>(csvString, {
@@ -321,6 +243,7 @@ function parseCategory(value: string): string {
 function parseClub(value: string): string {
   switch (value) {
     case 'BWCC':
+    case 'Blanch Wheelies':
     case 'Blanch Wheelies CC':
       return 'bwcc'
     case 'CCC':
@@ -330,18 +253,22 @@ function parseClub(value: string): string {
     case 'Lucan Cycling Road Club':
       return 'lcrc'
     case 'OWCC':
+    case 'Orwell':
     case 'Orwell Wheelers Cycling Club':
       return 'owcc'
     case 'SDCC':
+    case 'South Dublin':
     case 'South Dublin Cycling Club':
       return 'sdcc'
     case 'STCC':
     case 'St Tiernans Cycling Club':
       return 'stcc'
     case 'STT':
+    case 'Sundrive':
     case 'Sundrive Track Team':
       return 'stt'
     case 'UIRC':
+    case 'Usher IRC':
     case 'Usher Irish Road Club':
       return 'uirc'
     default:
