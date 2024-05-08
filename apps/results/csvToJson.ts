@@ -2,134 +2,149 @@ import _ from 'lodash'
 import Papa from 'papaparse'
 import { StageResultEntity } from '../server/src/entity/StageResultEntity'
 
-// https://www.youpdf.com/result.html?e=0&c=pdf-to-excel
+// https://www.youpdf.com/pdf-to-excel.html
 
-const csvString = `Club,Name,Group,1,2,3
-Sundrive,George Sevastopulo,Semi Scratch,8,11,11
-STCC,Adam Greally,Scratch,7,11,10
-LCRC,Pierce O Leary,Scratch,10,10,8
-STCC,Terence Mc Cartan,Semi Limit,5,11,11
-Orwell,Michael Hickey,Limit,5,9,10
-South Dublin,Brian Reynolds,Limit,5,5,11
-LCRC,Adriaan Pretorius,Scratch,5,5,11
-Clondalkin CC,Daniel Mc Guinness,Semi Scratch,11,5,5
-Orwell,Ilie Gabuja,Semi Limit,6,9,5
-Orwell,Owen O Flaherty,Semi Limit,5,10,5
-LCRC,Ed Kelly,Semi Scratch,11,9,
-LCRC,Sean Oleary,Scratch,9,5,6
-Clondalkin CC,Bob Hall,Scratch,5,5,9
-Orwell,Cesar Lopes,Semi Scratch,5,5,9
-STCC,Bryan Geary,Scratch,5,7,6
-Orwell,David Cahill,Semi Limit,9,8,
-LCRC,Ronan Conway,Semi Limit,8,,9
-Blanch Wheelies,Oleksandr Konkolevsky,Limit,5,6,5
-Orwell,Gavin Dodd,Semi Scratch,5,6,5
-Orwell,Matthew Broadstock,Limit,5,10,
-Usher IRC,Paul Needham,Limit,5,5,5
-Orwell,Stephen O Shea,Limit,5,5,5
-Orwell,Daragh Boyd,Semi Limit,5,5,5
-LCRC,Filippo Lin,Semi Limit,5,5,5
-Orwell,Luke Keaney,Semi Limit,10,,5
-Sundrive,Colm Sevastopulo,Semi Scratch,5,5,5
-Orwell,Connor Fennell,Semi Scratch,5,5,5
-LCRC,Luke Keogh,Semi Limit,,5,10
-STCC,David Ryan,Scratch,5,8,
-Orwell,Harry Rochford,Semi Limit,,5,8
-Blanch Wheelies,Brian Nolan,Limit,5,7,
-Blanch Wheelies,Gareth Jones,Semi Limit,,7,5
-Clondalkin CC,Brendan Ward,Semi Scratch,,7,5
-Usher IRC,Samuel Curtis,Limit,,11,
-Orwell,Cahir O Higgins,Scratch,6,5,
-STCC,John Sheridan,Scratch,,6,5
-Blanch Wheelies,Kieran Sweeney,Semi Limit,5,6,
-Orwell,Colum Bradley,Limit,5,5,
-LCRC,Peter Gibbons,Limit,,5,5
-Blanch Wheelies,Des,Scratch,,5,5
-Orwell,Diarmuid Collins,Scratch,,5,5
-LCRC,Mark Donnelly-Orr,Scratch,,10,
-STCC,Martin Casey,Scratch,5,5,
-LCRC,Pawel Rybak,Scratch,5,5,
-Sundrive,Sean Curtis,Scratch,,5,5
-Orwell,Alan O Dowd,Semi Limit,5,5,
-LCRC,Eamon Quigley,Semi Limit,,5,5
-Clondalkin CC,Gareth Muldowney,Semi Limit,5,5,
-STCC,Louis Twomey,Semi Limit,5,,5
-Orwell,Paul Kane,Semi Limit,5,5,
-Clondalkin CC,Stephen Seagrave,Semi Limit,5,5,
-Usher IRC,Adam Nelson,Semi Scratch,,5,5
-LCRC,Andrew Keogh,Semi Scratch,,5,5
-LCRC,Anthony Dunne,Semi Scratch,,5,5
-LCRC,Callum Byrne,Semi Scratch,5,5,
-Clondalkin CC,Davi Silva,Semi Scratch,5,,5
-Orwell,Dick  O Brien,Semi Scratch,5,5,
-LCRC,John Mc Gettigan,Semi Scratch,5,5,
-Orwell,Jonathan O Brien,Semi Scratch,5,5,
-Orwell,Ken O Neill,Semi Scratch,5,5,
-LCRC,Rich Matthew Walls,Semi Scratch,,,10
-LCRC,Rob Jennings,Semi Scratch,5,5,
-STCC,Robert Bowen,Semi Scratch,5,,5
-LCRC,Sean Ward,Semi Scratch,5,5,
-LCRC,Clinton Slowey,Semi Limit,,,9
-Orwell,Aimhirghin O Brannagain,Scratch,,9,
-Orwell,Peadar Corbally,Limit,,8,
-Orwell,Alan Clarke,Semi Scratch,,8,
-Orwell,Shane Burke,Semi Limit,7,,
-LCRC,Ryan Dunne,Semi Limit,,,6
-STCC,Abily Tudal,Limit,5,,
-LCRC,Aishling Barry,Limit,,5,
-Orwell,Bart Wijn,Limit,5,,
-STCC,Brendan Bonnie,Limit,,5,
-Clondalkin CC,Brian  Stafford,Limit,,5,
-Orwell,Danya El Gahzel,Limit,,5,
-STCC,Daragh O'Toole,Limit,,5,
-LCRC,Federico Argento,Limit,,,5
-Orwell,Hannah Roche,Limit,,,5
-Blanch Wheelies,John Mc Auliffe,Limit,,5,
-LCRC,Michael Leonard,Limit,,,5
-STCC,Padraig Donohoe,Limit,5,,
-STCC,Richard Magnier,Limit,,5,
-Orwell,Ronan Simms,Limit,,5,
-Blanch Wheelies,Simon Crowe,Limit,,,5
-Orwell,Ysabella Huele,Limit,5,,
-LCRC,Andy Grehan,Semi Scratch,,,5
-STCC,Eoin Farrell,Scratch,5,,
-LCRC,Gavin Hendley,Scratch,,5,
-STCC,James Kelly,Scratch,5,,
-STCC,Tiit Talumaa,Scratch,,5,
-STCC,Alan Dempsey,Semi Limit,5,,
-Orwell,Andrew Lomax,Semi Limit,5,,
-Orwell,Barry Fennell,Semi Limit,5,,
-Orwell,David Maher,Semi Limit,5,,
-Orwell,Jim Carey,Semi Limit,5,,
-Orwell,Jonathan Hudson,Semi Limit,,5,
-LCRC,Joshua Chambers,Semi Limit,5,,
-STCC,Marc  Farrelly,Semi Limit,5,,
-Clondalkin CC,Mark Dillon,Semi Limit,,5,
-Blanch Wheelies,Mark O Connor,Semi Limit,,5,
-LCRC,Martin Mc Namara,Semi Limit,,,5
-LCRC,Matthew Broughton,Semi Limit,,,5
-Orwell,Nigel Burke,Semi Limit,,,5
-Orwell,Paul O Brien,Semi Limit,5,,
-Clondalkin CC,Peter Bates,Semi Limit,5,,
-Clondalkin CC,Pierce Oconnor,Semi Limit,,5,
-Orwell,Sean O Kane,Semi Limit,,,5
-Orwell,Werner Otto,Semi Limit,,,5
-Orwell,Adam Mc Connell,Semi Scratch,5,,
-Orwell,Barry Greene,Semi Scratch,,,5
-STCC,Conor O Brien,Semi Scratch,,,5
-Orwell,Dave Smyth,Semi Scratch,,5,
-LCRC,Declan Brassil,Semi Scratch,,,5
-STCC,Frederick Roberts,Semi Scratch,5,,
-LCRC,Mark Nicholls,Semi Scratch,,5,
-Sundrive,Mark Stewart,Semi Scratch,,5,
-STCC,Niall Kelly,Semi Scratch,,5,
-Orwell,Niall Kieran,Semi Scratch,,5,
-Sundrive,Oscar Sevastopulo,Semi Scratch,5,,
-Blanch Wheelies,Owen Kennedy,Semi Scratch,,,5
-LCRC,Paul Rogers,Semi Scratch,5,,
-STCC,Ronan Flannery,Semi Scratch,,5,
-Orwell,Shane O Neill,Semi Scratch,,,5
-LCRC,Simon Ward,Semi Scratch,,,5`
+const csvString = `Club,Name,Group,1,2,3,4
+Sundrive,George Sevastopulo,Semi Scratch,8,11,11,8
+LCRC,Pierce O Leary,Scratch,10,10,8,9
+STCC,Adam Greally,Scratch,7,11,10,5
+STCC,Bryan Geary,Scratch,5,7,7,10
+STCC,Terence Mc Cartan,Semi Limit,5,11,11,
+Clondalkin CC,Daniel Mc Guinness,Semi Scratch,11,5,5,6
+South Dublin,Brian Reynolds,Limit,5,5,11,5
+LCRC,Adriaan Pretorius,Scratch,5,5,11,5
+Orwell,Cesar Lopes,Semi Scratch,5,5,9,7
+Orwell,Ilie Gabuja,Semi Limit,6,9,5,5
+LCRC,Ed Kelly,Semi Scratch,11,9,,5
+LCRC,Sean Oleary,Scratch,9,5,6,5
+Orwell,Michael Hickey,Limit,5,9,10,
+Clondalkin CC,Bob Hall,Scratch,5,5,9,5
+LCRC,Ronan Conway,Semi Limit,8,,9,5
+Blanch Wheelies,Oleksandr Konkolevsky,Limit,5,6,5,5
+Orwell,Gavin Dodd,Semi Scratch,5,6,5,5
+Orwell,Matthew Broadstock,Limit,5,10,,5
+Usher IRC,Paul Needham,Limit,5,5,5,5
+Orwell,Stephen O Shea,Limit,5,5,5,5
+LCRC,Filippo Lin,Semi Limit,5,5,5,5
+Orwell,Luke Keaney,Semi Limit,10,,5,5
+Orwell,Owen O Flaherty,Semi Limit,5,10,5,
+Orwell,Connor Fennell,Semi Scratch,5,5,5,5
+Orwell,Dick  O Brien,Semi Scratch,5,5,5,5
+Orwell,Harry Rochford,Semi Limit,,5,8,5
+Blanch Wheelies,Brian Nolan,Limit,5,7,,5
+Orwell,David Cahill,Semi Limit,9,8,,
+Blanch Wheelies,Gareth Jones,Semi Limit,,7,5,5
+Clondalkin CC,Brendan Ward,Semi Scratch,,7,5,5
+Usher IRC,Samuel Curtis,Limit,,11,,5
+Orwell,Cahir O Higgins,Scratch,6,5,5,
+Blanch Wheelies,Kieran Sweeney,Semi Limit,5,6,,5
+Orwell,Colum Bradley,Limit,5,5,,5
+LCRC,Peter Gibbons,Limit,,5,5,5
+Blanch Wheelies,Des,Scratch,,5,5,5
+Orwell,Diarmuid Collins,Scratch,,5,5,5
+LCRC,Mark Donnelly-Orr,Scratch,,10,,5
+STCC,Martin Casey,Scratch,5,5,,5
+LCRC,Pawel Rybak,Scratch,5,5,,5
+Orwell,Alan O Dowd,Semi Limit,5,5,,5
+Orwell,Daragh Boyd,Semi Limit,5,5,5,
+LCRC,Eamon Quigley,Semi Limit,,5,5,5
+STCC,Louis Twomey,Semi Limit,5,,5,5
+LCRC,Anthony Dunne,Semi Scratch,,5,5,5
+LCRC,Callum Byrne,Semi Scratch,5,5,,5
+Sundrive,Colm Sevastopulo,Semi Scratch,5,5,5,
+LCRC,John Mc Gettigan,Semi Scratch,5,5,,5
+LCRC,Luke Keogh,Semi Scratch,,5,5,5
+LCRC,Rob Jennings,Semi Scratch,5,5,,5
+STCC,Robert Bowen,Semi Scratch,5,,5,5
+LCRC,Clinton Slowey,Semi Limit,,,9,5
+Orwell,Aimhirghin O Brannagain,Scratch,,9,,5
+STCC,David Ryan,Scratch,5,8,,
+Orwell,Alan Clarke,Semi Scratch,,8,,5
+STCC,John Sheridan,Scratch,,6,5,
+STCC,Abily Tudal,Limit,5,,,5
+LCRC,Aishling Barry,Limit,,5,,5
+STCC,Brendan Bonnie,Limit,,5,,5
+Clondalkin CC,Brian  Stafford,Limit,,5,,5
+STCC,Daragh O'Toole,Limit,,5,,5
+Orwell,Hannah Roche,Limit,,,5,5
+Blanch Wheelies,John Mc Auliffe,Limit,,5,,5
+LCRC,Michael Leonard,Limit,,,5,5
+Blanch Wheelies,Simon Crowe,Limit,,,5,5
+LCRC,Andy Grehan,Semi Scratch,,,5,5
+Sundrive,Sean Curtis,Scratch,,5,5,
+STCC,Alan Dempsey,Semi Limit,5,,,5
+Orwell,Andrew Lomax,Semi Limit,5,,,5
+Orwell,Barry Fennell,Semi Limit,5,,,5
+Clondalkin CC,Gareth Muldowney,Semi Limit,5,5,,
+Orwell,Jim Carey,Semi Limit,5,,,5
+LCRC,Joshua Chambers,Semi Limit,5,,,5
+Clondalkin CC,Mark Dillon,Semi Limit,,5,,5
+Blanch Wheelies,Mark O Connor,Semi Limit,,5,,5
+LCRC,Martin Mc Namara,Semi Limit,,,5,5
+LCRC,Matthew Broughton,Semi Limit,,,5,5
+Orwell,Nigel Burke,Semi Limit,,,5,5
+Orwell,Paul Kane,Semi Limit,5,5,,
+Clondalkin CC,Peter Bates,Semi Limit,5,,,5
+Orwell,Sean O Kane,Semi Limit,,,5,5
+Clondalkin CC,Stephen Seagrave,Semi Limit,5,5,,
+Usher IRC,Adam Nelson,Semi Scratch,,5,5,
+LCRC,Andrew Keogh,Semi Scratch,,5,5,
+Orwell,Barry Greene,Semi Scratch,,,5,5
+Clondalkin CC,Davi Silva,Semi Scratch,5,,5,
+LCRC,Declan Brassil,Semi Scratch,,,5,5
+Orwell,Jonathan O Brien,Semi Scratch,5,5,,
+Orwell,Ken O Neill,Semi Scratch,5,5,,
+LCRC,Mark Nicholls,Semi Scratch,,5,,5
+Sundrive,Mark Stewart,Semi Scratch,,5,,5
+Blanch Wheelies,Owen Kennedy,Semi Scratch,,,5,5
+LCRC,Paul Rogers,Semi Scratch,5,,,5
+LCRC,Rich Matthew Walls,Semi Scratch,,,10,
+STCC,Ronan Flannery,Semi Scratch,,5,,5
+LCRC,Sean Ward,Semi Scratch,5,5,,
+Orwell,Shane O Neill,Semi Scratch,,,5,5
+LCRC,Simon Ward,Semi Scratch,,,5,5
+Orwell,Peadar Corbally,Limit,,8,,
+Orwell,Shane Burke,Semi Limit,7,,,
+LCRC,Ryan Dunne,Semi Limit,,,6,
+Blanch Wheelies,Alan Waters,Semi Scratch,,,,5
+Orwell,Bart Wijn,Limit,5,,,
+STCC,Cormac O Connor,Limit,,,,5
+Orwell,Danya El Gahzel,Limit,,5,,
+LCRC,Federico Argento,Limit,,,5,
+Orwell,Isabelle Cairns,Limit,,,,5
+STCC,Padraig Donohoe,Limit,5,,,
+STCC,Richard Magnier,Limit,,5,,
+Orwell,Ronan Simms,Limit,,5,,
+Orwell,Ysabella Huele,Limit,5,,,
+STCC,Eoin Farrell,Scratch,5,,,
+LCRC,Gavin Hendley,Scratch,,5,,
+STCC,James Kelly,Scratch,5,,,
+LCRC,Robert Farrell,Scratch,,,,5
+LCRC,Ronan Killeen,Scratch,,,,5
+STCC,Tiit Talumaa,Scratch,,5,,
+Orwell,David Maher,Semi Limit,5,,,
+STCC,Fergal May,Semi Limit,,,,5
+Clondalkin CC,Jennifer Bates,Limit,,,,5
+Usher IRC,John Lalor,Semi Limit,,,,5
+Orwell,Jonathan Hudson,Semi Limit,,5,,
+STCC,Marc  Farrelly,Semi Limit,5,,,
+LCRC,Paul Heynen,Semi Limit,,,,5
+Orwell,Paul O Brien,Semi Limit,5,,,
+Clondalkin CC,Pierce Oconnor,Semi Limit,,5,,
+Orwell,Werner Otto,Semi Limit,,,5,
+Orwell,Adam Mc Connell,Semi Scratch,5,,,
+STCC,Conor O Brien,Semi Scratch,,,5,
+Orwell,Darran Kearney,Semi Scratch,,,,5
+Orwell,Dave Smyth,Semi Scratch,,5,,
+Clondalkin CC,Derek Daly,Semi Scratch,,,,5
+Usher IRC,Eoin Rheinisch,Semi Scratch,,,,5
+STCC,Frederick Roberts,Semi Scratch,5,,,
+LCRC,Ian O Hara,Semi Scratch,,,,5
+STCC,Niall Kelly,Semi Scratch,,5,,
+Orwell,Niall Kieran,Semi Scratch,,5,,
+Sundrive,Oscar Sevastopulo,Semi Scratch,5,,,
+Blanch Wheelies,Pat Beere,Semi Scratch,,,,5
+Orwell,Yvonne Doran,Semi Scratch,,,,5`
 
 function convertCsvToJson() {
   const parseResult = Papa.parse<CsvRow>(csvString, {
