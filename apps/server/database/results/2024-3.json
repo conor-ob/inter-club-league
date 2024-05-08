@@ -562,10 +562,10 @@
   {
     "categoryId": "semi-scratch",
     "clubId": "owcc",
-    "riderId": "dick--o-brien",
+    "riderId": "dick-o-brien",
     "riderInitials": "DOB",
-    "riderName": "Dick  O'Brien",
-    "riderShortName": "D.  O'Brien",
+    "riderName": "Dick O'Brien",
+    "riderShortName": "D. O'Brien",
     "seasonPoints": [5, 5, 0],
     "stagePoints": 0
   },
@@ -742,10 +742,10 @@
   {
     "categoryId": "limit",
     "clubId": "ccc",
-    "riderId": "brian--stafford",
+    "riderId": "brian-stafford",
     "riderInitials": "BS",
-    "riderName": "Brian  Stafford",
-    "riderShortName": "B.  Stafford",
+    "riderName": "Brian Stafford",
+    "riderShortName": "B. Stafford",
     "seasonPoints": [0, 5, 0],
     "stagePoints": 0
   },
@@ -982,10 +982,10 @@
   {
     "categoryId": "semi-limit",
     "clubId": "stcc",
-    "riderId": "marc--farrelly",
+    "riderId": "marc-farrelly",
     "riderInitials": "MF",
-    "riderName": "Marc  Farrelly",
-    "riderShortName": "M.  Farrelly",
+    "riderName": "Marc Farrelly",
+    "riderShortName": "M. Farrelly",
     "seasonPoints": [5, 0, 0],
     "stagePoints": 0
   },
