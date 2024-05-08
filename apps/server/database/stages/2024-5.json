@@ -9,5 +9,10 @@
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
   "coordinates": "53.306305,-6.412072",
-  "stravaId": null
+  "stravaId": null,
+  "info": [
+    "Limit & Semi Limit race at 7pm",
+    "Scratch & Semi Scratch race at 7:45pm",
+    "Both races are 40 mins + 3 laps"
+  ]
 }
