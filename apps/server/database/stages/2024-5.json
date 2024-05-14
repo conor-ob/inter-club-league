@@ -7,9 +7,8 @@
   "startTime": "2024-05-09T19:00:00Z",
   "type": "CRITERIUM",
   "mandatory": false,
-  "categoryGroups": "S,SS,SL,L",
+  "categoryGroups": "S+SS,SL+L",
   "coordinates": "53.306305,-6.412072",
-  "stravaId": null,
   "info": [
     "Limit & Semi Limit race at 7pm",
     "Scratch & Semi Scratch race at 7:45pm",

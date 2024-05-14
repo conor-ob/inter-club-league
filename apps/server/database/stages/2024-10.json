@@ -8,6 +8,5 @@
   "type": "HILL_CLIMB",
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": null
 }
