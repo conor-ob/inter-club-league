@@ -36,7 +36,6 @@ export class StageMapper {
         categories
       ),
       coordinates: stageEntity.coordinates,
-      stravaId: null,
       info: stageEntity.info ?? ['Info will be available before the stage']
     }
   }
@@ -60,7 +59,6 @@ export class StageMapper {
           categories
         ),
         coordinates: stageEntity.coordinates,
-        stravaId: null,
         info: stageEntity.info ?? ['Info will be available before the stage']
       }
     })

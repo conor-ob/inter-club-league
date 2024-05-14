@@ -8,6 +8,5 @@
   "type": "ROAD_RACE",
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": "53.500740,-6.590326",
-  "stravaId": null
+  "coordinates": "53.500740,-6.590326"
 }

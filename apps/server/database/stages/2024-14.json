@@ -8,6 +8,5 @@
   "type": "TIME_TRIAL",
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": "53.445325,-6.477471",
-  "stravaId": null
+  "coordinates": "53.445325,-6.477471"
 }

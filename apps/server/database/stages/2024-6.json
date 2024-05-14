@@ -8,6 +8,11 @@
   "type": "TIME_TRIAL",
   "mandatory": true,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": null,
-  "stravaId": null
+  "coordinates": "53.424764606905015,-6.488980101838879",
+  "info": [
+    "This week's round of ICL is the 10m TT. TT bikes and equipment are allowed. The route is listed below and is one way TT (not out and back)",
+    "For anyone who is unfamiliar how we run the TTs your start time will be given at sign on and you will be assigned the related number e.g start time is 7.01 and your number is 1. You will then have to shout your number as you finish to the Marshal",
+    "Points will be award for top 6 in each group",
+    "Sign on will close at 6:50pm"
+  ]
 }

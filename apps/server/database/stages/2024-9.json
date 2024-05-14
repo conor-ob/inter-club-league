@@ -8,6 +8,5 @@
   "type": "CRITERIUM",
   "mandatory": false,
   "categoryGroups": "S,SS,SL,L",
-  "coordinates": "53.257027,-6.745262",
-  "stravaId": null
+  "coordinates": "53.257027,-6.745262"
 }

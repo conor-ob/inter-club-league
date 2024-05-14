@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "vite build",
-    "clean": "rm -rf dist && rm -rf node_modules && rm -rf src/generated",
-    "dev": "cross-env NODE_ENV=development vite",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
     "convert": "ts-node csvToJson.ts"
   },
   "dependencies": {
