@@ -25,28 +25,28 @@ class Document extends NextDocument {
           <link rel='preconnect' href='https://www.googletagmanager.com' />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-regular.otf'
+            href='/inter-regular.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
           />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-medium.otf'
+            href='/inter-medium.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
           />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-semibold.otf'
+            href='/inter-semibold.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
           />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/cdn@latest/font/inter-bold.otf'
+            href='/inter-bold.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
