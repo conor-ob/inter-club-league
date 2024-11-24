@@ -23,9 +23,7 @@ export function StageMap({ stage }: { stage: Stage }) {
 
   return (
     <Column>
-      <Text className='text-primary font-inter-medium ml-4 text-xl'>
-        Location
-      </Text>
+      <Text className='text-primary ml-4 text-xl font-medium'>Location</Text>
       <View className='h-2' />
       <Card>
         <Column>
@@ -59,7 +57,7 @@ function Directions({ stage }: { stage: Stage }) {
 
   return (
     <Row className='items-center justify-between px-4 py-4'>
-      <Text className='text-secondary font-inter-regular text-base'>
+      <Text className='text-secondary font-regular text-base'>
         {stage.location}
       </Text>
       <TouchableOpacity>
@@ -71,7 +69,7 @@ function Directions({ stage }: { stage: Stage }) {
           }
         >
           <Row>
-            <Text className='text-brand-blue font-inter-regular text-base'>
+            <Text className='text-brand-blue font-regular text-base'>
               Directions
             </Text>
             <HeroIcon
@@ -88,7 +86,7 @@ function Directions({ stage }: { stage: Stage }) {
   // if (isAppleDevice) {
   //   return (
   //     <Row className='items-center justify-between px-4'>
-  //       <Text className='text-secondary font-inter-regular pr-4 text-base'>
+  //       <Text className='text-secondary font-regular pr-4 text-base'>
   //         {`Directions to ${stage.location}`}
   //       </Text>
   //       <View className='h-4' />
@@ -98,7 +96,7 @@ function Directions({ stage }: { stage: Stage }) {
   //             href={`maps://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`}
   //           >
   //             <Row>
-  //               <Text className='text-brand-blue font-inter-regular text-base'>
+  //               <Text className='text-brand-blue font-regular text-base'>
   //                 Apple Maps
   //               </Text>
   //               <View className='w-2' />
@@ -115,7 +113,7 @@ function Directions({ stage }: { stage: Stage }) {
   //             href={`https://maps.google.com/maps?daddr=${stage.coordinates}&amp;ll=`}
   //           >
   //             <Row>
-  //               <Text className='font-inter-regular text-brand-blue text-base'>
+  //               <Text className='font-regular text-brand-blue text-base'>
   //                 Google Maps
   //               </Text>
   //               <View className='w-2' />
@@ -133,7 +131,7 @@ function Directions({ stage }: { stage: Stage }) {
   // } else {
   //   return (
   //     <Row className='items-center justify-between px-4 py-4'>
-  //       <Text className='text-secondary font-inter-regular text-base'>
+  //       <Text className='text-secondary font-regular text-base'>
   //         {stage.location}
   //       </Text>
   //       <TouchableOpacity>
@@ -145,7 +143,7 @@ function Directions({ stage }: { stage: Stage }) {
   //           }
   //         >
   //           <Row>
-  //             <Text className='text-brand-blue font-inter-regular text-base'>
+  //             <Text className='text-brand-blue font-regular text-base'>
   //               Directions
   //             </Text>
   //             <HeroIcon
@@ -168,7 +166,7 @@ function Directions({ stage }: { stage: Stage }) {
 //   if (isAppleDevice) {
 //     return (
 //       <Column>
-//         {/* <Text className='text-secondary font-inter-regular p-4 pb-0 text-base'>
+//         {/* <Text className='text-secondary font-regular p-4 pb-0 text-base'>
 //           Directions
 //         </Text> */}
 //         <Column>
@@ -187,7 +185,7 @@ function Directions({ stage }: { stage: Stage }) {
 //               <TouchableOpacity className='items-end p-4'>
 //                 <Link href={item.href}>
 //                   <Row>
-//                     <Text className='text-brand-blue font-inter-regular text-base'>
+//                     <Text className='text-brand-blue font-regular text-base'>
 //                       {item.label}
 //                     </Text>
 //                     <View className='w-2' />
@@ -208,7 +206,7 @@ function Directions({ stage }: { stage: Stage }) {
 //   } else {
 //     return (
 //       <Row className='items-center justify-between px-4 py-4'>
-//         <Text className='text-secondary font-inter-regular text-base'>
+//         <Text className='text-secondary font-regular text-base'>
 //           {stage.location}
 //         </Text>
 //         <TouchableOpacity>
@@ -220,7 +218,7 @@ function Directions({ stage }: { stage: Stage }) {
 //             }
 //           >
 //             <Row>
-//               <Text className='text-brand-blue font-inter-regular text-base'>
+//               <Text className='text-brand-blue font-regular text-base'>
 //                 Directions
 //               </Text>
 //               <View className='w-2' />

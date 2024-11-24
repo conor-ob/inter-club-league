@@ -9,10 +9,10 @@ export function GcHeader() {
   return (
     <Row className='justify-between px-2'>
       <Row>
-        <Text className='text-primary font-inter-semibold w-10 text-center text-sm tracking-tight'>
+        <Text className='text-primary w-10 text-center text-sm font-semibold tracking-tight'>
           POS
         </Text>
-        <Text className='text-primary font-inter-semibold px-2 text-center text-sm tracking-tight'>
+        <Text className='text-primary px-2 text-center text-sm font-semibold tracking-tight'>
           RIDER
         </Text>
       </Row>
@@ -24,10 +24,10 @@ export function GcHeader() {
             size={18}
           />
         </View>
-        <Text className='text-primary font-inter-semibold w-10 text-center text-sm tracking-tight'>
+        <Text className='text-primary w-10 text-center text-sm font-semibold tracking-tight'>
           GC
         </Text>
-        <Text className='text-primary font-inter-semibold w-10 text-center text-sm tracking-tight'>
+        <Text className='text-primary w-10 text-center text-sm font-semibold tracking-tight'>
           TOT
         </Text>
       </Row>

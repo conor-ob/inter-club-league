@@ -52,7 +52,7 @@ export function ScheduleListCard({
                       // scrollEnabled={false}
                       ItemSeparatorComponent={() => <View className='h-2' />}
                       renderItem={({ item }) => (
-                        <Text className='text-primary font-inter-regular text-base'>
+                        <Text className='text-primary font-regular text-base'>
                           {item}
                         </Text>
                       )}

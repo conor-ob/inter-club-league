@@ -61,7 +61,7 @@ export function StageNavigation({
   //   <Card>
   //     <Row className='px-4 py-3'>
   //       <Text
-  //         className={cx('font-inter-medium text-primary text-base', {
+  //         className={cx('font-medium text-primary text-base', {
   //           'text-quarternary': disabled
   //         })}
   //       >
@@ -99,7 +99,7 @@ export function StageNavigation({
               )}
               <View className='w-2' />
               <Text
-                className={cx('font-inter-medium text-primary text-base', {
+                className={cx('font-medium text-primary text-base', {
                   'text-quarternary': disabled,
                   invisible: previousStageId === null
                 })}
@@ -121,7 +121,7 @@ export function StageNavigation({
           >
             <Row className='items-center'>
               <Text
-                className={cx('font-inter-medium text-primary text-base', {
+                className={cx('font-medium text-primary text-base', {
                   'text-quarternary': disabled,
                   invisible: nextStageId === null
                 })}

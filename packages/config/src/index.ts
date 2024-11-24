@@ -1,12 +1,8 @@
 const production = {
   hostname: '0.0.0.0',
   port: 8080,
-  allowedOrigins: [
-    'inter-club-league-production.up.railway.app',
-    'https://clubleague.conorob.me'
-  ],
-  // graphqlUri: 'https://clubleague.conorob.me/graphql',
-  graphqlUri: 'https://inter-club-league-production.up.railway.app/graphql'
+  allowedOrigins: ['https://clubleague.conorob.me'],
+  graphqlUri: 'https://clubleague.conorob.me/graphql'
 }
 
 const development = {

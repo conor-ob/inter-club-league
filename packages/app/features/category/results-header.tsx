@@ -6,14 +6,14 @@ export function ResultsHeader() {
   return (
     <Row className='justify-between px-2'>
       <Row>
-        <Text className='text-primary font-inter-semibold w-12 text-center text-sm tracking-tight'>
+        <Text className='text-primary w-12 text-center text-sm font-semibold tracking-tight'>
           POS
         </Text>
-        <Text className='text-primary font-inter-semibold px-2 text-center text-sm tracking-tight'>
+        <Text className='text-primary px-2 text-center text-sm font-semibold tracking-tight'>
           RIDER
         </Text>
       </Row>
-      <Text className='text-primary font-inter-semibold w-16 text-center text-sm tracking-tight'>
+      <Text className='text-primary w-16 text-center text-sm font-semibold tracking-tight'>
         POINTS
       </Text>
     </Row>

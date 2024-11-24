@@ -7,13 +7,11 @@ export function MarshallsCard({ marshalls }: { marshalls: string[] }) {
   if (marshalls.length === 0) {
     return (
       <Column>
-        <Text className='text-primary font-inter-medium ml-4 text-xl'>
-          Marshalls
-        </Text>
+        <Text className='text-primary ml-4 text-xl font-medium'>Marshalls</Text>
         <View className='h-2' />
         <Card>
           <View className='p-4'>
-            <Text className='text-secondary font-inter-regular py-1 text-base'>
+            <Text className='text-secondary font-regular py-1 text-base'>
               No marshalls for this stage
             </Text>
           </View>
@@ -24,9 +22,7 @@ export function MarshallsCard({ marshalls }: { marshalls: string[] }) {
     const slice = Math.ceil(marshalls.length / 2)
     return (
       <Column>
-        <Text className='text-primary font-inter-medium ml-4 text-xl'>
-          Marshalls
-        </Text>
+        <Text className='text-primary ml-4 text-xl font-medium'>Marshalls</Text>
         <View className='h-2' />
         <Card>
           <Row className='p-4'>
@@ -34,7 +30,7 @@ export function MarshallsCard({ marshalls }: { marshalls: string[] }) {
               {marshalls.slice(0, slice).map((it) => (
                 <Text
                   key={it}
-                  className='text-primary font-inter-regular py-1 text-base'
+                  className='text-primary font-regular py-1 text-base'
                 >
                   {it}
                 </Text>
@@ -44,7 +40,7 @@ export function MarshallsCard({ marshalls }: { marshalls: string[] }) {
               {marshalls.slice(slice).map((it) => (
                 <Text
                   key={it}
-                  className='text-primary font-inter-regular py-1 text-base'
+                  className='text-primary font-regular py-1 text-base'
                 >
                   {it}
                 </Text>

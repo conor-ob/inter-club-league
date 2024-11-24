@@ -13,11 +13,11 @@ export function StageLayout({ stage }: { stage: Stage }) {
     <Column className='flex-1'>
       {/* <Row className='items-center justify-between'> */}
       {/** TODO handle long names */}
-      <Text className='font-inter-medium text-secondary flex flex-1 text-base'>
+      <Text className='text-secondary flex flex-1 text-base font-medium'>
         {stage.name}
       </Text>
       {/* <View className='flex flex-row items-center'>
-          <Text className='font-inter-medium text-secondary mr-2 text-sm'>
+          <Text className='font-medium text-secondary mr-2 text-sm'>
             {getisplayDate(stage.startTime)}
           </Text>
           <Ionicon
@@ -28,7 +28,7 @@ export function StageLayout({ stage }: { stage: Stage }) {
         </View> */}
       {/* </Row> */}
       <View className='h-1.5' />
-      <Text className='font-inter-medium text-primary text-xl'>{`Stage ${stage.id.split('-')[1]}`}</Text>
+      <Text className='text-primary text-xl font-medium'>{`Stage ${stage.id.split('-')[1]}`}</Text>
       <View className='h-1.5' />
       <View className='-mx-1 flex flex-row flex-wrap'>
         <View className='px-1 py-1'>

@@ -18,7 +18,7 @@ export function StageMap({ stage }: { stage: Stage }) {
   return (
     <Card>
       <View className='px-4 py-5'>
-        <Text className='text-primary font-inter-medium text-xl'>Location</Text>
+        <Text className='text-primary text-xl font-medium'>Location</Text>
       </View>
       <View className='h-64'>
         {stage.coordinates && (
@@ -52,7 +52,7 @@ export function StageMap({ stage }: { stage: Stage }) {
         )}
       </View>
       <View className='flex flex-row justify-between px-4 py-5'>
-        <Text className='text-secondary font-inter-regular text-lg'>
+        <Text className='text-secondary font-regular text-lg'>
           {stage.location}
         </Text>
         <TouchableOpacity
@@ -71,7 +71,7 @@ export function StageMap({ stage }: { stage: Stage }) {
             Linking.openURL(url!)
           }}
         >
-          <Text className='text-brand-blue font-inter-regular text-lg'>
+          <Text className='text-brand-blue font-regular text-lg'>
             Directions
           </Text>
           {/* <Ionicon

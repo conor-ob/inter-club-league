@@ -44,7 +44,7 @@ export default function Layout() {
             <View className='flex flex-row items-center'>
               <GcBadge />
               {id && (
-                <Text className='text-primary font-inter-semibold ml-2 text-lg'>{`Stage ${stageNumberFromStageId(id)}`}</Text>
+                <Text className='text-primary ml-2 text-lg font-semibold'>{`Stage ${stageNumberFromStageId(id)}`}</Text>
               )}
             </View>
           ),

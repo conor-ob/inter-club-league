@@ -51,23 +51,3 @@ body {
   -ms-overflow-style: scrollbar;
   padding-bottom: env(safe-area-inset-bottom);
 }
-
-@font-face {
-  font-family: 'inter-regular';
-  src: url('/inter-regular.otf');
-}
-
-@font-face {
-  font-family: 'inter-medium';
-  src: url('/inter-medium.otf');
-}
-
-@font-face {
-  font-family: 'inter-semibold';
-  src: url('/inter-semibold.otf');
-}
-
-@font-face {
-  font-family: 'inter-bold';
-  src: url('/inter-bold.otf');
-}

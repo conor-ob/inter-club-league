@@ -19,17 +19,6 @@ export const theme = {
       secondary: 'var(--color-secondary)',
       tertiary: 'var(--color-tertiary)',
       quarternary: 'var(--color-quarternary)'
-    },
-    fontFamily: {
-      'inter-thin': ['inter-thin'],
-      'inter-extralight': ['inter-extralight'],
-      'inter-light': ['inter-light'],
-      'inter-regular': ['inter-regular'],
-      'inter-medium': ['inter-medium'],
-      'inter-semibold': ['inter-semibold'],
-      'inter-bold': ['inter-bold'],
-      'inter-extrabold': ['inter-extrabold'],
-      'inter-black': ['inter-black']
     }
   }
 } satisfies Config['theme']

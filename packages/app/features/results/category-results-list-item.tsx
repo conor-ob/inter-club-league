@@ -31,7 +31,7 @@ export function CategoryResultsListItem({
       >
         <View className='flex flex-row items-center justify-between px-4 py-3'>
           <View className='flex flex-1'>
-            <Text className='text-primary font-inter-medium text-base'>
+            <Text className='text-primary text-base font-medium'>
               {categoryResults.categoryGroup.categories
                 .map((category) => category.name)
                 .join(' & ')}

@@ -40,7 +40,7 @@ export function ResultsFeature() {
           <View className='h-12' />
           {data.stageResults.resultsStatus === ResultsStatus.Upcoming && (
             <Card>
-              <Text className='text-secondary font-inter-regular p-4 text-center text-base'>
+              <Text className='text-secondary font-regular p-4 text-center text-base'>
                 {`Stage ${stageNumberFromStageId(data.stage.id)} not yet started`}
               </Text>
             </Card>
@@ -48,7 +48,7 @@ export function ResultsFeature() {
           {data.stageResults.resultsStatus ===
             ResultsStatus.AwaitingResults && (
             <Card>
-              <Text className='text-primary font-inter-regular p-4 text-center text-base'>
+              <Text className='text-primary font-regular p-4 text-center text-base'>
                 {`Results will be available after Stage ${stageNumberFromStageId(data.stage.id)}`}
               </Text>
             </Card>

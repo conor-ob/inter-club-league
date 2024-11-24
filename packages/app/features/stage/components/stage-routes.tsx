@@ -20,9 +20,7 @@ export function StageRoutes({ routes }: { routes: Route[] }) {
 
   return (
     <Column>
-      <Text className='text-primary font-inter-medium ml-4 text-xl'>
-        Routes
-      </Text>
+      <Text className='text-primary ml-4 text-xl font-medium'>Routes</Text>
       <View className='h-2' />
       <Card>
         <FlatList
@@ -33,13 +31,13 @@ export function StageRoutes({ routes }: { routes: Route[] }) {
             <TouchableOpacity>
               <Link href={`https://www.strava.com/routes/${item.id}`}>
                 <Row className='justify-between p-4'>
-                  <Text className='text-primary font-inter-medium text-base'>
+                  <Text className='text-primary text-base font-medium'>
                     {item.label}
                   </Text>
                   <Row>
                     <Text
                       className={cx(
-                        'font-inter-regular text-base',
+                        'font-regular text-base',
                         getTextClassName({ type: item.type })
                       )}
                     >

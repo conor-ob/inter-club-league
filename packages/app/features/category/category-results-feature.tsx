@@ -74,7 +74,7 @@ export function CategoryResultsFeature() {
         </View>
       ) : results ? (
         <Column>
-          <Text className='text-primary font-inter-medium ml-2 text-xl'>
+          <Text className='text-primary ml-2 text-xl font-medium'>
             {`${parseCategoryGroupId(data?.stage, params.group)} Winner`}
           </Text>
           <View className='h-2' />
@@ -85,26 +85,26 @@ export function CategoryResultsFeature() {
                   <YellowJersey />
                 ) : (
                   <View className='w-8 items-center'>
-                    <Text className='text-primary font-inter-medium text-base'>
+                    <Text className='text-primary text-base font-medium'>
                       1st
                     </Text>
                   </View>
                 )}
                 <View className='w-3' />
                 <Column className='flex-1'>
-                  <Text className='text-primary font-inter-medium text-base'>
+                  <Text className='text-primary text-base font-medium'>
                     {results[0]!.rider.name}
                   </Text>
                   <View className='h-0' />
-                  <Text className='text-secondary font-inter-regular text-sm'>{`${results[0]!.club.code} • ${results[0]!.category.name}`}</Text>
+                  <Text className='text-secondary font-regular text-sm'>{`${results[0]!.club.code} • ${results[0]!.category.name}`}</Text>
                 </Column>
               </Row>
               <Column>
-                <Text className='text-primary font-inter-medium text-right text-base'>
+                <Text className='text-primary text-right text-base font-medium'>
                   {results[0]!.points}
                 </Text>
                 <View className='h-0' />
-                <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
+                <Text className='text-secondary font-regular text-sm uppercase tracking-tight'>
                   Points
                 </Text>
               </Column>

@@ -58,7 +58,7 @@ export function Navigation() {
           <GcBadge />
           <View className='w-2' />
           {typeof stageId === 'string' && stageId ? (
-            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+            <Text className='text-primary text-lg font-medium'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
           ) : (
             <Skeleton className='h-6 w-20 rounded-md' />
           )}
@@ -75,7 +75,7 @@ export function Navigation() {
           <GcBadge text='Results' />
           <View className='w-2' />
           {typeof stageId === 'string' && stageId ? (
-            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+            <Text className='text-primary text-lg font-medium'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
           ) : (
             <Skeleton className='h-6 w-20 rounded-md' />
           )}
@@ -88,7 +88,7 @@ export function Navigation() {
           <GcBadge text='Results' />
           <View className='w-2' />
           {typeof stageId === 'string' && stageId ? (
-            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+            <Text className='text-primary text-lg font-medium'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
           ) : (
             <Skeleton className='h-6 w-20 rounded-md' />
           )}
@@ -113,7 +113,7 @@ export function Navigation() {
           )}
           <View className='w-2' />
           {typeof stageId === 'string' && stageId ? (
-            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
+            <Text className='text-primary text-lg font-medium'>{`Stage ${stageNumberFromStageId(stageId)}`}</Text>
           ) : (
             <Skeleton className='h-6 w-20 rounded-md' />
           )}
@@ -129,9 +129,7 @@ export function Navigation() {
             <Skeleton className='h-6 w-10 rounded-md' />
           )}
           <View className='w-2' />
-          <Text className='text-primary font-inter-medium text-lg'>
-            Schedule
-          </Text>
+          <Text className='text-primary text-lg font-medium'>Schedule</Text>
         </View>
       )
     } else {
@@ -140,7 +138,7 @@ export function Navigation() {
           <GcBadge />
           <View className='w-2' />
           {data?.redirects.currentStageId ? (
-            <Text className='text-primary font-inter-medium text-lg'>{`Stage ${stageNumberFromStageId(data.redirects.currentStageId)}`}</Text>
+            <Text className='text-primary text-lg font-medium'>{`Stage ${stageNumberFromStageId(data.redirects.currentStageId)}`}</Text>
           ) : (
             <Skeleton className='h-6 w-20 rounded-md' />
           )}
@@ -179,7 +177,7 @@ export function Navigation() {
                           isCurrent(item.path)
                             ? 'bg-card text-primary'
                             : 'text-secondary hover:bg-card hover:text-primary',
-                          'font-inter-medium rounded-xl px-3 py-2 text-base'
+                          'rounded-xl px-3 py-2 text-base font-medium'
                         )}
                         aria-current={isCurrent(item.path) ? 'page' : undefined}
                       >
@@ -230,7 +228,7 @@ export function Navigation() {
                           isCurrent(item.path)
                             ? 'bg-card text-primary'
                             : 'text-secondary hover:bg-card hover:text-primary',
-                          'font-inter-medium block rounded-xl px-3 py-2 text-base'
+                          'block rounded-xl px-3 py-2 text-base font-medium'
                         )}
                         aria-current={isCurrent(item.path) ? 'page' : undefined}
                       >

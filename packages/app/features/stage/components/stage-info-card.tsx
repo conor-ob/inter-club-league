@@ -8,9 +8,7 @@ export function StageInfoCard({ stage }: { stage: Stage }) {
 
   return (
     <Column>
-      <Text className='text-primary font-inter-medium ml-4 text-xl'>
-        Stage Info
-      </Text>
+      <Text className='text-primary ml-4 text-xl font-medium'>Stage Info</Text>
       <View className='h-2' />
       <Card>
         <Column className='p-4'>
@@ -19,7 +17,7 @@ export function StageInfoCard({ stage }: { stage: Stage }) {
             // scrollEnabled={false}
             ItemSeparatorComponent={() => <View className='h-2' />}
             renderItem={({ item }) => (
-              <Text className='text-primary font-inter-regular text-base'>
+              <Text className='text-primary font-regular text-base'>
                 {item}
               </Text>
             )}

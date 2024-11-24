@@ -21,36 +21,7 @@ class Document extends NextDocument {
         <Head>
           <meta charSet='UTF-8' />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-          <link rel='preconnect' href='https://cdn.jsdelivr.net' />
           <link rel='preconnect' href='https://www.googletagmanager.com' />
-          <link
-            rel='preload'
-            href='/inter-regular.otf'
-            as='font'
-            type='font/otf'
-            crossOrigin='anonymous'
-          />
-          <link
-            rel='preload'
-            href='/inter-medium.otf'
-            as='font'
-            type='font/otf'
-            crossOrigin='anonymous'
-          />
-          <link
-            rel='preload'
-            href='/inter-semibold.otf'
-            as='font'
-            type='font/otf'
-            crossOrigin='anonymous'
-          />
-          <link
-            rel='preload'
-            href='/inter-bold.otf'
-            as='font'
-            type='font/otf'
-            crossOrigin='anonymous'
-          />
         </Head>
         <body className='bg-[#f6f6f6] dark:bg-[#010101]'>
           <Main />

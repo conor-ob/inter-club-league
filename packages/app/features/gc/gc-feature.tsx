@@ -55,7 +55,7 @@ export function GcFeature({ providedStageId }: { providedStageId: string }) {
               <View className='h-12' />
               {data.gc.gcStatus === GcStatus.Completed && (
                 <Column>
-                  <Text className='text-primary font-inter-medium ml-2 text-xl'>
+                  <Text className='text-primary ml-2 text-xl font-medium'>
                     GC Winner
                   </Text>
                   <View className='h-2' />
@@ -65,19 +65,19 @@ export function GcFeature({ providedStageId }: { providedStageId: string }) {
                         <YellowJersey />
                         <View className='w-3' />
                         <Column className='flex-1'>
-                          <Text className='text-primary font-inter-medium text-base'>
+                          <Text className='text-primary text-base font-medium'>
                             {data.gc.gcRiders[0]!.rider.name}
                           </Text>
                           <View className='h-0' />
-                          <Text className='text-secondary font-inter-regular text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
+                          <Text className='text-secondary font-regular text-sm'>{`${data.gc.gcRiders[0]!.club.code} • ${data.gc.gcRiders[0]!.category.name}`}</Text>
                         </Column>
                       </Row>
                       <Column>
-                        <Text className='text-primary font-inter-medium text-right text-base'>
+                        <Text className='text-primary text-right text-base font-medium'>
                           {data.gc.gcRiders[0]!.gcPoints}
                         </Text>
                         <View className='h-0' />
-                        <Text className='text-secondary font-inter-regular text-sm uppercase tracking-tight'>
+                        <Text className='text-secondary font-regular text-sm uppercase tracking-tight'>
                           Points
                         </Text>
                       </Column>
@@ -88,14 +88,14 @@ export function GcFeature({ providedStageId }: { providedStageId: string }) {
               )}
               {data.gc.resultsStatus === ResultsStatus.Upcoming && (
                 <Card>
-                  <Text className='text-secondary font-inter-regular p-4 text-center text-base'>
+                  <Text className='text-secondary font-regular p-4 text-center text-base'>
                     {`Stage ${stageNumberFromStageId(data.stage.id)} not yet started`}
                   </Text>
                 </Card>
               )}
               {data.gc.resultsStatus === ResultsStatus.AwaitingResults && (
                 <Card>
-                  <Text className='text-primary font-inter-regular p-4 text-center text-base'>
+                  <Text className='text-primary font-regular p-4 text-center text-base'>
                     {`Results will be available after Stage ${stageNumberFromStageId(data.stage.id)}`}
                   </Text>
                 </Card>
