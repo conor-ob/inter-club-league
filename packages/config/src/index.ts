@@ -2,10 +2,10 @@ const production = {
   hostname: '0.0.0.0',
   port: 8080,
   allowedOrigins: [
-    'https://inter-club-league-jtmtu.ondigitalocean.app',
-    'https://clubleague.conorob.ie'
+    'inter-club-league-production.up.railway.app',
+    'https://clubleague.conorob.me'
   ],
-  graphqlUri: 'https://clubleague.conorob.ie/graphql'
+  graphqlUri: 'https://clubleague.conorob.me/graphql'
 }
 
 const development = {
