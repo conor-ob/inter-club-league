@@ -29,9 +29,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # Installs deps with yarn (from packageManager) so railway.ts can import
-      # railway/iac, then uploads the plan as an artifact; railway-apply.yaml
-      # applies exactly this plan on merge
+      # railway.ts imports railway/iac, but railwayapp/config@v1 always runs
+      # `npm install` at the repo root, and npm can't resolve this yarn
+      # workspace's peer deps. Install with yarn, then hide package.json so the
+      # npm step no-ops
+      - name: Install node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install deps
+        run: |
+          corepack enable
+          yarn install --immutable --mode=skip-build
+
+      - name: Hide package.json from npm
+        run: mv package.json package.json.bak
+
+      # Uploads the plan as an artifact; railway-apply.yaml applies exactly
+      # this plan on merge
       - name: Railway config plan
         uses: railwayapp/config@v1
         with:

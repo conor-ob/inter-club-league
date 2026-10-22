@@ -14,6 +14,8 @@ export default defineRailway(() => {
     deploy: {
       startCommand: "yarn workspace @inter-club-league/server start",
       healthcheckPath: "/healthcheck",
+      // Sleep when idle; the next request wakes it with a cold start
+      sleepApplication: true,
       multiRegionConfig: { "europe-west4-drams3a": { numReplicas: 1 } },
     },
   });
