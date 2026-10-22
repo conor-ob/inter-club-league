@@ -25,28 +25,28 @@ class Document extends NextDocument {
           <link rel='preconnect' href='https://www.googletagmanager.com' />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-regular.otf'
+            href='https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-regular.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
           />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-medium.otf'
+            href='https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-medium.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
           />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-semibold.otf'
+            href='https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-semibold.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'
           />
           <link
             rel='preload'
-            href='https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-bold.otf'
+            href='https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-bold.otf'
             as='font'
             type='font/otf'
             crossOrigin='anonymous'

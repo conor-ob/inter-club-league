@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>ICL</title>
-        <meta name='description' content='Inter Club League' />
+        <title>Club League</title>
+        <meta name='description' content='Club League' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Provider>

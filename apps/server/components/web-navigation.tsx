@@ -7,7 +7,7 @@ import {
 import {
   seasonIdFromStageId,
   stageNumberFromStageId
-} from '@inter-club-league/utils'
+} from '@club-league/utils'
 import { GcBadge } from 'app/components/gc/gc-badge'
 import { Skeleton } from 'app/components/loading/skeleton'
 import { useRedirectQuery } from 'app/graphql/use-redirect-query'

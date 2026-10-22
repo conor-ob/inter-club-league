@@ -9,7 +9,7 @@ export function Provider({ children }: { children: React.ReactNode }) {
     <ApolloClientProvider>
       <ThemeProvider>
         <NativewindProvider>
-          <SolitoImageProvider nextJsURL='https://inter-club-league.vercel.app/'>
+          <SolitoImageProvider nextJsURL='https://clubleague.conorob.me/'>
             <SafeArea>{children}</SafeArea>
           </SolitoImageProvider>
         </NativewindProvider>

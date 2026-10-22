@@ -2873,6 +2873,139 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@club-league/config@*, @club-league/config@workspace:packages/config":
+  version: 0.0.0-use.local
+  resolution: "@club-league/config@workspace:packages/config"
+  dependencies:
+    typescript: ^5.3.3
+  languageName: unknown
+  linkType: soft
+
+"@club-league/graphql@*, @club-league/graphql@workspace:packages/graphql":
+  version: 0.0.0-use.local
+  resolution: "@club-league/graphql@workspace:packages/graphql"
+  dependencies:
+    "@graphql-codegen/cli": ^5.0.0
+    "@graphql-codegen/client-preset": ^4.1.0
+    "@graphql-codegen/introspection": ^4.0.0
+    "@graphql-codegen/schema-ast": ^4.0.0
+    "@graphql-codegen/typescript": ^4.0.1
+    "@graphql-codegen/typescript-resolvers": ^4.0.1
+    graphql: ^16.8.1
+  languageName: unknown
+  linkType: soft
+
+"@club-league/mobile@workspace:apps/mobile":
+  version: 0.0.0-use.local
+  resolution: "@club-league/mobile@workspace:apps/mobile"
+  dependencies:
+    "@babel/core": ^7.20.0
+    "@expo-google-fonts/inter": ^0.2.3
+    "@types/react": ^18.2.21
+    "@types/react-native": ^0.72.2
+    app: "*"
+    expo: ^49.0.0
+    expo-image: ^1.10.6
+    expo-linking: ~5.0.2
+    expo-router: ^2.0.5
+    expo-splash-screen: ~0.20.5
+    expo-status-bar: ~1.6.0
+    nativewind: ^4.0.1
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-native: 0.72.4
+    react-native-gesture-handler: ~2.12.0
+    react-native-reanimated: 3.3.0
+    react-native-safe-area-context: 4.6.3
+    react-native-screens: ~3.22.0
+    react-native-web: ~0.19.6
+    tailwindcss: ^3.4.1
+    typescript: ^5.2.2
+  languageName: unknown
+  linkType: soft
+
+"@club-league/results@workspace:apps/results":
+  version: 0.0.0-use.local
+  resolution: "@club-league/results@workspace:apps/results"
+  dependencies:
+    "@apollo/server": ^4.10.0
+    "@club-league/config": "*"
+    "@club-league/utils": "*"
+    "@types/body-parser": ^1.19.5
+    "@types/cors": ^2.8.17
+    "@types/express": ^4.17.21
+    "@types/node": ^20.11.5
+    "@types/papaparse": ^5.3.14
+    body-parser: ^1.20.2
+    cors: ^2.8.5
+    cross-env: ^7.0.3
+    date-fns: ^3.2.0
+    express: ^4.18.2
+    globby: 11.0.4
+    graphql: ^16.8.1
+    papaparse: ^5.4.1
+    ts-node: ^10.9.2
+    typescript: ^5.3.3
+    vite: ^5.1.4
+    vite-plugin-node: ^3.1.0
+  languageName: unknown
+  linkType: soft
+
+"@club-league/server@workspace:apps/server":
+  version: 0.0.0-use.local
+  resolution: "@club-league/server@workspace:apps/server"
+  dependencies:
+    "@apollo/server": ^4.10.0
+    "@club-league/config": "*"
+    "@club-league/graphql": "*"
+    "@club-league/utils": "*"
+    "@expo/next-adapter": 5.0.2
+    "@headlessui/react": ^1.7.18
+    "@heroicons/react": ^2.1.3
+    "@khmyznikov/pwa-install": ^0.3.6
+    "@next/third-parties": ^14.1.4
+    "@types/cors": ^2.8.17
+    "@types/express": ^4.17.21
+    "@types/lodash": ^4.17.0
+    "@types/node": ^20.11.5
+    "@types/papaparse": ^5.3.14
+    app: "*"
+    autoprefixer: ^10.4.7
+    classnames: ^2.5.1
+    compression: ^1.7.4
+    cors: ^2.8.5
+    cross-env: ^7.0.3
+    date-fns: ^3.2.0
+    eslint-config-next: 13.2.0
+    express: ^4.19.2
+    globby: 11.0.4
+    graphql: ^16.8.1
+    lodash: ^4.17.21
+    next: 13.4.19
+    next-pwa: ^5.6.0
+    papaparse: ^5.4.1
+    raf: ^3.4.1
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-native-web: ~0.19.6
+    remove-flow-types-loader: ^1.1.0
+    setimmediate: ^1.0.5
+    tailwindcss: ^3.4.1
+    ts-node: ^10.9.2
+    typescript: ^5.4.3
+    vite: ^5.1.4
+    vite-plugin-node: ^3.1.0
+  languageName: unknown
+  linkType: soft
+
+"@club-league/utils@*, @club-league/utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@club-league/utils@workspace:packages/utils"
+  dependencies:
+    typescript: ^5.3.3
+  languageName: unknown
+  linkType: soft
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -4265,139 +4398,6 @@ __metadata:
   checksum: 2fc11503361b5fb4f14714c700c02a3f4c7c93e9acd6b87a29f62c522d90470f364d6161b03d1cc618b979f2ae02aed1106fd29d302695d8927e2fc8165ba8ee
   languageName: node
   linkType: hard
-
-"@inter-club-league/config@*, @inter-club-league/config@workspace:packages/config":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/config@workspace:packages/config"
-  dependencies:
-    typescript: ^5.3.3
-  languageName: unknown
-  linkType: soft
-
-"@inter-club-league/graphql@*, @inter-club-league/graphql@workspace:packages/graphql":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/graphql@workspace:packages/graphql"
-  dependencies:
-    "@graphql-codegen/cli": ^5.0.0
-    "@graphql-codegen/client-preset": ^4.1.0
-    "@graphql-codegen/introspection": ^4.0.0
-    "@graphql-codegen/schema-ast": ^4.0.0
-    "@graphql-codegen/typescript": ^4.0.1
-    "@graphql-codegen/typescript-resolvers": ^4.0.1
-    graphql: ^16.8.1
-  languageName: unknown
-  linkType: soft
-
-"@inter-club-league/mobile@workspace:apps/mobile":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/mobile@workspace:apps/mobile"
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@expo-google-fonts/inter": ^0.2.3
-    "@types/react": ^18.2.21
-    "@types/react-native": ^0.72.2
-    app: "*"
-    expo: ^49.0.0
-    expo-image: ^1.10.6
-    expo-linking: ~5.0.2
-    expo-router: ^2.0.5
-    expo-splash-screen: ~0.20.5
-    expo-status-bar: ~1.6.0
-    nativewind: ^4.0.1
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-native: 0.72.4
-    react-native-gesture-handler: ~2.12.0
-    react-native-reanimated: 3.3.0
-    react-native-safe-area-context: 4.6.3
-    react-native-screens: ~3.22.0
-    react-native-web: ~0.19.6
-    tailwindcss: ^3.4.1
-    typescript: ^5.2.2
-  languageName: unknown
-  linkType: soft
-
-"@inter-club-league/results@workspace:apps/results":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/results@workspace:apps/results"
-  dependencies:
-    "@apollo/server": ^4.10.0
-    "@inter-club-league/config": "*"
-    "@inter-club-league/utils": "*"
-    "@types/body-parser": ^1.19.5
-    "@types/cors": ^2.8.17
-    "@types/express": ^4.17.21
-    "@types/node": ^20.11.5
-    "@types/papaparse": ^5.3.14
-    body-parser: ^1.20.2
-    cors: ^2.8.5
-    cross-env: ^7.0.3
-    date-fns: ^3.2.0
-    express: ^4.18.2
-    globby: 11.0.4
-    graphql: ^16.8.1
-    papaparse: ^5.4.1
-    ts-node: ^10.9.2
-    typescript: ^5.3.3
-    vite: ^5.1.4
-    vite-plugin-node: ^3.1.0
-  languageName: unknown
-  linkType: soft
-
-"@inter-club-league/server@workspace:apps/server":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/server@workspace:apps/server"
-  dependencies:
-    "@apollo/server": ^4.10.0
-    "@expo/next-adapter": 5.0.2
-    "@headlessui/react": ^1.7.18
-    "@heroicons/react": ^2.1.3
-    "@inter-club-league/config": "*"
-    "@inter-club-league/graphql": "*"
-    "@inter-club-league/utils": "*"
-    "@khmyznikov/pwa-install": ^0.3.6
-    "@next/third-parties": ^14.1.4
-    "@types/cors": ^2.8.17
-    "@types/express": ^4.17.21
-    "@types/lodash": ^4.17.0
-    "@types/node": ^20.11.5
-    "@types/papaparse": ^5.3.14
-    app: "*"
-    autoprefixer: ^10.4.7
-    classnames: ^2.5.1
-    compression: ^1.7.4
-    cors: ^2.8.5
-    cross-env: ^7.0.3
-    date-fns: ^3.2.0
-    eslint-config-next: 13.2.0
-    express: ^4.19.2
-    globby: 11.0.4
-    graphql: ^16.8.1
-    lodash: ^4.17.21
-    next: 13.4.19
-    next-pwa: ^5.6.0
-    papaparse: ^5.4.1
-    raf: ^3.4.1
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-native-web: ~0.19.6
-    remove-flow-types-loader: ^1.1.0
-    setimmediate: ^1.0.5
-    tailwindcss: ^3.4.1
-    ts-node: ^10.9.2
-    typescript: ^5.4.3
-    vite: ^5.1.4
-    vite-plugin-node: ^3.1.0
-  languageName: unknown
-  linkType: soft
-
-"@inter-club-league/utils@*, @inter-club-league/utils@workspace:packages/utils":
-  version: 0.0.0-use.local
-  resolution: "@inter-club-league/utils@workspace:packages/utils"
-  dependencies:
-    typescript: ^5.3.3
-  languageName: unknown
-  linkType: soft
 
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
@@ -6443,10 +6443,10 @@ __metadata:
   resolution: "app@workspace:packages/app"
   dependencies:
     "@apollo/client": ^3.8.10
+    "@club-league/config": "*"
+    "@club-league/graphql": "*"
+    "@club-league/utils": "*"
     "@expo/vector-icons": ^13.0.0
-    "@inter-club-league/config": "*"
-    "@inter-club-league/graphql": "*"
-    "@inter-club-league/utils": "*"
     "@nandorojo/heroicons": ^0.3.0
     "@react-native-segmented-control/segmented-control": ^2.5.0
     "@react-navigation/native": ~6.1.6
@@ -7622,6 +7622,22 @@ __metadata:
   checksum: aaf106e9bc025b21333e2f4c12da539b568db4925c0501a1bf4070836c9e848c892fa22c35548ce0d1132b08bbbfa17a00144fe58fccdab6fa900fec4250f67d
   languageName: node
   linkType: hard
+
+"club-league@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "club-league@workspace:."
+  dependencies:
+    "@types/react": ^18.2.21
+    "@types/react-native": ^0.72.2
+    eslint: ^8.21.0
+    prettier: ^3.1.1
+    prettier-plugin-organize-imports: ^3.2.4
+    prettier-plugin-tailwindcss: ^0.5.11
+    railway: ^3.16.0
+    turbo: ^1.4.2
+    typescript: ^5.2.2
+  languageName: unknown
+  linkType: soft
 
 "color-convert@npm:^1.9.0":
   version: 1.9.3
@@ -10859,22 +10875,6 @@ __metadata:
   checksum: 387ffb0a513559cc7414eb42c57556a60e302f820d6960e89d376d092e257a919961cd485a1b4de693dbb5c0de8bc58320bfd6247dfd827a873aa82a4215a240
   languageName: node
   linkType: hard
-
-"inter-club-league@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "inter-club-league@workspace:."
-  dependencies:
-    "@types/react": ^18.2.21
-    "@types/react-native": ^0.72.2
-    eslint: ^8.21.0
-    prettier: ^3.1.1
-    prettier-plugin-organize-imports: ^3.2.4
-    prettier-plugin-tailwindcss: ^0.5.11
-    railway: ^3.16.0
-    turbo: ^1.4.2
-    typescript: ^5.2.2
-  languageName: unknown
-  linkType: soft
 
 "internal-ip@npm:4.3.0":
   version: 4.3.0

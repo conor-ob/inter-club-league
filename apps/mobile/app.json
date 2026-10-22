@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ICL",
+    "name": "Club League",
     "slug": "inter-club-league",
     "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "inter-club-league",
+    "scheme": "club-league",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -14,7 +14,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "com.conorob.interclubleague",
+      "bundleIdentifier": "com.conorob.clubleague",
       "userInterfaceStyle": "automatic",
       "config": {
         "googleMapsApiKey": "AIzaSyBnh4wUk495k-Tf6kiW9M7KorigyGtC828"
@@ -26,7 +26,7 @@
         "backgroundColor": "#ffffff"
       },
       "userInterfaceStyle": "automatic",
-      "package": "com.conorob.interclubleague",
+      "package": "com.conorob.clubleague",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyB9ZokUNZ2n2PS4dwPryZWbrLXHYaKWAtQ"

@@ -1,7 +1,7 @@
 import {
   seasonIdFromStageId,
   stageNumberFromStageId
-} from '@inter-club-league/utils'
+} from '@club-league/utils'
 import { Stage } from 'app/generated/graphql'
 import cx from 'classnames'
 import { useEffect } from 'react'

@@ -5,7 +5,7 @@ import {
   ApolloServerPluginLandingPageLocalDefault,
   ApolloServerPluginLandingPageProductionDefault
 } from '@apollo/server/plugin/landingPage/default'
-import { config } from '@inter-club-league/config'
+import { config } from '@club-league/config'
 import cors from 'cors'
 import { default as compression, default as express } from 'express'
 import { readFileSync } from 'fs'

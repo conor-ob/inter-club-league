@@ -1,4 +1,4 @@
-# Inter Club League
+# Club League
 
 ## Ideas
 

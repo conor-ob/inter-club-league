@@ -2,7 +2,7 @@ import { defineRailway, github, group, project, service } from "railway/iac";
 
 export default defineRailway(() => {
   const server = service("server", {
-    source: github("conor-ob/inter-club-league", { checkSuites: false }),
+    source: github("conor-ob/club-league", { checkSuites: false }),
     env: {
       PORT: "8080",
     },
@@ -21,7 +21,7 @@ export default defineRailway(() => {
 
   const backend = group("backend", [server]);
 
-  return project("inter-club-league", {
+  return project("club-league", {
     resources: [backend],
   });
 });

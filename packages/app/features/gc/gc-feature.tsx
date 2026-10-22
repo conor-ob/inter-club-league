@@ -1,4 +1,4 @@
-import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { stageNumberFromStageId } from '@club-league/utils'
 import { GenericErrorView } from 'app/components/view/generic-error-view'
 import { RefreshScrollView } from 'app/components/view/refresh-scroll-view'
 import { StatefulView } from 'app/components/view/stateful-view'

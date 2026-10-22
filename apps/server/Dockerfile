@@ -14,7 +14,7 @@ RUN corepack enable \
 FROM base AS pruner
 WORKDIR /app
 COPY . .
-RUN turbo prune --scope=@inter-club-league/server --docker
+RUN turbo prune --scope=@club-league/server --docker
 
 # Build stage
 FROM base AS builder
@@ -31,7 +31,7 @@ RUN yarn install --immutable
 COPY --from=pruner /app/out/full/ .
 
 # Turbo codegen and build
-RUN turbo run build --filter=@inter-club-league/server
+RUN turbo run build --filter=@club-league/server
 
 # Runner stage
 FROM alpine AS runner
@@ -48,7 +48,7 @@ WORKDIR /app/apps/server
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Port comes from @inter-club-league/config
+# Port comes from @club-league/config
 EXPOSE 8080
 
 CMD ["node", "dist/index.mjs"]
