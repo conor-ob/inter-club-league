@@ -8,11 +8,10 @@ export default defineRailway(() => {
     },
     build: {
       buildEnvironment: "V3",
-      builder: "RAILPACK",
-      buildCommand: "yarn turbo run build --filter=@inter-club-league/server",
+      builder: "DOCKERFILE",
+      dockerfilePath: "apps/server/Dockerfile",
     },
     deploy: {
-      startCommand: "yarn workspace @inter-club-league/server start",
       healthcheckPath: "/healthcheck",
       // Sleep when idle; the next request wakes it with a cold start
       sleepApplication: true,
