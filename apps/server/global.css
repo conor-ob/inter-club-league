@@ -52,23 +52,23 @@ body {
 
 @font-face {
     font-family: 'inter-regular';
-    src: url('https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-regular.otf');
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-regular.otf');
 }
 
 
 @font-face {
     font-family: 'inter-medium';
-    src: url('https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-medium.otf');
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-medium.otf');
 }
 
 
 @font-face {
     font-family: 'inter-semibold';
-    src: url('https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-semibold.otf');
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-semibold.otf');
 }
 
 
 @font-face {
     font-family: 'inter-bold';
-    src: url('https://cdn.jsdelivr.net/gh/conor-ob/inter-club-league@latest/apps/cdn/font/inter-bold.otf');
+    src: url('https://cdn.jsdelivr.net/gh/conor-ob/club-league@latest/apps/cdn/font/inter-bold.otf');
 }

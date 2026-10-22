@@ -1,4 +1,4 @@
-import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { stageNumberFromStageId } from '@club-league/utils'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'
 import { StageEntity } from '../entity/StageEntity'

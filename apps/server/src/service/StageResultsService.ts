@@ -1,4 +1,4 @@
-import { seasonIdFromStageId } from '@inter-club-league/utils'
+import { seasonIdFromStageId } from '@club-league/utils'
 import { differenceInHours, isAfter, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'

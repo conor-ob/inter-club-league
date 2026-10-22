@@ -1,4 +1,4 @@
-import { stageNumberFromStageId } from '@inter-club-league/utils'
+import { stageNumberFromStageId } from '@club-league/utils'
 import { Card } from 'app/components/card/card'
 import { Stage } from 'app/generated/graphql'
 import {

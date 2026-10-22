@@ -1,7 +1,7 @@
 import {
   seasonIdFromStageId,
   stageNumberFromStageId
-} from '@inter-club-league/utils'
+} from '@club-league/utils'
 import { isAfter, parseISO } from 'date-fns'
 import { Database } from '../database/Database'
 import { Table } from '../database/Table'

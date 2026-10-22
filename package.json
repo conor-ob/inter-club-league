@@ -1,5 +1,5 @@
 {
-  "name": "inter-club-league",
+  "name": "club-league",
   "private": true,
   "workspaces": [
     "apps/*",

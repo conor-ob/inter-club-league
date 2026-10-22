@@ -1,4 +1,4 @@
-import { idFromPath } from '@inter-club-league/utils'
+import { idFromPath } from '@club-league/utils'
 import { sync } from 'globby'
 import path from 'path'
 import { FileReader } from './FileReader'
