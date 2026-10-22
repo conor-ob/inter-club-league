@@ -1,0 +1,39 @@
+name: 🚂 Railway plan
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    paths:
+      - ".railway/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+  # Lets railwayapp/config post the plan comment as the Railway bot
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  plan:
+    name: 📋 Plan
+    # Fork PRs get no secrets
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # Installs deps with yarn (from packageManager) so railway.ts can import
+      # railway/iac, then uploads the plan as an artifact; railway-apply.yaml
+      # applies exactly this plan on merge
+      - name: Railway config plan
+        uses: railwayapp/config@v1
+        with:
+          command: plan
+          railway-token: ${{ secrets.RAILWAY_TOKEN }}
